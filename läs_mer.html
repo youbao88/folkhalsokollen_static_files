@@ -42,7 +42,7 @@
         var data = sampleData["data"];
         div.innerHTML += `<span style='color: rgb(46,116,181);'>${data[1]}</span><br><br>`;
         div.innerHTML += "<span style='color: rgb(46,116,181);''>Definition: </span>"+`${data[2]}`+"<br><br>";
-        div.innerHTML += "<span style='color: rgb(46,116,181);''>Källa: </span>"+`<a href = ${data[4]} target = '_blank'>${data[3]}</a>` + "<br><br>";
+        div.innerHTML += "<span style='color: rgb(46,116,181);''>Källa: </span>"+`<a href = ${data[4]}>${data[3]}</a>` + "<br><br>";
 
         
         div.innerHTML += "<span style='color: rgb(46,116,181);''>Läsa mer: </span>"+"<br>";
@@ -52,7 +52,7 @@
             if (data[i] == ""){
                 break
             }
-            list.innerHTML += `<li><a href = ${data[i+1]} target = "_blank">${data[i]}</a></li>`;
+            list.innerHTML += `<li><a href = ${data[i+1]}>${data[i]}</a></li>`;
         }
 
         
