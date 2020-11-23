@@ -15,18 +15,18 @@
     <div id = "text_content">
     </div>
     <script>
-        // if (window.addEventListener) {
-        // // For standards-compliant web browsers
-        //     window.addEventListener("message", onMessage, false);
-        // } else {
-        //     window.attachEvent("onmessage", onMessage);
-        // } 
-        // // Retrieve data and begin processing
-        // function onMessage(event) {
-        //     if (event && event.data) {
-        //         //process event.data
-        //     }
-        // }
+        if (window.addEventListener) {
+        // For standards-compliant web browsers
+            window.addEventListener("message", onMessage, false);
+        } else {
+            window.attachEvent("onmessage", onMessage);
+        } 
+        // Retrieve data and begin processing
+        function onMessage(event) {
+            if (event && event.data) {
+               console.log(event.data) 
+            }
+        }
         var sampleData = {data:["Död",
                                 "Dödsfall på grund av covid-19",
                                 "Antal dödsfall med covid-19 som underliggande dödsorsak per 10 000 invånare",
