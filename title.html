@@ -7,7 +7,7 @@
         body {
             font-family: AvenirNext, Helvetica, Arial, sans-serif;
             font-size: .8889rem;
-            background-color: #FFFFFF;
+            background-color: #F5F3F0;
         }
     </style>
 </head>
@@ -24,7 +24,7 @@
         // Retrieve data and begin processing
         function onMessage(event) {
             if (event && event.data) {
-               console.log(event.data) 
+               console.log(event.data['parameters'][0]['value']) 
             }
         }
         var sampleData = {data:["Död",
