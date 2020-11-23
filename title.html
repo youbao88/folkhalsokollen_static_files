@@ -12,8 +12,7 @@
     </style>
 </head>
 <body>
-    <div id = "text_content" style="position:fixed; top: 30%; left: 0%">
-        <span> This is the demo of the title</span>
+    <div id = "text_content" style="position:fixed; top: 30%; left: 0%; font-family: Arial, Helvetica, sans-serif;">
     </div>
     <script>
         if (window.addEventListener) {
@@ -26,6 +25,24 @@
         function onMessage(event) {
             if (event && event.data) {
                console.log(event.data) 
+               var div = document.getElementById("text_content")
+               
+               var rows = event.data.data;
+               if (rows == []){
+                   return;
+               }
+
+               var indicator_name = rows[0][0];
+               div.innerHTML += `<b>${indicator_name} </b>`;
+
+               if (rows[0][1] !== 'Ej valbart'){
+                   div.innerHTML += 'med';
+                   for (var i = 0; i < rows.length; i++){
+                       div.innerHTML += `<b>${rows[i][1]}</b>; `;
+                   }
+               }
+               value_unit = rows[0][2];
+               div.innerHTML += `<br>enket: <b>${value_unit}</b>`;
             }
         }
     </script>
