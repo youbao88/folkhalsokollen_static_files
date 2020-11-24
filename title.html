@@ -24,7 +24,6 @@
         // Retrieve data and begin processing
         function onMessage(event) {
             if (event && event.data) {
-               console.log(event.data) 
                var div = document.getElementById("text_content")
                
                var rows = event.data.data;
@@ -32,18 +31,20 @@
                    return;
                }
                div.innerHTML = '';
-
                var indicator_name = rows[0][0];
-               div.innerHTML += `<b>${indicator_name} </b>`;
-
+               if (rows[0][0] == 'covid-19'){
+                   div.innerHTML += `<b>${indicator_name} på grund av covid-19`;
+               } else{
+                   div.innerHTML += `<b>${indicator_name}`;
+               }
                if (rows[0][1] !== 'Ej valbart'){
-                   div.innerHTML += 'med ';
-                   for (var i = 0; i < rows.length; i++){
-                       div.innerHTML += `<b>${rows[i][1]}</b>; `;
+                   div.innerHTML += '<br>';
+                   for(var i = 0; i<rows.length; i++){
+                       div.innerHTML += `<b>${rows[i][1]}; `;
                    }
                }
                value_unit = rows[0][2];
-               div.innerHTML += `<br>enket: <b>${value_unit}</b>`;
+               div.innerHTML += `<br>enhet: <b>${value_unit}</b>`;
             }
         }
     </script>
