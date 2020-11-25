@@ -44,8 +44,12 @@
                    var parameter_name = parameters[i]['label'].split('_')[1];
                    div.innerHTML += `<br><span style = 'font-size: 0.9rem'>${parameter_name}:</span>`;
                    var parameter_value = parameters[i]['value'];
-                   for (var j = 0; j<parameter_value.length; j++){
-                       div.innerHTML += `<span style = 'font-size: 0.9rem; font-weight:bold'> ${parameter_value[j]};</span>`;
+                   if (parameter_value.isArray()){
+                        for (var j = 0; j<parameter_value.length; j++){
+                            div.innerHTML += `<span style = 'font-size: 0.9rem; font-weight:bold'> ${parameter_value[j]};</span>`;
+                        }
+                   }else{
+                       div.innerHTML += `<span style = 'font-size: 0.9rem; font-weight:bold'> ${parameter_value};</span>`;
                    }
                }
                value_unit = rows[0][2];
