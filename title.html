@@ -6,13 +6,12 @@
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
-            font-size: 1.1rem;
             background-color: #F5F3F0;
         }
     </style>
 </head>
 <body>
-    <div id = "text_content" style="position:fixed; top: 30%; left: 0%; font-family: Arial, Helvetica, sans-serif;">
+    <div id = "text_content" style="position:fixed; top: 10%; left: 0%; font-family: Arial, Helvetica, sans-serif;">
     </div>
     <script>
         if (window.addEventListener) {
@@ -24,27 +23,24 @@
         // Retrieve data and begin processing
         function onMessage(event) {
             if (event && event.data) {
+               console.log(event.data);
                var div = document.getElementById("text_content")
-               
                var rows = event.data.data;
                if (rows == []){
                    return;
                }
                div.innerHTML = '';
                var indicator_name = rows[0][0];
-               if (rows[0][0] == 'covid-19'){
-                   div.innerHTML += `<b>${indicator_name} på grund av covid-19`;
-               } else{
-                   div.innerHTML += `<b>${indicator_name}`;
-               }
+               div.innerHTML += `<span style="font-size: 1.0rem; font-weight: bold">${indicator_name}</span>`;
+              
                if (rows[0][1] !== 'Ej valbart'){
                    div.innerHTML += '<br>';
                    for(var i = 0; i<rows.length; i++){
-                       div.innerHTML += `<b>${rows[i][1]}; `;
+                       div.innerHTML += `<span style="font-size: 0.9rem; font-weight: bold">${rows[i][1]}; </span>`;
                    }
                }
                value_unit = rows[0][2];
-               div.innerHTML += `<br>enhet: <b>${value_unit}</b>`;
+               div.innerHTML += `<br>enhet:<span style="font-size: 0.9rem; font-weight:bold">${value_unit}`;
             }
         }
     </script>
