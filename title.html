@@ -11,7 +11,7 @@
     </style>
 </head>
 <body>
-    <div id = "text_content" style="position:fixed; top: 10%; left: 0%; font-family: Arial, Helvetica, sans-serif;">
+    <div id = "text_content" style="position:fixed; top: 20%; left: 0%; font-family: Arial, Helvetica, sans-serif;">
     </div>
     <script>
         if (window.addEventListener) {
@@ -31,7 +31,7 @@
                }
                div.innerHTML = '';
                var indicator_name = rows[0][0];
-               div.innerHTML += `<span style="font-size: 1.0rem; font-weight: bold">${indicator_name}</span>`;
+               div.innerHTML += `<span style="font-size: 1.1rem; font-weight: bold">${indicator_name}</span>`;
               
                if (rows[0][1] !== 'Ej valbart'){
                    div.innerHTML += '<br>';
@@ -40,7 +40,7 @@
                    }
                }
                value_unit = rows[0][2];
-               div.innerHTML += `<br>enhet:<span style="font-size: 0.9rem; font-weight:bold">${value_unit}`;
+               div.innerHTML += `<br><span style="font-size: 0.9rem">enhet: </span><span style="font-size: 0.9rem; font-weight:bold">${value_unit}`;
             }
         }
     </script>
