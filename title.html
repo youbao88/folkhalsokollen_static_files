@@ -39,6 +39,16 @@
                        div.innerHTML += `<span style="font-size: 0.9rem; font-weight: bold">${rows[i][1]}; </span>`;
                    }
                }
+               var parameters = event.data.parameters;
+               for (var i = 0; i<parameters.length; i++){
+                   var parameter_name = parameters[i]['label'].split('_')[1];
+                   div.innerHTML += `<br><span style = 'font-size: 0.9rem'>${parameter_name}:</span>`;
+                   var parameter_value = parameters[i]['value'];
+                   for (var j = 0; j<parameter_value.length; j++){
+                       div.innerHTML += `<span style = 'font-size: 0.9rem; font-weight:bold'> ${parameter_value[j]};</span>`:
+                   }
+                   div.innerHTML += '<br>';
+               }
                value_unit = rows[0][2];
                div.innerHTML += `<br><span style="font-size: 0.9rem">enhet: </span><span style="font-size: 0.9rem; font-weight:bold">${value_unit}`;
             }
