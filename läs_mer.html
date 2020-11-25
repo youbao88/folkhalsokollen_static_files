@@ -30,7 +30,7 @@
                 var indikator_name_selection = event.data.parameters[0]['value'];
                 var indikator_existed_in_data = false;
                 for (var i = 0; i < rows.length; i++){
-                    if (rows[i][0] == indikator_name_selection){
+                    if (rows[i][1] == indikator_name_selection){
                         indikator_existed_in_data = true;
                         var row_index_data = i;
                         break
