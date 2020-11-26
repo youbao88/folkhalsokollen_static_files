@@ -45,7 +45,7 @@
                     var list = document.createElement("ul");
                     div.appendChild(list);
                     for (var i = 5; i<data.length; i=i+2){
-                        if (data[i] == "(missing)"){
+                        if (data[i] == "(missing)" || data[i] == "(saknas)"){
                             break
                         }
                         list.innerHTML += `<li><a href = ${data[i+1]}>${data[i]}</a></li>`;
