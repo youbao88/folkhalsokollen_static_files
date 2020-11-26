@@ -31,7 +31,8 @@
                }
                div.innerHTML = '';
                var indicator_name = rows[0][0];
-               div.innerHTML += `<span style="font-size: 1.1rem; font-weight: bold">${indicator_name}</span>`;
+               div.innerHTML += `<span id = "big_title" style="font-size: 1.1rem; font-weight: bold">${indicator_name}</span>`;
+
               
                if (rows[0][1] !== 'Ej valbart'){
                    div.innerHTML += '<br>';
@@ -40,7 +41,21 @@
                    }
                }
                var parameters = event.data.parameters;
+               var advanced_report = false;
                for (var i = 0; i<parameters.length; i++){
+                   if(parameters[i]['label'] == "selection_option"){
+                       if(parameters[i]['value'] == 'på'){
+                           document.getElementById('big_title').innerHTML += ` (avancerad nivå stratifierad av `;
+                           advanced_report = true;
+                       } 
+                    continue;
+                    }
+                   if(parameters[i]['label'] == "total_social variabel"){
+                       if(advanced_report == true){
+                           document.getElementById('big_title').innerHTML += `${parameters[i]['value']})`;
+                       }
+                       continue
+                   }
                    var parameter_name = parameters[i]['label'].split('_')[1];
                    div.innerHTML += `<br><span style = 'font-size: 0.9rem'>${parameter_name}:</span>`;
                    var parameter_value = parameters[i]['value'];
