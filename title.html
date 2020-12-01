@@ -39,7 +39,9 @@
                    for(var i = 0; i<rows.length; i++){
                        div.innerHTML += `<span style="font-size: 0.9rem; font-weight: bold">${rows[i][1]}</span>`;
                        if (i < rows.length-1){
-                           div.innerHTML += '<span style="font-size: 0.9rem; font-weight: bold">; </span><br>';
+                           div.innerHTML += '<span style="font-size: 0.9rem; font-weight: bold">; </span>';
+                       }else{
+                           div.innerHTML += '<br>'
                        }
                    }
                }else{
