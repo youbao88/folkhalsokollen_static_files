@@ -35,10 +35,15 @@
 
               
                if (rows[0][1] !== 'Ej valbart'){
-                   div.innerHTML += '<br>';
+                   div.innerHTML += ': ';
                    for(var i = 0; i<rows.length; i++){
-                       div.innerHTML += `<span style="font-size: 0.9rem; font-weight: bold">${rows[i][1]}; </span>`;
+                       div.innerHTML += `<span style="font-size: 0.9rem; font-weight: bold">${rows[i][1]}</span>`;
+                       if (i < rows.length-1){
+                           div.innerHTML += '<span style="font-size: 0.9rem; font-weight: bold">; </span><br>';
+                       }
                    }
+               }else{
+                   div.innerHTML += '<br>';
                }
                var parameters = event.data.parameters;
                var advanced_report = false;
@@ -61,10 +66,13 @@
                    var parameter_value = parameters[i]['value'];
                    if (Array.isArray(parameter_value)){
                         for (var j = 0; j<parameter_value.length; j++){
-                            div.innerHTML += `<span style = 'font-size: 0.9rem; font-weight:bold'> ${parameter_value[j]};</span>`;
+                            div.innerHTML += `<span style = 'font-size: 0.9rem; font-weight:bold'> ${parameter_value[j]}</span>`;
+                            if (j<parameter_value.length-1){
+                                div.innerHTML += "<span style = 'font-size: 0.9rem; font-weight:bold'>; </span>"
+                            }
                         }
                    }else{
-                       div.innerHTML += `<span style = 'font-size: 0.9rem; font-weight:bold'> ${parameter_value};</span>`;
+                       div.innerHTML += `<span style = 'font-size: 0.9rem; font-weight:bold'> ${parameter_value}</span>`;
                    }
                }
                value_unit = rows[0][2];
