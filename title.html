@@ -23,8 +23,7 @@
         // Retrieve data and begin processing
         function onMessage(event) {
             if (event && event.data) {
-               console.log(event.data);
-               var div = document.getElementById("text_content")
+               var div = document.getElementById("text_content");
                var rows = event.data.data;
                if (rows == []){
                    return;
@@ -39,7 +38,7 @@
                        if (i < rows.length-1){
                            div.innerHTML += '<span style="font-size: 1.1rem; font-weight: bold">; </span>';
                        }else{
-                           div.innerHTML += '<br>'
+                           div.innerHTML += '<br>';
                        }
                    }
                }else{
