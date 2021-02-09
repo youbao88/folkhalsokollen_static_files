@@ -5,7 +5,7 @@
     </title>
     <style>
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: Arial;
             background-color: #F5F3F0;
         }
     </style>
@@ -63,6 +63,29 @@
                    var parameter_name = parameters[i]['label'].split('_')[1];
                    div.innerHTML += `<span style = 'font-size: 0.9rem'>${parameter_name}:</span>`;
                    var parameter_value = parameters[i]['value'];
+
+                   if (parameter_name == "Åldersgrupp"){
+                       var ålder_interval = [];
+                       for(var j= 0; j<parameter_value.length; j++){
+                           if (parameter_value[j].charAt(parameter_value[j].length-1) == "+"){  //if the age-group is "XX+", run this
+                               ålder_interval.push([parameter_value[j].trim("+"), "+"]);
+                           }
+                           else{
+                               ålder_interval.push(parameter_value[j].trim(" år").split('-'));  //if age-group is "XX-XX år", run this
+                           }
+                       }
+
+                       var ålder_interval_processed = [];
+                       ålder_interval_processed.push(ålder_interval[0]);
+                       for(var j=1; j<ålder_interval.length; j++){
+                           if (parseInt(ålder_interval[j][0])-1 == ålder_interval_processed[ålder_interval_processed.length-1]){
+                               ålder_interval_processed[ålder_interval_processed.length-1][1] = ålder_interval[j][1];
+                           }else{
+                               ålder_interval_processed.push(ålder_interval[j]);
+                           }
+                       }
+                       console.log(ålder_interval_processed);
+                    }
                    if (Array.isArray(parameter_value)){
                         for (var j = 0; j<parameter_value.length; j++){
                             div.innerHTML += `<span style = 'font-size: 0.9rem; font-weight:bold'> ${parameter_value[j]}</span>`;
