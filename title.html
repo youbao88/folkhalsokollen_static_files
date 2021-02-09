@@ -66,6 +66,7 @@
 
                    if (parameter_name == "Åldersgrupp"){
                        var ålder_interval = [];
+                       console.log(parameter_value);
                        for(var j= 0; j<parameter_value.length; j++){
                            if (parameter_value[j].charAt(parameter_value[j].length-1) == "+"){  //if the age-group is "XX+", run this
                                ålder_interval.push([parameter_value[j].trim("+"), "+"]);
@@ -84,7 +85,6 @@
                                ålder_interval_processed.push(ålder_interval[j]);
                            }
                        }
-                       console.log(ålder_interval_processed);
                     }
                    if (Array.isArray(parameter_value)){
                         for (var j = 0; j<parameter_value.length; j++){
