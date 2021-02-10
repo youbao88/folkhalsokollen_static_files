@@ -65,8 +65,15 @@
                div.innerHTML += `<span id = "big_title" style="font-size: 1.1rem; font-weight: bold">${indicator_name}</span>`;
                if (rows[0][1] !== 'Ej valbart'){
                    div.innerHTML += ': ';
-                   for(var i = 0; i<rows.length; i++){
-                       div.innerHTML += `<span style="font-size: 1.1rem; font-weight: bold">${rows[i][1]}</span>`;
+                   indicator_filter = [];
+                   for(var i= 0; i<rows.length; i++){
+                       indicator_filter.push(rows[i][1]);
+                   }
+                   if (indicator_name == "Åldersgrupper"){
+                       indicator_filter = combineAgeInterval(indicator_filter);
+                   }
+                   for(var i = 0; i<indicator_filter.length; i++){
+                       div.innerHTML += `<span style="font-size: 1.1rem; font-weight: bold">${indicator_filter[i]}</span>`;
                        if (i < rows.length-1){
                            div.innerHTML += '<span style="font-size: 1.1rem; font-weight: bold">; </span>';
                        }else{
@@ -93,12 +100,12 @@
                        continue
                    }
                    var parameter_name = parameters[i]['label'].split('_')[1];
-                   div.innerHTML += `<span style = 'font-size: 0.9rem'>${parameter_name}:</span>`;
-                   var parameter_value = parameters[i]['value'];
-
                    if(indicator_name == "Åldersgrupper" && parameter_name == "Åldersgrupp"){  //hide "Åldersgrupp" subtitle if indicator is "Ålderesgrupper"
                        continue
                    }
+                   div.innerHTML += `<span style = 'font-size: 0.9rem'>${parameter_name}:</span>`;
+                   var parameter_value = parameters[i]['value'];
+
 
                    if (Array.isArray(parameter_value)){
                        if(parameter_name == "Åldersgrupp"){
