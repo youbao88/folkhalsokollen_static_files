@@ -96,12 +96,12 @@
                    div.innerHTML += `<span style = 'font-size: 0.9rem'>${parameter_name}:</span>`;
                    var parameter_value = parameters[i]['value'];
 
-                   if(indicator_name == "Åldersgrupper" && parameter_name == "Ålderesgrupp"){  //hide "Åldersgrupp" subtitle if indicator is "Ålderesgrupper"
+                   if(indicator_name == "Åldersgrupper" && parameter_name == "Åldersgrupp"){  //hide "Åldersgrupp" subtitle if indicator is "Ålderesgrupper"
                        continue
                    }
 
                    if (Array.isArray(parameter_value)){
-                       if(parameter_name == "Ålderesgrupp"){
+                       if(parameter_name == "Åldersgrupp"){
                            parameter_value = combineAgeInterval(parameter_value);
                        }
                         for (var j = 0; j<parameter_value.length; j++){
