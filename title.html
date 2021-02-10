@@ -14,6 +14,38 @@
     <div id = "text_content" style="position:fixed; top: 20%; left: 0%; font-family: Arial, Helvetica, sans-serif;">
     </div>
     <script>
+        function combineAgeInterval(originalInterval){
+            var ålder_interval = [];
+            for(var j= 0; j<originalInterval.length; j++){
+                var interval = originalInterval[j].replace(" år", ""); 
+                if (interval.charAt(interval.length -1) == "+"){  //if tne interval is like 'XX+'
+                    ålder_interval.push([interval.replace("+", ""), "+"]);
+                }else{                                            //if the interval is ended up without 'XX-XX'
+                    ålder_interval.push(interval.split('-'));
+                }
+            }
+
+            var ålder_interval_processed = [];
+            ålder_interval_processed.push(ålder_interval[0]);
+            for(var j=1; j<ålder_interval.length; j++){
+                if (parseInt(ålder_interval[j][0])-1 == parseInt(ålder_interval_processed[ålder_interval_processed.length-1][1])){
+                    ålder_interval_processed[ålder_interval_processed.length-1][1] = ålder_interval[j][1];
+                }else{
+                    ålder_interval_processed.push(ålder_interval[j]);
+                }
+            }
+
+            var ålder_interval_output = [];
+            for(var j=0; j<ålder_interval_processed.length; j++){
+                if (ålder_interval_processed[j][1] != "+"){
+                    ålder_interval_output.push(`${ålder_interval_processed[j][0]}-${ålder_interval_processed[j][1]} år`);
+                }else{
+                    ålder_interval_output.push(`${ålder_interval_processed[j][0]}+ år`);
+                }
+            }
+            return ålder_interval_output;
+        }
+
         if (window.addEventListener) {
         // For standards-compliant web browsers
             window.addEventListener("message", onMessage, false);
@@ -64,29 +96,14 @@
                    div.innerHTML += `<span style = 'font-size: 0.9rem'>${parameter_name}:</span>`;
                    var parameter_value = parameters[i]['value'];
 
-                   if (parameter_name == "Åldersgrupp"){
-                       var ålder_interval = [];
-                       console.log(parameter_value);
-                       for(var j= 0; j<parameter_value.length; j++){
-                           if (parameter_value[j].charAt(parameter_value[j].length-1) == "+"){  //if the age-group is "XX+", run this
-                               ålder_interval.push([parameter_value[j].trim("+"), "+"]);
-                           }
-                           else{
-                               ålder_interval.push(parameter_value[j].trim(" år").split('-'));  //if age-group is "XX-XX år", run this
-                           }
-                       }
+                   if(indicator_name == "Åldersgrupper" && parameter_name == "Ålderesgrupp"){  //hide "Åldersgrupp" subtitle if indicator is "Ålderesgrupper"
+                       continue
+                   }
 
-                       var ålder_interval_processed = [];
-                       ålder_interval_processed.push(ålder_interval[0]);
-                       for(var j=1; j<ålder_interval.length; j++){
-                           if (parseInt(ålder_interval[j][0])-1 == ålder_interval_processed[ålder_interval_processed.length-1]){
-                               ålder_interval_processed[ålder_interval_processed.length-1][1] = ålder_interval[j][1];
-                           }else{
-                               ålder_interval_processed.push(ålder_interval[j]);
-                           }
-                       }
-                    }
                    if (Array.isArray(parameter_value)){
+                       if(parameter_name == "Ålderesgrupp"){
+                           parameter_value = combineAgeInterval(parameter_value);
+                       }
                         for (var j = 0; j<parameter_value.length; j++){
                             div.innerHTML += `<span style = 'font-size: 0.9rem; font-weight:bold'> ${parameter_value[j]}</span>`;
                             if (j<parameter_value.length-1){
