@@ -24,6 +24,7 @@
                     ålder_interval.push(interval.split('-'));
                 }
             }
+            ålder_interval = ålder_interval.sort((a,b)=>a[0]-b[0])  //sort ålder_interval based on the first value;
 
             var ålder_interval_processed = [];
             ålder_interval_processed.push(ålder_interval[0]);
@@ -74,7 +75,7 @@
                    }
                    for(var i = 0; i<indicator_filter.length; i++){
                        div.innerHTML += `<span style="font-size: 1.1rem; font-weight: bold">${indicator_filter[i]}</span>`;
-                       if (i < rows.length-1){
+                       if (i < indicator_filter.length-1){
                            div.innerHTML += '<span style="font-size: 1.1rem; font-weight: bold">; </span>';
                        }else{
                            div.innerHTML += '<br>';
