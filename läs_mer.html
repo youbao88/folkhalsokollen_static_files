@@ -38,6 +38,7 @@
                 }
                 if (indikator_existed_in_data == true){
                     var data = rows[row_index_data];
+                    console.log(window.location.href)
                     var hostUrl = window.location.href.match(/(^.+\.se).*/,'g')[1];
                     var kallaUrl = hostUrl+'/datakallor/';
                     div.innerHTML += `<span style='color: rgb(46,116,181);'>${data[1]}</span><br><br>`;
