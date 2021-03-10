@@ -41,7 +41,7 @@
                     var kallaUrl = 'https://prod14.slso.sll.se/datakallor/';
                     div.innerHTML += `<span style='color: rgb(46,116,181);'>${data[1]}</span><br><br>`;
                     div.innerHTML += "<span style='color: rgb(46,116,181);''>Definition: </span>"+`${data[2]}`+"<br><br>";
-                    div.innerHTML += "<span style='color: rgb(46,116,181);''>Källa: </span>"+`<a href = ${kallaUrl}>${data[3]}</a>` + "<br><br>";
+                    div.innerHTML += "<span style='color: rgb(46,116,181);''>Källa: </span>"+`<a href = ${kallaUrl} target = "_blank">${data[3]}</a>` + "<br><br>";
                     div.innerHTML += "<span style='color: rgb(46,116,181);''>Läsa mer: </span>"+"<br>";
                     var list = document.createElement("ul");
                     div.appendChild(list);
