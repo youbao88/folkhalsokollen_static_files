@@ -23,6 +23,16 @@
         } 
         // Retrieve data and begin processing
         function onMessage(event) {
+            källa_url_map = {
+                'Socialstyrelsen dödsorsaksstatistik':'',
+                'VAL-databaserna': 'https://prod14.slso.sll.se/datakallor/val-databaserna',
+                'Områdesdatabasen (ODB)': '',
+                'Folkhälsoenkät': 'https://prod14.slso.sll.se/datakallor/region-Stockholms-folkhalsoenkat',
+                'Barnhälsovårdens årsrapport': 'https://prod14.slso.sll.se/datakallor/barnhalsovardens-arsrappor',
+                'SCB, Valmyndigheten och Stockholms statistikkontor': 'https://prod14.slso.sll.se/datakallor/sociodemografiska-data',
+                'Databas över anmälda brott, Brottsförebyggande rådet (Brå)': 'https://prod14.slso.sll.se/datakallor/brottsforebyggande-radet',
+                'Regionalt cancercentrum Stockholm Gotland (RCC)': 'https://prod14.slso.sll.se/datakallor/cancerdata'
+            }
             if (event && event.data) {
                 var div = document.getElementById('text_content');
                 div.innerHTML = ''
@@ -37,11 +47,16 @@
                     }
                 }
                 if (indikator_existed_in_data == true){
-                    var data = rows[row_index_data];
-                    var kallaUrl = 'https://prod14.slso.sll.se/datakallor/';
+
                     div.innerHTML += `<span style='color: rgb(46,116,181);'>${data[1]}</span><br><br>`;
                     div.innerHTML += "<span style='color: rgb(46,116,181);''>Definition: </span>"+`${data[2]}`+"<br><br>";
-                    div.innerHTML += "<span style='color: rgb(46,116,181);''>Källa: </span>"+`<a href = ${kallaUrl} target = "_blank">${data[3]}</a>` + "<br><br>";
+                    var _kalla_url = källa_url_map[data[3].trim()];
+                    if(kalla_url == 'undefined'){
+                        kalla_url = null;
+                    }else{
+                        kalla_url = _kalla_url;
+                    }
+                    div.innerHTML += "<span style='color: rgb(46,116,181);''>Källa: </span>"+`<a href = ${kalla_url}>${data[3]}</a>` + "<br><br>";
                     div.innerHTML += "<span style='color: rgb(46,116,181);''>Läsa mer: </span>"+"<br>";
                     var list = document.createElement("ul");
                     div.appendChild(list);
