@@ -47,7 +47,7 @@
                     }
                 }
                 if (indikator_existed_in_data == true){
-
+                    var data = rows[row_index_data];
                     div.innerHTML += `<span style='color: rgb(46,116,181);'>${data[1]}</span><br><br>`;
                     div.innerHTML += "<span style='color: rgb(46,116,181);''>Definition: </span>"+`${data[2]}`+"<br><br>";
                     var _kalla_url = källa_url_map[data[3].trim()];
