@@ -51,10 +51,10 @@
                     div.innerHTML += `<span style='color: rgb(46,116,181);'>${data[1]}</span><br><br>`;
                     div.innerHTML += "<span style='color: rgb(46,116,181);''>Definition: </span>"+`${data[2]}`+"<br><br>";
                     var _kalla_url = källa_url_map[data[3].trim()];
-                    if(kalla_url == 'undefined'){
-                        kalla_url = null;
+                    if(_kalla_url == 'undefined'){
+                        var kalla_url = null;
                     }else{
-                        kalla_url = _kalla_url;
+                        var kalla_url = _kalla_url;
                     }
                     div.innerHTML += "<span style='color: rgb(46,116,181);''>Källa: </span>"+`<a href = ${kalla_url}>${data[3]}</a>` + "<br><br>";
                     div.innerHTML += "<span style='color: rgb(46,116,181);''>Läsa mer: </span>"+"<br>";
