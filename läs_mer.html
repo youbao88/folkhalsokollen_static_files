@@ -1,37 +1,40 @@
 <!DOCTYPE html>
+
 <head>
     <title>
         Folkhälsokollen läs mer
     </title>
     <style>
         body {
-            font-family: Arial,Verdana,Helvetica;
+            font-family: Arial, Verdana, Helvetica;
             font-size: 0.9rem;
             background-color: #FFFFFF;
         }
-        button.link {
+
+        button.buttonLink {
             background: none;
             border: none;
         }
     </style>
 </head>
+
 <body>
-    <div id = "text_content">
+    <div id="text_content">
     </div>
     <script>
-        function sendLinkMessage(link_url){
+        function sendLinkMessage(link_url) {
             window.parent.postMessage(message = link_url, targetOrigin = '*');
         }
         if (window.addEventListener) {
-        // For standards-compliant web browsers
+            // For standards-compliant web browsers
             window.addEventListener("message", onMessage, false);
         } else {
             window.attachEvent("onmessage", onMessage);
-        } 
+        }
         // Retrieve data and begin processing
         function onMessage(event) {
             källa_url_map = {
-                'Socialstyrelsen dödsorsaksstatistik':'',
+                'Socialstyrelsen dödsorsaksstatistik': '',
                 'VAL-databaserna': 'https://prod14.slso.sll.se/datakallor/val-databaserna',
                 'Områdesdatabasen (ODB)': '',
                 'Region Stockholms folkhälsoenkät': 'https://prod14.slso.sll.se/datakallor/region-Stockholms-folkhalsoenkat',
@@ -46,37 +49,44 @@
                 var rows = event.data.data;
                 var indikator_name_selection = event.data.parameters[0]['value'];
                 var indikator_existed_in_data = false;
-                for (var i = 0; i < rows.length; i++){
-                    if (rows[i][1] == indikator_name_selection){
+                for (var i = 0; i < rows.length; i++) {
+                    if (rows[i][1] == indikator_name_selection) {
                         indikator_existed_in_data = true;
                         var row_index_data = i;
                         break
                     }
                 }
-                if (indikator_existed_in_data == true){
+                if (indikator_existed_in_data == true) {
                     var data = rows[row_index_data];
                     div.innerHTML += `<span style='font-weight: bold; font-size: 1.5rem'>${data[1]}</span><br><br>`;
-                    div.innerHTML += "<span style='font-weight: bold;'>Definition: </span>"+`${data[2]}`+"<br><br>";
+                    div.innerHTML += "<span style='font-weight: bold;'>Definition: </span>" + `${data[2]}` + "<br><br>";
                     var _kalla_url = källa_url_map[data[3].trim()];
-                    if(_kalla_url == 'undefined'){
+                    if (_kalla_url == 'undefined') {
                         var kalla_url = null;
-                    }else{
+                    } else {
                         var kalla_url = _kalla_url;
                     }
-                    div.innerHTML += "<span style='font-weight: bold'>Källa: </span>"+`<a href = ${kalla_url}>${data[3]}</a>` + "<br><br>";
-                    div.innerHTML += "<span style='font-weight: bold'>Läs mer</a>"+"<br>";
+                    div.innerHTML += "<span style='font-weight: bold'>Källa: </span>" +
+                        `<button class = "buttonLink" title = ${kalla_url}>${data[3]}</button>` + "<br><br>";
+                    div.innerHTML += "<span style='font-weight: bold'>Läs mer</a>" + "<br>";
                     var list = document.createElement("ul");
                     div.appendChild(list);
-                    for (var i = 5; i<data.length; i=i+2){
-                        if (data[i] == "(missing)" || data[i] == "(saknas)"){
+                    for (var i = 5; i < data.length; i = i + 2) {
+                        if (data[i] == "(missing)" || data[i] == "(saknas)") {
                             break
                         }
-                        list.innerHTML += `<li><button class = "link" onclick= "sendLinkMessage(${data[i+1]})">${data[i]}</button></li>`;
+                        list.innerHTML += `<li><button class = "buttonLink" title = ${data[i+1]}>${data[i]}</button></li>`;
                     }
-                }else{
+                } else {
                     div.innerHTML += "<span style='font-weight: bold;'>information not available so far</span>"
                 }
             }
         }
+        const buttonList = document.querySelectorAll('.buttonLink');
+        buttonList.forEach(element => {
+            buttonUrl = element.getAttribute('title');
+            window.parent.postMessage(message = buttonUrl, targetOrigin = '*');
+        })
+
     </script>
 </body>
