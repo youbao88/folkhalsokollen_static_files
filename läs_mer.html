@@ -92,7 +92,7 @@
         buttonList.forEach(element => {
             var buttonUrl = element.getAttribute('title');
             element.addEventListener('click', () => {
-                window.parent.postMessage(message = buttonUrl, targetOrigin = '*');
+                window.parent.parent.postMessage(message = buttonUrl, targetOrigin = '*');
             })
         })
     </script>
