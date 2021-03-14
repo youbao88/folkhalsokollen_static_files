@@ -90,7 +90,7 @@
         }
         const buttonList = document.querySelectorAll('.buttonLink');
         buttonList.forEach(element => {
-            buttonUrl = element.getAttribute('title');
+            var buttonUrl = element.getAttribute('title');
             element.addEventListener('click', () => {
                 window.parent.postMessage(message = buttonUrl, targetOrigin = '*');
             })
