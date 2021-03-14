@@ -12,8 +12,13 @@
         }
 
         button.buttonLink {
-            background: none;
+            background: none !important;
             border: none;
+            padding: 0 !important;
+            /*optional*/
+            color: #069;
+            text-decoration: underline;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -75,7 +80,8 @@
                         if (data[i] == "(missing)" || data[i] == "(saknas)") {
                             break
                         }
-                        list.innerHTML += `<li><button class = "buttonLink" title = ${data[i+1]}>${data[i]}</button></li>`;
+                        list.innerHTML +=
+                            `<li><button class = "buttonLink" title = ${data[i+1]}>${data[i]}</button></li>`;
                     }
                 } else {
                     div.innerHTML += "<span style='font-weight: bold;'>information not available so far</span>"
@@ -85,8 +91,9 @@
         const buttonList = document.querySelectorAll('.buttonLink');
         buttonList.forEach(element => {
             buttonUrl = element.getAttribute('title');
-            window.parent.postMessage(message = buttonUrl, targetOrigin = '*');
+            element.addEventListener('click', () => {
+                window.parent.postMessage(message = buttonUrl, targetOrigin = '*');
+            })
         })
-
     </script>
 </body>
