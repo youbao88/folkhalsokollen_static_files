@@ -9,6 +9,10 @@
             font-size: 0.9rem;
             background-color: #FFFFFF;
         }
+        button.link {
+            background: none;
+            border: none;
+        }
     </style>
 </head>
 <body>
@@ -67,7 +71,7 @@
                         if (data[i] == "(missing)" || data[i] == "(saknas)"){
                             break
                         }
-                        list.innerHTML += `<li><button onclick= "sendLinkMessage(${data[i+1]})">${data[i]}</button></li>`;
+                        list.innerHTML += `<li><button class = "link" onclick= "sendLinkMessage(${data[i+1]})">${data[i]}</button></li>`;
                     }
                 }else{
                     div.innerHTML += "<span style='font-weight: bold;'>information not available so far</span>"
