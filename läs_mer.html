@@ -87,8 +87,10 @@
                     div.innerHTML += "<span style='font-weight: bold;'>information not available so far</span>"
                 }
             }
+
         }
         var buttonList = document.querySelectorAll('.buttonLink');
+        console.log(buttonList)
         buttonList.forEach(element => {
             var buttonUrl = element.getAttribute('title');
             element.addEventListener('click', () => {
