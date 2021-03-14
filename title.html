@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <head>
     <title>
         Folkhälsokollen läs mer
@@ -8,42 +9,46 @@
             font-family: Arial;
             background-color: #F5F3F0;
         }
-        #text_content{
+
+        #text_content {
             padding: 0 0 0 14px;
         }
     </style>
 </head>
+
 <body>
-    <div id = "text_content" style="position:fixed; top: 20%; left: 0%; font-family: Arial, Helvetica, sans-serif;">
+    <div id="text_content" style="position:fixed; top: 20%; left: 0%; font-family: Arial, Helvetica, sans-serif;">
     </div>
     <script>
-        function combineAgeInterval(originalInterval){
+        function combineAgeInterval(originalInterval) {
             var ålder_interval = [];
-            for(var j= 0; j<originalInterval.length; j++){
-                var interval = originalInterval[j].replace(" år", ""); 
-                if (interval.charAt(interval.length -1) == "+"){  //if tne interval is like 'XX+'
+            for (var j = 0; j < originalInterval.length; j++) {
+                var interval = originalInterval[j].replace(" år", "");
+                if (interval.charAt(interval.length - 1) == "+") { //if tne interval is like 'XX+'
                     ålder_interval.push([interval.replace("+", ""), "+"]);
-                }else{                                            //if the interval is ended up without 'XX-XX'
+                } else { //if the interval is ended up without 'XX-XX'
                     ålder_interval.push(interval.split('-'));
                 }
             }
-            ålder_interval = ålder_interval.sort((a,b)=>a[0]-b[0])  //sort ålder_interval based on the first value;
+            ålder_interval = ålder_interval.sort((a, b) => a[0] - b[0]) //sort ålder_interval based on the first value;
 
             var ålder_interval_processed = [];
             ålder_interval_processed.push(ålder_interval[0]);
-            for(var j=1; j<ålder_interval.length; j++){
-                if (parseInt(ålder_interval[j][0])-1 == parseInt(ålder_interval_processed[ålder_interval_processed.length-1][1])){
-                    ålder_interval_processed[ålder_interval_processed.length-1][1] = ålder_interval[j][1];
-                }else{
+            for (var j = 1; j < ålder_interval.length; j++) {
+                if (parseInt(ålder_interval[j][0]) - 1 == parseInt(ålder_interval_processed[ålder_interval_processed
+                        .length - 1][1])) {
+                    ålder_interval_processed[ålder_interval_processed.length - 1][1] = ålder_interval[j][1];
+                } else {
                     ålder_interval_processed.push(ålder_interval[j]);
                 }
             }
 
             var ålder_interval_output = [];
-            for(var j=0; j<ålder_interval_processed.length; j++){
-                if (ålder_interval_processed[j][1] != "+"){
-                    ålder_interval_output.push(`${ålder_interval_processed[j][0]}-${ålder_interval_processed[j][1]} år`);
-                }else{
+            for (var j = 0; j < ålder_interval_processed.length; j++) {
+                if (ålder_interval_processed[j][1] != "+") {
+                    ålder_interval_output.push(
+                    `${ålder_interval_processed[j][0]}-${ålder_interval_processed[j][1]} år`);
+                } else {
                     ålder_interval_output.push(`${ålder_interval_processed[j][0]}+ år`);
                 }
             }
@@ -51,83 +56,93 @@
         }
 
         if (window.addEventListener) {
-        // For standards-compliant web browsers
+            // For standards-compliant web browsers
             window.addEventListener("message", onMessage, false);
         } else {
             window.attachEvent("onmessage", onMessage);
-        } 
+        }
         // Retrieve data and begin processing
         function onMessage(event) {
             if (event && event.data) {
-               var div = document.getElementById("text_content");
-               var rows = event.data.data;
-               if (rows == []){
-                   return;
-               }
-               div.innerHTML = '';
-               var indicator_name = rows[0][0];
-               div.innerHTML += `<span id = "big_title" style="font-size: 1.1rem; font-weight: bold">${indicator_name}</span>`;
-               if (rows[0][1] !== 'Ej valbart'){
-                   div.innerHTML += ': ';
-                   indicator_filter = [];
-                   for(var i= 0; i<rows.length; i++){
-                       indicator_filter.push(rows[i][1]);
-                   }
-                   if (indicator_name == "Åldersgrupper"){
-                       indicator_filter = combineAgeInterval(indicator_filter);
-                   }
-                   for(var i = 0; i<indicator_filter.length; i++){
-                       div.innerHTML += `<span style="font-size: 1.1rem; font-weight: bold">${indicator_filter[i]}</span>`;
-                       if (i < indicator_filter.length-1){
-                           div.innerHTML += '<span style="font-size: 1.1rem; font-weight: bold">; </span>';
-                       }else{
-                           div.innerHTML += '<br>';
-                       }
-                   }
-               }else{
-                   div.innerHTML += '<br>';
-               }
-               var parameters = event.data.parameters;
-               var advanced_report = false;
-               for (var i = 0; i<parameters.length; i++){
-                   if(parameters[i]['label'] == "selection_option"){
-                       if(parameters[i]['value'] == 'på'){
-                           document.getElementById('big_title').innerHTML += ` (avancerad nivå stratifierad av `;
-                           advanced_report = true;
-                       } 
-                    continue;
+                var div = document.getElementById("text_content");
+                var rows = event.data.data;
+                if (rows == []) {
+                    return;
+                }
+                div.innerHTML = '';
+                var indicator_name = rows[0][0];
+
+                //Send indicatorname message to parent window
+                window.parent.postMessage(message = indicator_name, targetOrigin = '*');
+                
+                div.innerHTML +=
+                    `<span id = "big_title" style="font-size: 1.1rem; font-weight: bold">${indicator_name}</span>`;
+                if (rows[0][1] !== 'Ej valbart') {
+                    div.innerHTML += ': ';
+                    indicator_filter = [];
+                    for (var i = 0; i < rows.length; i++) {
+                        indicator_filter.push(rows[i][1]);
                     }
-                   if(parameters[i]['label'] == "total_social variabel"){
-                       if(advanced_report == true){
-                           document.getElementById('big_title').innerHTML += `${parameters[i]['value']})`;
-                       }
-                       continue
-                   }
-                   var parameter_name = parameters[i]['label'].split('_')[1];
-                   if(indicator_name == "Åldersgrupper" && parameter_name == "Åldersgrupp"){  //hide "Åldersgrupp" subtitle if indicator is "Ålderesgrupper"
-                       continue
-                   }
-                   div.innerHTML += `<span style = 'font-size: 0.9rem'>${parameter_name}:</span>`;
-                   var parameter_value = parameters[i]['value'];
+                    if (indicator_name == "Åldersgrupper") {
+                        indicator_filter = combineAgeInterval(indicator_filter);
+                    }
+                    for (var i = 0; i < indicator_filter.length; i++) {
+                        div.innerHTML +=
+                            `<span style="font-size: 1.1rem; font-weight: bold">${indicator_filter[i]}</span>`;
+                        if (i < indicator_filter.length - 1) {
+                            div.innerHTML += '<span style="font-size: 1.1rem; font-weight: bold">; </span>';
+                        } else {
+                            div.innerHTML += '<br>';
+                        }
+                    }
+                } else {
+                    div.innerHTML += '<br>';
+                }
+                var parameters = event.data.parameters;
+                var advanced_report = false;
+                for (var i = 0; i < parameters.length; i++) {
+                    if (parameters[i]['label'] == "selection_option") {
+                        if (parameters[i]['value'] == 'på') {
+                            document.getElementById('big_title').innerHTML += ` (avancerad nivå stratifierad av `;
+                            advanced_report = true;
+                        }
+                        continue;
+                    }
+                    if (parameters[i]['label'] == "total_social variabel") {
+                        if (advanced_report == true) {
+                            document.getElementById('big_title').innerHTML += `${parameters[i]['value']})`;
+                        }
+                        continue
+                    }
+                    var parameter_name = parameters[i]['label'].split('_')[1];
+                    if (indicator_name == "Åldersgrupper" && parameter_name ==
+                        "Åldersgrupp") { //hide "Åldersgrupp" subtitle if indicator is "Ålderesgrupper"
+                        continue
+                    }
+                    div.innerHTML += `<span style = 'font-size: 0.9rem'>${parameter_name}:</span>`;
+                    var parameter_value = parameters[i]['value'];
 
 
-                   if (Array.isArray(parameter_value)){
-                       if(parameter_name == "Åldersgrupp"){
-                           parameter_value = combineAgeInterval(parameter_value);
-                       }
-                        for (var j = 0; j<parameter_value.length; j++){
-                            div.innerHTML += `<span style = 'font-size: 0.9rem; font-weight:bold'> ${parameter_value[j]}</span>`;
-                            if (j<parameter_value.length-1){
+                    if (Array.isArray(parameter_value)) {
+                        if (parameter_name == "Åldersgrupp") {
+                            parameter_value = combineAgeInterval(parameter_value);
+                        }
+                        for (var j = 0; j < parameter_value.length; j++) {
+                            div.innerHTML +=
+                                `<span style = 'font-size: 0.9rem; font-weight:bold'> ${parameter_value[j]}</span>`;
+                            if (j < parameter_value.length - 1) {
                                 div.innerHTML += "<span style = 'font-size: 0.9rem; font-weight:bold'>; </span>"
                             }
                         }
-                   }else{
-                       div.innerHTML += `<span style = 'font-size: 0.9rem; font-weight:bold'> ${parameter_value}</span>`;
-                   }
-                   div.innerHTML += '<br>';
-               }
-               value_unit = rows[0][2];
-               div.innerHTML += `<span style="font-size: 0.9rem">Enhet: </span><span style="font-size: 0.9rem; font-weight:bold">${value_unit}`;
+                    } else {
+                        div.innerHTML +=
+                            `<span style = 'font-size: 0.9rem; font-weight:bold'> ${parameter_value}</span>`;
+                    }
+                    div.innerHTML += '<br>';
+                }
+                value_unit = rows[0][2];
+                div.innerHTML +=
+                    `<span style="font-size: 0.9rem">Enhet: </span><span style="font-size: 0.9rem; font-weight:bold">${value_unit}`;
             }
         }
     </script>
