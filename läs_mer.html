@@ -5,8 +5,8 @@
     </title>
     <style>
         body {
-            font-family: Arial;
-            font-size: 0.8889rem;
+            font-family: Arial,Verdana,Helvetica;
+            font-size: 0.9rem;
             background-color: #FFFFFF;
         }
     </style>
@@ -15,6 +15,9 @@
     <div id = "text_content">
     </div>
     <script>
+        function sendLinkMessage(link_url){
+            window.parent.postMessage(message = link_url, targetOrigin = '*');
+        }
         if (window.addEventListener) {
         // For standards-compliant web browsers
             window.addEventListener("message", onMessage, false);
@@ -48,26 +51,26 @@
                 }
                 if (indikator_existed_in_data == true){
                     var data = rows[row_index_data];
-                    div.innerHTML += `<span style='color: rgb(46,116,181);'>${data[1]}</span><br><br>`;
-                    div.innerHTML += "<span style='color: rgb(46,116,181);''>Definition: </span>"+`${data[2]}`+"<br><br>";
+                    div.innerHTML += `<span style='font-weight: bold; font-size: 1.5rem'>${data[1]}</span><br><br>`;
+                    div.innerHTML += "<span style='font-weight: bold;'>Definition: </span>"+`${data[2]}`+"<br><br>";
                     var _kalla_url = källa_url_map[data[3].trim()];
                     if(_kalla_url == 'undefined'){
                         var kalla_url = null;
                     }else{
                         var kalla_url = _kalla_url;
                     }
-                    div.innerHTML += "<span style='color: rgb(46,116,181);''>Källa: </span>"+`<a href = ${kalla_url}>${data[3]}</a>` + "<br><br>";
-                    div.innerHTML += "<span style='color: rgb(46,116,181);''>Läsa mer: </span>"+"<br>";
+                    div.innerHTML += "<span style='font-weight: bold'>Källa: </span>"+`<a href = ${kalla_url}>${data[3]}</a>` + "<br><br>";
+                    div.innerHTML += "<span style='font-weight: bold'>Läs mer</a>"+"<br>";
                     var list = document.createElement("ul");
                     div.appendChild(list);
                     for (var i = 5; i<data.length; i=i+2){
                         if (data[i] == "(missing)" || data[i] == "(saknas)"){
                             break
                         }
-                        list.innerHTML += `<li><a href = ${data[i+1]}>${data[i]}</a></li>`;
+                        list.innerHTML += `<li><span onclick= "sendLinkMessage(${data[i+1]})">${data[i]}</span></li>`;
                     }
                 }else{
-                    div.innerHTML += "<span style='color: rgb(46,116,181);'>information not available so far</span>"
+                    div.innerHTML += "<span style='font-weight: bold;'>information not available so far</span>"
                 }
             }
         }
