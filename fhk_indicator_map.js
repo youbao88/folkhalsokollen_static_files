@@ -99,7 +99,7 @@ const indicator_name_parameter_map = {
         'tabel_Kön': ['Kvinnor', 'Män']
     },
     'Födelseland': {
-        'indikator_category_selection': 'Annat land',
+        'indikator_category_selection': 'Europa',
         'karta_Tidsperiod': '2019',
         'karta_Kön': ['Kvinnor', 'Män'],
         'karta_Åldersgrupp': ['0-24 år', '25-44 år', '45-64 år', '65+ år'],
@@ -184,7 +184,7 @@ const indicator_name_parameter_map = {
         'tabel_Kön': ['Kvinnor', 'Män']
     },
     'Depression och ångest': {
-        'indikator_category_selection': 'Vårdkontakter depression/ångest',
+        'indikator_category_selection': 'Ej valbart',
         'karta_Tidsperiod': '2019',
         'karta_Kön': ['Kvinnor', 'Män'],
         'karta_Åldersgrupp': ['16-24 år', '25-44 år', '45-64 år', '65+ år'],
@@ -200,7 +200,7 @@ const indicator_name_parameter_map = {
         'tabel_Kön': ['Kvinnor', 'Män']
     },
     'Bröstcancer': {
-        'indikator_category_selection': 'Bröstcancer',
+        'indikator_category_selection': 'Ej valbart',
         'karta_Tidsperiod': '2019',
         'karta_Kön': ['Kvinnor'],
         'karta_Åldersgrupp': ['0-54 år', '55+ år'],
@@ -216,7 +216,7 @@ const indicator_name_parameter_map = {
         'tabel_Kön': ['Kvinnor']
     },
     'Förväntad medellivslängd': {
-        'indikator_category_selection': 'Medellivslängd',
+        'indikator_category_selection': 'Ej valbart',
         'karta_Tidsperiod': '2019',
         'karta_Kön': ['Samtliga'],
         'karta_Åldersgrupp': ['Samtliga'],
@@ -232,7 +232,7 @@ const indicator_name_parameter_map = {
         'tabel_Kön': ['Samtliga']
     },
     'Prostatacancer': {
-        'indikator_category_selection': 'Prostatacancer',
+        'indikator_category_selection': 'Ej valbart',
         'karta_Tidsperiod': '2019',
         'karta_Kön': ['Män'],
         'karta_Åldersgrupp': ['0-54 år', '55+ år'],
@@ -248,7 +248,7 @@ const indicator_name_parameter_map = {
         'tabel_Kön': ['Män']
     },
     'Lungcancer': {
-        'indikator_category_selection': 'Lungcancer',
+        'indikator_category_selection': 'Ej valbart',
         'karta_Tidsperiod': '2019',
         'karta_Kön': ['Kvinnor', 'Män'],
         'karta_Åldersgrupp': ['0-54 år', '55+ år'],
@@ -280,7 +280,7 @@ const indicator_name_parameter_map = {
         'tabel_Kön': ['Kvinnor', 'Män']
     },
     'Anmälda våldsbrott': {
-        'indikator_category_selection': 'Anmälda brott mot person',
+        'indikator_category_selection': 'Ej valbart',
         'karta_Tidsperiod': '2019',
         'karta_Kön': ['Samtliga'],
         'karta_Åldersgrupp': ['Samtliga'],
@@ -935,7 +935,7 @@ const indicator_name_parameter_map = {
         'tabel_Åldersgrupp': ['16-44 år', '45-64 år'],
         'tabel_Kön': ['Kvinnor', 'Män']
     },
-    'Användning av annan narkotika än hasch eller marijana (senaste året)': {
+    'Användning av annan narkotika än hasch eller marijuana (senaste året)': {
         'indikator_category_selection': 'Ej valbart',
         'karta_Tidsperiod': '2018',
         'karta_Kön': ['Kvinnor', 'Män'],
@@ -1223,8 +1223,8 @@ const indicator_name_parameter_map = {
         'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
         'tabel_Kön': ['Kvinnor', 'Män']
     },
-    'Ohälsotal': {
-        'indikator_category_selection': 'Ohälsotal',
+    'Ohälsodagar': {
+        'indikator_category_selection': 'Ej valbart',
         'karta_Tidsperiod': '2005',
         'karta_Kön': ['Kvinnor', 'Män'],
         'karta_Åldersgrupp': ['20-34 år', '35-49 år', '50-64 år'],
