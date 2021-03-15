@@ -1,10 +1,7 @@
 //Disable animation
 var styles = `
     .sas_ReportContainer-internal-SlideTransition_container {
-        animation-dcd veuration: 0s !important;
-    }
-    HoverEffect:hover{
-        background-color: black;
+        animation-duration: 0s !important;
     }
 `;
 var styleSheet = document.createElement("style");
@@ -49,17 +46,6 @@ function disableScrollDoubleClickOutline() {
             birdText[i].style.outline = "none";
         }
     }
-    // //
-    // var previousIndicatorName = null;
-    // let titleiframe = document.getElementsByTagName("iframe");
-    // console.log(titleiframe.contentWindow.document);
-    // if (indicatorName != null){
-    //     if (previousIndicatorName == null || previousIndicatorName == indicatorName){
-    //         previousIndicatorName = indicatorName;
-    //     }else{
-    //         console.log('Indicator name change');
-    //     }
-    // }
 };
 const observer = new MutationObserver(mutations => {
     disableScrollDoubleClickOutline();
@@ -71,25 +57,11 @@ window.addEventListener('vaReportComponents.loaded', function () {
         event.stopPropagation();
     }, true);
 
+    var currentUrl = window.location.href;
+    var UrlId = currentUtl.match(/.+id=(\d+).*/)[1];
+
     sasReport.getReportHandle().then((reportHandle) => {
-        reportHandle.setReportParameters({
-            indikator_group_selection: "Äldre",
-            indikator_name_selection: "Fallolyckor",
-            indikator_category_selection: "Ej valbart",
-            karta_Tidsperiod: "2018",
-            karta_Kön: ["Kvinnor", "Män"],
-            karta_Åldersgrupp: "65+ år",
-            stapel_Område: "Stockholms län",
-            stapel_Tidsperiod: "2018",
-            stapel_Kön: ["Kvinnor", "Män"],
-            linje_Område: ["Stockholms län", "Botkyrka"],
-            linje_Kön: ["Kvinnor", "Män"],
-            linje_Åldersgrupp: "65+ år",
-            table_Tidsperiod: "2018",
-            table_Område: "Stockholms län",
-            tabel_Åldersgrupp: "65+ år",
-            tabel_Kön: ["Kvinnor", "Män"]
-        });
+        reportHandle.setReportParameters(indicator_init_map[id_indicaotr[UrlId]]);
     });
     // Observe on the sas-report if there is any changes
     observer.observe(target = sasReport, {
@@ -119,13 +91,21 @@ document.getElementsByTagName("sas-report")[0].addEventListener("click", e => {
     }
 })
 //Detect the change of indicatorname and change default selection;
+var sasReport = document.getElementById("my-report");
 var currentIndicator = null;
 window.addEventListener('message', (event) => {
-    var newIndicator = event.data;
-    if (currentIndicator == null) {
-        currentIndicator = newIndicator;
-    } else if (currentIndicator != newIndicator) {
-
-        currentIndicator = newIndicator
+    if (event.data.startsWith('http')) {
+        var win = window.open(event.data, '_blank');
+        win.focus;
+    } else {
+        var newIndicator = event.data;
+        if (currentIndicator == null) {
+            currentIndicator = newIndicator;
+        } else if (currentIndicator != newIndicator) {
+            sasReport.getReportHandle().then(reportHandle => {
+                var parameters = indicator_name_parameter_map[newIndicator]
+            })
+            currentIndicator = newIndicator;
+        }
     }
 })
