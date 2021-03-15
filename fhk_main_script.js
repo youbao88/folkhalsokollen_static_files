@@ -104,7 +104,8 @@ window.addEventListener('message', (event) => {
             currentIndicator = newIndicator;
         } else if (currentIndicator != newIndicator) {
             sasReport.getReportHandle().then(reportHandle => {
-                var parameters = indicator_name_parameter_map[newIndicator]
+                var parameters = indicator_name_parameter_map[newIndicator];
+                reportHandle.updateReportParameters(parameters);
             })
             currentIndicator = newIndicator;
         }
