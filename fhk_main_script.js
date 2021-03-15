@@ -58,7 +58,7 @@ window.addEventListener('vaReportComponents.loaded', function () {
     }, true);
 
     var currentUrl = window.location.href;
-    var UrlId = currentUtl.match(/.+id=(\d+).*/)[1];
+    var UrlId = currentUrl.match(/.+id=(\d+).*/)[1];
 
     sasReport.getReportHandle().then((reportHandle) => {
         reportHandle.setReportParameters(indicator_init_map[id_indicaotr[UrlId]]);
