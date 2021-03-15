@@ -63,51 +63,49 @@ window.addEventListener('vaReportComponents.loaded', function () {
     sasReport.getReportHandle().then((reportHandle) => {
         reportHandle.setReportParameters(indicator_init_map[id_indicaotr[UrlId]]);
     });
+    // This is the js script for downloading the report as Image from browser
+    document.getElementsByTagName("sas-report")[0].addEventListener("click", e => {
+        if (e.target.title ==
+            "Klicka här för att spara en bild av din visualisering. Bilden laddas ned som en jpg-fil på din dator."
+        ) {
+            const canvases = document.getElementsByTagName('canvas');
+            for (var i = 0; i < canvases.length; i++) {
+                try {
+                    dataURL = canvases[i].toDataURL(type = "image/png");
+                } catch {
+                    continue;
+                }
+                const a = document.createElement("a");
+                a.href = dataURL;
+                a.download = "Folkhalsokollen_report.png";
+                a.click();
+            }
+        }
+    })
+    //Detect the change of indicatorname and change default selection;
+    var currentIndicator = null;
+    window.addEventListener('message', (event) => {
+        console.log(event.data)
+        if (event.data.startsWith('http')) {
+            var win = window.open(event.data, '_blank');
+            win.focus;
+        } else {
+            var newIndicator = event.data;
+            if (currentIndicator == null) {
+                currentIndicator = newIndicator;
+            } else if (currentIndicator != newIndicator) {
+                sasReport.getReportHandle().then(reportHandle => {
+                    var parameters = indicator_name_parameter_map[newIndicator];
+                    reportHandle.updateReportParameters(parameters);
+                })
+                currentIndicator = newIndicator;
+            }
+        }
+    })
     // Observe on the sas-report if there is any changes
     observer.observe(target = sasReport, {
         attributes: true,
         subtree: true
     })
 
-})
-
-// This is the js script for downloading the report as Image from browser
-document.getElementsByTagName("sas-report")[0].addEventListener("click", e => {
-    if (e.target.title ==
-        "Klicka här för att spara en bild av din visualisering. Bilden laddas ned som en jpg-fil på din dator."
-    ) {
-        const canvases = document.getElementsByTagName('canvas');
-        for (var i = 0; i < canvases.length; i++) {
-            try {
-                dataURL = canvases[i].toDataURL(type = "image/png");
-            } catch {
-                continue;
-            }
-            const a = document.createElement("a");
-            a.href = dataURL;
-            a.download = "Folkhalsokollen_report.png";
-            a.click();
-        }
-    }
-})
-//Detect the change of indicatorname and change default selection;
-var sasReport = document.getElementById("my-report");
-var currentIndicator = null;
-window.addEventListener('message', (event) => {
-    console.log(event.data)
-    if (event.data.startsWith('http')) {
-        var win = window.open(event.data, '_blank');
-        win.focus;
-    } else {
-        var newIndicator = event.data;
-        if (currentIndicator == null) {
-            currentIndicator = newIndicator;
-        } else if (currentIndicator != newIndicator) {
-            sasReport.getReportHandle().then(reportHandle => {
-                var parameters = indicator_name_parameter_map[newIndicator];
-                reportHandle.updateReportParameters(parameters);
-            })
-            currentIndicator = newIndicator;
-        }
-    }
 })

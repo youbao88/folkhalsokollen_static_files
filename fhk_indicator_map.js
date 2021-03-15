@@ -1,7 +1,7 @@
 const indicator_name_parameter_map = {
     'Dödsfall på grund av covid-19': {
         'indikator_category_selection': 'Ej valbart',
-        'karta_Tidsperiod': 'September 2020',
+        'karta_Tidsperiod': 'Hela 2020',
         'karta_Kön': ['Kvinnor', 'Män'],
         'karta_Åldersgrupp': ['0-24 år',
             '25-44 år',
@@ -10,7 +10,7 @@ const indicator_name_parameter_map = {
             '80+ år'
         ],
         'stapel_Område': 'Stockholms län',
-        'stapel_Tidsperiod': 'September 2020',
+        'stapel_Tidsperiod': 'Hela 2020',
         'stapel_Kön': ['Kvinnor', 'Män'],
         'linje_Område': ['Stockholms län', 'Botkyrka'],
         'linje_Kön': ['Kvinnor', 'Män'],
@@ -20,7 +20,7 @@ const indicator_name_parameter_map = {
             '65-79 år',
             '80+ år'
         ],
-        'table_Tidsperiod': 'September 2020',
+        'table_Tidsperiod': 'Hela 2020',
         'table_Område': 'Stockholms län',
         'tabel_Åldersgrupp': ['0-24 år',
             '25-44 år',
@@ -32,7 +32,7 @@ const indicator_name_parameter_map = {
     },
     'Slutenvård med covid-19': {
         'indikator_category_selection': 'Ej valbart',
-        'karta_Tidsperiod': 'September 2020',
+        'karta_Tidsperiod': 'Hela 2020',
         'karta_Kön': ['Kvinnor', 'Män'],
         'karta_Åldersgrupp': ['0-24 år',
             '25-44 år',
@@ -41,7 +41,7 @@ const indicator_name_parameter_map = {
             '80+ år'
         ],
         'stapel_Område': 'Stockholms län',
-        'stapel_Tidsperiod': 'September 2020',
+        'stapel_Tidsperiod': 'Hela 2020',
         'stapel_Kön': ['Kvinnor', 'Män'],
         'linje_Område': ['Stockholms län', 'Botkyrka'],
         'linje_Kön': ['Kvinnor', 'Män'],
@@ -51,7 +51,7 @@ const indicator_name_parameter_map = {
             '65-79 år',
             '80+ år'
         ],
-        'table_Tidsperiod': 'September 2020',
+        'table_Tidsperiod': 'Hela 2020',
         'table_Område': 'Stockholms län',
         'tabel_Åldersgrupp': ['0-24 år',
             '25-44 år',
