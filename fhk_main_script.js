@@ -85,7 +85,6 @@ window.addEventListener('vaReportComponents.loaded', function () {
     //Detect the change of indicatorname and change default selection;
     var currentIndicator = null;
     window.addEventListener('message', (event) => {
-        console.log(event.data)
         if (event.data.startsWith('http')) {
             var win = window.open(event.data, '_blank');
             win.focus;
