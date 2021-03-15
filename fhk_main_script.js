@@ -94,6 +94,7 @@ document.getElementsByTagName("sas-report")[0].addEventListener("click", e => {
 var sasReport = document.getElementById("my-report");
 var currentIndicator = null;
 window.addEventListener('message', (event) => {
+    console.log(event.data)
     if (event.data.startsWith('http')) {
         var win = window.open(event.data, '_blank');
         win.focus;
