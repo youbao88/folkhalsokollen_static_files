@@ -30,21 +30,20 @@
             padding: 5px 0;
             position: absolute;
             z-index: 1;
-            bottom: 150%;
+            top: 150%;
             left: 50%;
             margin-left: -60px;
         }
 
         .tooltip .tooltiptext::after {
-            content: " ";
+            content: "";
             position: absolute;
             bottom: 100%;
-            /* At the bottom of the tooltip */
             left: 50%;
             margin-left: -5px;
             border-width: 5px;
             border-style: solid;
-            border-color: black transparent transparent transparent;
+            border-color: transparent transparent black transparent;
         }
 
         .tooltip:hover .tooltiptext {
