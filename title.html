@@ -13,6 +13,39 @@
         #text_content {
             padding: 0 0 0 14px;
         }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 150%;
+            left: 50%;
+            margin-left: -60px;
+        }
+
+        .tooltip .tooltiptext::after {
+            content: " ";
+            position: absolute;
+            top: 100%;
+            /* At the bottom of the tooltip */
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: black transparent transparent transparent;
+        }
     </style>
 </head>
 
@@ -47,20 +80,24 @@
             for (var j = 0; j < ålder_interval_processed.length; j++) {
                 if (ålder_interval_processed[j][1] != "+") {
                     ålder_interval_output.push(
-                    `${ålder_interval_processed[j][0]}-${ålder_interval_processed[j][1]} år`);
+                        `${ålder_interval_processed[j][0]}-${ålder_interval_processed[j][1]} år`);
                 } else {
                     ålder_interval_output.push(`${ålder_interval_processed[j][0]}+ år`);
                 }
             }
             return ålder_interval_output;
         }
-        function shortenValue(values){
-            if(values.length <= 6){
-                return values;
-            }else{
-                var shortedValues = values.slice(0,6);
-                shortedValues.push(`+${values.length-6}`);
-                return shortedValues;
+
+        function shortenValue(values) {
+            var omittedNumber = null;
+            var omittedValue = null
+            if (values.length <= 6) {
+                return [values, omittedNumber, omittedValue];
+            } else {
+                var trimedValues = values.slice(0, 6);
+                omittedNumber = values.length - 6;
+                omittedValues = values.slice(6)
+                return [trimedValues, omittedNumber, omittedValues];
             }
         }
 
@@ -83,7 +120,7 @@
 
                 //Send indicatorname message to parent window
                 window.parent.postMessage(message = indicator_name, targetOrigin = '*');
-                
+
                 div.innerHTML +=
                     `<span id = "big_title" style="font-size: 1.1rem; font-weight: bold">${indicator_name}</span>`;
                 if (rows[0][1] !== 'Ej valbart') {
@@ -135,8 +172,11 @@
                     if (Array.isArray(parameter_value)) {
                         if (parameter_name == "Åldersgrupp") {
                             parameter_value = combineAgeInterval(parameter_value);
-                        }else{
-                            parameter_value = shortenValue(parameter_value);
+                            var ommittedNumber = null;
+                        } else {
+                            parameter_value = shortenValue(parameter_value)[0];
+                            omittedNumber = shortenValue(parameter_value)[1];
+                            omittedValue = shortenValue(parameter_value)[2]
                         }
                         for (var j = 0; j < parameter_value.length; j++) {
                             div.innerHTML +=
@@ -144,6 +184,10 @@
                             if (j < parameter_value.length - 1) {
                                 div.innerHTML += "<span style = 'font-size: 0.9rem; font-weight:bold'>; </span>"
                             }
+                        }
+                        if (omittedNumber) {
+                            div.innterHTML += `<span style = 'font-size: 0.9rem; font-weight:bold' class = 'tooltip'> +${omittedNumber}</span>
+                            <span class = 'tooltiptext'>${omittedValue.toString().replaceAll(',','; ')}</span>`
                         }
                     } else {
                         div.innerHTML +=
