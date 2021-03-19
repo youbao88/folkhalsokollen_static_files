@@ -54,6 +54,15 @@
             }
             return ålder_interval_output;
         }
+        function shortenValue(values){
+            if(values.length <= 6){
+                return values;
+            }else{
+                var shortedValues = values.slice(0,6);
+                shortedValues.push(`+${values.length-6}`);
+                return shortedValues;
+            }
+        }
 
         if (window.addEventListener) {
             // For standards-compliant web browsers
@@ -126,6 +135,8 @@
                     if (Array.isArray(parameter_value)) {
                         if (parameter_name == "Åldersgrupp") {
                             parameter_value = combineAgeInterval(parameter_value);
+                        }else{
+                            parameter_value = shortenValue(parameter_value);
                         }
                         for (var j = 0; j < parameter_value.length; j++) {
                             div.innerHTML +=
