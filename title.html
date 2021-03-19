@@ -90,9 +90,9 @@
 
         function shortenValue(values) {
             var omittedNumber = null;
-            var omittedValue = null
+            var omittedValues = null
             if (values.length <= 6) {
-                return [values, omittedNumber, omittedValue];
+                return [values, omittedNumber, omittedValues];
             } else {
                 var trimedValues = values.slice(0, 6);
                 omittedNumber = values.length - 6;
@@ -178,6 +178,7 @@
                             omittedNumber = shortenValue(parameter_value)[1];
                             omittedValue = shortenValue(parameter_value)[2]
                         }
+                        console.log(omittedNumber, omittedValue)
                         for (var j = 0; j < parameter_value.length; j++) {
                             div.innerHTML +=
                                 `<span style = 'font-size: 0.9rem; font-weight:bold'> ${parameter_value[j]}</span>`;
@@ -186,7 +187,6 @@
                             }
                         }
                         if (omittedNumber) {
-                            console.log(omitted)
                             div.innterHTML += `<div style = 'font-size: 0.9rem; font-weight:bold' class = 'tooltip'> +${omittedNumber}</span>
                             <span class = 'tooltiptext'>${omittedValue.toString().replaceAll(',','; ')}</span>`
                         }
