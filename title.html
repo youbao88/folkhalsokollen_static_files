@@ -174,9 +174,10 @@
                             parameter_value = combineAgeInterval(parameter_value);
                             var ommittedNumber = 0;
                         } else {
-                            parameter_value = shortenValue(parameter_value)[0];
-                            var omittedNumber = shortenValue(parameter_value)[1];
-                            var omittedValue = shortenValue(parameter_value)[2]
+                            var shortenReturned = shortenValue(parameter_value)
+                            parameter_value = shortenReturned[0];
+                            var omittedNumber = shortenReturned[1];
+                            var omittedValue = shortenReturned[2];
                         }
                         console.log(omittedNumber, omittedValue)
                         for (var j = 0; j < parameter_value.length; j++) {
