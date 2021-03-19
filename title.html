@@ -22,9 +22,9 @@
 
         .tooltip .tooltiptext {
             visibility: hidden;
-            width: 120px;
-            background-color: black;
-            color: #fff;
+            width: 180px;
+            background-color: white;
+            color: black;
             text-align: center;
             border-radius: 6px;
             padding: 5px 0;
@@ -32,7 +32,9 @@
             z-index: 1;
             top: 150%;
             left: 50%;
-            margin-left: -60px;
+            margin-left: -90px;
+            border: solid;
+            border-width: thin;
         }
 
         .tooltip .tooltiptext::after {
@@ -182,7 +184,6 @@
                             var omittedNumber = shortenReturned[1];
                             var omittedValue = shortenReturned[2];
                         }
-                        console.log(omittedNumber, omittedValue)
                         for (var j = 0; j < parameter_value.length; j++) {
                             div.innerHTML +=
                                 `<span style = 'font-size: 0.9rem; font-weight:bold'> ${parameter_value[j]}</span>`;
@@ -191,7 +192,8 @@
                             }
                         }
                         if (omittedNumber != 0) {
-                            div.innerHTML += `<div style = 'font-size: 0.9rem; font-weight:bold' class = 'tooltip'>; +${omittedNumber}
+                            div.innerHTML += "<span style = 'font-size: 0.9rem; font-weight:bold'>; </span>"
+                            div.innerHTML += `<div style = 'font-size: 0.9rem; font-weight:bold' class = 'tooltip'>+${omittedNumber}
                             <span class = 'tooltiptext'>${omittedValue.toString().replaceAll(',','; ')}</span></div>`
                         }
                     } else {
