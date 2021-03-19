@@ -46,6 +46,10 @@
             border-style: solid;
             border-color: black transparent transparent transparent;
         }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+        }
     </style>
 </head>
 
@@ -95,7 +99,7 @@
                 return [values, omittedNumber, omittedValues];
             } else {
                 var trimedValues = values.slice(0, 6);
-                var omittedNumber = values.length-6;
+                var omittedNumber = values.length - 6;
                 var omittedValues = values.slice(6)
                 return [trimedValues, omittedNumber, omittedValues];
             }
