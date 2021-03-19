@@ -172,7 +172,7 @@
                     if (Array.isArray(parameter_value)) {
                         if (parameter_name == "Åldersgrupp") {
                             parameter_value = combineAgeInterval(parameter_value);
-                            var ommittedNumber = null;
+                            var ommittedNumber = 0;
                         } else {
                             parameter_value = shortenValue(parameter_value)[0];
                             var omittedNumber = shortenValue(parameter_value)[1];
