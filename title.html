@@ -186,7 +186,8 @@
                             }
                         }
                         if (omittedNumber) {
-                            div.innterHTML += `<span style = 'font-size: 0.9rem; font-weight:bold' class = 'tooltip'> +${omittedNumber}</span>
+                            console.log(omitted)
+                            div.innterHTML += `<div style = 'font-size: 0.9rem; font-weight:bold' class = 'tooltip'> +${omittedNumber}</span>
                             <span class = 'tooltiptext'>${omittedValue.toString().replaceAll(',','; ')}</span>`
                         }
                     } else {
