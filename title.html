@@ -95,8 +95,8 @@
                 return [values, omittedNumber, omittedValues];
             } else {
                 var trimedValues = values.slice(0, 6);
-                omittedNumber = values.length-6;
-                omittedValues = values.slice(6)
+                var omittedNumber = values.length-6;
+                var omittedValues = values.slice(6)
                 return [trimedValues, omittedNumber, omittedValues];
             }
         }
