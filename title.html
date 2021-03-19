@@ -93,7 +93,7 @@
                 return [values, null, null];
             } else {
                 var trimedValues = values.slice(0, 6);
-                var omittedNumber = values.length - 6;
+                var omittedNumber = values.length-6;
                 var omittedValues = values.slice(6)
                 return [trimedValues, omittedNumber, omittedValues];
             }
@@ -173,8 +173,8 @@
                             var ommittedNumber = null;
                         } else {
                             parameter_value = shortenValue(parameter_value)[0];
-                            omittedNumber = shortenValue(parameter_value)[1];
-                            omittedValue = shortenValue(parameter_value)[2]
+                            var omittedNumber = shortenValue(parameter_value)[1];
+                            var omittedValue = shortenValue(parameter_value)[2]
                         }
                         console.log(omittedNumber, omittedValue)
                         for (var j = 0; j < parameter_value.length; j++) {
