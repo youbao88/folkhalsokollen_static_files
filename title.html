@@ -89,12 +89,14 @@
         }
 
         function shortenValue(values) {
+            var omittedNumber = 0;
+            var omittedValues = [];
             if (values.length <= 6) {
-                return [values, null, null];
+                return [values, omittedNumber, omittedValues];
             } else {
                 var trimedValues = values.slice(0, 6);
-                var omittedNumber = values.length-6;
-                var omittedValues = values.slice(6)
+                omittedNumber = values.length-6;
+                omittedValues = values.slice(6)
                 return [trimedValues, omittedNumber, omittedValues];
             }
         }
@@ -184,7 +186,7 @@
                                 div.innerHTML += "<span style = 'font-size: 0.9rem; font-weight:bold'>; </span>"
                             }
                         }
-                        if (omittedNumber) {
+                        if (omittedNumber != 0) {
                             div.innterHTML += `<div style = 'font-size: 0.9rem; font-weight:bold' class = 'tooltip'> +${omittedNumber}</span>
                             <span class = 'tooltiptext'>${omittedValue.toString().replaceAll(',','; ')}</span>`
                         }
