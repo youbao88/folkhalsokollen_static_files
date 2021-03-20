@@ -55,7 +55,7 @@
 </head>
 
 <body>
-    <div id="text_content" style="position:fixed; top: 20%; left: 0%; font-family: Arial, Helvetica, sans-serif;">
+    <div id="iframe_title_div" style="position:fixed; top: 20%; left: 0%; font-family: Arial, Helvetica, sans-serif;">
     </div>
     <script>
         function combineAgeInterval(originalInterval) {
@@ -115,7 +115,7 @@
         // Retrieve data and begin processing
         function onMessage(event) {
             if (event && event.data) {
-                var div = document.getElementById("text_content");
+                var div = document.getElementById("iframe_title_div");
                 var rows = event.data.data;
                 if (rows == []) {
                     return;
@@ -205,6 +205,9 @@
                 value_unit = rows[0][2];
                 div.innerHTML +=
                     `<span style="font-size: 0.9rem">Enhet: </span><span style="font-size: 0.9rem; font-weight:bold">${value_unit}`;
+                // Send page information back to the main server in order to create it as an image
+                var iframe_title_div = document.getElementById('iframe_title_div');
+                window.parent.postMessage(message = iframe_title_div, targetOrigin = '*');
             }
         }
     </script>

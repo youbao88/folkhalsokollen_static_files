@@ -33,7 +33,7 @@
 </head>
 
 <body>
-    <div id="text_content">
+    <div id="iframe_readmore_div">
     </div>
     <script>
         function sendLinkMessage(link_url) {
@@ -58,7 +58,7 @@
                 'Regionalt cancercentrum Stockholm Gotland (RCC)': 'https://prod14.slso.sll.se/datakallor/cancerdata'
             }
             if (event && event.data) {
-                var div = document.getElementById('text_content');
+                var div = document.getElementById('iframe_readmore_div');
                 div.innerHTML = ''
                 var rows = event.data.data;
                 var indikator_name_selection = event.data.parameters[0]['value'];
