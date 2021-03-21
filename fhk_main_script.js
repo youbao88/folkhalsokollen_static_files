@@ -88,6 +88,8 @@ window.addEventListener('vaReportComponents.loaded', function () {
         if (event.data.startsWith('http')) {
             var win = window.open(event.data, '_blank');
             win.focus;
+        } else if(event.data.startsWith('<span')){
+            //Pass
         } else {
             var newIndicator = event.data;
             if (currentIndicator == null) {
