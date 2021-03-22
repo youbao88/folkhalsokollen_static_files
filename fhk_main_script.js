@@ -1,7 +1,10 @@
-//Disable animation
+//Disable animation and set the background of loading page to transparent
 var styles = `
     .sas_ReportContainer-internal-SlideTransition_container {
         animation-duration: 0s !important;
+    }
+    .sas_components-Pane-Pane_pane {
+        --pane-bg: transparent !important;
     }
 `;
 var styleSheet = document.createElement("style");
@@ -88,7 +91,7 @@ window.addEventListener('vaReportComponents.loaded', function () {
         if (event.data.startsWith('http')) {
             var win = window.open(event.data, '_blank');
             win.focus;
-        } else if(event.data.startsWith('<span')){
+        } else if (event.data.startsWith('<span')) {
             //Pass
         } else {
             var newIndicator = event.data;
