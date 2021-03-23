@@ -113,8 +113,8 @@
             window.attachEvent("onmessage", onMessage);
         }
         // Retrieve data and begin processing
+        var curr_indicator_name = null;
         function onMessage(event) {
-            var curr_indicator_name = null;
             if (event && event.data) {
                 var div = document.getElementById("iframe_title_div");
                 var rows = event.data.data;
