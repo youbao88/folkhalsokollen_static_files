@@ -12,10 +12,10 @@ styleSheet.type = "text/css";
 styleSheet.innerText = styles;
 document.head.appendChild(styleSheet);
 
-var previous_canvases_id = [];
+var previousIsKarta = null;
 
 function disableScrollDoubleClickOutline() {
-    var canvases = document.getElementsByTagName('canvas');
+    var canvases = Array.from(document.getElementsByTagName('canvas'));
     var i
     for (i = 0; i < canvases.length; i++) {
         //Stop double click function
@@ -26,21 +26,37 @@ function disableScrollDoubleClickOutline() {
         canvases[i].style.outline = "none";
     }
 
-    //Detect those canvases that are not existed in the previous canvases
-    var _previous_canvases_id = [];
-    var curr_canvases_index = []
-    for (i = 0; i < canvases.length; i++) {
-        if (previous_canvases_id.indexOf(canvases[i].getAttribute('id')) == -1) {
-            curr_canvases_index.push(i);
-            _previous_canvases_id.push(canvases[i].getAttribute('id'));
-        }
-    }
     //Stop wheel function
-    if (curr_canvases_index.length != 0) {
-        canvases[curr_canvases_index[curr_canvases_index.length - 1]].addEventListener('wheel', function (event) {
-            event.stopPropagation();
-        }, true);
-        previous_canvses_id = _previous_canvases_id;
+    if (canvases.length != 0) {
+        var canvases_sorted = canvases.sort((a, b) => (a.id < b.id) ? 1 : -1)
+        if (previousIsKarta === null) { //When user firstly open the page
+            canvases_sorted[0].addEventListener("wheel", function (event) {
+                event.stopPropagation();
+            }, true);
+            previousIsKarta = true;
+        } else if (canvases.length == 1) {
+            canvases[0].addEventListener("wheel", function (event) {
+                event.stopPropagation();
+            }, true);
+            previousIsKarta = false;
+        } else if (previousIsKarta === true) {
+            canvases_sorted[0].addEventListener("wheel", function (event) {
+                event.stopPropagation();
+            }, true);
+            previousIsKarta = false
+        } else {
+            if (canvases_sorted.length == 2) {
+                canvases_sorted[0].addEventListener("wheel", function (event) {
+                    event.stopPropagation();
+                }, true);
+                previousIsKarta = false
+            } else {
+                canvases_sorted[0].addEventListener("wheel", function (event) {
+                    event.stopPropagation();
+                }, true);
+                previousIsKarta = true
+            }
+        }
     }
     //Disable the outline for selection boxes
     var selectionBoxes = document.getElementsByClassName("sas_components-Select-Select_select sas_components-Select-Select_focus-visible");
@@ -95,7 +111,7 @@ window.addEventListener('vaReportComponents.loaded', function () {
             } else if (currentIndicator != newIndicator) {
                 sasReport.getReportHandle().then(reportHandle => {
                     var parameters = indicator_name_parameter_map[newIndicator];
-                    reportHandle.updateReportParameters(parameters);
+                    reportHandle.setReportParameters(parameters);
                 });
                 currentIndicator = newIndicator;
             }
@@ -106,46 +122,53 @@ window.addEventListener('vaReportComponents.loaded', function () {
         if (e.target.title ==
             "Klicka här för att spara en bild av din visualisering. Bilden laddas ned som en jpg-fil på din dator."
         ) {
-            var iframe_title_div = document.createElement('div');
-            iframe_title_div.innerHTML = iframe_title_div_innerHTML;
-            document.body.appendChild(iframe_title_div);
-            html2canvas(iframe_title_div, {
-                width: 806,
-                height: 150,
-                backgroundColor: null,
-                scale: 1.5
-            }).then(function (title_canvas) {
-                var export_canvas = document.createElement('canvas');
-                var figure_canvases = document.getElementsByTagName('canvas');
-                var ctx;
-                if (figure_canvases.length == 2) { //two visualizations on the page
-                    //Configure the width and height of export canvas
-                    export_canvas.width = figure_canvases[0].width + figure_canvases[1].width;
-                    export_canvas.height = title_canvas.height + Math.max(figure_canvases[0].height, figure_canvases[1].height);
 
-                    ctx = export_canvas.getContext('2d');
+            var export_canvas = document.createElement('canvas');
+            var figure_canvases = document.getElementsByTagName('canvas');
+            var ctx;
+            if (figure_canvases.length == 2) { //two visualizations on the page
+                //Configure the width and height of export canvas
+                export_canvas.width = figure_canvases[0].width + figure_canvases[1].width;
+                export_canvas.height = 150 + Math.max(figure_canvases[0].height, figure_canvases[1].height);
 
-                    ctx.drawImage(title_canvas, 0, 0);
-                    ctx.drawImage(figure_canvases[0], 0, title_canvas.height + 1);
-                    ctx.drawImage(figure_canvases[1], figure_canvases[0].width + 1, title_canvas.height + 1);
-                } else if (figure_canvases.length == 1) { //one visualization on the page
-                    export_canvas.width = figure_canvases[0].width;
-                    export_canvas.height = title_canvas.height + figure_canvases[0].height;
-                    ctx = export_canvas.getContext('2d');
+                ctx = export_canvas.getContext('2d');
 
-                    ctx.drawImage(title_canvas, 0, 0);
-                    ctx.drawImage(figure_canvases[0], 0, title_canvas.height + 1);
+                ctx.drawImage(figure_canvases[0], 0, 150);
+                ctx.drawImage(figure_canvases[1], figure_canvases[0].width, 150);
+            } else if (figure_canvases.length == 1) { //one visualization on the page
+                export_canvas.width = figure_canvases[0].width;
+                export_canvas.height = 150 + figure_canvases[0].height;
+                ctx = export_canvas.getContext('2d');
+
+                ctx.drawImage(figure_canvases[0], 0, 150);
+            }
+
+            var title_lines = iframe_title_div_innerHTML.split('<br>')
+            start_y_position = 31
+            for (i = 0; i < title_lines.length; i++) {
+                var line_span = title_lines[i].match(/<.*?\/span>/gm);
+                var line_text = "";
+                for (var j = 0; j < line_span.length; j++) {
+                    line_text = line_text.concat(line_span[j].match(/.*>(.+)</m)[1]);
                 }
-                var dataURL = export_canvas.toDataURL(type = 'image/png');
-                var a = document.createElement("a");
-                a.href = dataURL;
-                a.download = "Bild Folkhälsokollen";
-                a.click();
+                if (i == 0) {
+                    ctx.font = "bold 22px Arial";
+                    ctx.fillText(line_text, 10, start_y_position);
+                    start_y_position = start_y_position + 25;
+                } else {
+                    ctx.font = "15px Arial";
+                    ctx.fillText(line_text, 10, start_y_position);
+                    start_y_position = start_y_position + 18;
+                }
+            }
+            var dataURL = export_canvas.toDataURL(type = 'image/png');
+            var a = document.createElement("a");
+            a.href = dataURL;
+            a.download = "Bild Folkhälsokollen";
+            a.click();
 
-                // Clear canvas
-                ctx.clearRect(0, 0, export_canvas.width, export_canvas.height);
-            });
-            document.body.removeChild(iframe_title_div);
+            // Clear canvas
+            ctx.clearRect(0, 0, export_canvas.width, export_canvas.height);
         }
     });
 });
