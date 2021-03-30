@@ -110,8 +110,8 @@ window.addEventListener('vaReportComponents.loaded', function () {
             iframe_title_div.innerHTML = iframe_title_div_innerHTML;
             document.body.appendChild(iframe_title_div);
             html2canvas(iframe_title_div, {
-                width: 1100,
-                height: 170,
+                width: 500,
+                height: 100,
                 scale: 1.5,
                 backgroundColor: null
             }).then(function (title_canvas) {
