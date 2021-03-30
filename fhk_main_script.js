@@ -112,7 +112,8 @@ window.addEventListener('vaReportComponents.loaded', function () {
             html2canvas(iframe_title_div, {
                 width: 806,
                 height: 150,
-                backgroundColor: null
+                backgroundColor: null,
+                scale: 1.5
             }).then(function (title_canvas) {
                 var export_canvas = document.createElement('canvas');
                 var figure_canvases = document.getElementsByTagName('canvas');
