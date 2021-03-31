@@ -111,7 +111,7 @@ window.addEventListener('vaReportComponents.loaded', function () {
             } else if (currentIndicator != newIndicator) {
                 sasReport.getReportHandle().then(reportHandle => {
                     var parameters = indicator_name_parameter_map[newIndicator];
-                    reportHandle.setReportParameters(parameters);
+                    reportHandle.updateReportParameters(parameters);
                 });
                 currentIndicator = newIndicator;
             }
