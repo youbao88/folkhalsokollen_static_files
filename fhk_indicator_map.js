@@ -1354,8 +1354,8 @@ const indicator_name_parameter_map = {
     }
 }
 const indicator_init_map = {
-    "Äldre": {
-        indikator_group: "Äldre",
+    "Äldres hälsa": {
+        indikator_group: "Äldres hälsa",
         indikator_name: "Fallolyckor",
         indikator_category: "Ej valbart",
         karta_Tidsperiod: "2018",
@@ -1444,8 +1444,8 @@ const indicator_init_map = {
         tabel_Åldersgrupp: ["0-24 år", "25-44 år", "45-64 år", "65-79 år", "80+ år"],
         tabel_Kön: ["Kvinnor", "Män"]
     },
-    "Psykisk hälsa": {
-        indikator_group: "Psykisk hälsa",
+    "Psykisk ohälsa": {
+        indikator_group: "Psykisk ohälsa",
         indikator_name: "Ensamhet",
         indikator_category: "Ej valbart",
         karta_Tidsperiod: "2018",
@@ -1534,8 +1534,8 @@ const indicator_init_map = {
         tabel_Åldersgrupp: "Se indikatorn",
         tabel_Kön: ["Kvinnor", "Män"]
     },
-    "Barn": {
-        indikator_group: "Barn",
+    "Barns hälsa": {
+        indikator_group: "Barns hälsa",
         indikator_name: "Amning vid 4 månaders ålder",
         indikator_category: "Ej valbart",
         karta_Tidsperiod: "2019",
@@ -1555,14 +1555,14 @@ const indicator_init_map = {
 }
 const id_indicaotr = {
     "138423": "Arbetsmiljö",
-    "138425": "Barn",
+    "138425": "Barns hälsa",
     "138427": "Covid-19",
     "138424": "Demografi",
     "138391": "Hälsa och sjukdom",
     "138415": "Hälso- och sjukvård",
     "138365": "Levnadsvanor",
-    "138419": "Psykisk hälsa",
+    "138419": "Psykisk ohälsa",
     "138421": "Sociala relationer, demokrati och miljö",
     "138422": "Utbildning, sysselsättning och inkomst",
-    "138426": "Äldre"
+    "138426": "Äldres hälsa"
 }
