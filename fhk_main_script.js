@@ -169,6 +169,9 @@ window.addEventListener('vaReportComponents.loaded', function () {
 
             // Clear canvas
             ctx.clearRect(0, 0, export_canvas.width, export_canvas.height);
+        } else if (e.target.title == 'Hjälp') {
+            window.open(
+                "https://prod14.slso.sll.se/sa-har-gor-du/", "_blank");
         }
     });
 });
