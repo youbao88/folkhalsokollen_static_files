@@ -144,7 +144,7 @@ var styles = `
         .loading-tip {
             display: block;
             margin: auto;
-            margin-top: 200px;
+            margin-top: 100px;
         }
 `;
 var styleSheet = document.createElement("style");
