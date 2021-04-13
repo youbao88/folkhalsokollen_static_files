@@ -104,7 +104,7 @@ var styles = `
         .second-line,
         .third-line,
         .fourth-line {
-            font-size: 3rem;
+            font-size: 2.8rem;
             font-family: Arial, Helvetica, sans-serif;
             position: absolute;
             opacity: 0;
@@ -112,7 +112,7 @@ var styles = `
             animation-iteration-count: infinite;
             width: 100%;
             text-align: center;
-            margin-top: 100px;
+            margin-top: 200px;
         }
 
         .first-line {
