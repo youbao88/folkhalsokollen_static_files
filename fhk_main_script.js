@@ -112,7 +112,6 @@ var styles = `
             animation-iteration-count: infinite;
             width: 100%;
             text-align: center;
-            margin-top: 200px;
         }
 
         .first-line {
@@ -145,6 +144,7 @@ var styles = `
         .loading-tip {
             display: block;
             margin: auto;
+            margin-top: 200px;
         }
 `;
 var styleSheet = document.createElement("style");
