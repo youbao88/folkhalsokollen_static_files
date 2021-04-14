@@ -113,7 +113,6 @@
             window.attachEvent("onmessage", onMessage);
         }
         // Retrieve data and begin processing
-        var curr_indicator_name = null;
         function onMessage(event) {
             if (event && event.data) {
                 var div = document.getElementById("iframe_title_div");
@@ -123,12 +122,6 @@
                 }
                 div.innerHTML = '';
                 var indicator_name = rows[0][0];
-
-                //Send message when there is a change of indicator namen to parent window
-                if (indicator_name != curr_indicator_name){
-                    window.parent.postMessage(message = indicator_name, targetOrigin = '*');
-                    curr_indicator_name = indicator_name
-                }
 
                 div.innerHTML +=
                     `<span id = "big_title" style="font-size: 1.1rem; font-weight: bold">${indicator_name}</span>`;
