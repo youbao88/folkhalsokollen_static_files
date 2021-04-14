@@ -117,7 +117,7 @@
             if (event && event.data) {
                 var div = document.getElementById("iframe_title_div");
                 var rows = event.data.data;
-                if (rows == []) {
+                if (rows == [] || rows == null) {
                     return;
                 }
                 div.innerHTML = '';
