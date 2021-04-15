@@ -104,7 +104,7 @@ var styles = `
         .second-line,
         .third-line,
         .fourth-line {
-            font-size: 1.5rem;
+            font-size: 2.8rem;
             font-family: Arial, Helvetica, sans-serif;
             position: absolute;
             opacity: 0;
@@ -138,7 +138,7 @@ var styles = `
             text-align: center;
             display: block;
             margin: auto;
-            font-size: 1.1rem;
+            font-size: 2rem;
             font-family:Arial, Helvetica, sans-serif;
         }
 
@@ -263,8 +263,8 @@ window.addEventListener('vaReportComponents.loaded', function () {
                         <div></div>
                         <div></div>
                     </div>
-                    <div class='loading-text'>Läser in...</div>
-                    <div class='loading-tip'>
+                    <div class='loading-text'>webbverktyget laddas...</div>
+                    <!-- <div class='loading-tip'>
                         <p class="first-line">This is your last chance. After this, there is no turning back.</p>
 
                         <p class="second-line">You take the blue pill - the story ends, you wake up in your bed and believe
@@ -273,7 +273,7 @@ window.addEventListener('vaReportComponents.loaded', function () {
                         <p class="third-line">You take the red pill - you stay in Wonderland and I show you how deep the
                             rabbit-hole goes.</p>
                         <p class="fourth-line">Remember: all I'm offering is the truth. Nothing more.</p>
-                    </div>
+                    </div> -->
                 </div>
             `
         }
