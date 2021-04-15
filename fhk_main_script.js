@@ -239,7 +239,7 @@ window.addEventListener('vaReportComponents.loaded', function () {
                     var parameters = indicator_name_parameter_map[newIndicator];
                     reportHandle.updateReportParameters(parameters);
                 });
-            }, 100);
+            }, 1000);
         }else{
             notFirstTime = true;
         }

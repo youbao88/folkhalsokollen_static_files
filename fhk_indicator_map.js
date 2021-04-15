@@ -3,7 +3,7 @@ const indicator_name_parameter_map = {
         'indikator_group': 'Covid-19',
         'indikator_name': 'Dödsfall på grund av covid-19',
         'indikator_category': 'Ej valbart',
-        'karta_Tidsperiod': 'September 2020',
+        'karta_Tidsperiod': 'Hela 2020',
         'karta_Kön': ['Kvinnor', 'Män'],
         'karta_Åldersgrupp': ['0-24 år',
             '25-44 år',
@@ -12,7 +12,7 @@ const indicator_name_parameter_map = {
             '80+ år'
         ],
         'stapel_Område': 'Stockholms län',
-        'stapel_Tidsperiod': 'September 2020',
+        'stapel_Tidsperiod': 'Hela 2020',
         'linje_Kön': ['Kvinnor', 'Män'],
         'linje_Område': ['Stockholms län', 'Botkyrka'],
         'linje_Åldersgrupp': ['0-24 år',
@@ -21,7 +21,7 @@ const indicator_name_parameter_map = {
             '65-79 år',
             '80+ år'
         ],
-        'table_Tidsperiod': 'September 2020',
+        'table_Tidsperiod': 'Hela 2020',
         'table_Område': 'Stockholms län',
         'tabel_Åldersgrupp': ['0-24 år',
             '25-44 år',
@@ -35,7 +35,7 @@ const indicator_name_parameter_map = {
         'indikator_group': 'Covid-19',
         'indikator_name': 'Slutenvård med covid-19',
         'indikator_category': 'Ej valbart',
-        'karta_Tidsperiod': 'September 2020',
+        'karta_Tidsperiod': 'Hela 2020',
         'karta_Kön': ['Kvinnor', 'Män'],
         'karta_Åldersgrupp': ['0-24 år',
             '25-44 år',
@@ -44,7 +44,7 @@ const indicator_name_parameter_map = {
             '80+ år'
         ],
         'stapel_Område': 'Stockholms län',
-        'stapel_Tidsperiod': 'September 2020',
+        'stapel_Tidsperiod': 'Hela 2020',
         'linje_Kön': ['Kvinnor', 'Män'],
         'linje_Område': ['Stockholms län', 'Botkyrka'],
         'linje_Åldersgrupp': ['0-24 år',
@@ -53,7 +53,7 @@ const indicator_name_parameter_map = {
             '65-79 år',
             '80+ år'
         ],
-        'table_Tidsperiod': 'September 2020',
+        'table_Tidsperiod': 'Hela 2020',
         'table_Område': 'Stockholms län',
         'tabel_Åldersgrupp': ['0-24 år',
             '25-44 år',
