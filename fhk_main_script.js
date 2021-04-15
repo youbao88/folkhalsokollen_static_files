@@ -104,7 +104,7 @@ var styles = `
         .second-line,
         .third-line,
         .fourth-line {
-            font-size: 2.8rem;
+            font-size: 1.5rem;
             font-family: Arial, Helvetica, sans-serif;
             position: absolute;
             opacity: 0;
@@ -112,6 +112,7 @@ var styles = `
             animation-iteration-count: infinite;
             width: 100%;
             text-align: center;
+            margin-top: 50px;
         }
 
         .first-line {
@@ -137,14 +138,19 @@ var styles = `
             text-align: center;
             display: block;
             margin: auto;
-            font-size: 2rem;
+            font-size: 1.1rem;
             font-family:Arial, Helvetica, sans-serif;
         }
 
         .loading-tip {
             display: block;
             margin: auto;
-            margin-top: 80px;
+        }
+        .sas_components-Popper-Popper_popper-pane{
+            height: 250px ! important;
+        }
+        .sas_components-Popper-Popper_popper-pane > div > div{
+            height: 240px ! important;
         }
 `;
 var styleSheet = document.createElement("style");
@@ -221,12 +227,30 @@ function disableScrollDoubleClickOutline() {
     }
 }
 window.addEventListener('vaReportComponents.loaded', function () {
+
+    var notFirstTime = false;
     var sasReport = document.getElementById("my-report");
 
-    var observer = new MutationObserver(mutationRecords => {
-        console.log(mutationRecords)
+    observer_change_indicator = new MutationObserver(mutationRecords => {
+        if (notFirstTime){
+            setTimeout(function(){ 
+                sasReport.getReportHandle().then(reportHandle => {
+                    var newIndicator = document.querySelector('[aria-controls="sas_RC-Dropdown-list-0"]').getElementsByClassName('sas_components-Select-Select_label')[0].innerText;
+                    var parameters = indicator_name_parameter_map[newIndicator];
+                    reportHandle.updateReportParameters(parameters);
+                });
+            }, 100);
+        }else{
+            notFirstTime = true;
+        }
+
+    })
+
+    var loading_replaced = false;
+    var observer_loading = new MutationObserver(mutationRecords => {
         var sasLoadingDiv = document.getElementsByClassName('sas_components-BusyStateIndicator-BusyStateIndicator_state');
-        if (sasLoadingDiv){
+        if (sasLoadingDiv && loading_replaced == false) {
+            loading_replaced = true;
             sasLoadingDiv[0].style.visibility = "hidden";
             var sasMainPanel = document.getElementsByClassName('sas_components-Pane-Pane_pane')[0];
             var customLoadingDiv = sasMainPanel.appendChild(document.createElement('div'));
@@ -252,11 +276,21 @@ window.addEventListener('vaReportComponents.loaded', function () {
                     </div>
                 </div>
             `
-            observer.disconnect();
         }
+        var indicator_control = document.querySelector('[aria-controls="sas_RC-Dropdown-list-0"]')
+        if (indicator_control) {
+            observer_change_indicator.observe(indicator_control.getElementsByClassName('sas_components-Select-Select_label')[0], {
+                characterData: true,
+                attributes: false,
+                childList: false,
+                subtree: true
+            })
+            observer_loading.disconnect();
+        }
+
     })
 
-    observer.observe(sasReport, {
+    observer_loading.observe(sasReport, {
         childList: true,
         subtree: true
     });
@@ -274,7 +308,6 @@ window.addEventListener('vaReportComponents.loaded', function () {
         reportHandle.updateReportParameters(indicator_init_map[id_indicaotr[UrlId]]);
     });
     //Receive data from two iframes;
-    var currentIndicator = null;
     var iframe_title_div_innerHTML
     window.addEventListener('message', (event) => {
         disableScrollDoubleClickOutline();
@@ -283,19 +316,10 @@ window.addEventListener('vaReportComponents.loaded', function () {
             win.focus();
         } else if (event.data.startsWith('<span')) { //if the data is a span div
             iframe_title_div_innerHTML = event.data;
-        } else {
-            var newIndicator = event.data;
-            if (currentIndicator == null) {
-                currentIndicator = newIndicator;
-            } else if (currentIndicator != newIndicator) {
-                sasReport.getReportHandle().then(reportHandle => {
-                    var parameters = indicator_name_parameter_map[newIndicator];
-                    reportHandle.setReportParameters(parameters);
-                });
-                currentIndicator = newIndicator;
-            }
         }
     });
+
+
     // This is the js script for downloading the report as Image from browser
     document.getElementsByTagName("sas-report")[0].addEventListener("click", e => {
         if (e.target.title ==
