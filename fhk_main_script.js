@@ -152,6 +152,23 @@ var styles = `
         .sas_components-Popper-Popper_popper-pane > div > div{
             height: 240px ! important;
         }
+
+        /* Following CSS controls the style of 'mer-information' pop-up windwo*/ 
+
+        .sas_components-Heading-Heading_text{
+            font-size: 1.4rem ! important;
+        }
+        .sas_components-SVG-SVG_svg sas_components-SVG-SVG_icon sas_components-Icon-Icon_icon sas_components-Button-__internal__-BaseButton_icon-inner{
+            width: 28px ! important;
+            height: 28px ! important;
+        }
+        .sas_components-Dialog-Dialog_dialog-button sas_components-Button-__internal__-BaseButton_button{
+            width: 70px ! important;
+            height: 30px ! important;
+        }
+        sas_components-Button-__internal__-BaseButton_text{
+            font-size: 1.2rem ! important;
+        }
 `;
 var styleSheet = document.createElement("style");
 styleSheet.type = "text/css";
