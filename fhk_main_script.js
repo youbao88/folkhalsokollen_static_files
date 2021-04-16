@@ -164,7 +164,7 @@ var styles = `
         }
         .sas_components-Dialog-Dialog_dialog-button.sas_components-Button-__internal__-BaseButton_button{
             width: 70px ! important;
-            height: 30px ! important;
+            height: 25px ! important;
         }
         .sas_components-Button-__internal__-BaseButton_text{
             font-size: 1.2rem ! important;
