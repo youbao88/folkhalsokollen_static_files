@@ -86,7 +86,7 @@ var styles = `
 
         .loading-tip {
             display: block;
-            margin: auto;
+            margin: 100px auto auto auto;
         }
         .sas_components-Popper-Popper_popper-pane{
             height: 250px ! important;
@@ -95,7 +95,7 @@ var styles = `
             height: 240px ! important;
         }
 
-        /* Following CSS controls the style of 'mer-information' pop-up windwo*/ 
+        /* Following CSS controls the style of 'mer-information' pop-up window*/ 
 
         .sas_components-Heading-Heading_text{
             font-size: 1.4rem ! important;
