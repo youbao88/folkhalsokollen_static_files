@@ -53,7 +53,7 @@ var styles = `
             animation-name: fadeInOpacity;
             animation-iteration-count: 1;
             animation-timing-function: ease-in;
-            animation-duration: 1s;
+            animation-duration: 0.5s;
             animation-fill-mode: forwards;
         }
 
@@ -86,7 +86,7 @@ var styles = `
 
         .loading-tip {
             display: block;
-            margin: 100px auto auto auto;
+            margin: 60px auto auto auto;
         }
         .sas_components-Popper-Popper_popper-pane{
             height: 250px ! important;
