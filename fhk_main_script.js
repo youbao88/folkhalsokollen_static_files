@@ -74,6 +74,7 @@ var styles = `
             opacity: 0;
             width: 100%;
             text-align: center;
+            margin-top: 100px;
         }
 
         .loading-text{
