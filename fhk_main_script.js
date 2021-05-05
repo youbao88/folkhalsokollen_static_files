@@ -1,6 +1,6 @@
 //Disable animation and set the background of loading page to transparent
 var styles = `
-    .sas_ReportContainer-internal-SlideTransition_container {
+  .sas_ReportContainer-internal-SlideTransition_container {
         animation-duration: 0s !important;
     }
     .sas_components-Pane-Pane_pane {
@@ -48,90 +48,33 @@ var styles = `
             }
         }
 
-        .animation-box {
-            width: 75%;
-            height: 30rem;
-            background-color: darkblue;
-            margin: 0 auto;
-            overflow: hidden;
-            position: relative;
+        .fade-in {
+            opacity: 1;
+            animation-name: fadeInOpacity;
+            animation-iteration-count: 1;
+            animation-timing-function: ease-in;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
         }
 
-        @keyframes fadeInOut {
+        @keyframes fadeInOpacity {
             0% {
                 opacity: 0;
             }
-
-            2% {
-                opacity: 0;
-            }
-
-            5% {
-                opacity: 1;
-            }
-
-            17% {
-                opacity: 1;
-            }
-
-            19% {
-                opacity: 1;
-            }
-
-            24% {
-                opacity: 0;
-            }
-
-            80% {
-                opacity: 0;
-            }
-
             100% {
-                opacity: 0;
+                opacity: 1;
             }
         }
 
-        .animation-box h1 {
-            position: absolute;
-            left: 5%;
-            top: 0;
-            font-size: 4em;
-            color: white;
-            font-weight: 400;
-        }
 
-        .first-line,
-        .second-line,
-        .third-line,
-        .fourth-line {
+        .first-line {
             font-size: 2.8rem;
             font-family: Arial, Helvetica, sans-serif;
             position: absolute;
             opacity: 0;
-            animation-name: fadeInOut;
-            animation-iteration-count: infinite;
             width: 100%;
             text-align: center;
             margin-top: 50px;
-        }
-
-        .first-line {
-            animation-duration: 32s;
-        }
-
-        .second-line {
-            animation-delay: 8s;
-            animation-duration: 32s;
-        }
-
-        .third-line {
-            animation-delay: 16s;
-            animation-duration: 32s;
-        }
-
-        .fourth-line {
-            animation-delay: 24s;
-            animation-duration: 32s;
         }
 
         .loading-text{
@@ -168,7 +111,7 @@ var styles = `
         }
         .sas_components-Button-__internal__-BaseButton_text{
             font-size: 1.2rem ! important;
-        }
+        } 
 `;
 var styleSheet = document.createElement("style");
 styleSheet.type = "text/css";
@@ -249,15 +192,15 @@ window.addEventListener('vaReportComponents.loaded', function () {
     var sasReport = document.getElementById("my-report");
 
     observer_change_indicator = new MutationObserver(mutationRecords => {
-        if (notFirstTime){
-            setTimeout(function(){ 
+        if (notFirstTime) {
+            setTimeout(function () {
                 sasReport.getReportHandle().then(reportHandle => {
                     var newIndicator = document.querySelector('[aria-controls="sas_RC-Dropdown-list-0"]').getElementsByClassName('sas_components-Select-Select_label')[0].innerText;
                     var parameters = indicator_name_parameter_map[newIndicator];
                     reportHandle.updateReportParameters(parameters);
                 });
             }, 1000);
-        }else{
+        } else {
             notFirstTime = true;
         }
 
@@ -281,16 +224,16 @@ window.addEventListener('vaReportComponents.loaded', function () {
                         <div></div>
                     </div>
                     <div class='loading-text'>webbverktyget laddas...</div>
-                    <!-- <div class='loading-tip'>
-                        <p class="first-line">This is your last chance. After this, there is no turning back.</p>
+                    <div class='loading-tip'>
+                        <p class="first-line fade-in">Använd dator eller surfplatta för att använda webbverktyget. För att garantera att det visas på bästa sätt rekommenderar vi webbläsarna Firefox 12, Google chrome 19, Internet explorer 10, Safari 5.1 eller senare versioner av dessa.</p>
 
-                        <p class="second-line">You take the blue pill - the story ends, you wake up in your bed and believe
+                        <!-- <p class="second-line">You take the blue pill - the story ends, you wake up in your bed and believe
                             whatever you want to believe.</p>
 
                         <p class="third-line">You take the red pill - you stay in Wonderland and I show you how deep the
                             rabbit-hole goes.</p>
-                        <p class="fourth-line">Remember: all I'm offering is the truth. Nothing more.</p>
-                    </div> -->
+                        <p class="fourth-line">Remember: all I'm offering is the truth. Nothing more.</p> -->
+                    </div>
                 </div>
             `
         }
