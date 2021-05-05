@@ -66,7 +66,6 @@ var styles = `
             }
         }
 
-
         .first-line {
             font-size: 2.0rem;
             font-family: Arial, Helvetica, sans-serif;
@@ -74,7 +73,7 @@ var styles = `
             opacity: 0;
             width: 100%;
             text-align: center;
-            margin-top: 100px;
+            margin-top: 50px;
         }
 
         .loading-text{
