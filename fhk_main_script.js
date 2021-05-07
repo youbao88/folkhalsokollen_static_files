@@ -261,6 +261,7 @@ window.addEventListener('vaReportComponents.loaded', function () {
 
     // var currentUrl = 'https://prod14.slso.sll.se/analysverktyg/?id=138425';
     var currentUrl = window.location.href;
+    var domainUrl = currentUrl.match(/(https:\/\/.+?)\/.+/)[1];
     var UrlId = currentUrl.match(/.+id=(\d+).*/)[1];
 
     sasReport.getReportHandle().then((reportHandle) => {
@@ -333,7 +334,7 @@ window.addEventListener('vaReportComponents.loaded', function () {
             ctx.clearRect(0, 0, export_canvas.width, export_canvas.height);
         } else if (e.target.title == 'Hjälp') {
             window.open(
-                "https://prod14.slso.sll.se/sa-har-gor-du/", "_blank");
+                domainUrl+'/sa-har-gor-du/', "_blank");
         }
     });
 });
