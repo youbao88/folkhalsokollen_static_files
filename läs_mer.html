@@ -71,8 +71,8 @@
                 }
                 if (indikator_existed_in_data == true) {
                     var data = rows[row_index_data];
-                    div.innerHTML += `<span style='font-weight: bold; font-size: 1.5rem'>${data[1]}</span><br><br>`;
-                    div.innerHTML += "<span style='font-weight: bold;'>Definition: </span>" + `${data[2]}` + "<br><br>";
+                    div.innerHTML += `<h1 style='font-weight: bold; font-size: 1.5rem'>${data[1]}</h1><br><br>`;
+                    div.innerHTML += "<span style='font-weight: bold;' title = 'definition'>Definition: </span>" + `${data[2]}` + "<br><br>";
                     var _kalla_url = källa_url_map[data[3].trim()];
                     if (_kalla_url == 'undefined') {
                         var kalla_url = null;
@@ -80,7 +80,7 @@
                         var kalla_url = _kalla_url;
                     }
                     div.innerHTML += "<span style='font-weight: bold'>Källa: </span>" +
-                        `<button class = "buttonLink" title = ${kalla_url}>${data[3]}</button>` + "<br><br>";
+                        `<button class = "buttonLink" title = ${kalla_url} role = "link">${data[3]}</button>` + "<br><br>";
                     div.innerHTML += "<span style='font-weight: bold'>Läs mer</a>" + "<br>";
                     var list = document.createElement("ul");
                     div.appendChild(list);
@@ -89,7 +89,7 @@
                             break
                         }
                         list.innerHTML +=
-                            `<li><button class = "buttonLink" title = ${data[i+1]}>${data[i]}</button></li>`;
+                            `<li><button class = "buttonLink" title = ${data[i+1]} role = "link">${data[i]}</button></li>`;
                     }
                 } else {
                     div.innerHTML += "<span style='font-weight: bold;'>information not available so far</span>"
