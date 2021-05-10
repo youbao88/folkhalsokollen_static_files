@@ -262,11 +262,11 @@ window.addEventListener('vaReportComponents.loaded', function () {
     // var currentUrl = 'https://prod14.slso.sll.se/analysverktyg/?id=138425';
     var currentUrl = window.location.href;
     var domainUrl = currentUrl.match(/(https:\/\/.+?)\/.+/)[1];
-    var UrlId = currentUrl.match(/.+id=(\d+).*/)[1];
+    var UrlId = currentUrl.match(/.+id=(\d+).*/);
 
-    if (UrlId in id_indicator) {
+    if (UrlId != null || UrlId[1] in id_indicator) {
         sasReport.getReportHandle().then((reportHandle) => {
-            reportHandle.updateReportParameters(indicator_init_map[id_indicaotr[UrlId]]);
+            reportHandle.updateReportParameters(indicator_init_map[id_indicaotr[UrlId[1]]]);
         });
     } else {
         sasReport.getReportHandle().then((reportHandle) => {
