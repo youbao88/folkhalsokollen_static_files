@@ -48,13 +48,13 @@
         // Retrieve data and begin processing
         function onMessage(event) {
             källa_url_map = {
-                'Socialstyrelsens dödsorsaksstatistik': 'https://prod14.slso.sll.se/datakallor/socialstyrelsens-dodsorsaksstatistik',
-                'VAL-databaserna': 'https://prod14.slso.sll.se/datakallor/val-databaserna',
-                'Region Stockholms folkhälsoenkät': 'https://prod14.slso.sll.se/datakallor/region-Stockholms-folkhalsoenkat',
-                'Barnhälsovårdens årsrapport': 'https://prod14.slso.sll.se/datakallor/barnhalsovardens-arsrapport',
-                'Statistiska centralbyrån (SCB)': 'https://prod14.slso.sll.se/datakallor/sociodemografiska-data',
-                'Databas över anmälda brott, Brottsförebyggande rådet (Brå)': 'https://prod14.slso.sll.se/datakallor/brottsforebyggande-radet',
-                'Regionalt cancercentrum Stockholm Gotland (RCC)': 'https://prod14.slso.sll.se/datakallor/cancerdata'
+                'Socialstyrelsens dödsorsaksstatistik': 'https://www.folkhalsokollen.se/datakallor/socialstyrelsens-dodsorsaksstatistik',
+                'VAL-databaserna': 'https://www.folkhalsokollen.se/datakallor/val-databaserna',
+                'Region Stockholms folkhälsoenkät': 'https://www.folkhalsokollen.se/datakallor/region-Stockholms-folkhalsoenkat',
+                'Barnhälsovårdens årsrapport': 'https://www.folkhalsokollen.se/datakallor/barnhalsovardens-arsrapport',
+                'Statistiska centralbyrån (SCB)': 'https://www.folkhalsokollen.se/datakallor/sociodemografiska-data',
+                'Databas över anmälda brott, Brottsförebyggande rådet (Brå)': 'https://www.folkhalsokollen.se/datakallor/brottsforebyggande-radet',
+                'Regionalt cancercentrum Stockholm Gotland (RCC)': 'https://www.folkhalsokollen.se/datakallor/cancerdata'
             }
             if (event && event.data) {
                 var div = document.getElementById('iframe_readmore_div');

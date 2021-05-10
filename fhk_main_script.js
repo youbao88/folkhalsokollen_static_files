@@ -264,9 +264,16 @@ window.addEventListener('vaReportComponents.loaded', function () {
     var domainUrl = currentUrl.match(/(https:\/\/.+?)\/.+/)[1];
     var UrlId = currentUrl.match(/.+id=(\d+).*/)[1];
 
-    sasReport.getReportHandle().then((reportHandle) => {
-        reportHandle.updateReportParameters(indicator_init_map[id_indicaotr[UrlId]]);
-    });
+    if (UrlId in id_indicator) {
+        sasReport.getReportHandle().then((reportHandle) => {
+            reportHandle.updateReportParameters(indicator_init_map[id_indicaotr[UrlId]]);
+        });
+    } else {
+        sasReport.getReportHandle().then((reportHandle) => {
+            reportHandle.updateReportParameters(indicator_init_map["Arbetsmiljö"]);
+        });
+    }
+
     //Receive data from two iframes;
     var iframe_title_div_innerHTML
     window.addEventListener('message', (event) => {
@@ -334,7 +341,7 @@ window.addEventListener('vaReportComponents.loaded', function () {
             ctx.clearRect(0, 0, export_canvas.width, export_canvas.height);
         } else if (e.target.title == 'Hjälp') {
             window.open(
-                domainUrl+'/sa-har-gor-du/', "_blank");
+                domainUrl + '/sa-har-gor-du/', "_blank");
         }
     });
 });
