@@ -224,14 +224,7 @@ window.addEventListener('vaReportComponents.loaded', function () {
                     </div>
                     <div class='loading-text'>webbverktyget laddas...</div>
                     <div class='loading-tip'>
-                        <p class="first-line fade-in">Använd dator eller surfplatta för att använda webbverktyget. För att garantera att det visas på bästa sätt rekommenderar vi webbläsarna Firefox 12, Google chrome 19, Internet explorer 10, Safari 5.1 eller senare versioner av dessa.</p>
-
-                        <!-- <p class="second-line">You take the blue pill - the story ends, you wake up in your bed and believe
-                            whatever you want to believe.</p>
-
-                        <p class="third-line">You take the red pill - you stay in Wonderland and I show you how deep the
-                            rabbit-hole goes.</p>
-                        <p class="fourth-line">Remember: all I'm offering is the truth. Nothing more.</p> -->
+                        <p class="first-line fade-in">Använd webbverktyget från en dator eller surfplatta. För att garantera att det visas på bästa sätt rekommenderar vi webbläsarna Microsoft Edge (alla versioner), Firefox 12, Google chrome 19, Internet explorer 10, Safari 5.1 eller senare versioner av dessa.</p>
                     </div>
                 </div>
             `
@@ -263,7 +256,7 @@ window.addEventListener('vaReportComponents.loaded', function () {
     var currentUrl = window.location.href;
     var UrlId = currentUrl.match(/.+id=(\d+).*/);
 
-    if (UrlId != null || UrlId[1] in id_indicator) {
+    if (UrlId != null && UrlId[1] in id_indicator) {
         sasReport.getReportHandle().then((reportHandle) => {
             reportHandle.updateReportParameters(indicator_init_map[id_indicaotr[UrlId[1]]]);
         });
