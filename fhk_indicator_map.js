@@ -1553,7 +1553,7 @@ const indicator_init_map = {
         tabel_Kön: "Samtliga"
     },
 }
-const id_indicaotr = {
+const id_indicator = {
     "138423": "Arbetsmiljö",
     "138425": "Barns hälsa",
     "138427": "Covid-19",

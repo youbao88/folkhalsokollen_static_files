@@ -258,7 +258,7 @@ window.addEventListener('vaReportComponents.loaded', function () {
 
     if (UrlId != null && UrlId[1] in id_indicator) {
         sasReport.getReportHandle().then((reportHandle) => {
-            reportHandle.updateReportParameters(indicator_init_map[id_indicaotr[UrlId[1]]]);
+            reportHandle.updateReportParameters(indicator_init_map[id_indicator[UrlId[1]]]);
         });
     } else {
         sasReport.getReportHandle().then((reportHandle) => {
