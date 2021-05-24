@@ -1,10 +1,27 @@
 //Disable animation and set the background of loading page to transparent
 var styles = `
-  .sas_ReportContainer-internal-SlideTransition_container {
+    .sas_ReportContainer-internal-SlideTransition_container {
         animation-duration: 0s !important;
     }
     .sas_components-Pane-Pane_pane {
         --pane-bg: transparent !important;
+    }
+    .sas_ReportContainer-BreadcrumbHack_hack{
+        display: none;
+    }
+    .tab_icon:hover{
+        background-color: #e9ecef !important;
+        border: 1px solid #f8f9fa !important;
+        -webkit-transition: background-color 100ms linear !important;
+        -ms-transition: background-color 100ms linear !important;
+        transition: background-color 100ms linear !important;
+        
+    }
+    .help_icon{
+        opacity:0.6 !important;
+    }
+    .help_icon:hover{
+        opacity: 1.0 !important;
     }
             .lds-ring {
             display: block;
@@ -88,12 +105,6 @@ var styles = `
             display: block;
             margin: 60px auto auto auto;
         }
-        .sas_components-Popper-Popper_popper-pane{
-            height: 250px ! important;
-        }
-        .sas_components-Popper-Popper_popper-pane > div > div{
-            height: 240px ! important;
-        }
 
         /* Following CSS controls the style of 'mer-information' pop-up window*/ 
 
@@ -117,7 +128,6 @@ styleSheet.type = "text/css";
 styleSheet.innerText = styles;
 document.head.appendChild(styleSheet);
 
-var previousIsKarta = null;
 
 function disableScrollDoubleClickOutline() {
     var canvases = Array.from(document.getElementsByTagName('canvas'));
@@ -129,40 +139,12 @@ function disableScrollDoubleClickOutline() {
         }, true);
         //Disable the outline
         canvases[i].style.outline = "none";
+        //Stop wheel function
+        canvases[i].addEventListener("wheel", function (event) {
+            event.stopPropagation();
+        }, true);
     }
 
-    //Stop wheel function
-    if (canvases.length != 0) {
-        var canvases_sorted = canvases.sort((a, b) => (a.id < b.id) ? 1 : -1)
-        if (previousIsKarta === null) { //When user firstly open the page
-            canvases_sorted[0].addEventListener("wheel", function (event) {
-                event.stopPropagation();
-            }, true);
-            previousIsKarta = true;
-        } else if (canvases.length == 1) {
-            canvases[0].addEventListener("wheel", function (event) {
-                event.stopPropagation();
-            }, true);
-            previousIsKarta = false;
-        } else if (previousIsKarta === true) {
-            canvases_sorted[0].addEventListener("wheel", function (event) {
-                event.stopPropagation();
-            }, true);
-            previousIsKarta = false
-        } else {
-            if (canvases_sorted.length == 2) {
-                canvases_sorted[0].addEventListener("wheel", function (event) {
-                    event.stopPropagation();
-                }, true);
-                previousIsKarta = false
-            } else {
-                canvases_sorted[0].addEventListener("wheel", function (event) {
-                    event.stopPropagation();
-                }, true);
-                previousIsKarta = true
-            }
-        }
-    }
     //Disable the outline for selection boxes
     var selectionBoxes = document.getElementsByClassName("sas_components-Select-Select_select sas_components-Select-Select_focus-visible");
     if (selectionBoxes.length != 0) {
@@ -184,6 +166,15 @@ function disableScrollDoubleClickOutline() {
             birdText[i].style.outline = "none";
         }
     }
+    //Add hover effect to the icons
+    var icons = document.getElementsByClassName('sas_components-Image-Image_clickable sas_components-Image-Image_scale sas_components-Image-Image_span')
+    for( i = 0; i<icons.length; i++){
+        if(icons[i].title == "Hjälp"){
+            icons[i].parentNode.parentNode.parentNode.classList.add("help_icon");
+        }else{
+            icons[i].parentNode.parentNode.parentNode.parentNode.classList.add("tab_icon");
+        }
+    }
 }
 window.addEventListener('vaReportComponents.loaded', function () {
 
@@ -194,7 +185,7 @@ window.addEventListener('vaReportComponents.loaded', function () {
         if (notFirstTime) {
             setTimeout(function () {
                 sasReport.getReportHandle().then(reportHandle => {
-                    var newIndicator = document.querySelector('[aria-controls="sas_RC-Dropdown-list-0"]').getElementsByClassName('sas_components-Select-Select_label')[0].innerText;
+                    var newIndicator = document.querySelector('[aria-controls="sas_RC-Dropdown-list-1"]').getElementsByClassName('sas_components-Select-Select_label')[0].innerText;
                     var parameters = indicator_name_parameter_map[newIndicator];
                     reportHandle.updateReportParameters(parameters);
                 });
@@ -202,7 +193,6 @@ window.addEventListener('vaReportComponents.loaded', function () {
         } else {
             notFirstTime = true;
         }
-
     })
 
     var loading_replaced = false;
@@ -229,7 +219,7 @@ window.addEventListener('vaReportComponents.loaded', function () {
                 </div>
             `
         }
-        var indicator_control = document.querySelector('[aria-controls="sas_RC-Dropdown-list-0"]')
+        var indicator_control = document.querySelector('[aria-controls="sas_RC-Dropdown-list-1"]')
         if (indicator_control) {
             observer_change_indicator.observe(indicator_control.getElementsByClassName('sas_components-Select-Select_label')[0], {
                 characterData: true,
