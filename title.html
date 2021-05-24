@@ -117,6 +117,7 @@
             if (event && event.data) {
                 var div = document.getElementById("iframe_title_div");
                 var rows = event.data.data;
+                var messageToMain = {};
                 if (rows == [] || rows == null) {
                     return;
                 }
@@ -163,12 +164,14 @@
                         continue
                     }
                     var parameter_name = parameters[i]['label'].split('_')[1];
+                    var parameter_value = parameters[i]['value'];
+                    messageToMain[parameter_name] = parameter_value;
+
                     if (indicator_name == "Åldersgrupper" && parameter_name ==
                         "Åldersgrupp") { //hide "Åldersgrupp" subtitle if indicator is "Ålderesgrupper"
                         continue
                     }
                     div.innerHTML += `<span style = 'font-size: 0.9rem'>${parameter_name}:</span>`;
-                    var parameter_value = parameters[i]['value'];
 
 
                     if (Array.isArray(parameter_value)) {
@@ -204,7 +207,8 @@
                     `<span style="font-size: 0.9rem">Enhet: </span><span style="font-size: 0.9rem; font-weight:bold">${value_unit}`;
                 // Send page information back to the main server in order to create it as an image
                 var iframe_title_div = document.getElementById('iframe_title_div');
-                window.parent.postMessage(message = iframe_title_div.innerHTML, targetOrigin = '*');
+                messageToMain["title_div"] = iframe_title_div.innerHTML;
+                window.parent.postMessage(message = messageToMain, targetOrigin = '*');
             }
         }
     </script>
