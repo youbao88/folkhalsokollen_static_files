@@ -1,10 +1,30 @@
 //Disable animation and set the background of loading page to transparent
 var styles = `
-  .sas_ReportContainer-internal-SlideTransition_container {
+    .sas_ReportContainer-internal-SlideTransition_container {
         animation-duration: 0s !important;
+    }
+    .sas_components-Select-Select_label{
+        font-size: 16px !important;
     }
     .sas_components-Pane-Pane_pane {
         --pane-bg: transparent !important;
+    }
+    .sas_ReportContainer-BreadcrumbHack_hack{
+        display: none;
+    }
+    .tab_icon:hover{
+        background-color: #e9ecef !important;
+        border: 1px solid #f8f9fa !important;
+        -webkit-transition: background-color 100ms linear !important;
+        -ms-transition: background-color 100ms linear !important;
+        transition: background-color 100ms linear !important;
+        
+    }
+    .help_icon{
+        opacity:0.8 !important;
+    }
+    .help_icon:hover{
+        opacity: 1.0 !important;
     }
             .lds-ring {
             display: block;
@@ -117,7 +137,6 @@ styleSheet.type = "text/css";
 styleSheet.innerText = styles;
 document.head.appendChild(styleSheet);
 
-var previousIsKarta = null;
 
 function disableScrollDoubleClickOutline() {
     var canvases = Array.from(document.getElementsByTagName('canvas'));
@@ -129,40 +148,12 @@ function disableScrollDoubleClickOutline() {
         }, true);
         //Disable the outline
         canvases[i].style.outline = "none";
+        //Stop wheel function
+        canvases[i].addEventListener("wheel", function (event) {
+            event.stopPropagation();
+        }, true);
     }
 
-    //Stop wheel function
-    if (canvases.length != 0) {
-        var canvases_sorted = canvases.sort((a, b) => (a.id < b.id) ? 1 : -1)
-        if (previousIsKarta === null) { //When user firstly open the page
-            canvases_sorted[0].addEventListener("wheel", function (event) {
-                event.stopPropagation();
-            }, true);
-            previousIsKarta = true;
-        } else if (canvases.length == 1) {
-            canvases[0].addEventListener("wheel", function (event) {
-                event.stopPropagation();
-            }, true);
-            previousIsKarta = false;
-        } else if (previousIsKarta === true) {
-            canvases_sorted[0].addEventListener("wheel", function (event) {
-                event.stopPropagation();
-            }, true);
-            previousIsKarta = false
-        } else {
-            if (canvases_sorted.length == 2) {
-                canvases_sorted[0].addEventListener("wheel", function (event) {
-                    event.stopPropagation();
-                }, true);
-                previousIsKarta = false
-            } else {
-                canvases_sorted[0].addEventListener("wheel", function (event) {
-                    event.stopPropagation();
-                }, true);
-                previousIsKarta = true
-            }
-        }
-    }
     //Disable the outline for selection boxes
     var selectionBoxes = document.getElementsByClassName("sas_components-Select-Select_select sas_components-Select-Select_focus-visible");
     if (selectionBoxes.length != 0) {
@@ -184,6 +175,18 @@ function disableScrollDoubleClickOutline() {
             birdText[i].style.outline = "none";
         }
     }
+    //Add hover effect to the icons
+    var icons = document.getElementsByClassName('sas_components-Image-Image_clickable sas_components-Image-Image_scale sas_components-Image-Image_span')
+    for (i = 0; i < icons.length; i++) {
+        if (icons[i].title == "Hjälp") {
+            icons[i].parentNode.parentNode.parentNode.classList.add("help_icon");
+        } else {
+            var icon_div = icons[i].parentNode.parentNode.parentNode.parentNode;
+            if (icon_div.style.backgroundColor != "rgb(233, 236, 239)") {
+                icon_div.classList.add("tab_icon");
+            }
+        }
+    }
 }
 window.addEventListener('vaReportComponents.loaded', function () {
 
@@ -202,7 +205,6 @@ window.addEventListener('vaReportComponents.loaded', function () {
         } else {
             notFirstTime = true;
         }
-
     })
 
     var loading_replaced = false;
@@ -229,7 +231,7 @@ window.addEventListener('vaReportComponents.loaded', function () {
                 </div>
             `
         }
-        var indicator_control = document.querySelector('[aria-controls="sas_RC-Dropdown-list-0"]')
+        var indicator_control = document.querySelector('[aria-controls="sas_RC-Dropdown-list-1"]')
         if (indicator_control) {
             observer_change_indicator.observe(indicator_control.getElementsByClassName('sas_components-Select-Select_label')[0], {
                 characterData: true,
@@ -270,11 +272,23 @@ window.addEventListener('vaReportComponents.loaded', function () {
     var iframe_title_div_innerHTML
     window.addEventListener('message', (event) => {
         disableScrollDoubleClickOutline();
-        if (event.data.startsWith('http')) { //if the data is a link
-            var win = window.open(event.data, '_blank');
-            win.focus();
-        } else if (event.data.startsWith('<span')) { //if the data is a span div
-            iframe_title_div_innerHTML = event.data;
+        if (typeof (event.data) == "string") {
+            if (event.data.startsWith("http")) { //if the data is a link
+                var win = window.open(event.data, '_blank');
+                win.focus();
+            }
+        } else if (typeof (event.data) == "object") { //if the data is an Object
+            iframe_title_div_innerHTML = event.data["title_div"];
+            var menus = document.querySelectorAll("[role='combobox']");
+            menus.forEach(element => {
+                if (element.innerText in event.data) {
+                    var menuName = element.innerText;
+                    element.querySelector(".sas_components-Select-Select_label").innerText = event.data[element.innerText];
+                    element.setAttribute("title", menuName);
+                } else if (element.getAttribute("title") in event.data) {
+                    element.querySelector(".sas_components-Select-Select_label").innerText = event.data[element.getAttribute("title")];
+                }
+            })
         }
     });
 
