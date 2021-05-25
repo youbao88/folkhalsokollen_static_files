@@ -14,7 +14,7 @@ var styles = `
     }
     .tab_icon:hover{
         background-color: #e9ecef !important;
-        border: 1px solid #f8f9fa !important;
+        border: 1px solid #e9ecef !important;
         -webkit-transition: background-color 100ms linear !important;
         -ms-transition: background-color 100ms linear !important;
         transition: background-color 100ms linear !important;
@@ -25,6 +25,7 @@ var styles = `
     }
     .help_icon:hover{
         opacity: 1.0 !important;
+        border: 1px solid #f5f3f0 !important;
     }
             .lds-ring {
             display: block;
@@ -197,7 +198,7 @@ window.addEventListener('vaReportComponents.loaded', function () {
         if (notFirstTime) {
             setTimeout(function () {
                 sasReport.getReportHandle().then(reportHandle => {
-                    var newIndicator = document.querySelector('[aria-controls="sas_RC-Dropdown-list-0"]').getElementsByClassName('sas_components-Select-Select_label')[0].innerText;
+                    var newIndicator = document.querySelector('[aria-controls="sas_RC-Dropdown-list-1"]').getElementsByClassName('sas_components-Select-Select_label')[0].innerText;
                     var parameters = indicator_name_parameter_map[newIndicator];
                     reportHandle.updateReportParameters(parameters);
                 });
