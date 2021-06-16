@@ -12,9 +12,11 @@
         } else {
             window.attachEvent("onmessage", onMessage);
         }
-        if (event && event.data) {
-            console.log(event)
-            console.log(event.data)
+        function onMessage(event) {
+            if (event && event.data) {
+                console.log(event)
+                console.log(event.data)
+            }
         }
     </script>
 </body>
