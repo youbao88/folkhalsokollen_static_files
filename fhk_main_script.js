@@ -280,7 +280,7 @@ window.addEventListener('vaReportComponents.loaded', function () {
             }
         } else if (typeof (event.data) == "object") { //if the data is an Object
             iframe_title_div_innerHTML = event.data["title_div"];
-            var menus = document.querySelectorAll("[role='combobox']");
+            var menus = document.querySelectorAll("[aria-haspopup='listbox']");
             menus.forEach(element => {
                 if (element.innerText in event.data) {
                     var menuName = element.innerText;
