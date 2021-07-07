@@ -132,6 +132,14 @@ var styles = `
         .sas_components-Button-__internal__-BaseButton_text{
             font-size: 1.2rem ! important;
         } 
+
+        .sas_components-ListBox-List_item-text{
+            font-size: 1.4rem ! important;
+        }
+
+        .sasTipTable > tbody > tr > td{
+            border: none ! important;
+        }
 `;
 var styleSheet = document.createElement("style");
 styleSheet.type = "text/css";
