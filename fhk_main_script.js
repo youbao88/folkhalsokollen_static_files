@@ -134,7 +134,7 @@ var styles = `
         } 
 
         .sas_components-ListBox-List_item-text{
-            font-size: 1.4rem ! important;
+            font-size: 1.6rem ! important;
         }
 
         .sasTipTable > tbody > tr > td{
