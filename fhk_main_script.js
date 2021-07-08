@@ -135,6 +135,7 @@ var styles = `
 
         .sas_components-ListBox-List_item-text{
             font-size: 1.6rem ! important;
+            font-family: Arial, Helvetica, sans-serif ! important;
         }
 
         .sasTipTable > tbody > tr > td{
