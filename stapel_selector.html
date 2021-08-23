@@ -87,20 +87,20 @@
                 konUnique.forEach(element => {
                     $('#stapel_kon').add(
                         `<option value="${element}" data-tokens="${element}">${element}</option>`)
-                    $('#stapel_kon').selectpicker('refresh')
-                })
+                });
+                $('#stapel_kon').selectpicker('refresh');
 
                 tidPeriodUnique.forEach(element => {
                     $('#stapel_tidsperiod').add(
                         `<option value="${element}" data-tokens="${element}">${element}</option>`)
-                    $('#stapel_tidsperiod').selectpicker('refresh')
-                })
+                });
+                $('#stapel_tidsperiod').selectpicker('refresh');
 
                 omradeUnique.forEach(element => {
                     $('#stapel_omrade').add(
                         `<option value="${element}" data-tokens="${element}">${element}</option>`)
-                    $('#stapel_omrade').selectpicker('refresh')
-                })
+                });
+                $('#stapel_omrade').selectpicker('refresh');
             }
         }
     </script>
