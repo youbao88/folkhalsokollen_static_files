@@ -84,18 +84,21 @@
                 const tidPeriodUnique = unzippedData[1].unique().sort();
                 const omradeUnique = unzippedData[2].unique().sort();
 
+                $('#stapel_kon').empty();
                 konUnique.forEach(element => {
                     $('#stapel_kon').append(
                         `<option value="${element}" data-tokens="${element}">${element}</option>`)
                 });
                 $('#stapel_kon').selectpicker('refresh');
 
+                $('#stapel_tidsperiod').empty();
                 tidPeriodUnique.forEach(element => {
                     $('#stapel_tidsperiod').append(
                         `<option value="${element}" data-tokens="${element}">${element}</option>`)
                 });
                 $('#stapel_tidsperiod').selectpicker('refresh');
 
+                $('#stapel_omrade').empty();
                 omradeUnique.forEach(element => {
                     $('#stapel_omrade').append(
                         `<option value="${element}" data-tokens="${element}">${element}</option>`)
