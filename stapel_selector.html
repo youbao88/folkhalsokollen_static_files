@@ -76,29 +76,32 @@
         }
         // Retrieve data and begin processing
         function onMessage(event) {
+            if (event && event.data) {
 
-            const unzippedData = unzip(event.data.data);
+                const unzippedData = unzip(event.data.data);
 
-            const konUnique = unzippedData[0].unique().sort();
-            const tidPeriodUnique = unzippedData[1].unique().sort();
-            const omradeUnique = unzippedData[2].unique().sort();
+                const konUnique = unzippedData[0].unique().sort();
+                const tidPeriodUnique = unzippedData[1].unique().sort();
+                const omradeUnique = unzippedData[2].unique().sort();
 
-            konUnique.forEach(element => {
-                $('#stapel_kon').add(`<option value="${element}" data-tokens="${element}">${element}</option>`)
-                $('#stapel_kon').selectpicker('refresh')
-            })
+                konUnique.forEach(element => {
+                    $('#stapel_kon').add(
+                        `<option value="${element}" data-tokens="${element}">${element}</option>`)
+                    $('#stapel_kon').selectpicker('refresh')
+                })
 
-            tidPeriodUnique.forEach(element => {
-                $('#stapel_tidsperiod').add(
-                    `<option value="${element}" data-tokens="${element}">${element}</option>`)
-                $('#stapel_tidsperiod').selectpicker('refresh')
-            })
+                tidPeriodUnique.forEach(element => {
+                    $('#stapel_tidsperiod').add(
+                        `<option value="${element}" data-tokens="${element}">${element}</option>`)
+                    $('#stapel_tidsperiod').selectpicker('refresh')
+                })
 
-            omradeUnique.forEach(element => {
-                $('#stapel_omrade').add(
-                    `<option value="${element}" data-tokens="${element}">${element}</option>`)
-                $('#stapel_omrade').selectpicker('refresh')
-            })
+                omradeUnique.forEach(element => {
+                    $('#stapel_omrade').add(
+                        `<option value="${element}" data-tokens="${element}">${element}</option>`)
+                    $('#stapel_omrade').selectpicker('refresh')
+                })
+            }
         }
     </script>
 </body>
