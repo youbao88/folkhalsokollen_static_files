@@ -87,12 +87,12 @@
 
             tidPeriodUnique.forEach(element =>{
                 $('#stapel_tidsperiod').add(`<option value="${element}" data-tokens="${element}">${element}</option>`)
-                $('#stapel_tidsperiod').refresh()
+                $('#stapel_tidsperiod').selectpicker('refresh')
             })
 
             omradeUnique.forEach(element =>{
                 $('#stapel_omrade').add(`<option value="${element}" data-tokens="${element}">${element}</option>`)
-                $('#stapel_omrade').refresh()
+                $('#stapel_omrade').selectpicker('refresh')
             })
         }
     </script>
