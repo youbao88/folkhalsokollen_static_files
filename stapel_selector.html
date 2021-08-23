@@ -85,19 +85,19 @@
                 const omradeUnique = unzippedData[2].unique().sort();
 
                 konUnique.forEach(element => {
-                    $('#stapel_kon').add(
+                    $('#stapel_kon').append(
                         `<option value="${element}" data-tokens="${element}">${element}</option>`)
                 });
                 $('#stapel_kon').selectpicker('refresh');
 
                 tidPeriodUnique.forEach(element => {
-                    $('#stapel_tidsperiod').add(
+                    $('#stapel_tidsperiod').append(
                         `<option value="${element}" data-tokens="${element}">${element}</option>`)
                 });
                 $('#stapel_tidsperiod').selectpicker('refresh');
 
                 omradeUnique.forEach(element => {
-                    $('#stapel_omrade').add(
+                    $('#stapel_omrade').append(
                         `<option value="${element}" data-tokens="${element}">${element}</option>`)
                 });
                 $('#stapel_omrade').selectpicker('refresh');
