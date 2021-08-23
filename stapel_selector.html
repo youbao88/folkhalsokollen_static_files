@@ -82,7 +82,7 @@
 
             konUnique.forEach(element =>{
                 $('#stapel_kon').add(`<option value="${element}" data-tokens="${element}">${element}</option>`)
-                $('#stapel_kon').refresh()
+                $('#stapel_kon').selectpicker('refresh')
             })
 
             tidPeriodUnique.forEach(element =>{
