@@ -161,5 +161,12 @@
                 $('#stapel_omrade').selectpicker('refresh');
             }
         }
+        $('.selectpicker').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
+            if($(this).val().length <1){
+                $(this).val(previousValue);
+                $(this).selectpicker('refresh');
+            }
+        });
+
     </script>
 </body>
