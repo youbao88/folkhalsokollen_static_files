@@ -159,7 +159,7 @@
                         `<option value="${element}" data-tokens="${element}">${element}</option>`)
                 });
                 $('#stapel_kon').selectpicker('refresh');
-                $('#stapel_kon').val(konUnique[0]).selectpicker('refresh');
+                $('#stapel_kon').selectpicker('selectAll');
 
                 $('#stapel_tidsperiod').empty();
                 tidPeriodUnique.forEach(element => {
@@ -167,7 +167,7 @@
                         `<option value="${element}" data-tokens="${element}">${element}</option>`)
                 });
                 $('#stapel_tidsperiod').selectpicker('refresh');
-                $('#stapel_tidsperiod').selectpicker('selectAll');
+                $('#stapel_tidsperiod').val(tidPeriodUnique[0]).selectpicker('refresh');
 
                 $('#stapel_omrade').empty();
                 omradeUnique.forEach(element => {
