@@ -12,15 +12,44 @@
         body {
             font-family: Arial, Verdana, Helvetica;
             font-size: 0.9rem;
+            background-color: transparent;
+        }
+
+        .selectorContainer {
+            padding: 20px;
+        }
+        .selectorText{
+            background-color: rgb(97, 35, 97);
+            padding: 8px;
+            margin-top: 13px;
+            margin-bottom: 0px;
+            width:100%;
+            height: 18px;
+        }
+        .selectorDropdown{
             background-color: #FFFFFF;
+            margin-top: 0px;
+            width: 100%;
+            padding: 16px;
+        }
+        .selectpicker{
+            margin: auto;
+            border: 1px solid #b0b8bc;
         }
     </style>
 </head>
 
 <body>
     <div class="selectorContainer">
-        <select class="selectpicker" id='stapel_tidsperiod'>
-        </select>
+        <div class='selectorWrap'>
+            <div class='selectorText'>
+                4. Välj tidsperiod
+            </div>
+            <div class='selectorDropdown'>
+                <select class="selectpicker" id='stapel_tidsperiod'>
+                </select>
+            </div>
+        </div>
         <select class="selectpicker" id='stapel_kon' multiple>
         </select>
         <select class="selectpicker" id='stapel_omrade' data-live-search="true">
