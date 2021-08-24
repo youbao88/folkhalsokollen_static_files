@@ -18,24 +18,28 @@
         .selectorContainer {
             padding: 20px;
         }
-        .selectorTextWrap{
+
+        .selectorTextWrap {
             background-color: rgb(97, 35, 97);
             padding: 8px;
             margin-top: 13px;
             margin-bottom: 0px;
-            width:100%;
+            width: 100%;
         }
-        .selectorText{
+
+        .selectorText {
             color: #FFFFFF;
             font-size: 12.0pt;
         }
-        .selectorDropdown{
+
+        .selectorDropdown {
             background-color: #FFFFFF;
             margin-top: 0px;
             width: 100%;
             padding: 16px;
         }
-        .mySelectpicker{
+
+        .mySelectpicker {
             margin: auto;
             border: 1px solid #b0b8bc;
             border-radius: 0;
@@ -47,17 +51,31 @@
     <div class="selectorContainer">
         <div class='selectorWrap'>
             <div class='selectorTextWrap'>
-                <span class = 'selectorText'>4. Välj tidsperiod</span>
+                <span class='selectorText'>4. Välj tidsperiod</span>
             </div>
             <div class='selectorDropdown'>
                 <select class="selectpicker" id='stapel_tidsperiod'>
                 </select>
             </div>
         </div>
-        <select class="selectpicker" id='stapel_kon' multiple>
-        </select>
-        <select class="selectpicker" id='stapel_omrade' data-live-search="true">
-        </select>
+        <div class='selectorWrap'>
+            <div class='selectorTextWrap'>
+                <span class='selectorText'>5. Välj kön</span>
+            </div>
+            <div class='selectorDropdown'>
+                <select class="selectpicker" id='stapel_kon' multiple>
+                </select>
+            </div>
+        </div>
+        <div class='selectorWrap'>
+            <div class='selectorTextWrap'>
+                <span class='selectorText'>6. Välj område</span>
+            </div>
+            <div class='selectorDropdown'>
+                <select class="selectpicker" id='stapel_omrade' data-live-search="true">
+                </select>
+            </div>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
