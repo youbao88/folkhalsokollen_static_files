@@ -18,13 +18,15 @@
         .selectorContainer {
             padding: 20px;
         }
-        .selectorText{
+        .selectorTextWrap{
             background-color: rgb(97, 35, 97);
             padding: 8px;
             margin-top: 13px;
             margin-bottom: 0px;
             width:100%;
-            height: 18px;
+        }
+        .selectorText{
+            color: #FFFFFF;
         }
         .selectorDropdown{
             background-color: #FFFFFF;
@@ -42,8 +44,8 @@
 <body>
     <div class="selectorContainer">
         <div class='selectorWrap'>
-            <div class='selectorText'>
-                4. Välj tidsperiod
+            <div class='selectorTextWrap'>
+                <span class = 'selectorText'>4. Välj tidsperiod</span>
             </div>
             <div class='selectorDropdown'>
                 <select class="selectpicker" id='stapel_tidsperiod'>
