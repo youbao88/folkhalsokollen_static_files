@@ -191,8 +191,7 @@
                         [parameterName]: $(this).val()
                     }
                 }
-                console.log(sendMessage)
-                // window.parent.postMessage(message = buttonUrl, targetOrigin = '*');
+                window.parent.postMessage(message = sendMessage, targetOrigin = '*');
             }
         });
     </script>
