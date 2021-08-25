@@ -184,8 +184,14 @@
                 $(this).val(previousValue);
                 $(this).selectpicker('refresh');
             }else{
-                console.log(e)
-                console.log(e.target)
+                parameterName = e.target.attributes['sas-parameter'].textContent;
+                sendMessage = {
+                    'type': 'changeParameter',
+                    'content': {
+                        parameterName: $(this).val()
+                    }
+                }
+                conosle.log(sendMessage)
                 // window.parent.postMessage(message = buttonUrl, targetOrigin = '*');
             }
         });
