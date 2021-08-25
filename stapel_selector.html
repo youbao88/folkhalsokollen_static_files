@@ -171,6 +171,7 @@
                 $('#stapel_tidsperiod').val(tidPeriodUnique[0]).selectpicker('refresh');
 
                 $('#stapel_omrade').empty();
+                console.log(omradeUnique)
                 omradeUnique.forEach(element => {
                     $('#stapel_omrade').append(
                         `<option value="${element}" data-tokens="${element}">${element}</option>`)
