@@ -188,10 +188,10 @@
                 sendMessage = {
                     'type': 'changeParameter',
                     'content': {
-                        parameterName: $(this).val()
+                        [parameterName]: $(this).val()
                     }
                 }
-                conosle.log(sendMessage)
+                console.log(sendMessage)
                 // window.parent.postMessage(message = buttonUrl, targetOrigin = '*');
             }
         });
