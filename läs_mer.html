@@ -36,9 +36,6 @@
     <div id="iframe_readmore_div">
     </div>
     <script>
-        function sendLinkMessage(link_url) {
-            window.parent.postMessage(message = link_url, targetOrigin = '*');
-        }
         if (window.addEventListener) {
             // For standards-compliant web browsers
             window.addEventListener("message", onMessage, false);
@@ -98,8 +95,12 @@
                 var buttonList = document.querySelectorAll('.buttonLink');
                 buttonList.forEach(element => {
                     var buttonUrl = element.getAttribute('title');
+                    sendMessage = {
+                        type: 'openUrl',
+                        content: buttonUrl
+                    }
                     element.addEventListener('click', () => {
-                        window.parent.postMessage(message = buttonUrl, targetOrigin = '*');
+                        window.parent.postMessage(message = sendMessage, targetOrigin = '*');
                     })
                 })
             }

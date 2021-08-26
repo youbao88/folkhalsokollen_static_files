@@ -210,7 +210,11 @@
                 // Send page information back to the main server in order to create it as an image
                 var iframe_title_div = document.getElementById('iframe_title_div');
                 messageToMain["title_div"] = iframe_title_div.innerHTML;
-                window.parent.postMessage(message = messageToMain, targetOrigin = '*');
+                sendMessage = {
+                    type: 'screenshotInfo',
+                    content: messageToMain
+                }
+                window.parent.postMessage(message = sendMessage, targetOrigin = '*');
             }
         }
     </script>
