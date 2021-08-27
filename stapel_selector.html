@@ -153,6 +153,9 @@
         $('.bs-deselect-all').addClass('hide');
         $('.bs-select-all').addClass('center');
 
+        $(document).add(parent.document).mouseup(function (e) {
+            console.log('clicked')
+        });
 
         Array.prototype.contains = function (v) {
             for (var i = 0; i < this.length; i++) {
@@ -205,7 +208,8 @@
                         `<option value="${element}" data-tokens="${element}">${element}</option>`)
                 });
                 $('#stapel_kon').selectpicker('refresh');
-                $('#stapel_kon').val(event.data.parameters.find(o => o.label == 'stapel_Kön').value).selectpicker('refresh');
+                $('#stapel_kon').val(event.data.parameters.find(o => o.label == 'stapel_Kön').value).selectpicker(
+                    'refresh');
 
                 $('#stapel_tidsperiod').empty();
                 tidPeriodUnique.forEach(element => {
@@ -213,16 +217,19 @@
                         `<option value="${element}" data-tokens="${element}">${element}</option>`)
                 });
                 $('#stapel_tidsperiod').selectpicker('refresh');
-                $('#stapel_tidsperiod').val(event.data.parameters.find(o => o.label == 'stapel_Tidsperiod').value).selectpicker('refresh');
+                $('#stapel_tidsperiod').val(event.data.parameters.find(o => o.label == 'stapel_Tidsperiod').value)
+                    .selectpicker('refresh');
 
                 $('#stapel_omrade').empty();
                 console.log(omradeUnique)
                 omradeUnique.forEach(element => {
                     $('#stapel_omrade').append(
-                        `<option value="${element}" data-tokens="${element}" data-subtext="${omradeSubTextMap[element]}">${element}</option>`)
+                        `<option value="${element}" data-tokens="${element}" data-subtext="${omradeSubTextMap[element]}">${element}</option>`
+                        )
                 });
                 $('#stapel_omrade').selectpicker('refresh');
-                $('#stapel_omrade').val(event.data.parameters.find(o => o.label == 'stapel_Område').value).selectpicker('refresh');
+                $('#stapel_omrade').val(event.data.parameters.find(o => o.label == 'stapel_Område').value).selectpicker(
+                    'refresh');
             }
         }
         $('.selectpicker').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
