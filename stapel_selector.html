@@ -153,10 +153,6 @@
         $('.bs-deselect-all').addClass('hide');
         $('.bs-select-all').addClass('center');
 
-        $(document).add(parent.document).mouseup(function (e) {
-            console.log('clicked')
-        });
-
         Array.prototype.contains = function (v) {
             for (var i = 0; i < this.length; i++) {
                 if (this[i] === v) return true;
