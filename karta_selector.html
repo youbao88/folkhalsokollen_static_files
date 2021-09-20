@@ -175,8 +175,7 @@
                     .selectpicker('refresh');
 
                 $('#karta_alder').empty();
-                console.log(omradeUnique)
-                omradeUnique.forEach(element => {
+                aldersUnique.forEach(element => {
                     $('#karta_alder').append(
                         `<option value="${element}" data-tokens="${element}">${element}</option>`
                     )
