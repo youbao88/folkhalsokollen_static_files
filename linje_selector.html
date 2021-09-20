@@ -223,8 +223,8 @@
                         `<option value="${element}" data-tokens="${element}" data-subtext="${omradeSubTextMap[element]}">${element}</option>`
                         )
                 });
-                $('#stapel_omrade').selectpicker('refresh');
-                $('#stapel_omrade').val(event.data.parameters.find(o => o.label == 'linje_Område').value).selectpicker(
+                $('#linje_omrade').selectpicker('refresh');
+                $('#linje_omrade').val(event.data.parameters.find(o => o.label == 'linje_Område').value).selectpicker(
                     'refresh');
             }
         }
