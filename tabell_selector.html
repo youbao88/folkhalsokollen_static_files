@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<head>
+    <title>
+        stapel_selector
+    </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <style>
+        body {
+            font-family: Arial, Verdana, Helvetica;
+            font-size: 0.9rem;
+            background-color: transparent;
+        }
+
+        .selectorContainer {
+            padding: 20px;
+        }
+
+        .selectorTextWrap {
+            background-color: rgb(97, 35, 97);
+            padding: 8px;
+            margin-top: 13px;
+            margin-bottom: 0px;
+            width: 100%;
+        }
+
+        .selectorText {
+            color: #FFFFFF;
+            font-size: 12.0pt;
+        }
+
+        .selectorDropdown {
+            background-color: #FFFFFF;
+            margin-top: 0px;
+            width: 100%;
+            padding: 16px;
+        }
+
+        .mySelectpicker {
+            margin: auto;
+            border: 1px solid #b0b8bc;
+            border-radius: 0;
+            background-color: #FFFFFF;
+        }
+
+        .mySelectpicker:hover {
+            background-color: #b0b8bc;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .center {
+            margin: auto !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="selectorContainer">
+        <div class='selectorWrap'>
+            <div class='selectorTextWrap'>
+                <span class='selectorText'>4. Välj tidsperiod</span>
+            </div>
+            <div class='selectorDropdown'>
+                <select class="selectpicker show-tick" multiple id='tabell_tidsperiod' data-style='mySelectpicker'
+                    data-width='100%' sas-parameter='tabell_Tidsperiod' data-actions-box="true" data-select-all-text='välj alla'>
+                </select>
+            </div>
+        </div>
+        <div class='selectorWrap'>
+            <div class='selectorTextWrap'>
+                <span class='selectorText'>5. Välj kön</span>
+            </div>
+            <div class='selectorDropdown'>
+                <select class="selectpicker" id='tabell_kon' multiple data-style='mySelectpicker' data-width='100%'
+                    data-actions-box="true" data-select-all-text='välj alla' sas-parameter='tabell_Kön'>
+                </select>
+            </div>
+        </div>
+        <div class='selectorWrap'>
+            <div class='selectorTextWrap'>
+                <span class='selectorText'>6. Välj område</span>
+            </div>
+            <div class='selectorDropdown'>
+                <select class="selectpicker" id='tabell_omrade' muptiple data-live-search="true" data-style='mySelectpicker'
+                    data-width='100%' data-live-search-placeholder='Sök område' sas-parameter='tabell_Område'>
+                </select>
+            </div>
+        </div>
+        <div class='selectorWrap'>
+            <div class='selectorTextWrap'>
+                <span class='selectorText'>7. Välj ålder</span>
+            </div>
+            <div class='selectorDropdown'>
+                <select class="selectpicker" id='tabell_alder' muptiple data-style='mySelectpicker'
+                    data-width='100%' sas-parameter='tabell_Åldersgrupp' data-actions-box="true" data-select-all-text='välj alla'>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+    <script>
+        omradeSubTextMap = {
+            "Botkyrka": "kommun",
+            "Bromma": "stadsdel",
+            "Danderyd": "kommun",
+            "Ekerö": "kommun",
+            "Enskede-Årsta-Vantör": "stadsdel",
+            "Farsta": "stadsdel",
+            "Haninge": "kommun",
+            "Huddinge": "kommun",
+            "Hägersten-Älvsjö": "stadsdel",
+            "Hässelby-Vällingby": "stadsdel",
+            "Järfälla": "kommun",
+            "Kungsholmen": "stadsdel",
+            "Lidingö": "kommun",
+            "Nacka": "kommun",
+            "Norrmalm": "stadsdel",
+            "Norrtälje": "kommun",
+            "Nykvarn": "kommun",
+            "Nynäshamn": "kommun",
+            "Rinkeby-Kista": "stadsdel",
+            "Salem": "kommun",
+            "Sigtuna": "kommun",
+            "Skarpnäck": "stadsdel",
+            "Skärholmen": "stadsdel",
+            "Sollentuna": "kommun",
+            "Solna": "kommun",
+            "Spånga-Tensta": "stadsdel",
+            "Stockholm": "kommun",
+            "Stockholms län": "län",
+            "Sundbyberg": "kommun",
+            "Södermalm": "stadsdel",
+            "Södertälje": "kommun",
+            "Tyresö": "kommun",
+            "Täby": "kommun",
+            "Upplands Väsby": "kommun",
+            "Upplands-Bro": "kommun",
+            "Vallentuna": "kommun",
+            "Vaxholm": "kommun",
+            "Värmdö": "kommun",
+            "Östermalm": "stadsdel",
+            "Österåker": "kommun"
+        };
+
+        $('.selectpicker').selectpicker();
+        $('.bs-deselect-all').addClass('hide');
+        $('.bs-select-all').addClass('center');
+
+        Array.prototype.contains = function (v) {
+            for (var i = 0; i < this.length; i++) {
+                if (this[i] === v) return true;
+            }
+            return false;
+        };
+
+        Array.prototype.unique = function () {
+            var arr = [];
+            for (var i = 0; i < this.length; i++) {
+                if (!arr.contains(this[i])) {
+                    arr.push(this[i]);
+                }
+            }
+            return arr;
+        }
+        const unzip = arr =>
+            arr.reduce(
+                (acc, val) => (val.forEach((v, i) => acc[i].push(v)), acc),
+                Array.from({
+                    length: Math.max(...arr.map(x => x.length))
+                }).map(x => [])
+            );
+
+        function sendLinkMessage(link_url) {
+            window.parent.postMessage(message = link_url, targetOrigin = '*');
+        }
+        if (window.addEventListener) {
+            // For standards-compliant web browsers
+            window.addEventListener("message", onMessage, false);
+        } else {
+            window.attachEvent("onmessage", onMessage);
+        }
+        // Retrieve data and begin processing
+        function onMessage(event) {
+            if (event && event.data) {
+
+
+                const unzippedData = unzip(event.data.data);
+
+                const konUnique = unzippedData[0].unique().sort();
+                const tidPeriodUnique = unzippedData[1].unique().sort();
+                const omradeUnique = unzippedData[2].unique().sort();
+                const alderUnique = unzippedData[3].unique().sort();
+
+                $('#tabell_kon').empty();
+                konUnique.forEach(element => {
+                    $('#tabell_kon').append(
+                        `<option value="${element}" data-tokens="${element}">${element}</option>`)
+                });
+                $('#tabell_kon').selectpicker('refresh');
+                $('#tabell_kon').val(event.data.parameters.find(o => o.label == 'tabell_Kön').value).selectpicker(
+                    'refresh');
+
+                $('#tabell_tidsperiod').empty();
+                tidPeriodUnique.forEach(element => {
+                    $('#tabell_tidsperiod').append(
+                        `<option value="${element}" data-tokens="${element}">${element}</option>`)
+                });
+                $('#tabell_tidsperiod').selectpicker('refresh');
+                $('#tabell_tidsperiod').val(event.data.parameters.find(o => o.label == 'tabell_Tidsperiod').value)
+                    .selectpicker('refresh');
+
+                $('#tabell_omrade').empty();
+                omradeUnique.forEach(element => {
+                    $('#tabell_omrade').append(
+                        `<option value="${element}" data-tokens="${element}" data-subtext="${omradeSubTextMap[element]}">${element}</option>`
+                        )
+                });
+                $('#tabell_omrade').selectpicker('refresh');
+                $('#tabell_omrade').val(event.data.parameters.find(o => o.label == 'tabell_Område').value).selectpicker(
+                    'refresh');
+
+                $('#tabell_alder').empty();
+                alderUnique.forEach(element => {
+                    $('#tabell_alder').append(
+                        `<option value="${element}" data-tokens="${element}">${element}</option>`
+                        )
+                });
+                $('#tabell_alder').selectpicker('refresh');
+                $('#tabell_alder').val(event.data.parameters.find(o => o.label == 'tabell_Åldersgrupp').value).selectpicker(
+                    'refresh');
+            }
+        }
+        $('.selectpicker').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
+            if ($(this).val().length < 1) {
+                $(this).val(previousValue);
+                $(this).selectpicker('refresh');
+            } else {
+                parameterName = e.target.attributes['sas-parameter'].textContent;
+                sendMessage = {
+                    'type': 'changeParameter',
+                    'content': {
+                        [parameterName]: $(this).val()
+                    }
+                }
+                window.parent.postMessage(message = sendMessage, targetOrigin = '*');
+            }
+        });
+    </script>
+</body>
