@@ -57,6 +57,9 @@
         .center {
             margin: auto !important;
         }
+        .bootstrap-select .dropdown-menu {
+            max-width: 100% !important;
+        }
     </style>
 </head>
 
@@ -221,7 +224,7 @@
                 omradeUnique.forEach(element => {
                     $('#stapel_omrade').append(
                         `<option value="${element}" data-tokens="${element}" data-subtext="${omradeSubTextMap[element]}">${element}</option>`
-                        )
+                    )
                 });
                 $('#stapel_omrade').selectpicker('refresh');
                 $('#stapel_omrade').val(event.data.parameters.find(o => o.label == 'stapel_Område').value).selectpicker(
