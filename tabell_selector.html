@@ -57,6 +57,10 @@
         .center {
             margin: auto !important;
         }
+
+        .bootstrap-select .dropdown-menu {
+            max-width: 100% !important;
+        }
     </style>
 </head>
 
@@ -68,7 +72,8 @@
             </div>
             <div class='selectorDropdown'>
                 <select class="selectpicker show-tick" multiple id='tabell_tidsperiod' data-style='mySelectpicker'
-                    data-width='100%' sas-parameter='table_Tidsperiod' data-actions-box="true" data-select-all-text='välj alla'>
+                    data-width='100%' sas-parameter='table_Tidsperiod' data-actions-box="true"
+                    data-select-all-text='välj alla'>
                 </select>
             </div>
         </div>
@@ -87,8 +92,9 @@
                 <span class='selectorText'>6. Välj område</span>
             </div>
             <div class='selectorDropdown'>
-                <select class="selectpicker" id='tabell_omrade' multiple data-live-search="true" data-style='mySelectpicker'
-                    data-width='100%' data-live-search-placeholder='Sök område' sas-parameter='table_Område'>
+                <select class="selectpicker" id='tabell_omrade' multiple data-live-search="true"
+                    data-style='mySelectpicker' data-width='100%' data-live-search-placeholder='Sök område'
+                    sas-parameter='table_Område'>
                 </select>
             </div>
         </div>
@@ -97,8 +103,8 @@
                 <span class='selectorText'>7. Välj ålder</span>
             </div>
             <div class='selectorDropdown'>
-                <select class="selectpicker" id='tabell_alder' multiple data-style='mySelectpicker'
-                    data-width='100%' sas-parameter='tabel_Åldersgrupp' data-actions-box="true" data-select-all-text='välj alla'>
+                <select class="selectpicker" id='tabell_alder' multiple data-style='mySelectpicker' data-width='100%'
+                    sas-parameter='tabel_Åldersgrupp' data-actions-box="true" data-select-all-text='välj alla'>
                 </select>
             </div>
         </div>
@@ -230,7 +236,7 @@
                 omradeUnique.forEach(element => {
                     $('#tabell_omrade').append(
                         `<option value="${element}" data-tokens="${element}" data-subtext="${omradeSubTextMap[element]}">${element}</option>`
-                        )
+                    )
                 });
                 $('#tabell_omrade').selectpicker('refresh');
                 $('#tabell_omrade').val(event.data.parameters.find(o => o.label == 'table_Område').value).selectpicker(
@@ -240,11 +246,12 @@
                 alderUnique.forEach(element => {
                     $('#tabell_alder').append(
                         `<option value="${element}" data-tokens="${element}">${element}</option>`
-                        )
+                    )
                 });
                 $('#tabell_alder').selectpicker('refresh');
-                $('#tabell_alder').val(event.data.parameters.find(o => o.label == 'tabel_Åldersgrupp').value).selectpicker(
-                    'refresh');
+                $('#tabell_alder').val(event.data.parameters.find(o => o.label == 'tabel_Åldersgrupp').value)
+                    .selectpicker(
+                        'refresh');
             }
         }
         $('.selectpicker').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
