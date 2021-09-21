@@ -68,7 +68,7 @@
             </div>
             <div class='selectorDropdown'>
                 <select class="selectpicker show-tick" multiple id='tabell_tidsperiod' data-style='mySelectpicker'
-                    data-width='100%' sas-parameter='tabell_Tidsperiod' data-actions-box="true" data-select-all-text='välj alla'>
+                    data-width='100%' sas-parameter='table_Tidsperiod' data-actions-box="true" data-select-all-text='välj alla'>
                 </select>
             </div>
         </div>
@@ -78,7 +78,7 @@
             </div>
             <div class='selectorDropdown'>
                 <select class="selectpicker" id='tabell_kon' multiple data-style='mySelectpicker' data-width='100%'
-                    data-actions-box="true" data-select-all-text='välj alla' sas-parameter='tabell_Kön'>
+                    data-actions-box="true" data-select-all-text='välj alla' sas-parameter='tabel_Kön'>
                 </select>
             </div>
         </div>
@@ -88,7 +88,7 @@
             </div>
             <div class='selectorDropdown'>
                 <select class="selectpicker" id='tabell_omrade' muptiple data-live-search="true" data-style='mySelectpicker'
-                    data-width='100%' data-live-search-placeholder='Sök område' sas-parameter='tabell_Område'>
+                    data-width='100%' data-live-search-placeholder='Sök område' sas-parameter='table_Område'>
                 </select>
             </div>
         </div>
@@ -98,7 +98,7 @@
             </div>
             <div class='selectorDropdown'>
                 <select class="selectpicker" id='tabell_alder' muptiple data-style='mySelectpicker'
-                    data-width='100%' sas-parameter='tabell_Åldersgrupp' data-actions-box="true" data-select-all-text='välj alla'>
+                    data-width='100%' sas-parameter='tabel_Åldersgrupp' data-actions-box="true" data-select-all-text='välj alla'>
                 </select>
             </div>
         </div>
@@ -214,7 +214,7 @@
                         `<option value="${element}" data-tokens="${element}">${element}</option>`)
                 });
                 $('#tabell_kon').selectpicker('refresh');
-                $('#tabell_kon').val(event.data.parameters.find(o => o.label == 'tabell_Kön').value).selectpicker(
+                $('#tabell_kon').val(event.data.parameters.find(o => o.label == 'tabel_Kön').value).selectpicker(
                     'refresh');
 
                 $('#tabell_tidsperiod').empty();
@@ -223,7 +223,7 @@
                         `<option value="${element}" data-tokens="${element}">${element}</option>`)
                 });
                 $('#tabell_tidsperiod').selectpicker('refresh');
-                $('#tabell_tidsperiod').val(event.data.parameters.find(o => o.label == 'tabell_Tidsperiod').value)
+                $('#tabell_tidsperiod').val(event.data.parameters.find(o => o.label == 'table_Tidsperiod').value)
                     .selectpicker('refresh');
 
                 $('#tabell_omrade').empty();
@@ -233,7 +233,7 @@
                         )
                 });
                 $('#tabell_omrade').selectpicker('refresh');
-                $('#tabell_omrade').val(event.data.parameters.find(o => o.label == 'tabell_Område').value).selectpicker(
+                $('#tabell_omrade').val(event.data.parameters.find(o => o.label == 'table_Område').value).selectpicker(
                     'refresh');
 
                 $('#tabell_alder').empty();
@@ -243,7 +243,7 @@
                         )
                 });
                 $('#tabell_alder').selectpicker('refresh');
-                $('#tabell_alder').val(event.data.parameters.find(o => o.label == 'tabell_Åldersgrupp').value).selectpicker(
+                $('#tabell_alder').val(event.data.parameters.find(o => o.label == 'tabel_Åldersgrupp').value).selectpicker(
                     'refresh');
             }
         }
