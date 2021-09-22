@@ -215,8 +215,6 @@
                         `<option value="${element}" data-tokens="${element}">${element}</option>`)
                 });
                 $('#linje_kon').selectpicker('refresh');
-                $('#linje_kon').val(event.data.parameters.find(o => o.label == 'linje_Kön').value).selectpicker(
-                    'refresh');
 
                 if (konUnique.contains(event.data.parameters.find(o => o.label == 'linje_Kön').value)) {
                     $('#linje_kon').val(event.data.parameters.find(o => o.label == 'linje_Kön').value).selectpicker(
@@ -239,9 +237,7 @@
                         `<option value="${element}" data-tokens="${element}">${element}</option>`)
                 });
                 $('#linje_alder').selectpicker('refresh');
-                $('#linje_alder').val(event.data.parameters.find(o => o.label == 'linje_Åldersgrupp').value)
-                    .selectpicker('refresh');
-
+               
                 if (alderUnique.contains(event.data.parameters.find(o => o.label == 'linje_Åldersgrupp').value)) {
                     $('#linje_alder').val(event.data.parameters.find(o => o.label == 'linje_Åldersgrupp').value)
                         .selectpicker(
@@ -265,9 +261,7 @@
                     )
                 });
                 $('#linje_omrade').selectpicker('refresh');
-                $('#linje_omrade').val(event.data.parameters.find(o => o.label == 'linje_Område').value).selectpicker(
-                    'refresh');
-
+               
                 if (omradeUnique.contains(event.data.parameters.find(o => o.label == 'linje_Område').value)) {
                     $('#linje_omrade').val(event.data.parameters.find(o => o.label == 'linje_Område').value)
                         .selectpicker(

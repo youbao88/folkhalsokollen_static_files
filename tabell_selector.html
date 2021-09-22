@@ -165,17 +165,23 @@
             "Österåker": "kommun"
         };
 
-        const monthOrder = ['Januari', 'Februari', 'Mars', 'April', 'Maj', 'Juni', 'Juli', 'Augusti', 'September', 'Oktober', 'November', 'December']
+        const monthOrder = ['Januari', 'Februari', 'Mars', 'April', 'Maj', 'Juni', 'Juli', 'Augusti', 'September',
+            'Oktober', 'November', 'December'
+        ]
 
         $('.selectpicker').selectpicker();
         $('.bs-deselect-all').addClass('hide');
         $('.bs-select-all').addClass('center');
 
         Array.prototype.contains = function (v) {
-            for (var i = 0; i < this.length; i++) {
-                if (this[i] === v) return true;
+            if (Array.isArray(v)) {
+                return v.every(ai => this.includes(ai));
+            } else {
+                for (var i = 0; i < this.length; i++) {
+                    if (this[i] === v) return true;
+                }
+                return false;
             }
-            return false;
         };
 
         Array.prototype.unique = function () {
@@ -213,23 +219,26 @@
 
                 const konUnique = unzippedData[0].unique().sort();
                 const tidPeriodUnique = unzippedData[1].unique();
-                const omradeUnique = unzippedData[2].unique().sort(function(x,y){ return x == "Stockholms län" ? -1 : y == "Stockholms län" ? 1 : 0; });
+                const omradeUnique = unzippedData[2].unique().sort(function (x, y) {
+                    return x == "Stockholms län" ? -1 : y == "Stockholms län" ? 1 : 0;
+                });
                 const alderUnique = unzippedData[3].unique().sort();
 
-                if (tidPeriodUnique[0].length == 4){
-                    var tidPeriodUniqueSorted = tidPeriodUnique.sort() 
-                }else{
-                    function tidsperiodsort(x,y){
-                        if (x == "Hela 2020"){
+                if (tidPeriodUnique[0].length == 4) {
+                    var tidPeriodUniqueSorted = tidPeriodUnique.sort()
+                } else {
+                    function tidsperiodsort(x, y) {
+                        if (x == "Hela 2020") {
                             return -1
-                        }else{
-                            if(y == "Hela 2020"){
+                        } else {
+                            if (y == "Hela 2020") {
                                 return 1
-                            }else{
-                                if(x.split(" ")[1] == y.split(" ")[1]){
-                                    console.log(monthOrder.indexOf(x.split(" ")[0]) - monthOrder.indexOf(y.split(" ")[0]))
+                            } else {
+                                if (x.split(" ")[1] == y.split(" ")[1]) {
+                                    console.log(monthOrder.indexOf(x.split(" ")[0]) - monthOrder.indexOf(y.split(" ")[
+                                        0]))
                                     return monthOrder.indexOf(x.split(" ")[0]) - monthOrder.indexOf(y.split(" ")[0])
-                                }else{
+                                } else {
                                     return x.split(" ")[1] - y.split(" ")[1]
                                 }
                             }
@@ -244,8 +253,22 @@
                         `<option value="${element}" data-tokens="${element}">${element}</option>`)
                 });
                 $('#tabell_kon').selectpicker('refresh');
-                $('#tabell_kon').val(event.data.parameters.find(o => o.label == 'tabel_Kön').value).selectpicker(
-                    'refresh');
+
+                if (konUnique.contains(event.data.parameters.find(o => o.label == 'tabel_Kön').value)) {
+                    $('#tabell_kon').val(event.data.parameters.find(o => o.label == 'tabel_Kön').value).selectpicker(
+                        'refresh');
+                } else {
+                    $('#tabell_kon').val(konUnique).selectpicker(
+                        'refresh');
+                    sendMessage = {
+                        'type': 'changeParameter',
+                        'content': {
+                            tabel_Kön: konUnique
+                        }
+                    }
+                    window.parent.postMessage(message = sendMessage, targetOrigin = '*');
+                }
+
 
                 $('#tabell_tidsperiod').empty();
                 tidPeriodUniqueSorted.forEach(element => {
@@ -253,8 +276,23 @@
                         `<option value="${element}" data-tokens="${element}">${element}</option>`)
                 });
                 $('#tabell_tidsperiod').selectpicker('refresh');
-                $('#tabell_tidsperiod').val(event.data.parameters.find(o => o.label == 'table_Tidsperiod').value)
-                    .selectpicker('refresh');
+
+                if (tidPeriodUniqueSorted.contains(event.data.parameters.find(o => o.label == 'table_Tidsperiod')
+                        .value)) {
+                    $('#tabell_tidsperiod').val(event.data.parameters.find(o => o.label == 'table_Tidsperiod').value)
+                        .selectpicker(
+                            'refresh');
+                } else {
+                    $('#tabell_tidsperiod').val(tidPeriodUniqueSorted[0]).selectpicker(
+                        'refresh');
+                    sendMessage = {
+                        'type': 'changeParameter',
+                        'content': {
+                            table_Tidsperiod: tidPeriodUniqueSorted[0]
+                        }
+                    }
+                    window.parent.postMessage(message = sendMessage, targetOrigin = '*');
+                }
 
                 $('#tabell_omrade').empty();
                 omradeUnique.forEach(element => {
@@ -263,9 +301,22 @@
                     )
                 });
                 $('#tabell_omrade').selectpicker('refresh');
-                $('#tabell_omrade').val(event.data.parameters.find(o => o.label == 'table_Område').value).selectpicker(
-                    'refresh');
 
+                if (omradeUnique.contains(event.data.parameters.find(o => o.label == 'table_Område').value)) {
+                    $('#tabell_omrade').val(event.data.parameters.find(o => o.label == 'table_Område').value)
+                        .selectpicker(
+                            'refresh');
+                } else {
+                    $('#tabell_omrade').val(omradeUnique[0]).selectpicker(
+                        'refresh');
+                    sendMessage = {
+                        'type': 'changeParameter',
+                        'content': {
+                            table_Område: omradeUnique[0]
+                        }
+                    }
+                    window.parent.postMessage(message = sendMessage, targetOrigin = '*');
+                }
                 $('#tabell_alder').empty();
                 alderUnique.forEach(element => {
                     $('#tabell_alder').append(
@@ -273,9 +324,22 @@
                     )
                 });
                 $('#tabell_alder').selectpicker('refresh');
-                $('#tabell_alder').val(event.data.parameters.find(o => o.label == 'tabel_Åldersgrupp').value)
-                    .selectpicker(
+               
+                if (alderUnique.contains(event.data.parameters.find(o => o.label == 'tabel_Åldersgrupp').value)) {
+                    $('#tabell_alder').val(event.data.parameters.find(o => o.label == 'tabel_Åldersgrupp').value)
+                        .selectpicker(
+                            'refresh');
+                } else {
+                    $('#tabell_alder').val(alderUnique).selectpicker(
                         'refresh');
+                    sendMessage = {
+                        'type': 'changeParameter',
+                        'content': {
+                            tabel_Åldersgrupp: alderUnique
+                        }
+                    }
+                    window.parent.postMessage(message = sendMessage, targetOrigin = '*');
+                }
             }
         }
         $('.selectpicker').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
