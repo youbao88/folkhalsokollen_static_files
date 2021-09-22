@@ -231,6 +231,7 @@
                     'refresh');
 
                 $('#stapel_tidsperiod').empty();
+                console.log(tidPeriodUniqueSorted)
                 tidPeriodUniqueSorted.forEach(element => {
                     $('#stapel_tidsperiod').append(
                         `<option value="${element}" data-tokens="${element}">${element}</option>`)
