@@ -287,6 +287,13 @@
                 } else {
                     $('#stapel_tidsperiod').val(tidPeriodUniqueSorted[0]).selectpicker(
                         'refresh');
+                    sendMessage = {
+                        'type': 'changeParameter',
+                        'content': {
+                            stapel_Tidsperiod: tidPeriodUniqueSorted[0]
+                        }
+                    }
+                    window.parent.postMessage(message = sendMessage, targetOrigin = '*');
                 }
 
 
