@@ -248,17 +248,17 @@
                 $('#linje_alder').val(event.data.parameters.find(o => o.label == 'linje_Åldersgrupp').value)
                     .selectpicker('refresh');
 
-                if (inArray(event.data.parameters.find(o => o.label == 'linje_Åldersgrupp').value, aldersUnique)) {
+                if (inArray(event.data.parameters.find(o => o.label == 'linje_Åldersgrupp').value, alderUnique)) {
                     $('#linje_alder').val(event.data.parameters.find(o => o.label == 'linje_Åldersgrupp').value)
                         .selectpicker(
                             'refresh');
                 } else {
-                    $('#linje_alder').val(aldersUnique).selectpicker(
+                    $('#linje_alder').val(alderUnique).selectpicker(
                         'refresh');
                     sendMessage = {
                         'type': 'changeParameter',
                         'content': {
-                            linje_Åldersgrupp: aldersUnique
+                            linje_Åldersgrupp: alderUnique
                         }
                     }
                     window.parent.postMessage(message = sendMessage, targetOrigin = '*');
