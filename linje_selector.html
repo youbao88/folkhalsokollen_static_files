@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 
 <head>
     <title>
-        stapel_selector
+        linje_selector
     </title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -58,6 +57,7 @@
         .center {
             margin: auto !important;
         }
+
         .bootstrap-select .dropdown-menu {
             max-width: 100% !important;
         }
@@ -71,8 +71,9 @@
                 <span class='selectorText'>4. Välj område</span>
             </div>
             <div class='selectorDropdown'>
-                <select class="selectpicker show-tick" id='linje_omrade' multiple  data-live-search = "true" data-style='mySelectpicker'
-                    data-width='100%' sas-parameter='linje_Område' data-live-search-placeholder='Sök område'>
+                <select class="selectpicker show-tick" id='linje_omrade' multiple data-live-search="true"
+                    data-style='mySelectpicker' data-width='100%' sas-parameter='linje_Område'
+                    data-live-search-placeholder='Sök område'>
                 </select>
             </div>
         </div>
@@ -153,6 +154,16 @@
             "Österåker": "kommun"
         };
 
+        function inArray(target, array) {
+
+            for (var i = 0; i < array.length; i++) {
+                if (array[i] === target) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
         $('.selectpicker').selectpicker();
         $('.bs-deselect-all').addClass('hide');
         $('.bs-select-all').addClass('center');
@@ -200,7 +211,9 @@
 
                 const konUnique = unzippedData[0].unique().sort();
                 const alderUnique = unzippedData[1].unique().sort();
-                const omradeUnique = unzippedData[2].unique().sort(function(x,y){ return x == "Stockholms län" ? -1 : y == "Stockholms län" ? 1 : 0; });
+                const omradeUnique = unzippedData[2].unique().sort(function (x, y) {
+                    return x == "Stockholms län" ? -1 : y == "Stockholms län" ? 1 : 0;
+                });
 
                 $('#linje_kon').empty();
                 konUnique.forEach(element => {
@@ -211,6 +224,21 @@
                 $('#linje_kon').val(event.data.parameters.find(o => o.label == 'linje_Kön').value).selectpicker(
                     'refresh');
 
+                if (inArray(event.data.parameters.find(o => o.label == 'linje_Kön').value, konUnique)) {
+                    $('#linje_kon').val(event.data.parameters.find(o => o.label == 'linje_Kön').value).selectpicker(
+                        'refresh');
+                } else {
+                    $('#linje_kon').val(konUnique).selectpicker(
+                        'refresh');
+                    sendMessage = {
+                        'type': 'changeParameter',
+                        'content': {
+                            linje_Kön: konUnique
+                        }
+                    }
+                    window.parent.postMessage(message = sendMessage, targetOrigin = '*');
+                }
+
                 $('#linje_alder').empty();
                 alderUnique.forEach(element => {
                     $('#linje_alder').append(
@@ -220,15 +248,47 @@
                 $('#linje_alder').val(event.data.parameters.find(o => o.label == 'linje_Åldersgrupp').value)
                     .selectpicker('refresh');
 
+                if (inArray(event.data.parameters.find(o => o.label == 'linje_Åldersgrupp').value, aldersUnique)) {
+                    $('#linje_alder').val(event.data.parameters.find(o => o.label == 'linje_Åldersgrupp').value)
+                        .selectpicker(
+                            'refresh');
+                } else {
+                    $('#linje_alder').val(aldersUnique).selectpicker(
+                        'refresh');
+                    sendMessage = {
+                        'type': 'changeParameter',
+                        'content': {
+                            linje_Åldersgrupp: aldersUnique
+                        }
+                    }
+                    window.parent.postMessage(message = sendMessage, targetOrigin = '*');
+                }
+
                 $('#linje_omrade').empty();
                 omradeUnique.forEach(element => {
                     $('#linje_omrade').append(
                         `<option value="${element}" data-tokens="${element}" data-subtext="${omradeSubTextMap[element]}">${element}</option>`
-                        )
+                    )
                 });
                 $('#linje_omrade').selectpicker('refresh');
                 $('#linje_omrade').val(event.data.parameters.find(o => o.label == 'linje_Område').value).selectpicker(
                     'refresh');
+
+                if (inArray(event.data.parameters.find(o => o.label == 'linje_Område').value, omradeUnique)) {
+                    $('#linje_omrade').val(event.data.parameters.find(o => o.label == 'linje_Område').value)
+                        .selectpicker(
+                            'refresh');
+                } else {
+                    $('#linje_omrade').val(omradeUnique.slice(0,2)).selectpicker(
+                        'refresh');
+                    sendMessage = {
+                        'type': 'changeParameter',
+                        'content': {
+                            linje_Område: omradeUnique.slice(0,2)
+                        }
+                    }
+                    window.parent.postMessage(message = sendMessage, targetOrigin = '*');
+                }
             }
         }
         $('.selectpicker').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
