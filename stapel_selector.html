@@ -151,7 +151,7 @@
             "Östermalm": "stadsdel",
             "Österåker": "kommun"
         };
-        const monthOrder = ['januari', 'februari', 'mars', 'april', 'maj', 'juni', 'juli', 'augusti', 'september', 'oktober', 'november', 'december']
+        const monthOrder = ['Januari', 'Februari', 'Mars', 'April', 'Maj', 'Juni', 'Juli', 'Augusti', 'September', 'Oktober', 'November', 'December']
 
         $('.selectpicker').selectpicker();
         $('.bs-deselect-all').addClass('hide');
@@ -231,7 +231,6 @@
                     'refresh');
 
                 $('#stapel_tidsperiod').empty();
-                console.log(tidPeriodUniqueSorted)
                 tidPeriodUniqueSorted.forEach(element => {
                     $('#stapel_tidsperiod').append(
                         `<option value="${element}" data-tokens="${element}">${element}</option>`)
