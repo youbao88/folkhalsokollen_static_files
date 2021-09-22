@@ -197,9 +197,9 @@
                 const unzippedData = unzip(event.data.data);
 
                 const konUnique = unzippedData[0].unique().sort();
-                const tidsPeriodUnique = unzippedData[1].unique();
-                if (tidsperiodUnique[0].length == 4){
-                    const tidPeriodUniqueSorted = tidsperiodUnique.sort() 
+                const tidPeriodUnique = unzippedData[1].unique();
+                if (tidperiodUnique[0].length == 4){
+                    const tidPeriodUniqueSorted = tidperiodUnique.sort() 
                 }else{
                     function tidsperiodsort(x,y){
                         if (x == "Hela 2020"){
@@ -216,7 +216,7 @@
                             }
                         }
                     }
-                    const tidPeriodUniqueSorted = tidsperiodUnique.sort(tidsperiodsort);
+                    const tidPeriodUniqueSorted = tidperiodUnique.sort(tidsperiodsort);
                 }
                 const omradeUnique = unzippedData[2].unique().sort(function(x,y){ return x == "Stockholms län" ? -1 : y == "Stockholms län" ? 1 : 0; });
 
