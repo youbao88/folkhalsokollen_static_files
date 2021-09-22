@@ -156,8 +156,6 @@
             'Oktober', 'November', 'December'
         ]
 
-        var previousSelectOptions = []
-
         $('.selectpicker').selectpicker();
         $('.bs-deselect-all').addClass('hide');
         $('.bs-select-all').addClass('center');
@@ -229,45 +227,37 @@
                 const omradeUnique = unzippedData[2].unique().sort(function (x, y) {
                     return x == "Stockholms län" ? -1 : y == "Stockholms län" ? 1 : 0;
                 });
-                const currentSelectOptions = konUnique.concat(tidPeriodUniqueSorted,omradeUnique)
-                if (previousSelectOptions == 'undefined' || previousSelectOptions.toString() !== currentSelectOptions.toString()) {
 
-                    $('#stapel_kon').empty();
-                    konUnique.forEach(element => {
-                        $('#stapel_kon').append(
-                            `<option value="${element}" data-tokens="${element}">${element}</option>`)
-                    });
-                    $('#stapel_kon').selectpicker('refresh');
+                $('#stapel_kon').empty();
+                konUnique.forEach(element => {
+                    $('#stapel_kon').append(
+                        `<option value="${element}" data-tokens="${element}">${element}</option>`)
+                });
+                $('#stapel_kon').selectpicker('refresh');
+                $('#stapel_kon').val(event.data.parameters.find(o => o.label == 'stapel_Kön').value).selectpicker(
+                    'refresh');
 
-                    $('#stapel_tidsperiod').empty();
-                    tidPeriodUniqueSorted.forEach(element => {
-                        $('#stapel_tidsperiod').append(
-                            `<option value="${element}" data-tokens="${element}">${element}</option>`)
-                    });
-                    $('#stapel_tidsperiod').selectpicker('refresh');
+                $('#stapel_tidsperiod').empty();
+                tidPeriodUniqueSorted.forEach(element => {
+                    $('#stapel_tidsperiod').append(
+                        `<option value="${element}" data-tokens="${element}">${element}</option>`)
+                });
+                $('#stapel_tidsperiod').selectpicker('refresh');
+                $('#stapel_tidsperiod').val(event.data.parameters.find(o => o.label == 'stapel_Tidsperiod').value)
+                    .selectpicker('refresh');
 
-                    $('#stapel_omrade').empty();
-                    omradeUnique.forEach(element => {
-                        $('#stapel_omrade').append(
-                            `<option value="${element}" data-tokens="${element}" data-subtext="${omradeSubTextMap[element]}">${element}</option>`
-                        )
-                    });
-                    $('#stapel_omrade').selectpicker('refresh');
 
-                    previousSelectOptions = currentSelectOptions;
 
-                } else {
-
-                    $('#stapel_kon').val(event.data.parameters.find(o => o.label == 'stapel_Kön').value).selectpicker(
+                $('#stapel_omrade').empty();
+                omradeUnique.forEach(element => {
+                    $('#stapel_omrade').append(
+                        `<option value="${element}" data-tokens="${element}" data-subtext="${omradeSubTextMap[element]}">${element}</option>`
+                    )
+                });
+                $('#stapel_omrade').selectpicker('refresh');
+                $('#stapel_omrade').val(event.data.parameters.find(o => o.label == 'stapel_Område').value)
+                    .selectpicker(
                         'refresh');
-
-                    $('#stapel_tidsperiod').val(event.data.parameters.find(o => o.label == 'stapel_Tidsperiod').value)
-                        .selectpicker('refresh');
-
-                    $('#stapel_omrade').val(event.data.parameters.find(o => o.label == 'stapel_Område').value)
-                        .selectpicker(
-                            'refresh');
-                }
             }
         }
         $('.selectpicker').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
