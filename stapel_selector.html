@@ -209,6 +209,7 @@
                                 return 1
                             }else{
                                 if(x.split(" ")[1] == y.split(" ")[1]){
+                                    console.log(monthOrder.indexOf(x.split(" ")[0]) - monthOrder.indexOf(y.split(" ")[0]))
                                     return monthOrder.indexOf(x.split(" ")[0]) - monthOrder.indexOf(y.split(" ")[0])
                                 }else{
                                     return x.split(" ")[1] - y.split(" ")[1]
