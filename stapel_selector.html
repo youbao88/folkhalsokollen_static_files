@@ -204,6 +204,23 @@
         } else {
             window.attachEvent("onmessage", onMessage);
         }
+
+        $('.selectpicker').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
+            if ($(this).val().length < 1) {
+                $(this).val(previousValue);
+                $(this).selectpicker('refresh');
+            } else {
+                parameterName = e.target.attributes['sas-parameter'].textContent;
+                sendMessage = {
+                    'type': 'changeParameter',
+                    'content': {
+                        [parameterName]: $(this).val()
+                    }
+                }
+                window.parent.postMessage(message = sendMessage, targetOrigin = '*');
+            }
+        });
+
         // Retrieve data and begin processing
         function onMessage(event) {
 
@@ -280,28 +297,14 @@
                 });
                 $('#stapel_omrade').selectpicker('refresh');
                 if (inArray(event.data.parameters.find(o => o.label == 'stapel_Område').value, omradeUnique)) {
-                    $('#stapel_omrade').val(event.data.parameters.find(o => o.label == 'stapel_Område').value).selectpicker(
-                        'refresh');
+                    $('#stapel_omrade').val(event.data.parameters.find(o => o.label == 'stapel_Område').value)
+                        .selectpicker(
+                            'refresh');
                 } else {
                     $('#stapel_omrade').val(omradeUnique[0]).selectpicker(
                         'refresh');
                 }
             }
         }
-        $('.selectpicker').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
-            if ($(this).val().length < 1) {
-                $(this).val(previousValue);
-                $(this).selectpicker('refresh');
-            } else {
-                parameterName = e.target.attributes['sas-parameter'].textContent;
-                sendMessage = {
-                    'type': 'changeParameter',
-                    'content': {
-                        [parameterName]: $(this).val()
-                    }
-                }
-                window.parent.postMessage(message = sendMessage, targetOrigin = '*');
-            }
-        });
     </script>
 </body>
