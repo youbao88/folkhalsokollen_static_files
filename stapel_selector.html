@@ -270,6 +270,13 @@
                 } else {
                     $('#stapel_kon').val(konUnique).selectpicker(
                         'refresh');
+                    sendMessage = {
+                        'type': 'changeParameter',
+                        'content': {
+                            stapel_Kön: konUnique
+                        }
+                    }
+                    window.parent.postMessage(message = sendMessage, targetOrigin = '*');
                 }
 
                 $('#stapel_tidsperiod').empty();
@@ -311,6 +318,13 @@
                 } else {
                     $('#stapel_omrade').val(omradeUnique[0]).selectpicker(
                         'refresh');
+                    sendMessage = {
+                        'type': 'changeParameter',
+                        'content': {
+                            stapel_Område: omradeUnique[0]
+                        }
+                    }
+                    window.parent.postMessage(message = sendMessage, targetOrigin = '*');
                 }
             }
         }
