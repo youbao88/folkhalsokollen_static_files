@@ -114,6 +114,16 @@
             'Oktober', 'November', 'December'
         ]
 
+        function inArray(target, array) {
+
+            for (var i = 0; i < array.length; i++) {
+                if (array[i] === target) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
         $('.selectpicker').selectpicker();
         $('.bs-deselect-all').addClass('hide');
         $('.bs-select-all').addClass('center');
@@ -244,8 +254,9 @@
                     .selectpicker(
                         'refresh');
                 if (inArray(event.data.parameters.find(o => o.label == 'karta_Åldersgrupp').value, aldersUnique)) {
-                    $('#karta_alder').val(event.data.parameters.find(o => o.label == 'karta_Åldersgrupp').value).selectpicker(
-                        'refresh');
+                    $('#karta_alder').val(event.data.parameters.find(o => o.label == 'karta_Åldersgrupp').value)
+                        .selectpicker(
+                            'refresh');
                 } else {
                     $('#karta_alder').val(aldersUnique).selectpicker(
                         'refresh');
