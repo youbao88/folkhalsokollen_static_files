@@ -156,6 +156,17 @@
             'Oktober', 'November', 'December'
         ]
 
+        function inArray(target, array) {
+
+            for (var i = 0; i < array.length; i++) {
+                if (array[i] === target) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         $('.selectpicker').selectpicker();
         $('.bs-deselect-all').addClass('hide');
         $('.bs-select-all').addClass('center');
@@ -234,8 +245,14 @@
                         `<option value="${element}" data-tokens="${element}">${element}</option>`)
                 });
                 $('#stapel_kon').selectpicker('refresh');
-                $('#stapel_kon').val(event.data.parameters.find(o => o.label == 'stapel_Kön').value).selectpicker(
-                    'refresh');
+
+                if (inArray(event.data.parameters.find(o => o.label == 'stapel_Kön').value, konUnique)) {
+                    $('#stapel_kon').val(event.data.parameters.find(o => o.label == 'stapel_Kön').value).selectpicker(
+                        'refresh');
+                } else {
+                    $('#stapel_kon').val(konUnique).selectpicker(
+                        'refresh');
+                }
 
                 $('#stapel_tidsperiod').empty();
                 tidPeriodUniqueSorted.forEach(element => {
@@ -243,9 +260,16 @@
                         `<option value="${element}" data-tokens="${element}">${element}</option>`)
                 });
                 $('#stapel_tidsperiod').selectpicker('refresh');
-                $('#stapel_tidsperiod').val(event.data.parameters.find(o => o.label == 'stapel_Tidsperiod').value)
-                    .selectpicker('refresh');
 
+                if (inArray(event.data.parameters.find(o => o.label == 'stapel_Tidsperiod').value,
+                        tidPeriodUniqueSorted)) {
+                    $('#stapel_tidsperiod').val(event.data.parameters.find(o => o.label == 'stapel_Tidsperiod').value)
+                        .selectpicker(
+                            'refresh');
+                } else {
+                    $('#stapel_tidsperiod').val(tidPeriodUniqueSorted[0]).selectpicker(
+                        'refresh');
+                }
 
 
                 $('#stapel_omrade').empty();
@@ -255,9 +279,13 @@
                     )
                 });
                 $('#stapel_omrade').selectpicker('refresh');
-                $('#stapel_omrade').val(event.data.parameters.find(o => o.label == 'stapel_Område').value)
-                    .selectpicker(
+                if (inArray(event.data.parameters.find(o => o.label == 'stapel_Område').value, omradeUnique)) {
+                    $('#stapel_omrade').val(event.data.parameters.find(o => o.label == 'stapel_Område').value).selectpicker(
                         'refresh');
+                } else {
+                    $('#stapel_omrade').val(omradeUnique[0]).selectpicker(
+                        'refresh');
+                }
             }
         }
         $('.selectpicker').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
