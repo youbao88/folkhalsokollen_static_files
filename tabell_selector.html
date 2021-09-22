@@ -165,6 +165,8 @@
             "Österåker": "kommun"
         };
 
+        const monthOrder = ['Januari', 'Februari', 'Mars', 'April', 'Maj', 'Juni', 'Juli', 'Augusti', 'September', 'Oktober', 'November', 'December']
+
         $('.selectpicker').selectpicker();
         $('.bs-deselect-all').addClass('hide');
         $('.bs-select-all').addClass('center');
@@ -210,9 +212,31 @@
                 const unzippedData = unzip(event.data.data);
 
                 const konUnique = unzippedData[0].unique().sort();
-                const tidPeriodUnique = unzippedData[1].unique().sort();
-                const omradeUnique = unzippedData[2].unique().sort();
+                const tidPeriodUnique = unzippedData[1].unique();
+                const omradeUnique = unzippedData[2].unique().sort(function(x,y){ return x == "Stockholms län" ? -1 : y == "Stockholms län" ? 1 : 0; });
                 const alderUnique = unzippedData[3].unique().sort();
+
+                if (tidPeriodUnique[0].length == 4){
+                    var tidPeriodUniqueSorted = tidPeriodUnique.sort() 
+                }else{
+                    function tidsperiodsort(x,y){
+                        if (x == "Hela 2020"){
+                            return -1
+                        }else{
+                            if(y == "Hela 2020"){
+                                return 1
+                            }else{
+                                if(x.split(" ")[1] == y.split(" ")[1]){
+                                    console.log(monthOrder.indexOf(x.split(" ")[0]) - monthOrder.indexOf(y.split(" ")[0]))
+                                    return monthOrder.indexOf(x.split(" ")[0]) - monthOrder.indexOf(y.split(" ")[0])
+                                }else{
+                                    return x.split(" ")[1] - y.split(" ")[1]
+                                }
+                            }
+                        }
+                    }
+                    var tidPeriodUniqueSorted = tidPeriodUnique.sort(tidsperiodsort);
+                }
 
                 $('#tabell_kon').empty();
                 konUnique.forEach(element => {
@@ -224,7 +248,7 @@
                     'refresh');
 
                 $('#tabell_tidsperiod').empty();
-                tidPeriodUnique.forEach(element => {
+                tidPeriodUniqueSorted.forEach(element => {
                     $('#tabell_tidsperiod').append(
                         `<option value="${element}" data-tokens="${element}">${element}</option>`)
                 });

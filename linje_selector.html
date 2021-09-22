@@ -200,7 +200,7 @@
 
                 const konUnique = unzippedData[0].unique().sort();
                 const alderUnique = unzippedData[1].unique().sort();
-                const omradeUnique = unzippedData[2].unique().sort();
+                const omradeUnique = unzippedData[2].unique().sort(function(x,y){ return x == "Stockholms län" ? -1 : y == "Stockholms län" ? 1 : 0; });
 
                 $('#linje_kon').empty();
                 konUnique.forEach(element => {
