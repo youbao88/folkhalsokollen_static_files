@@ -155,28 +155,20 @@
         const monthOrder = ['Januari', 'Februari', 'Mars', 'April', 'Maj', 'Juni', 'Juli', 'Augusti', 'September',
             'Oktober', 'November', 'December'
         ]
-
-        function inArray(target, array) {
-
-            for (var i = 0; i < array.length; i++) {
-                if (array[i] === target) {
-                    return true;
+        Array.prototype.contains = function (v) {
+            if (Array.isArray(v)) {
+                return v.every(ai => this.includes(ai));
+            } else {
+                for (var i = 0; i < this.length; i++) {
+                    if (this[i] === v) return true;
                 }
+                return false;
             }
-
-            return false;
-        }
+        };
 
         $('.selectpicker').selectpicker();
         $('.bs-deselect-all').addClass('hide');
         $('.bs-select-all').addClass('center');
-
-        Array.prototype.contains = function (v) {
-            for (var i = 0; i < this.length; i++) {
-                if (this[i] === v) return true;
-            }
-            return false;
-        };
 
         Array.prototype.unique = function () {
             var arr = [];
@@ -264,7 +256,7 @@
                 });
                 $('#stapel_kon').selectpicker('refresh');
 
-                if (inArray(event.data.parameters.find(o => o.label == 'stapel_Kön').value, konUnique)) {
+                if (konUnique.contains(event.data.parameters.find(o => o.label == 'stapel_Kön').value)) {
                     $('#stapel_kon').val(event.data.parameters.find(o => o.label == 'stapel_Kön').value).selectpicker(
                         'refresh');
                 } else {
@@ -286,8 +278,7 @@
                 });
                 $('#stapel_tidsperiod').selectpicker('refresh');
 
-                if (inArray(event.data.parameters.find(o => o.label == 'stapel_Tidsperiod').value,
-                        tidPeriodUniqueSorted)) {
+                if (tidPeriodUniqueSorted.contains(event.data.parameters.find(o => o.label == 'stapel_Tidsperiod').value)) {
                     $('#stapel_tidsperiod').val(event.data.parameters.find(o => o.label == 'stapel_Tidsperiod').value)
                         .selectpicker(
                             'refresh');
@@ -311,7 +302,7 @@
                     )
                 });
                 $('#stapel_omrade').selectpicker('refresh');
-                if (inArray(event.data.parameters.find(o => o.label == 'stapel_Område').value, omradeUnique)) {
+                if (omradeUnique.contains(event.data.parameters.find(o => o.label == 'stapel_Område').value)) {
                     $('#stapel_omrade').val(event.data.parameters.find(o => o.label == 'stapel_Område').value)
                         .selectpicker(
                             'refresh');
