@@ -153,6 +153,8 @@
         };
         const monthOrder = ['Januari', 'Februari', 'Mars', 'April', 'Maj', 'Juni', 'Juli', 'Augusti', 'September', 'Oktober', 'November', 'December']
 
+        var previousEventDataHash
+
         $('.selectpicker').selectpicker();
         $('.bs-deselect-all').addClass('hide');
         $('.bs-select-all').addClass('center');
@@ -192,6 +194,7 @@
         }
         // Retrieve data and begin processing
         function onMessage(event) {
+            console.log(event)
             if (event && event.data) {
 
                 const unzippedData = unzip(event.data.data);
