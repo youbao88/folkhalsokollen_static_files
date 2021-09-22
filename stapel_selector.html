@@ -229,9 +229,8 @@
                 const omradeUnique = unzippedData[2].unique().sort(function (x, y) {
                     return x == "Stockholms län" ? -1 : y == "Stockholms län" ? 1 : 0;
                 });
-                if (previousSelectOptions === 'undefined' || previousSelectOptions !== konUnique.concat(tidPeriodUniqueSorted,omradeUnique)) {
-
-
+                const currentSelectOptions = konUnique.concat(tidPeriodUniqueSorted,omradeUnique)
+                if (previousSelectOptions == 'undefined' || previousSelectOptions.toString() !== currentSelectOptions.toString()) {
 
                     $('#stapel_kon').empty();
                     konUnique.forEach(element => {
@@ -255,7 +254,7 @@
                     });
                     $('#stapel_omrade').selectpicker('refresh');
 
-                    previousSelectOptions = konUnique.concat(tidPeriodUniqueSorted,omradeUnique);
+                    previousSelectOptions = currentSelectOptions;
 
                 } else {
 
