@@ -226,7 +226,7 @@
                     $('#stapel_kon').append(
                         `<option value="${element}" data-tokens="${element}">${element}</option>`)
                 });
-                $('#stapel_kon').selectpicker('refresh');
+                // $('#stapel_kon').selectpicker('refresh');
                 $('#stapel_kon').val(event.data.parameters.find(o => o.label == 'stapel_Kön').value).selectpicker(
                     'refresh');
 
@@ -235,7 +235,7 @@
                     $('#stapel_tidsperiod').append(
                         `<option value="${element}" data-tokens="${element}">${element}</option>`)
                 });
-                $('#stapel_tidsperiod').selectpicker('refresh');
+                // $('#stapel_tidsperiod').selectpicker('refresh');
                 $('#stapel_tidsperiod').val(event.data.parameters.find(o => o.label == 'stapel_Tidsperiod').value)
                     .selectpicker('refresh');
 
@@ -245,7 +245,7 @@
                         `<option value="${element}" data-tokens="${element}" data-subtext="${omradeSubTextMap[element]}">${element}</option>`
                     )
                 });
-                $('#stapel_omrade').selectpicker('refresh');
+                // $('#stapel_omrade').selectpicker('refresh');
                 $('#stapel_omrade').val(event.data.parameters.find(o => o.label == 'stapel_Område').value).selectpicker(
                     'refresh');
             }
