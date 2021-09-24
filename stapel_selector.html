@@ -61,6 +61,10 @@
         .bootstrap-select .dropdown-menu {
             max-width: 100% !important;
         }
+
+        .bootstrap-select .dropdown-menu li a{
+            padding-left: 15px !important;
+        }
     </style>
 </head>
 
@@ -71,8 +75,8 @@
                 <span class='selectorText'>4. Välj tidsperiod</span>
             </div>
             <div class='selectorDropdown'>
-                <select class="selectpicker show-tick" id='stapel_tidsperiod' data-style='mySelectpicker'
-                    data-width='100%' sas-parameter='stapel_Tidsperiod'>
+                <select class="selectpicker" id='stapel_tidsperiod' data-style='mySelectpicker' data-width='100%'
+                    sas-parameter='stapel_Tidsperiod'>
                 </select>
             </div>
         </div>
@@ -278,7 +282,8 @@
                 });
                 $('#stapel_tidsperiod').selectpicker('refresh');
 
-                if (tidPeriodUniqueSorted.contains(event.data.parameters.find(o => o.label == 'stapel_Tidsperiod').value)) {
+                if (tidPeriodUniqueSorted.contains(event.data.parameters.find(o => o.label == 'stapel_Tidsperiod')
+                        .value)) {
                     $('#stapel_tidsperiod').val(event.data.parameters.find(o => o.label == 'stapel_Tidsperiod').value)
                         .selectpicker(
                             'refresh');
