@@ -61,6 +61,10 @@
         .bootstrap-select .dropdown-menu {
             max-width: 100% !important;
         }
+
+        .bootstrap-select .dropdown-menu li a {
+            padding-left: 15px !important;
+        }
     </style>
 </head>
 
@@ -71,7 +75,7 @@
                 <span class='selectorText'>4. Välj område</span>
             </div>
             <div class='selectorDropdown'>
-                <select class="selectpicker show-tick" id='linje_omrade' multiple data-live-search="true"
+                <select class="selectpicker" id='linje_omrade' multiple data-live-search="true"
                     data-style='mySelectpicker' data-width='100%' sas-parameter='linje_Område'
                     data-live-search-placeholder='Sök område'>
                 </select>
@@ -160,7 +164,7 @@
 
         Array.prototype.contains = function (v) {
             if (Array.isArray(v)) {
-                return v.every( ai => this.includes(ai) );
+                return v.every(ai => this.includes(ai));
             } else {
                 for (var i = 0; i < this.length; i++) {
                     if (this[i] === v) return true;
@@ -237,7 +241,7 @@
                         `<option value="${element}" data-tokens="${element}">${element}</option>`)
                 });
                 $('#linje_alder').selectpicker('refresh');
-               
+
                 if (alderUnique.contains(event.data.parameters.find(o => o.label == 'linje_Åldersgrupp').value)) {
                     $('#linje_alder').val(event.data.parameters.find(o => o.label == 'linje_Åldersgrupp').value)
                         .selectpicker(
@@ -261,7 +265,7 @@
                     )
                 });
                 $('#linje_omrade').selectpicker('refresh');
-               
+
                 if (omradeUnique.contains(event.data.parameters.find(o => o.label == 'linje_Område').value)) {
                     $('#linje_omrade').val(event.data.parameters.find(o => o.label == 'linje_Område').value)
                         .selectpicker(

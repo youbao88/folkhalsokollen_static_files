@@ -61,6 +61,10 @@
         .bootstrap-select .dropdown-menu {
             max-width: 100% !important;
         }
+
+        .bootstrap-select .dropdown-menu li a {
+            padding-left: 15px !important;
+        }
     </style>
 </head>
 
@@ -324,7 +328,7 @@
                     )
                 });
                 $('#tabell_alder').selectpicker('refresh');
-               
+
                 if (alderUnique.contains(event.data.parameters.find(o => o.label == 'tabel_Åldersgrupp').value)) {
                     $('#tabell_alder').val(event.data.parameters.find(o => o.label == 'tabel_Åldersgrupp').value)
                         .selectpicker(
