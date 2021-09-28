@@ -95,7 +95,7 @@
             </div>
             <div class='selectorDropdown'>
                 <select class="selectpicker" id='linje_kon' multiple data-style='mySelectpicker' data-width='100%'
-                    data-actions-box="true" data-select-all-text='välj alla' sas-parameter='linje_Kön' data-icon-base='fa' data-tick-icon='fa-circle'>
+                    data-actions-box="true" data-select-all-text='välj alla' sas-parameter='linje_Kön'>
                 </select>
             </div>
         </div>
@@ -167,7 +167,7 @@
             "Österåker": "kommun"
         };
 
-        $('.selectpicker').selectpicker();
+        $('.selectpicker').selectpicker({iconBase: "fa", tickIcon = "fa-circle"});
         $('.bs-deselect-all').addClass('hide');
         $('.bs-select-all').addClass('center');
 
