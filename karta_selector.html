@@ -170,8 +170,6 @@
         function onMessage(event) {
             if (event && event.data) {
 
-                console.log(event.data)
-
                 const unzippedData = unzip(event.data.data);
 
                 const konUnique = unzippedData[0].unique().sort();
