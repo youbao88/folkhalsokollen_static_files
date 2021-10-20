@@ -121,7 +121,7 @@
                 var barchart;
                 var first_level_data = {};
                 // var second_level_data = {};
-                var event_rows = event_data["data"];
+                var event_rows = event.data.data;
                 for (var i = 0; i < event_rows.length; i++) {
                     if (first_level_data[event_rows[i][2]] == undefined) {
                         first_level_data[event_rows[i][2]] = event_rows[i][1]
