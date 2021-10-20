@@ -65,7 +65,7 @@
 
         .info {
             padding: 10px 10px;
-            font: 17px Arial, Helvetica, sans-serif;
+            font: 13px Arial, Helvetica, sans-serif;
             background: white;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
             border-radius: 5px;
@@ -100,9 +100,9 @@
 
 <body>
     <div class="visualization" style="width: 100%; display:flex">
-        <div style="width: 50%; height: 500px" id='karta'>
+        <div style="width: 50%; height: 520px" id='karta'>
         </div>
-        <div style="width: 50%; height: 500px">
+        <div style="width: 50%; height: 520px">
             <canvas id='karta_stapel'></canvas>
         </div>
     </div>
@@ -233,7 +233,7 @@
                             this._div.innerHTML = (props ? '<b>Omräde:</b>' + props.omr_namn +
                                 '<br /><b> Värde: </b>' +
                                 props
-                                .value + '</br><b>Enhet: </b>' + unit : ' ')
+                                .value.to_fixed(2) + '</br><b>Enhet: </b>' + unit : ' ')
                         };
 
 
