@@ -116,11 +116,11 @@
         } else {
             window.attachEvent("onmessage", onMessage);
         }
+        var mymap
 
         function onMessage(event) {
 
             if (event && event.data) {
-
                 var barchart;
                 var first_level_data = {};
                 // var second_level_data = {};
@@ -189,8 +189,12 @@
                             stockholm_kommun_sorted[i].properties.value = first_level_data[omrade]
                         }
 
+                        if(mymap !== undefined && mymap !== null){
+                            mymap.remove()
+                        }
+
                         // For the choropleth
-                        var mymap = L.map('karta', {
+                        mymap = L.map('karta', {
                             attributionControl: false,
                             gestureHandling: true,
                             gestureHandlingOptions:{
