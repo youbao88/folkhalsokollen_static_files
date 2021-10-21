@@ -312,8 +312,8 @@
                             for (var i = 0; i < grades.length; i++) {
                                 div.innerHTML +=
                                     '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
-                                    grades[i].toFixed(1) + (grades[i + 1] ? '&ndash;' + grades[i + 1].toFixed(
-                                            1) +
+                                    grades[i].toFixed(2) + (grades[i + 1] ? '&ndash;' + grades[i + 1].toFixed(
+                                            2) +
                                         '<br>' : '+');
                             }
                             return div;
