@@ -100,9 +100,9 @@
 
 <body>
     <div class="visualization" style="width: 100%; display:flex">
-        <div style="width: 50%; height: 520px" id='karta'>
+        <div style="width: 50%; height: 96vh" id='karta'>
         </div>
-        <div style="width: 50%; height: 520px">
+        <div style="width: 50%; height: 96vh">
             <canvas id='karta_stapel'></canvas>
         </div>
     </div>
@@ -399,6 +399,11 @@
                                 indexAxis: 'y',
                                 scales: {
                                     y: {
+                                        ticks:{
+                                            font:{
+                                                size: 10
+                                            }
+                                        },
                                         grid: {
                                             display: false,
                                         }
