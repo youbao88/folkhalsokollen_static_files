@@ -8,6 +8,9 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
         crossorigin=""></script>
+    <link rel="stylesheet" href="//unpkg.com/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.css"
+        type="text/css">
+    <script src="//unpkg.com/leaflet-gesture-handling"></script>
     <style>
         body {
             font-family: Arial, Verdana, Helvetica;
@@ -188,7 +191,15 @@
 
                         // For the choropleth
                         var mymap = L.map('karta', {
-                            attributionControl: false
+                            attributionControl: false,
+                            gestureHandling: true,
+                            gestureHandlingOptions:{
+                                text:{
+                                    touch: 'Använd två fingrar för att flytta kartan',
+                                    scroll: 'Använd ctrl + scroll för att zooma på kartan',
+                                    scrollMac: 'Använd \u2318 + scroll för att zooma på kartan'
+                                }
+                            }
                         }).setView([59.5, 18.15], 8);
                         // L.tileLayer('https://api.mapbox.com/styles/v1/minhaozhou/ckuy5xu3f8wu418qvg14sl6z7/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWluaGFvemhvdSIsImEiOiJja3JhZHptb3kwMTV3MnBwZW5hbmFxbGN3In0.BoVuzuGBe0nvmr3txBfscA'
                         // , {
@@ -307,7 +318,8 @@
                                     first_value_min + 3 * interval
                                 ],
                                 labels = [];
-                            div.innerHTML += '<h4 style = "text-align: center; font-weight: bold; margin : 8px">Värde</h4>'
+                            div.innerHTML +=
+                                '<h4 style = "text-align: center; font-weight: bold; margin : 8px">Värde</h4>'
                             // loop through our density intervals and generate a label with a colored square for each interval
                             for (var i = 0; i < grades.length; i++) {
                                 div.innerHTML +=
@@ -399,9 +411,9 @@
                                 indexAxis: 'y',
                                 scales: {
                                     y: {
-                                        ticks:{
+                                        ticks: {
                                             autoSkip: false,
-                                            font:{
+                                            font: {
                                                 size: 11
                                             }
                                         },
