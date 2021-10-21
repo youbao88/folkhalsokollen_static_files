@@ -117,6 +117,7 @@
             window.attachEvent("onmessage", onMessage);
         }
         var mymap
+        var barchart
 
         function onMessage(event) {
 
@@ -190,7 +191,10 @@
                         }
 
                         if(mymap !== undefined && mymap !== null){
-                            mymap.remove()
+                            mymap.remove();
+                        }
+                        if(barchart !== undefined && barchart !== null){
+                            barchart.destroy();
                         }
 
                         // For the choropleth
@@ -372,7 +376,7 @@
                         // For bar chart
                         var previous_hovered_omr
                         var ctx = document.getElementById('karta_stapel').getContext('2d');
-                        var barchart = new Chart(ctx, {
+                        barchart = new Chart(ctx, {
                             type: 'bar',
                             data: {
                                 responsive: true,
