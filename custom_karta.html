@@ -98,6 +98,19 @@
         .leaflet-container {
             background-color: rgba(255, 0, 0, 0.0);
         }
+
+        #karta::after {
+            width: 100%;
+            z-index: 1;
+        }
+
+        #karta.leaflet-gesture-handling-scroll-warning::after {
+            z-index: 1001;
+        }
+
+        #karta.leaflet-gesture-handling-touch-warning::after {
+            z-index: 1001;
+        }
     </style>
 </head>
 
@@ -189,11 +202,11 @@
                             stockholm_kommun_sorted[i].properties.value = first_level_data[omrade]
                         }
 
-                        if(mymap !== undefined && mymap !== null){
+                        if (mymap !== undefined && mymap !== null) {
                             mymap.gestureHandling.disable();
                             mymap.remove();
                         }
-                        if(barchart !== undefined && barchart !== null){
+                        if (barchart !== undefined && barchart !== null) {
                             barchart.destroy();
                         }
 
@@ -201,8 +214,8 @@
                         mymap = L.map('karta', {
                             attributionControl: false,
                             gestureHandling: true,
-                            gestureHandlingOptions:{
-                                text:{
+                            gestureHandlingOptions: {
+                                text: {
                                     touch: 'Använd två fingrar för att flytta kartan',
                                     scroll: 'Använd ctrl + scroll för att zooma på kartan',
                                     scrollMac: 'Använd \u2318 + scroll för att zooma på kartan'
