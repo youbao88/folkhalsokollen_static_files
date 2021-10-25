@@ -363,34 +363,50 @@
                             if (omr_namn !== 'Stockholms län' && omr_namn !== 'Stockholm') {
                                 geojson.eachLayer(function (layer) {
                                     if (layer.feature.properties.omr_namn == hovered_omr) {
-                                        hovered_layer = layer
+                                        layer.setStyle({
+                                            weight: 5,
+                                            color: '#666',
+                                            dashArray: '',
+                                            fillOpacity: 1.0
+                                        })
+                                        info.addTo(mymap)
+                                        info.update(layer.feature.properties);
+
+                                        if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+                                            layer.bringToFront();
+                                        }
+
                                         return;
                                     }
                                 })
-                                info.addTo(mymap)
-                                info.update(hovered_layer.feature.properties);
                             } else {
                                 if (omr_namn == 'Stockholms län') {
-                                    hovered_layer = geojson
+                                    geojson.eachLayer(function (layer) {
+                                        layer.setStyle({
+                                            weight: 5,
+                                            color: '#666',
+                                            dashArray: '',
+                                            fillOpacity: 1.0
+                                        })
+                                        if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+                                            layer.bringToFront();
+                                        }
+                                    })
                                 } else {
-                                    hovered_layer = []
                                     geojson.eachLayer(function (layer) {
                                         if (layer.feature.properties.omr_namn in stadsdelarList) {
-                                            hovered_layer.push(layer)
+                                            layer.setStyle({
+                                                weight: 5,
+                                                color: '#666',
+                                                dashArray: '',
+                                                fillOpacity: 1.0
+                                            })
+                                            if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+                                                layer.bringToFront();
+                                            }
                                         }
                                     })
                                 }
-                            }
-
-                            hovered_layer.setStyle({
-                                weight: 5,
-                                color: '#666',
-                                dashArray: '',
-                                fillOpacity: 1.0
-                            });
-
-                            if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
-                                hovered_layer.bringToFront();
                             }
                         }
 
@@ -399,26 +415,26 @@
                                 if (omr_namn !== 'Stockholms län' && omr_namn !== 'Stockholm') {
                                     geojson.eachLayer(function (layer) {
                                         if (layer.feature.properties.omr_namn == hovered_omr) {
-                                            hovered_layer = layer
+                                            geojson.resetStyle(layer);
+                                            info.remove();
                                             return;
                                         }
                                     })
                                 } else {
                                     if (omr_namn == 'Stockholms län') {
-                                        hovered_layer = geojson
+                                        geojson.eachLayer(function (layer) {
+                                            geojson.resetStyle(layer);
+                                        })
                                     } else {
-                                        hovered_layer = []
                                         geojson.eachLayer(function (layer) {
                                             if (layer.feature.properties.omr_namn in
                                                 stadsdelarList) {
-                                                hovered_layer.push(layer)
+                                                geojson.resetStyle(layer);
                                             }
                                         })
                                     }
                                 }
                             })
-                            geojson.resetStyle(hovered_layer);
-                            info.remove();
                         }
 
                         // For bar chart
@@ -484,7 +500,6 @@
                                         if (previous_hovered_omr == null) {
                                             hovered_omr = event.chart.data.labels[elements[0].index]
                                             highlightFeatureFromBar(hovered_omr)
-
                                             previous_hovered_omr = hovered_omr
                                         }
                                     } else {
