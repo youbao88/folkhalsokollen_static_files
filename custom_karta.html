@@ -364,41 +364,30 @@
                                 geojson.eachLayer(function (layer) {
                                     if (layer.feature.properties.omr_namn == hovered_omr) {
                                         hovered_layer = layer
-                                        return
+                                        return;
                                     }
                                 })
-                                hovered_layer.setStyle({
-                                    weight: 5,
-                                    color: '#666',
-                                    dashArray: '',
-                                    fillOpacity: 1.0
-                                });
-
                                 info.addTo(mymap)
                                 info.update(hovered_layer.feature.properties);
                             } else {
                                 if (omr_namn == 'Stockholms län') {
-                                    geojson.eachLayer(function (layer) {
-                                        layer.setStyle({
-                                            weight: 5,
-                                            color: '#666',
-                                            dashArray: '',
-                                            fillOpacity: 1.0
-                                        });
-                                    });
+                                    hovered_layer = geojson
                                 } else {
+                                    hovered_layer = []
                                     geojson.eachLayer(function (layer) {
                                         if (layer.feature.properties.omr_namn in stadsdelarList) {
-                                            layer.setStyle({
-                                                weight: 5,
-                                                color: '#666',
-                                                dashArray: '',
-                                                fillOpacity: 1.0
-                                            });
+                                            hovered_layer.push(layer)
                                         }
                                     })
                                 }
                             }
+
+                            hovered_layer.setStyle({
+                                weight: 5,
+                                color: '#666',
+                                dashArray: '',
+                                fillOpacity: 1.0
+                            });
 
                             if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
                                 hovered_layer.bringToFront();
@@ -407,9 +396,25 @@
 
                         function resetHighlightFromBar(omr_namn) {
                             geojson.eachLayer(function (layer) {
-                                if (layer.feature.properties.omr_namn == hovered_omr) {
-                                    hovered_layer = layer
-                                    return
+                                if (omr_namn !== 'Stockholms län' && omr_namn !== 'Stockholm') {
+                                    geojson.eachLayer(function (layer) {
+                                        if (layer.feature.properties.omr_namn == hovered_omr) {
+                                            hovered_layer = layer
+                                            return;
+                                        }
+                                    })
+                                } else {
+                                    if (omr_namn == 'Stockholms län') {
+                                        hovered_layer = geojson
+                                    } else {
+                                        hovered_layer = []
+                                        geojson.eachLayer(function (layer) {
+                                            if (layer.feature.properties.omr_namn in
+                                                stadsdelarList) {
+                                                hovered_layer.push(layer)
+                                            }
+                                        })
+                                    }
                                 }
                             })
                             geojson.resetStyle(hovered_layer);
