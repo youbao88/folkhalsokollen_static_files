@@ -131,6 +131,11 @@
         }
         var mymap
         var barchart
+        var stadsdelarList = [
+            'Bromma', 'Enskede-Årsta-Vantörs', 'Farsta', 'Hägersten-Älvsjö', 'Hässelby-Vällingby', 'Kungsholmens',
+            'Norrmalms', 'Rinkeby-Kista',
+            'Skarpnäcks', 'Skärholmens', 'Spånga-Tensta', 'Södermalms', 'Östermalms'
+        ]
 
         function onMessage(event) {
 
@@ -355,24 +360,49 @@
                         legend.addTo(mymap);
 
                         function highlightFeatureFromBar(omr_namn) {
-                            geojson.eachLayer(function (layer) {
-                                if (layer.feature.properties.omr_namn == hovered_omr) {
-                                    hovered_layer = layer
-                                    return
+                            if (omr_namn !== 'Stockholms län' && omr_namn !== 'Stockholm') {
+                                geojson.eachLayer(function (layer) {
+                                    if (layer.feature.properties.omr_namn == hovered_omr) {
+                                        hovered_layer = layer
+                                        return
+                                    }
+                                })
+                                hovered_layer.setStyle({
+                                    weight: 5,
+                                    color: '#666',
+                                    dashArray: '',
+                                    fillOpacity: 1.0
+                                });
+
+                                info.addTo(mymap)
+                                info.update(hovered_layer.feature.properties);
+                            } else {
+                                if (omr_namn == 'Stockholms län') {
+                                    geojson.eachLayer(function (layer) {
+                                        layer.setStyle({
+                                            weight: 5,
+                                            color: '#666',
+                                            dashArray: '',
+                                            fillOpacity: 1.0
+                                        });
+                                    });
+                                } else {
+                                    geojson.eachLayer(function (layer) {
+                                        if (layer.feature.properties.omr_namn in stadsdelarList) {
+                                            layer.setStyle({
+                                                weight: 5,
+                                                color: '#666',
+                                                dashArray: '',
+                                                fillOpacity: 1.0
+                                            });
+                                        }
+                                    })
                                 }
-                            })
-                            hovered_layer.setStyle({
-                                weight: 5,
-                                color: '#666',
-                                dashArray: '',
-                                fillOpacity: 1.0
-                            });
+                            }
 
                             if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
                                 hovered_layer.bringToFront();
                             }
-                            info.addTo(mymap)
-                            info.update(hovered_layer.feature.properties);
                         }
 
                         function resetHighlightFromBar(omr_namn) {
