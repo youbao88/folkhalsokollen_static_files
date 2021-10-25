@@ -267,7 +267,7 @@
                             var layer = e.target;
 
                             layer.setStyle({
-                                weight: 5,
+                                weight: 3,
                                 color: '#666',
                                 dashArray: '',
                                 fillOpacity: 1.0
@@ -352,7 +352,7 @@
                                 geojson.eachLayer(function (layer) {
                                     if (layer.feature.properties.omr_namn == hovered_omr) {
                                         layer.setStyle({
-                                            weight: 5,
+                                            weight: 3,
                                             color: '#666',
                                             dashArray: '',
                                             fillOpacity: 1.0
@@ -371,7 +371,7 @@
                                 if (omr_namn == 'Stockholms län') {
                                     geojson.eachLayer(function (layer) {
                                         layer.setStyle({
-                                            weight: 5,
+                                            weight: 3,
                                             color: '#666',
                                             dashArray: '',
                                             fillOpacity: 1.0
@@ -384,7 +384,7 @@
                                     geojson.eachLayer(function (layer) {
                                         if (stadsdelarList.includes(layer.feature.properties.omr_namn)) {
                                             layer.setStyle({
-                                                weight: 5,
+                                                weight: 3,
                                                 color: '#666',
                                                 dashArray: '',
                                                 fillOpacity: 1.0
