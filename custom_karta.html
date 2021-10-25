@@ -394,7 +394,7 @@
                                     })
                                 } else {
                                     geojson.eachLayer(function (layer) {
-                                        if (layer.feature.properties.omr_namn in stadsdelarList) {
+                                        if (stadsdelarList.includes(layer.feature.properties.omr_namn)) {
                                             layer.setStyle({
                                                 weight: 5,
                                                 color: '#666',
@@ -427,8 +427,7 @@
                                         })
                                     } else {
                                         geojson.eachLayer(function (layer) {
-                                            if (layer.feature.properties.omr_namn in
-                                                stadsdelarList) {
+                                            if (stadsdelarList.includes(layer.feature.properties.omr_namn)) {
                                                 geojson.resetStyle(layer);
                                             }
                                         })
