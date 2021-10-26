@@ -12,6 +12,7 @@
         type="text/css">
     <script src="//unpkg.com/leaflet-gesture-handling"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-image/v0.0.4/leaflet-image.js'></script>
     <style>
         body {
             font-family: Arial, Verdana, Helvetica;
@@ -609,10 +610,14 @@
                         // });
                     });
             } else {
-                if (event.data.type && event.data.type == "takeScreenShot") {
+                if (event.data && event.data.type && event.data.type == "takeScreenShot") {
                     var stapelBase64 = barchart.toBase64Image();
-                    var mapBase64 = document.getElementsByClassName('leaflet-zoom-animated')[0]
-                        .toDataUrl();
+
+                    leafletImage(map, function (err, canvas) {
+                        console.log(canvas.toDataURL())
+                        return canvas.toDataURL();
+                    });
+
                     var messageToMain = {
                         type: 'screenshotKarta',
                         content: {
