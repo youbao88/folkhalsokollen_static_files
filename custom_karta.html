@@ -613,7 +613,7 @@
                 if (event.data && event.data.type && event.data.type == "takeScreenShot") {
                     var stapelBase64 = barchart.toBase64Image();
 
-                    leafletImage(map, function (err, canvas) {
+                    leafletImage(mymap, function (err, canvas) {
                         console.log(canvas.toDataURL())
                         return canvas.toDataURL();
                     });
