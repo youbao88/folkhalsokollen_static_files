@@ -610,7 +610,7 @@
                     });
             }
         
-            leafletImage(map, function(err, canvas){
+            leafletImage(mymap, function(err, canvas){
                 var mapBase64 = canvas.toDataUrl();
                 var stapelBase64 = barchart.toBase64Image();
                 messageToMain = {
