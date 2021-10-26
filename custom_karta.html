@@ -206,7 +206,6 @@
 
                         // For the choropleth
                         mymap = L.map('karta', {
-                            renderer: L.canvas(),
                             attributionControl: false,
                             gestureHandling: true,
                             gestureHandlingOptions: {
@@ -316,6 +315,7 @@
                         }
 
                         geojson = L.geoJson(stockholm_kommun_sorted, {
+                            renderer: L.canvas(),
                             style: style,
                             onEachFeature: onEachFeature
                         });
