@@ -12,6 +12,7 @@
         type="text/css">
     <script src="//unpkg.com/leaflet-gesture-handling"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-image/v0.0.4/leaflet-image.js'></script>
     <style>
         body {
             font-family: Arial, Verdana, Helvetica;
@@ -455,7 +456,6 @@
                                             left: 6
                                         },
                                         clamp: true,
-                                        color: 'black',
                                         font:{
                                             size: 11
                                         }
@@ -464,13 +464,13 @@
                                     tooltip: {
                                         backgroundColor: '#F8F9FA',
                                         bodyFont: {
-                                            size: 16
+                                            size: 14
                                         },
                                         bodyColor: '#000000',
                                         displayColors: false,
                                         titleColor: '#000000',
                                         titleFont: {
-                                            size: 16
+                                            size: 14
                                         },
                                         cornerRadius: 3,
                                         borderColor: '#000000',
@@ -492,7 +492,6 @@
                                             font: {
                                                 size: 11
                                             },
-                                            color: 'black'
                                         },
                                         grid: {
                                             display: false,
@@ -610,6 +609,20 @@
                         // });
                     });
             }
+        
+            leafletImage(map, function(err, canvas){
+                var mapBase64 = canvas.toDataUrl();
+                var stapelBase64 = barchart.toBase64Image();
+                messageToMain = {
+                    type: 'screenshotKarta',
+                    content: {
+                        'karta': mapBase64,
+                        'stapel': stapelBase64
+                    }
+                }
+                console.log(messageToMain);
+                window.parent.postMessage(message = sendMessage, targetOrigin = '*');
+            })
         }
     </script>
 </body>
