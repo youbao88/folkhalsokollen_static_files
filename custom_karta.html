@@ -609,10 +609,10 @@
                         // });
                     });
             } else {
-                if (event.data.type == "takeScreenShot") {
+                if (event.data.type && event.data.type == "takeScreenShot") {
+                    var stapelBase64 = barchart.toBase64Image();
                     var mapBase64 = document.getElementsByClassName('leaflet-zoom-animated')[0]
                         .toDataUrl();
-                    var stapelBase64 = barchart.toBase64Image();
                     var messageToMain = {
                         type: 'screenshotKarta',
                         content: {
