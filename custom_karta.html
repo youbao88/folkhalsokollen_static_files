@@ -12,7 +12,6 @@
         type="text/css">
     <script src="//unpkg.com/leaflet-gesture-handling"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
-    <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-image/v0.0.4/leaflet-image.js'></script>
     <style>
         body {
             font-family: Arial, Verdana, Helvetica;
@@ -453,11 +452,11 @@
                                         },
                                         anchor: 'end',
                                         align: 'right',
-                                        padding:{
+                                        padding: {
                                             left: 6
                                         },
                                         clamp: true,
-                                        font:{
+                                        font: {
                                             size: 11
                                         }
                                     },
@@ -610,20 +609,18 @@
                         // });
                     });
             }
-        
-            leafletImage(mymap, function(err, canvas){
-                var mapBase64 = canvas.toDataUrl();
-                var stapelBase64 = barchart.toBase64Image();
-                messageToMain = {
-                    type: 'screenshotKarta',
-                    content: {
-                        'karta': mapBase64,
-                        'stapel': stapelBase64
-                    }
+
+            var mapBase64 = document.getElementsByClassName('leaflet-zoom-animated')[0].toDataUrl();
+            var stapelBase64 = barchart.toBase64Image();
+            messageToMain = {
+                type: 'screenshotKarta',
+                content: {
+                    'karta': mapBase64,
+                    'stapel': stapelBase64
                 }
-                console.log(messageToMain);
-                window.parent.postMessage(message = sendMessage, targetOrigin = '*');
-            })
+            }
+            console.log(messageToMain);
+            window.parent.postMessage(message = sendMessage, targetOrigin = '*');
         }
     </script>
 </body>
