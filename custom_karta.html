@@ -607,26 +607,27 @@
                         //     button = document.getElementById('back_btn');
                         //     button.style.display = 'none';
                         // });
+
+                        var callBack = function () {
+                            console.log(document.getElementsByClassName('leaflet-zoom-animated')[0]);
+                            // do some stuff
+                        };
+                        mymap.whenReady(callBack);
+
+                        var mapBase64 = document.getElementsByClassName('leaflet-zoom-animated')[0].toDataUrl();
+                        var stapelBase64 = barchart.toBase64Image();
+                        var messageToMain = {
+                            type: 'screenshotKarta',
+                            content: {
+                                'karta': mapBase64,
+                                'stapel': stapelBase64
+                            }
+                        }
+                        console.log(messageToMain);
+                        window.parent.postMessage(message = sendMessage, targetOrigin = '*');
                     });
             }
 
-            var callBack = function () {
-                console.log(document.getElementsByClassName('leaflet-zoom-animated')[0]);
-                // do some stuff
-            };
-            mymap.whenReady(callBack);
-
-            var mapBase64 = document.getElementsByClassName('leaflet-zoom-animated')[0].toDataUrl();
-            var stapelBase64 = barchart.toBase64Image();
-            var messageToMain = {
-                type: 'screenshotKarta',
-                content: {
-                    'karta': mapBase64,
-                    'stapel': stapelBase64
-                }
-            }
-            console.log(messageToMain);
-            window.parent.postMessage(message = sendMessage, targetOrigin = '*');
 
         }
     </script>
