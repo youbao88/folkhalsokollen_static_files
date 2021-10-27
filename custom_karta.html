@@ -613,7 +613,6 @@
                 if (event.data && event.data.type && event.data.type == "takeScreenShot") {
                     var stapelBase64 = barchart.toBase64Image();
 
-                    console.log(document.getElementsByTagName('canvas')[0].toDataURL())
                     var mapBase64 = document.getElementsByTagName('canvas')[0].toDataURL() 
 
                     var messageToMain = {
@@ -623,7 +622,7 @@
                             'stapel': stapelBase64
                         }
                     }
-                    console.log(messageToMain);
+                    window.parent.postMessage(message = messageToMain, targetOrigin = '*')
                 }
             }
         }
