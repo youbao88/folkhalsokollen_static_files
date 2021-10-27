@@ -287,10 +287,12 @@ window.addEventListener('vaReportComponents.loaded', function () {
                 case "openUrl":
                     var win = window.open(event.data.content, '_blank');
                     win.focus();
+                    break;
                 case "changeParameter":
                     sasReport.getReportHandle().then((reportHandle) => {
                         reportHandle.updateReportParameters(event.data.content);
                     });
+                    break;
                 case "screenshotInfo":
                     iframe_title_div_innerHTML = event.data.content["title_div"];
                     var menus = document.querySelectorAll("[aria-haspopup='listbox']");
@@ -303,6 +305,7 @@ window.addEventListener('vaReportComponents.loaded', function () {
                             element.querySelector(".sas_components-Select-Select_label").innerText = event.data.content[element.getAttribute("title")];
                         }
                     })
+                    break;
             }
         }
     });
