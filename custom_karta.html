@@ -613,7 +613,8 @@
                 if (event.data && event.data.type && event.data.type == "takeScreenShot") {
                     var stapelBase64 = barchart.toBase64Image();
 
-                    console.log(document.getElementsByTagName('canvas'))
+                    console.log(document.getElementsByTagName('canvas')[0].toDataURL())
+                    var mapBase64 = document.getElementsByTagName('canvas')[0].toDataURL() 
 
                     var messageToMain = {
                         type: 'screenshotKarta',
