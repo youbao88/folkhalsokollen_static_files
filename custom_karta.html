@@ -316,7 +316,6 @@
                         }
 
                         geojson = L.geoJson(stockholm_kommun_sorted, {
-                            renderer: L.canvas(),
                             style: style,
                             onEachFeature: onEachFeature
                         });
@@ -614,10 +613,7 @@
                 if (event.data && event.data.type && event.data.type == "takeScreenShot") {
                     var stapelBase64 = barchart.toBase64Image();
 
-                    leafletImage(mymap, function (err, canvas) {
-                        console.log(canvas.toDataURL())
-                        return canvas.toDataURL();
-                    });
+                    console.log(document.getElementsByTagName('canvas'))
 
                     var messageToMain = {
                         type: 'screenshotKarta',
