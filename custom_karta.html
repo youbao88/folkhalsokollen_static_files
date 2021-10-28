@@ -499,6 +499,9 @@
                                         }
                                     }
                                 },
+                                intersection: {
+                                    mode: 'point'
+                                },
                                 onHover: function (event, elements) {
                                     if (elements.length) {
                                         // mouse over
@@ -619,7 +622,8 @@
                         type: 'screenshotKarta',
                         content: {
                             'karta': mapBase64,
-                            'stapel': stapelBase64
+                            'stapel': stapelBase64,
+
                         }
                     }
                     window.parent.postMessage(message = messageToMain, targetOrigin = '*')
