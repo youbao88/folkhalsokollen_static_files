@@ -503,8 +503,8 @@
                                     mode: 'point'
                                 },
                                 onHover: function (event, elements) {
-                                    console.log(event)
-                                    if (elements.length) {
+                                    console.log(elements)
+                                    if (elements && elements.length) {
                                         // mouse over
                                         if (previous_hovered_omr == null) {
                                             hovered_omr = event.chart.data.labels[elements[0].index]
