@@ -75,7 +75,7 @@
             font-weight: bold;
         }
 
-        .check-mark{
+        .check-mark {
             font-size: 0.8rem;
             vertical-align: middle;
         }
@@ -308,6 +308,15 @@
                     }
                 }
                 window.parent.postMessage(message = sendMessage, targetOrigin = '*');
+                if (['linje_Område', 'stapel_Område', 'table_Område'].includes(parameterName)) {
+                    sendMessage = {
+                        'type': 'defaultOmradeChanged',
+                        'content': {
+                            [parameterName]: $(this).val()
+                        }
+                    }
+                    window.parent.postMessage(message = sendMessage, targetOrigin = '*');
+                }
             }
         });
     </script>
