@@ -62,17 +62,19 @@
             max-width: 100% !important;
         }
 
-        .bootstrap-select .dropdown-menu li a{
+        .bootstrap-select .dropdown-menu li a {
             padding-left: 15px !important;
         }
-        .dropdown-item .active .selected{
+
+        .dropdown-item .active .selected {
             font-weight: normal;
         }
 
         .selected {
             font-weight: bold;
         }
-        .check-mark{
+
+        .check-mark {
             font-size: 0.8rem;
             vertical-align: middle;
         }
@@ -86,8 +88,8 @@
                 <span class='selectorText'>4. Välj tidsperiod</span>
             </div>
             <div class='selectorDropdown'>
-                <select class="selectpicker show-tick" id='stapel_tidsperiod' data-style='mySelectpicker' data-width='100%'
-                    sas-parameter='stapel_Tidsperiod'>
+                <select class="selectpicker show-tick" id='stapel_tidsperiod' data-style='mySelectpicker'
+                    data-width='100%' sas-parameter='stapel_Tidsperiod'>
                 </select>
             </div>
         </div>
@@ -214,6 +216,15 @@
                     }
                 }
                 window.parent.postMessage(message = sendMessage, targetOrigin = '*');
+                if (['linje_Område', 'stapel_Område', 'table_Område'].includes(parameterName)) {
+                    sendMessage = {
+                        'type': 'defaultOmradeChanged',
+                        'content': {
+                            [parameterName]: $(this).val()
+                        }
+                    }
+                    window.parent.postMessage(message = sendMessage, targetOrigin = '*');
+                }
             }
         });
 
