@@ -228,11 +228,12 @@
                         // ).addTo(mymap);
 
                         function getColor(d) {
-                            interval = (first_value_max - first_value_min) / 4
-                            return d >= first_value_min + 3 * interval ? '#297b7b' :
-                                d >= first_value_min + 2 * interval ? '#5b9a9a' :
-                                d >= first_value_min + interval ? '#8cb7b8' :
-                                d >= first_value_min ? '#afcdce' :
+                            interval = (first_value_max - first_value_min) / 5
+                            return d >= first_value_min + 4 * interval ? '#297b7b' :
+                                d >= first_value_min + 3 * interval ? '#529494' :
+                                d >= first_value_min + 2*interval ? '#7fb0b0' :
+                                d >= first_value_min + 1*interval ? '#c3dada' :
+                                d >= first_value_min ? '#f4f8f8' :
                                 '#ffffff';
                         }
 
@@ -328,10 +329,9 @@
                         legend.onAdd = function (map) {
 
                             var div = L.DomUtil.create('div', 'legend'),
-                                interval = (first_value_max - first_value_min) / 4
+                                interval = (first_value_max - first_value_min) / 5
                             grades = [first_value_min, first_value_min + 1 * interval, first_value_min + 2 *
-                                    interval,
-                                    first_value_min + 3 * interval
+                                    interval, first_value_min + 3 * interval, first_value_max + 4*interval
                                 ],
                                 labels = [];
                             div.innerHTML +=
@@ -503,7 +503,6 @@
                                     mode: 'point'
                                 },
                                 onHover: function (event, elements) {
-                                    console.log(elements)
                                     if (elements && elements.length) {
                                         // mouse over
                                         if (previous_hovered_omr == null) {
