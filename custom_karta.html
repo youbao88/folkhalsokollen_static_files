@@ -233,7 +233,7 @@
                                 d >= first_value_min + 3 * interval ? '#529494' :
                                 d >= first_value_min + 2*interval ? '#7fb0b0' :
                                 d >= first_value_min + 1*interval ? '#c3dada' :
-                                d >= first_value_min ? '#f4f8f8' :
+                                d >= first_value_min ? '#e2eded' :
                                 '#ffffff';
                         }
 
@@ -335,7 +335,7 @@
                                 ],
                                 labels = [];
                             div.innerHTML +=
-                                '<h4 style = "text-align: center; font-weight: bold; margin : 8px">Värde</h4>'
+                                '<h4 style = "text-align: center; font-weight: bold; margin : 0px 8px 8px 8px">Värde</h4>'
                             // loop through our density intervals and generate a label with a colored square for each interval
                             for (var i = 0; i < grades.length; i++) {
                                 div.innerHTML +=
