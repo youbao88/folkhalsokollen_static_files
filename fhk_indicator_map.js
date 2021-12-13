@@ -1,1206 +1,1760 @@
 const indicator_name_parameter_map = {
-    'Dödsfall med covid-19': {
-        'karta_Tidsperiod': 'Juni 2021',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['0-24 år',
-            '25-44 år',
-            '45-64 år',
-            '65-79 år',
-            '80+ år'
-        ],
-        'stapel_Tidsperiod': 'Juni 2021',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['0-24 år',
-            '25-44 år',
-            '45-64 år',
-            '65-79 år',
-            '80+ år'
-        ],
-        'table_Tidsperiod': 'Juni 2021',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['0-24 år',
-            '25-44 år',
-            '45-64 år',
-            '65-79 år',
-            '80+ år'
-        ],
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
     'Slutenvård med covid-19': {
-        'karta_Tidsperiod': 'Juni 2021',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['0-24 år',
-            '25-44 år',
-            '45-64 år',
-            '65-79 år',
-            '80+ år'
-        ],
-        'stapel_Tidsperiod': 'Juni 2021',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['0-24 år',
-            '25-44 år',
-            '45-64 år',
-            '65-79 år',
-            '80+ år'
-        ],
-        'table_Tidsperiod': 'Juni 2021',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['0-24 år',
-            '25-44 år',
-            '45-64 år',
-            '65-79 år',
-            '80+ år'
-        ],
-        'tabel_Kön': ['Kvinnor', 'Män']
+        'karta': {
+            'karta_Tidsperiod': 'November 2021',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['0-24 år',
+                '25-44 år',
+                '45-64 år',
+                '65-79 år',
+                '80+ år'
+            ]
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': 'November 2021',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['0-24 år',
+                '25-44 år',
+                '45-64 år',
+                '65-79 år',
+                '80+ år'
+            ]
+        },
+        'tabell': {
+            'table_Tidsperiod': 'November 2021',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['0-24 år',
+                '25-44 år',
+                '45-64 år',
+                '65-79 år',
+                '80+ år'
+            ],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
     },
-    'Slutenvårdstillfällen': {
-        'karta_Tidsperiod': '2019',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['0-6 år',
-            '13-19 år',
-            '20-29 år',
-            '30-44 år',
-            '45-64 år',
-            '65-79 år',
-            '7-12 år',
-            '80+ år'
-        ],
-        'stapel_Tidsperiod': '2019',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['0-6 år',
-            '13-19 år',
-            '20-29 år',
-            '30-44 år',
-            '45-64 år',
-            '65-79 år',
-            '7-12 år',
-            '80+ år'
-        ],
-        'table_Tidsperiod': '2019',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['0-6 år',
-            '13-19 år',
-            '20-29 år',
-            '30-44 år',
-            '45-64 år',
-            '65-79 år',
-            '7-12 år',
-            '80+ år'
-        ],
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Prostatacancer': {
-        'karta_Tidsperiod': '2019',
-        'karta_Kön': 'Män',
-        'karta_Åldersgrupp': ['0-54 år', '55+ år'],
-        'stapel_Tidsperiod': '2019',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': 'Män',
-        'linje_Kön': 'Män',
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['0-54 år', '55+ år'],
-        'table_Tidsperiod': '2019',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['0-54 år', '55+ år'],
-        'tabel_Kön': 'Män'
-    },
-    'Öppenvårdsbesök': {
-        'karta_Tidsperiod': '2019',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['0-6 år',
-            '13-19 år',
-            '20-29 år',
-            '30-44 år',
-            '45-64 år',
-            '65-79 år',
-            '7-12 år',
-            '80+ år'
-        ],
-        'stapel_Tidsperiod': '2019',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['0-6 år',
-            '13-19 år',
-            '20-29 år',
-            '30-44 år',
-            '45-64 år',
-            '65-79 år',
-            '7-12 år',
-            '80+ år'
-        ],
-        'table_Tidsperiod': '2019',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['0-6 år',
-            '13-19 år',
-            '20-29 år',
-            '30-44 år',
-            '45-64 år',
-            '65-79 år',
-            '7-12 år',
-            '80+ år'
-        ],
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Stroke (ålder nyinsjuknade)': {
-        'karta_Tidsperiod': '2019',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': 'Ej valbart',
-        'stapel_Tidsperiod': '2019',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': 'Ej valbart',
-        'table_Tidsperiod': '2019',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': 'Ej valbart',
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Lungcancer': {
-        'karta_Tidsperiod': '2019',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['0-54 år', '55+ år'],
-        'stapel_Tidsperiod': '2019',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['0-54 år', '55+ år'],
-        'table_Tidsperiod': '2019',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['0-54 år', '55+ år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Bröstcancer': {
-        'karta_Tidsperiod': '2019',
-        'karta_Kön': 'Kvinnor',
-        'karta_Åldersgrupp': ['0-54 år', '55+ år'],
-        'stapel_Tidsperiod': '2019',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': 'Kvinnor',
-        'linje_Kön': 'Kvinnor',
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['0-54 år', '55+ år'],
-        'table_Tidsperiod': '2019',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['0-54 år', '55+ år'],
-        'tabel_Kön': 'Kvinnor'
+    'Dödsfall med covid-19': {
+        'karta': {
+            'karta_Tidsperiod': 'November 2021',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['0-24 år',
+                '25-44 år',
+                '45-64 år',
+                '65-79 år',
+                '80+ år'
+            ]
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': 'November 2021',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['0-24 år',
+                '25-44 år',
+                '45-64 år',
+                '65-79 år',
+                '80+ år'
+            ]
+        },
+        'tabell': {
+            'table_Tidsperiod': 'November 2021',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['0-24 år',
+                '25-44 år',
+                '45-64 år',
+                '65-79 år',
+                '80+ år'
+            ],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
     },
     'Familjetyp': {
-        'karta_Tidsperiod': '2019',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['0-24 år', '25-44 år', '45-64 år', '65+ år'],
-        'stapel_Tidsperiod': '2019',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['0-24 år', '25-44 år', '45-64 år', '65+ år'],
-        'table_Tidsperiod': '2019',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['0-24 år', '25-44 år', '45-64 år', '65+ år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
+        'karta': {
+            'karta_Tidsperiod': '2020',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['0-24 år', '25-44 år', '45-64 år', '65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2020',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['0-24 år', '25-44 år', '45-64 år', '65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2020',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['0-24 år', '25-44 år', '45-64 år', '65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
     },
-    'Anmälda våldsbrott': {
-        'karta_Tidsperiod': '2019',
-        'karta_Kön': 'Samtliga',
-        'karta_Åldersgrupp': 'Samtliga',
-        'stapel_Tidsperiod': '2019',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': 'Samtliga',
-        'linje_Kön': 'Samtliga',
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': 'Samtliga',
-        'table_Tidsperiod': '2019',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': 'Samtliga',
-        'tabel_Kön': 'Samtliga'
-    },
-    'Hjärtinfarkt (ålder nyinsjuknade)': {
-        'karta_Tidsperiod': '2019',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': 'Ej valbart',
-        'stapel_Tidsperiod': '2019',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': 'Ej valbart',
-        'table_Tidsperiod': '2019',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': 'Ej valbart',
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Förväntad medellivslängd': {
-        'karta_Tidsperiod': '2019',
-        'karta_Kön': 'Samtliga',
-        'karta_Åldersgrupp': 'Samtliga',
-        'stapel_Tidsperiod': '2019',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': 'Samtliga',
-        'linje_Kön': 'Samtliga',
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': 'Samtliga',
-        'table_Tidsperiod': '2019',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': 'Samtliga',
-        'tabel_Kön': 'Samtliga'
-    },
-    'Åldersgrupper': {
-        'karta_Tidsperiod': '2019',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': 'Se indikatorn',
-        'stapel_Tidsperiod': '2019',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': 'Se indikatorn',
-        'table_Tidsperiod': '2019',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': 'Se indikatorn',
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Depression och ångest': {
-        'karta_Tidsperiod': '2019',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['18-29 år', '30-49 år', '50-64 år', '65+ år'],
-        'stapel_Tidsperiod': '2019',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['18-29 år', '30-49 år', '50-64 år', '65+ år'],
-        'table_Tidsperiod': '2019',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['18-29 år', '30-49 år', '50-64 år', '65+ år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Tjock- och ändtarmscancer ': {
-        'karta_Tidsperiod': '2019',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['0-54 år', '55+ år'],
-        'stapel_Tidsperiod': '2019',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['0-54 år', '55+ år'],
-        'table_Tidsperiod': '2019',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['0-54 år', '55+ år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Övervikt och fetma 4-åringar': {
-        'karta_Tidsperiod': '2019',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': 'Samtliga',
-        'stapel_Tidsperiod': '2019',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': 'Samtliga',
-        'table_Tidsperiod': '2019',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': 'Samtliga',
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Födelseland': {
-        'karta_Tidsperiod': '2019',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['0-24 år', '25-44 år', '45-64 år', '65+ år'],
-        'stapel_Tidsperiod': '2019',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['0-24 år', '25-44 år', '45-64 år', '65+ år'],
-        'table_Tidsperiod': '2019',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['0-24 år', '25-44 år', '45-64 år', '65+ år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Utbildningsnivå': {
-        'karta_Tidsperiod': '2019',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['25-44 år', '45-64 år', '65+ år'],
-        'stapel_Tidsperiod': '2019',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['25-44 år', '45-64 år', '65+ år'],
-        'table_Tidsperiod': '2019',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['25-44 år', '45-64 år', '65+ år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Amning vid 4 månaders ålder': {
-        'karta_Tidsperiod': '2019',
-        'karta_Kön': 'Samtliga',
-        'karta_Åldersgrupp': 'Samtliga',
-        'stapel_Tidsperiod': '2019',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': 'Samtliga',
-        'linje_Kön': 'Samtliga',
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': 'Samtliga',
-        'table_Tidsperiod': '2019',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': 'Samtliga',
-        'tabel_Kön': 'Samtliga'
-    },
-    'Kariesfria 3-åringar': {
-        'karta_Tidsperiod': '2019',
-        'karta_Kön': 'Samtliga',
-        'karta_Åldersgrupp': 'Samtliga',
-        'stapel_Tidsperiod': '2019',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': 'Samtliga',
-        'linje_Kön': 'Samtliga',
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': 'Samtliga',
-        'table_Tidsperiod': '2019',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': 'Samtliga',
-        'tabel_Kön': 'Samtliga'
-    },
-    'Vaccinationstäckning MPR': {
-        'karta_Tidsperiod': '2019',
-        'karta_Kön': 'Samtliga',
-        'karta_Åldersgrupp': 'Samtliga',
-        'stapel_Tidsperiod': '2019',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': 'Samtliga',
-        'linje_Kön': 'Samtliga',
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': 'Samtliga',
-        'table_Tidsperiod': '2019',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': 'Samtliga',
-        'tabel_Kön': 'Samtliga'
-    },
-    'Exponering för tobaksrök vid 8 månaders ålder': {
-        'karta_Tidsperiod': '2019',
-        'karta_Kön': 'Samtliga',
-        'karta_Åldersgrupp': 'Samtliga',
-        'stapel_Tidsperiod': '2019',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': 'Samtliga',
-        'linje_Kön': 'Samtliga',
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': 'Samtliga',
-        'table_Tidsperiod': '2019',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': 'Samtliga',
-        'tabel_Kön': 'Samtliga'
-    },
-    'Avstått läkemedel på grund av dålig ekonomi': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Övervikt och fetma': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Avstått vård på grund av dålig ekonomi': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Huvudvärk eller migrän': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Nacksmärta': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Begränsade sjukdom': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Diabetes': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Sömnsvårigheter': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Tandhälsa': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Ryggsmärta': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Ohälsodagar': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['20-34 år', '35-49 år', '50-64 år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['20-34 år', '35-49 år', '50-64 år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['20-34 år', '35-49 år', '50-64 år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Självskattad hälsa': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Snusar dagligen': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Ekonomiska svårigheter': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Utsatthet för hot och våld': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
+    'Slutenvårdstillfällen': {
+        'karta': {
+            'karta_Tidsperiod': '2020',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['0-6 år',
+                '13-19 år',
+                '20-29 år',
+                '30-44 år',
+                '45-64 år',
+                '65-79 år',
+                '7-12 år',
+                '80+ år'
+            ]
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2020',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['0-6 år',
+                '13-19 år',
+                '20-29 år',
+                '30-44 år',
+                '45-64 år',
+                '65-79 år',
+                '7-12 år',
+                '80+ år'
+            ]
+        },
+        'tabell': {
+            'table_Tidsperiod': '2020',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['0-6 år',
+                '13-19 år',
+                '20-29 år',
+                '30-44 år',
+                '45-64 år',
+                '65-79 år',
+                '7-12 år',
+                '80+ år'
+            ],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
     },
     'Ekonomiskt bistånd': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['25-44 år', '45-64 år', '65+ år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['25-44 år', '45-64 år', '65+ år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['25-44 år', '45-64 år', '65+ år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
+        'karta': {
+            'karta_Tidsperiod': '2020',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['25-44 år', '45-64 år', '65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2020',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['25-44 år', '45-64 år', '65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2020',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['25-44 år', '45-64 år', '65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
     },
-    'Trafikbuller i bostad': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
+    'Födelseland': {
+        'karta': {
+            'karta_Tidsperiod': '2020',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['0-24 år', '25-44 år', '45-64 år', '65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2020',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['0-24 år', '25-44 år', '45-64 år', '65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2020',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['0-24 år', '25-44 år', '45-64 år', '65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
     },
-    'Huvudsaklig sysselsättning': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['25-44 år', '45-64 år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['25-44 år', '45-64 år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['25-44 år', '45-64 år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
+    'Öppenvårdsbesök': {
+        'karta': {
+            'karta_Tidsperiod': '2020',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['0-6 år',
+                '13-19 år',
+                '20-29 år',
+                '30-44 år',
+                '45-64 år',
+                '65-79 år',
+                '7-12 år',
+                '80+ år'
+            ]
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2020',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['0-6 år',
+                '13-19 år',
+                '20-29 år',
+                '30-44 år',
+                '45-64 år',
+                '65-79 år',
+                '7-12 år',
+                '80+ år'
+            ]
+        },
+        'tabell': {
+            'table_Tidsperiod': '2020',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['0-6 år',
+                '13-19 år',
+                '20-29 år',
+                '30-44 år',
+                '45-64 år',
+                '65-79 år',
+                '7-12 år',
+                '80+ år'
+            ],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
     },
-    'Självmordsförsök': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
+    'Utbildningsnivå': {
+        'karta': {
+            'karta_Tidsperiod': '2020',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['25-44 år', '45-64 år', '65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2020',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['25-44 år', '45-64 år', '65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2020',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['25-44 år', '45-64 år', '65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
     },
-    'Självmordstankar': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
+    'Åldersgrupper': {
+        'karta': {
+            'karta_Tidsperiod': '2020',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['Se indikatorn']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2020',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['Se indikatorn']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2020',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['Se indikatorn'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
     },
-    'Psykisk ohälsa': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
+    'Förväntad medellivslängd': {
+        'karta': {
+            'karta_Tidsperiod': '2020',
+            'karta_Kön': ['Samtliga'],
+            'karta_Åldersgrupp': ['Samtliga']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2020',
+            'stapel_Kön': ['Samtliga']
+        },
+        'linje': {
+            'linje_Kön': ['Samtliga'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['Samtliga']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2020',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['Samtliga'],
+            'tabel_Kön': ['Samtliga']
+        }
     },
-    'Ensamhet': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
+    'Vaccinationstäckning MPR': {
+        'karta': {
+            'karta_Tidsperiod': '2020',
+            'karta_Kön': ['Samtliga'],
+            'karta_Åldersgrupp': ['Samtliga']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2020',
+            'stapel_Kön': ['Samtliga']
+        },
+        'linje': {
+            'linje_Kön': ['Samtliga'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['Samtliga']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2020',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['Samtliga'],
+            'tabel_Kön': ['Samtliga']
+        }
     },
-    'Tillit till institutioner': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
+    'Övervikt och fetma 4-åringar': {
+        'karta': {
+            'karta_Tidsperiod': '2020',
+            'karta_Kön': ['Flickar', 'Pojkar'],
+            'karta_Åldersgrupp': ['Samtliga']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2020',
+            'stapel_Kön': ['Flickar', 'Pojkar']
+        },
+        'linje': {
+            'linje_Kön': ['Flickar', 'Pojkar'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['Samtliga']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2020',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['Samtliga'],
+            'tabel_Kön': ['Flickar', 'Pojkar']
+        }
     },
-    'Tillit till andra människor': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
+    'Exponering för tobaksrök vid 8 månaders ålder': {
+        'karta': {
+            'karta_Tidsperiod': '2020',
+            'karta_Kön': ['Samtliga'],
+            'karta_Åldersgrupp': ['Samtliga']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2020',
+            'stapel_Kön': ['Samtliga']
+        },
+        'linje': {
+            'linje_Kön': ['Samtliga'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['Samtliga']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2020',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['Samtliga'],
+            'tabel_Kön': ['Samtliga']
+        }
     },
-    'Röstande i kommunval': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': 'Samtliga',
-        'karta_Åldersgrupp': 'Samtliga',
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': 'Samtliga',
-        'linje_Kön': 'Samtliga',
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': 'Samtliga',
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': 'Samtliga',
-        'tabel_Kön': 'Samtliga'
-    },
-    'Oro för att förlora sitt arbete': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['16-44 år', '45-64 år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['16-44 år', '45-64 år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['16-44 år', '45-64 år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Inkomstnivå': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['0-24 år', '25-44 år', '45-64 år', '65+ år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['0-24 år', '25-44 år', '45-64 år', '65+ år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['0-24 år', '25-44 år', '45-64 år', '65+ år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Hjälp med hushållssysslor': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': '65+ år',
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': '65+ år',
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': '65+ år',
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Hjälp med personlig omvårdnad': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': '65+ år',
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': '65+ år',
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': '65+ år',
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Hjälp med att ta sig fram utomhus': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': '65+ år',
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': '65+ år',
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': '65+ år',
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Otillräcklig hjälp i vardagslivet': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': '65+ år',
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': '65+ år',
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': '65+ år',
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Nedsatt hörsel': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': '65+ år',
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': '65+ år',
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': '65+ år',
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Fallolyckor': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': '65+ år',
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': '65+ år',
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': '65+ år',
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Fallolyckor med påverkan på vardagslivet': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': '65+ år',
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': '65+ år',
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': '65+ år',
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Riskbruk alkohol': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Röker dagligen': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Riskabla spelvanor': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Lågt intag grönsaker': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Användning av narkotikaklassificerade läkemedel': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Användning av hasch eller marijuana': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['16-44 år', '45-64 år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['16-44 år', '45-64 år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['16-44 år', '45-64 år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Fysisk aktivitet': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Användning av annan narkotika än hasch eller marijuana': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['16-44 år', '45-64 år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['16-44 år', '45-64 år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['16-44 år', '45-64 år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Lågt intag frukt': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Högt intag läsk, saft, sötade drycker': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Boendeform': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['0-24 år', '25-44 år', '45-64 år', '65+ år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['0-24 år', '25-44 år', '45-64 år', '65+ år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['0-24 år', '25-44 år', '45-64 år', '65+ år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Spänd arbetssituation': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['16-44 år', '45-64 år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['16-44 år', '45-64 år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['16-44 år', '45-64 år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Vibrationer på jobbet': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['16-44 år', '45-64 år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['16-44 år', '45-64 år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['16-44 år', '45-64 år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
-    },
-    'Våtarbete': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['16-44 år', '45-64 år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['16-44 år', '45-64 år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['16-44 år', '45-64 år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
+    'Kariesfria 3-åringar': {
+        'karta': {
+            'karta_Tidsperiod': '2020',
+            'karta_Kön': ['Samtliga'],
+            'karta_Åldersgrupp': ['Samtliga']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2020',
+            'stapel_Kön': ['Samtliga']
+        },
+        'linje': {
+            'linje_Kön': ['Samtliga'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['Samtliga']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2020',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['Samtliga'],
+            'tabel_Kön': ['Samtliga']
+        }
     },
     'Anmälan socialtjänst via BVC': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': 'Samtliga',
-        'karta_Åldersgrupp': 'Samtliga',
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': 'Samtliga',
-        'linje_Kön': 'Samtliga',
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': 'Samtliga',
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': 'Samtliga',
-        'tabel_Kön': 'Samtliga'
+        'karta': {
+            'karta_Tidsperiod': '2020',
+            'karta_Kön': ['Samtliga'],
+            'karta_Åldersgrupp': ['Samtliga']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2020',
+            'stapel_Kön': ['Samtliga']
+        },
+        'linje': {
+            'linje_Kön': ['Samtliga'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['Samtliga']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2020',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['Samtliga'],
+            'tabel_Kön': ['Samtliga']
+        }
     },
-    'Luftförorening på jobbet': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['16-44 år', '45-64 år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['16-44 år', '45-64 år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['16-44 år', '45-64 år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
+    'Amning vid 4 månaders ålder': {
+        'karta': {
+            'karta_Tidsperiod': '2020',
+            'karta_Kön': ['Samtliga'],
+            'karta_Åldersgrupp': ['Samtliga']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2020',
+            'stapel_Kön': ['Samtliga']
+        },
+        'linje': {
+            'linje_Kön': ['Samtliga'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['Samtliga']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2020',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['Samtliga'],
+            'tabel_Kön': ['Samtliga']
+        }
+    },
+    'Boendeform': {
+        'karta': {
+            'karta_Tidsperiod': '2019',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['0-24 år', '25-44 år', '45-64 år', '65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2019',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['0-24 år', '25-44 år', '45-64 år', '65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2019',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['0-24 år', '25-44 år', '45-64 år', '65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Inkomstnivå': {
+        'karta': {
+            'karta_Tidsperiod': '2019',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['25-44 år', '45-64 år', '65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2019',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['25-44 år', '45-64 år', '65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2019',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['25-44 år', '45-64 år', '65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Huvudsaklig sysselsättning': {
+        'karta': {
+            'karta_Tidsperiod': '2019',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['25-44 år', '45-64 år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2019',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['25-44 år', '45-64 år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2019',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['25-44 år', '45-64 år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Depression och ångest': {
+        'karta': {
+            'karta_Tidsperiod': '2019',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['18-29 år', '30-49 år', '50-64 år', '65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2019',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['18-29 år', '30-49 år', '50-64 år', '65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2019',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['18-29 år', '30-49 år', '50-64 år', '65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Hjärtinfarkt (ålder nyinsjuknade)': {
+        'karta': {
+            'karta_Tidsperiod': '2019',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['Ej valbart']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2019',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['Ej valbart']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2019',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['Ej valbart'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Tjock- och ändtarmscancer': {
+        'karta': {
+            'karta_Tidsperiod': '2019',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['0-54 år', '55+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2019',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['0-54 år', '55+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2019',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['0-54 år', '55+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Prostatacancer': {
+        'karta': {
+            'karta_Tidsperiod': '2019',
+            'karta_Kön': ['Män'],
+            'karta_Åldersgrupp': ['0-54 år', '55+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2019',
+            'stapel_Kön': ['Män']
+        },
+        'linje': {
+            'linje_Kön': ['Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['0-54 år', '55+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2019',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['0-54 år', '55+ år'],
+            'tabel_Kön': ['Män']
+        }
+    },
+    'Lungcancer': {
+        'karta': {
+            'karta_Tidsperiod': '2019',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['0-54 år', '55+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2019',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['0-54 år', '55+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2019',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['0-54 år', '55+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Ohälsodagar': {
+        'karta': {
+            'karta_Tidsperiod': '2019',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['20-34 år', '35-49 år', '50-64 år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2019',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['20-34 år', '35-49 år', '50-64 år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2019',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['20-34 år', '35-49 år', '50-64 år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Bröstcancer': {
+        'karta': {
+            'karta_Tidsperiod': '2019',
+            'karta_Kön': ['Kvinnor'],
+            'karta_Åldersgrupp': ['0-54 år', '55+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2019',
+            'stapel_Kön': ['Kvinnor']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['0-54 år', '55+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2019',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['0-54 år', '55+ år'],
+            'tabel_Kön': ['Kvinnor']
+        }
+    },
+    'Ryggsmärta': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Användning av narkotikaklassificerade läkemedel': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Användning av annan narkotika än hasch eller marijuana': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['16-44 år', '45-64 år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['16-44 år', '45-64 år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['16-44 år', '45-64 år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Fysisk aktivitet': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Användning av hasch eller marijuana': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['16-44 år', '45-64 år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['16-44 år', '45-64 år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['16-44 år', '45-64 år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Riskbruk alkohol': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Lågt intag grönsaker': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Högt intag läsk, saft, sötade drycker': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Lågt intag frukt': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Avstått vård på grund av dålig ekonomi': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Tandhälsa': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Avstått läkemedel på grund av dålig ekonomi': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Sömnsvårigheter': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Snusar dagligen': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Röker dagligen': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Trafikbuller i bostad': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Tillit till andra människor': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Oro för att förlora sitt arbete': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['16-44 år', '45-64 år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['16-44 år', '45-64 år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['16-44 år', '45-64 år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Ekonomiska svårigheter': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Utsatthet för hot och våld': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Hjälp med att ta sig fram utomhus': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Fallolyckor med påverkan på vardagslivet': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Hjälp med hushållssysslor': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Hjälp med personlig omvårdnad': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Otillräcklig hjälp i vardagslivet': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Nedsatt hörsel': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Fallolyckor': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Ensamhet': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Psykisk ohälsa': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Självmordstankar': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Riskabla spelvanor': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Tillit till institutioner': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Självmordsförsök': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Vibrationer på jobbet': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['16-44 år', '45-64 år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['16-44 år', '45-64 år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['16-44 år', '45-64 år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
     },
     'Fysiskt tungt arbete': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['16-44 år', '45-64 år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['16-44 år', '45-64 år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['16-44 år', '45-64 år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['16-44 år', '45-64 år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['16-44 år', '45-64 år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['16-44 år', '45-64 år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Våtarbete': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['16-44 år', '45-64 år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['16-44 år', '45-64 år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['16-44 år', '45-64 år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Spänd arbetssituation': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['16-44 år', '45-64 år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['16-44 år', '45-64 år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['16-44 år', '45-64 år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Röstande i kommunval': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Samtliga'],
+            'karta_Åldersgrupp': ['Samtliga']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Samtliga']
+        },
+        'linje': {
+            'linje_Kön': ['Samtliga'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['Samtliga']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['Samtliga'],
+            'tabel_Kön': ['Samtliga']
+        }
+    },
+    'Huvudvärk eller migrän': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Nacksmärta': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Diabetes': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Övervikt och fetma': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Begränsade sjukdom': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Självskattad hälsa': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
     },
     'Buller på jobbet': {
-        'karta_Tidsperiod': '2018',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['16-44 år', '45-64 år'],
-        'stapel_Tidsperiod': '2018',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['16-44 år', '45-64 år'],
-        'table_Tidsperiod': '2018',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['16-44 år', '45-64 år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['16-44 år', '45-64 år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['16-44 år', '45-64 år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['16-44 år', '45-64 år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
+    },
+    'Luftförorening på jobbet': {
+        'karta': {
+            'karta_Tidsperiod': '2018',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['16-44 år', '45-64 år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2018',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['16-44 år', '45-64 år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2018',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['16-44 år', '45-64 år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
     },
     'Social isolering': {
-        'karta_Tidsperiod': '2014',
-        'karta_Kön': ['Kvinnor', 'Män'],
-        'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'stapel_Tidsperiod': '2014',
-        'stapel_Område': 'Stockholms län',
-        'stapel_Kön': ['Kvinnor', 'Män'],
-        'linje_Kön': ['Kvinnor', 'Män'],
-        'linje_Område': ['Stockholms län', 'Botkyrka'],
-        'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'table_Tidsperiod': '2014',
-        'table_Område': 'Stockholms län',
-        'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
-        'tabel_Kön': ['Kvinnor', 'Män']
+        'karta': {
+            'karta_Tidsperiod': '2014',
+            'karta_Kön': ['Kvinnor', 'Män'],
+            'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'stapel': {
+            'stapel_Område': 'Stockholms län',
+            'stapel_Tidsperiod': '2014',
+            'stapel_Kön': ['Kvinnor', 'Män']
+        },
+        'linje': {
+            'linje_Kön': ['Kvinnor', 'Män'],
+            'linje_Område': ['Stockholms län', 'Botkyrka'],
+            'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+        },
+        'tabell': {
+            'table_Tidsperiod': '2014',
+            'table_Område': 'Stockholms län',
+            'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
+            'tabel_Kön': ['Kvinnor', 'Män']
+        }
     }
 }
 const indicator_init_map = {
@@ -1280,16 +1834,16 @@ const indicator_init_map = {
         indikator_group: "Covid-19",
         indikator_name: "Dödsfall med covid-19",
         indikator_category: "Ej valbart",
-        karta_Tidsperiod: "Juni 2021",
+        karta_Tidsperiod: "November 2021",
         karta_Kön: ["Kvinnor", "Män"],
         karta_Åldersgrupp: ["0-24 år", "25-44 år", "45-64 år", "65-79 år", "80+ år"],
         stapel_Område: "Stockholms län",
-        stapel_Tidsperiod: "Juni 2021",
+        stapel_Tidsperiod: "November 2021",
         stapel_Kön: ["Kvinnor", "Män"],
         linje_Område: ["Stockholms län", "Botkyrka"],
         linje_Kön: ["Kvinnor", "Män"],
         linje_Åldersgrupp: ["0-24 år", "25-44 år", "45-64 år", "65-79 år", "80+ år"],
-        table_Tidsperiod: "Juni 2021",
+        table_Tidsperiod: "November 2021",
         table_Område: "Stockholms län",
         tabel_Åldersgrupp: ["0-24 år", "25-44 år", "45-64 år", "65-79 år", "80+ år"],
         tabel_Kön: ["Kvinnor", "Män"]
@@ -1370,16 +1924,16 @@ const indicator_init_map = {
         indikator_group: "Demografi",
         indikator_name: "Åldersgrupper",
         indikator_category: ["0-6 år", "7-12 år", "13-19 år"],
-        karta_Tidsperiod: "2019",
+        karta_Tidsperiod: "2020",
         karta_Kön: ["Kvinnor", "Män"],
         karta_Åldersgrupp: "Se indikatorn",
         stapel_Område: "Stockholms län",
-        stapel_Tidsperiod: "2019",
+        stapel_Tidsperiod: "2020",
         stapel_Kön: ["Kvinnor", "Män"],
         linje_Område: ["Stockholms län", "Botkyrka"],
         linje_Kön: ["Kvinnor", "Män"],
         linje_Åldersgrupp: "Se indikatorn",
-        table_Tidsperiod: "2019",
+        table_Tidsperiod: "2020",
         table_Område: "Stockholms län",
         tabel_Åldersgrupp: "Se indikatorn",
         tabel_Kön: ["Kvinnor", "Män"]
@@ -1388,16 +1942,16 @@ const indicator_init_map = {
         indikator_group: "Barns hälsa",
         indikator_name: "Amning vid 4 månaders ålder",
         indikator_category: "Ej valbart",
-        karta_Tidsperiod: "2019",
+        karta_Tidsperiod: "2020",
         karta_Kön: "Samtliga",
         karta_Åldersgrupp: "Samtliga",
         stapel_Område: "Stockholms län",
-        stapel_Tidsperiod: "2019",
+        stapel_Tidsperiod: "2020",
         stapel_Kön: "Samtliga",
         linje_Område: ["Stockholms län", "Botkyrka"],
         linje_Kön: "Samtliga",
         linje_Åldersgrupp: "Samtliga",
-        table_Tidsperiod: "2019",
+        table_Tidsperiod: "2020",
         table_Område: "Stockholms län",
         tabel_Åldersgrupp: "Samtliga",
         tabel_Kön: "Samtliga"
