@@ -465,7 +465,7 @@
                                 });
                                         },
                                         anchor: 'end',
-                                        align: 'start',
+                                        align: 'center',
                                         padding: {
                                             left: 6
                                         },
@@ -495,8 +495,7 @@
                                                 return 'Enhet: ' + unit;
                                             },
                                             label: function (t, d) {
-                                                console.log(t)
-                                                return t.raw.toLocaleString('sv-SE', {
+                                                return 'Värde: '+t.raw.toLocaleString('sv-SE', {
                                     minimumFractionDigits: 2,
                                     maximumFractionDigits: 2
                                 })
