@@ -232,8 +232,8 @@
                             interval = (first_value_max - first_value_min) / 5
                             return d >= first_value_min + 4 * interval ? '#297b7b' :
                                 d >= first_value_min + 3 * interval ? '#529494' :
-                                d >= first_value_min + 2*interval ? '#7fb0b0' :
-                                d >= first_value_min + 1*interval ? '#c3dada' :
+                                d >= first_value_min + 2 * interval ? '#7fb0b0' :
+                                d >= first_value_min + 1 * interval ? '#c3dada' :
                                 d >= first_value_min ? '#e2eded' :
                                 '#ffffff';
                         }
@@ -262,7 +262,10 @@
                             this._div.innerHTML = (props ? '<b>Omräde:</b>' + props.omr_namn +
                                 '<br /><b> Värde: </b>' +
                                 props
-                                .value.toFixed(2).toLocaleString("sv-SE") + '</br><b>Enhet: </b>' + unit : ' ')
+                                .value.toLocaleString('sv-SE', {
+                                    minimumFractionDigits: 2,
+                                    maximumFractionDigits: 2
+                                }) + '</br><b>Enhet: </b>' + unit : ' ')
                         };
 
 
@@ -332,7 +335,7 @@
                             var div = L.DomUtil.create('div', 'legend'),
                                 interval = (first_value_max - first_value_min) / 5
                             grades = [first_value_min, first_value_min + 1 * interval, first_value_min + 2 *
-                                    interval, first_value_min + 3 * interval, first_value_min + 4*interval
+                                    interval, first_value_min + 3 * interval, first_value_min + 4 * interval
                                 ],
                                 labels = [];
                             div.innerHTML +=
@@ -341,8 +344,14 @@
                             for (var i = 0; i < grades.length; i++) {
                                 div.innerHTML +=
                                     '<i style="background:' + getColor(grades[i]) + '"></i> ' +
-                                    grades[i].toFixed(2).toLocaleString("sv-SE") + (grades[i + 1] ? '&ndash;' + grades[i + 1].toFixed(
-                                            2).toLocaleString("sv-SE") +
+                                    grades[i].toLocaleString('sv-SE', {
+                                    minimumFractionDigits: 2,
+                                    maximumFractionDigits: 2
+                                }) + (grades[i + 1] ? '&ndash;' +
+                                        grades[i + 1].toLocaleString('sv-SE', {
+                                    minimumFractionDigits: 2,
+                                    maximumFractionDigits: 2
+                                }) +
                                         '<br>' : '+');
                             }
                             return div;
@@ -450,7 +459,10 @@
                                 plugins: {
                                     datalabels: {
                                         formatter: function (value, context) {
-                                            return value.toFixed(2).toLocaleString("sv-SE");
+                                            return value.toLocaleString('sv-SE', {
+                                    minimumFractionDigits: 2,
+                                    maximumFractionDigits: 2
+                                });
                                         },
                                         anchor: 'end',
                                         align: 'start',
@@ -482,8 +494,11 @@
                                             afterBody: function (t, d) {
                                                 return 'Enhet: ' + unit;
                                             },
-                                            label: function(t,d) {
-                                                return tooltipItem.yLabel.toFixed(2).toLocaleString('sv-SE')
+                                            label: function (t, d) {
+                                                return t.yLabel.toLocaleString('sv-SE', {
+                                    minimumFractionDigits: 2,
+                                    maximumFractionDigits: 2
+                                })
                                             }
                                         }
                                     }
@@ -620,7 +635,7 @@
                 if (event.data && event.data.type && event.data.type == "takeScreenShot") {
                     var stapelBase64 = barchart.toBase64Image();
 
-                    var mapBase64 = document.getElementsByTagName('canvas')[0].toDataURL() 
+                    var mapBase64 = document.getElementsByTagName('canvas')[0].toDataURL()
 
                     var messageToMain = {
                         type: 'screenshotKarta',
