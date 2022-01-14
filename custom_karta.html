@@ -262,7 +262,7 @@
                             this._div.innerHTML = (props ? '<b>Omräde:</b>' + props.omr_namn +
                                 '<br /><b> Värde: </b>' +
                                 props
-                                .value.toFixed(2) + '</br><b>Enhet: </b>' + unit : ' ')
+                                .value.toFixed(2).toLocaleString("sv-SE") + '</br><b>Enhet: </b>' + unit : ' ')
                         };
 
 
@@ -341,8 +341,8 @@
                             for (var i = 0; i < grades.length; i++) {
                                 div.innerHTML +=
                                     '<i style="background:' + getColor(grades[i]) + '"></i> ' +
-                                    grades[i].toFixed(2) + (grades[i + 1] ? '&ndash;' + grades[i + 1].toFixed(
-                                            2) +
+                                    grades[i].toFixed(2).toLocaleString("sv-SE") + (grades[i + 1] ? '&ndash;' + grades[i + 1].toFixed(
+                                            2).toLocaleString("sv-SE") +
                                         '<br>' : '+');
                             }
                             return div;
@@ -450,10 +450,10 @@
                                 plugins: {
                                     datalabels: {
                                         formatter: function (value, context) {
-                                            return value.toFixed(2);
+                                            return value.toFixed(2).toLocaleString("sv-SE");
                                         },
                                         anchor: 'end',
-                                        align: 'right',
+                                        align: 'start',
                                         padding: {
                                             left: 6
                                         },
@@ -481,6 +481,9 @@
                                         callbacks: {
                                             afterBody: function (t, d) {
                                                 return 'Enhet: ' + unit;
+                                            },
+                                            label: function(t,d) {
+                                                return tooltipItem.yLabel.toFixed(2).toLocaleString('sv-SE')
                                             }
                                         }
                                     }
