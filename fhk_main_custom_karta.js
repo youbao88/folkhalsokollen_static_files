@@ -200,22 +200,19 @@ function disableScrollDoubleClickOutline() {
 }
 window.addEventListener('vaReportComponents.loaded', function () {
 
-    var notFirstTime = false;
     var sasReport = document.getElementById("my-report");
     var stapelCurrentOmrade = 'Stockholms län';
 
     observer_change_indicator = new MutationObserver(mutationRecords => {
-        if (notFirstTime) {
-            setTimeout(function () {
-                sasReport.getReportHandle().then(reportHandle => {
-                    var newIndicator = document.querySelector('[aria-controls="sas_RC-Dropdown-list-1"]').getElementsByClassName('sas_components-Select-Select_label')[0].innerText;
-                    var parameters = indicator_name_parameter_map[newIndicator];
-                    reportHandle.updateReportParameters(parameters);
-                });
-            }, 1000);
-        } else {
-            notFirstTime = true;
-        }
+        sasReport.getReportHandle().then(reportHandle => {
+            var newIndicator = document.querySelector('[aria-controls="sas_RC-Dropdown-list-1"]').getElementsByClassName('sas_components-Select-Select_label')[0].innerText;
+            var _parameters = indicator_name_parameter_map[newIndicator];
+            var parameters = {}
+            for (let i in _parameters) {
+                Object.assign(parameters, _parameters[i]);
+            }
+            reportHandle.updateReportParameters(parameters);
+        });
     })
 
     var loading_replaced = false;
