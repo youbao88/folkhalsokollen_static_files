@@ -95,12 +95,9 @@
                 var buttonList = document.querySelectorAll('.buttonLink');
                 buttonList.forEach(element => {
                     var buttonUrl = element.getAttribute('title');
-                    sendMessage = {
-                        type: 'openUrl',
-                        content: buttonUrl
-                    }
+
                     element.addEventListener('click', () => {
-                        window.parent.postMessage(message = sendMessage, targetOrigin = '*');
+                        window.parent.postMessage(message = {type: 'openUrl', content: buttonUrl}, targetOrigin = '*');
                     })
                 })
             }
