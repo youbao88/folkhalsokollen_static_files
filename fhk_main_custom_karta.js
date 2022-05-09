@@ -1,5 +1,6 @@
-//Disable animation and set the background of loading page to transparent
-var styles = `
+document.addEventListener("DOMContentLoaded", function (event) {
+    //Disable animation and set the background of loading page to transparent
+    var styles = `
     .sas_ReportContainer-internal-SlideTransition_container {
         animation-duration: 0s !important;
     }
@@ -142,89 +143,92 @@ var styles = `
             border: none ! important;
         }
 `;
-var styleSheet = document.createElement("style");
-styleSheet.type = "text/css";
-styleSheet.innerText = styles;
-document.head.appendChild(styleSheet);
+    var styleSheet = document.createElement("style");
+    styleSheet.type = "text/css";
+    styleSheet.innerText = styles;
+    document.head.appendChild(styleSheet);
 
 
-function disableScrollDoubleClickOutline() {
-    var canvases = Array.from(document.getElementsByTagName('canvas'));
-    var i
-    for (i = 0; i < canvases.length; i++) {
-        //Stop double click function
-        canvases[i].addEventListener("dblclick", function (event) {
-            event.stopPropagation();
-        }, true);
-        //Disable the outline
-        canvases[i].style.outline = "none";
-        //Stop wheel function
-        canvases[i].addEventListener("wheel", function (event) {
-            event.stopPropagation();
-        }, true);
-    }
+    function disableScrollDoubleClickOutline() {
+        var canvases = Array.from(document.getElementsByTagName('canvas'));
+        var i
+        for (i = 0; i < canvases.length; i++) {
+            //Stop double click function
+            canvases[i].addEventListener("dblclick", function (event) {
+                event.stopPropagation();
+            }, true);
+            //Disable the outline
+            canvases[i].style.outline = "none";
+            //Stop wheel function
+            canvases[i].addEventListener("wheel", function (event) {
+                event.stopPropagation();
+            }, true);
+        }
 
-    //Disable the outline for selection boxes
-    var selectionBoxes = document.getElementsByClassName("sas_components-Select-Select_select sas_components-Select-Select_focus-visible");
-    if (selectionBoxes.length != 0) {
-        for (i = 0; i < selectionBoxes.length; i++) {
-            selectionBoxes[i].style.outline = "none";
+        //Disable the outline for selection boxes
+        var selectionBoxes = document.getElementsByClassName("sas_components-Select-Select_select sas_components-Select-Select_focus-visible");
+        if (selectionBoxes.length != 0) {
+            for (i = 0; i < selectionBoxes.length; i++) {
+                selectionBoxes[i].style.outline = "none";
+            }
         }
-    }
-    //Disable the outline for text link
-    var textLink = document.getElementsByClassName("sas_BirdText-BirdText_bird-text-link");
-    if (textLink.length != 0) {
-        for (i = 0; i < textLink.length; i++) {
-            textLink[i].style.outline = "none";
+        //Disable the outline for text link
+        var textLink = document.getElementsByClassName("sas_BirdText-BirdText_bird-text-link");
+        if (textLink.length != 0) {
+            for (i = 0; i < textLink.length; i++) {
+                textLink[i].style.outline = "none";
+            }
         }
-    }
-    //Disable the outline for bird text 
-    var birdText = document.getElementsByClassName("sas_BirdText-BirdText_text");
-    if (birdText.length != 0) {
-        for (i = 0; i < birdText.length; i++) {
-            birdText[i].style.outline = "none";
+        //Disable the outline for bird text 
+        var birdText = document.getElementsByClassName("sas_BirdText-BirdText_text");
+        if (birdText.length != 0) {
+            for (i = 0; i < birdText.length; i++) {
+                birdText[i].style.outline = "none";
+            }
         }
-    }
-    //Add hover effect to the icons
-    var icons = document.getElementsByClassName('sas_components-Image-Image_clickable sas_components-Image-Image_scale sas_components-Image-Image_span')
-    for (i = 0; i < icons.length; i++) {
-        if (icons[i].title == "Hjälp") {
-            icons[i].parentNode.parentNode.parentNode.classList.add("help_icon");
-        } else {
-            var icon_div = icons[i].parentNode.parentNode.parentNode.parentNode;
-            if (icon_div.style.backgroundColor != "rgb(233, 236, 239)") {
-                icon_div.classList.add("tab_icon");
+        //Add hover effect to the icons
+        var icons = document.getElementsByClassName('sas_components-Image-Image_clickable sas_components-Image-Image_scale sas_components-Image-Image_span')
+        for (i = 0; i < icons.length; i++) {
+            if (icons[i].title == "Hjälp") {
+                icons[i].parentNode.parentNode.parentNode.classList.add("help_icon");
+            } else {
+                var icon_div = icons[i].parentNode.parentNode.parentNode.parentNode;
+                if (icon_div.style.backgroundColor != "rgb(233, 236, 239)") {
+                    icon_div.classList.add("tab_icon");
+                }
             }
         }
     }
-}
-window.addEventListener('vaReportComponents.loaded', function () {
+    window.addEventListener('vaReportComponents.loaded', function () {
 
-    var sasReport = document.getElementById("my-report");
-    var stapelCurrentOmrade = 'Stockholms län';
+        var sasReport = document.getElementById("my-report");
+        var stapelCurrentOmrade = 'Stockholms län';
+        var defaultOmradeWhenIndicatorChanged = {};
 
-    observer_change_indicator = new MutationObserver(mutationRecords => {
-        sasReport.getReportHandle().then(reportHandle => {
-            var newIndicator = document.querySelector('[aria-controls="sas_RC-Dropdown-list-1"]').getElementsByClassName('sas_components-Select-Select_label')[0].innerText;
-            var _parameters = indicator_name_parameter_map[newIndicator];
-            var parameters = {}
-            for (let i in _parameters) {
-                Object.assign(parameters, _parameters[i]);
-            }
-            reportHandle.updateReportParameters(parameters);
-        });
-    })
 
-    var loading_replaced = false;
-    var observer_loading = new MutationObserver(mutationRecords => {
-        var sasLoadingDiv = document.getElementsByClassName('sas_components-BusyStateIndicator-BusyStateIndicator_state');
-        if (sasLoadingDiv && loading_replaced == false) {
-            loading_replaced = true;
-            sasLoadingDiv[0].style.visibility = "hidden";
-            var sasMainPanel = document.getElementsByClassName('sas_components-Pane-Pane_pane')[0];
-            var customLoadingDiv = sasMainPanel.appendChild(document.createElement('div'));
-            customLoadingDiv.setAttribute('id', 'customLoadingDiv');
-            customLoadingDiv.innerHTML = `
+        observer_change_indicator = new MutationObserver(mutationRecords => {
+            sasReport.getReportHandle().then(reportHandle => {
+                var newIndicator = document.querySelector('[aria-controls="sas_RC-Dropdown-list-1"]').getElementsByClassName('sas_components-Select-Select_label')[0].innerText;
+                var _parameters = indicator_name_parameter_map[newIndicator];
+                var parameters = {}
+                for (let i in _parameters) {
+                    Object.assign(parameters, _parameters[i]);
+                }
+                Object.assign(parameters, defaultOmradeWhenIndicatorChanged);
+                reportHandle.updateReportParameters(parameters);
+            });
+        })
+
+        var loading_replaced = false;
+        var observer_loading = new MutationObserver(mutationRecords => {
+            var sasLoadingDiv = document.getElementsByClassName('sas_components-BusyStateIndicator-BusyStateIndicator_state');
+            if (sasLoadingDiv && loading_replaced == false) {
+                loading_replaced = true;
+                sasLoadingDiv[0].style.visibility = "hidden";
+                var sasMainPanel = document.getElementsByClassName('sas_components-Pane-Pane_pane')[0];
+                var customLoadingDiv = sasMainPanel.appendChild(document.createElement('div'));
+                customLoadingDiv.setAttribute('id', 'customLoadingDiv');
+                customLoadingDiv.innerHTML = `
                 <div class='loading screen'>
                     <div class="lds-ring">
                         <div></div>
@@ -238,225 +242,235 @@ window.addEventListener('vaReportComponents.loaded', function () {
                     </div>
                 </div>
             `
-        }
-        var indicator_control = document.querySelector('[aria-controls="sas_RC-Dropdown-list-1"]')
-        if (indicator_control) {
-            observer_change_indicator.observe(indicator_control.getElementsByClassName('sas_components-Select-Select_label')[0], {
-                characterData: true,
-                attributes: false,
-                childList: false,
-                subtree: true
-            })
-            observer_loading.disconnect();
-        }
+            }
+            var indicator_control = document.querySelector('[aria-controls="sas_RC-Dropdown-list-1"]')
+            if (indicator_control) {
+                observer_change_indicator.observe(indicator_control.getElementsByClassName('sas_components-Select-Select_label')[0], {
+                    characterData: true,
+                    attributes: false,
+                    childList: false,
+                    subtree: true
+                })
+                observer_loading.disconnect();
+            }
 
-    })
+        })
 
-    observer_loading.observe(sasReport, {
-        childList: true,
-        subtree: true
-    });
-
-    //disable the right-click function
-    sasReport.addEventListener("contextmenu", function (event) {
-        event.stopPropagation();
-    }, true);
-
-    //update indicator when firstly open the report
-    var currentUrl = window.location.href;
-    var UrlId = currentUrl.match(/.+id=(\d+).*/);
-
-    if (UrlId != null && UrlId[1] in id_indicator) {
-        sasReport.getReportHandle().then((reportHandle) => {
-            reportHandle.updateReportParameters(indicator_init_map[id_indicator[UrlId[1]]]);
+        observer_loading.observe(sasReport, {
+            childList: true,
+            subtree: true
         });
-    } else {
-        sasReport.getReportHandle().then((reportHandle) => {
-            reportHandle.updateReportParameters(indicator_init_map["Arbetsmiljö"]);
-        });
-    }
 
-    //Receive data from two iframes;
-    var iframe_title_div_innerHTML
-    window.addEventListener('message', (event) => {
-        disableScrollDoubleClickOutline();
-        if (typeof (event.data) == 'object') {
-            switch (event.data.type) {
-                case "openUrl":
-                    var win = window.open(event.data.content, '_blank');
-                    win.focus();
-                    break;
-                case "changeParameter":
-                    sasReport.getReportHandle().then((reportHandle) => {
-                        reportHandle.updateReportParameters(event.data.content);
-                    });
-                    break;
-                case "screenshotInfo":
-                    iframe_title_div_innerHTML = event.data.content["title_div"];
-                    var menus = document.querySelectorAll("[aria-haspopup='listbox']");
-                    menus.forEach(element => {
-                        if (element.innerText in event.data.content) {
-                            var menuName = element.innerText;
-                            element.querySelector(".sas_components-Select-Select_label").innerText = event.data.content[element.innerText];
-                            element.setAttribute("title", menuName);
-                        } else if (element.getAttribute("title") in event.data.content) {
-                            element.querySelector(".sas_components-Select-Select_label").innerText = event.data.content[element.getAttribute("title")];
-                        }
-                    })
-                    break;
-                case "defaultOmradeChanged":
-                    var rx = /(.+)_.+/g;
-                    var omrade_page = rx.exec(Object.keys(event.data.content)[0])[1]
-                    switch (omrade_page) {
-                        case "stapel":
-                            stapelCurrentOmrade = Object.values(event.data.content)[0];
-                            sasReport.getReportHandle().then((reportHandle) => {
-                                reportHandle.updateReportParameters({
-                                    'linje_Område': ['Stockholms län', Object.values(event.data.content)[0]],
-                                    'table_Område': ['Stockholms län', Object.values(event.data.content)[0]]
-                                });
-                            });
-                            break;
-                        case "linje":
-                            parameterTobeChanged = {}
-                            parameterTobeChanged['table_Område'] = Object.values(event.data.content)[0]
-                            if (!(Object.values(event.data.content)[0].includes(stapelCurrentOmrade))) {
-                                parameterTobeChanged['stapel_Område'] = Object.values(event.data.content)[0][Object.values(event.data.content)[0].length - 1];
-                                stapelCurrentOmrade = Object.values(event.data.content)[0][Object.values(event.data.content)[0].length - 1];
-                            }
-                            sasReport.getReportHandle().then((reportHandle) => {
-                                reportHandle.updateReportParameters(parameterTobeChanged);
-                            });
-                            break;
-                        case "table":
-                            parameterTobeChanged = {}
-                            parameterTobeChanged['linje_Område'] = Object.values(event.data.content)[0]
-                            if (!(Object.values(event.data.content)[0].includes(stapelCurrentOmrade))) {
-                                parameterTobeChanged['stapel_Område'] = Object.values(event.data.content)[0][Object.values(event.data.content)[0].length - 1];
-                                stapelCurrentOmrade = Object.values(event.data.content)[0][Object.values(event.data.content)[0].length - 1];
-                            }
-                            sasReport.getReportHandle().then((reportHandle) => {
-                                reportHandle.updateReportParameters(parameterTobeChanged);
-                            });
-                            break;
-                    }
+        //disable the right-click function
+        sasReport.addEventListener("contextmenu", function (event) {
+            event.stopPropagation();
+        }, true);
 
-                    case "screenshotKarta":
-                        var kartaImage = new Image();
-                        var stapelImage = new Image();
-                        var imagesLoaded = 0
+        //update indicator when firstly open the report
+        var currentUrl = window.location.href;
+        var UrlId = currentUrl.match(/.+id=(\d+).*/);
 
-                        function createKartaScreenShot() {
+        if (UrlId != null && UrlId[1] in id_indicator) {
+            sasReport.getReportHandle().then((reportHandle) => {
+                reportHandle.updateReportParameters(indicator_init_map[id_indicator[UrlId[1]]]);
+            });
+        } else {
+            sasReport.getReportHandle().then((reportHandle) => {
+                reportHandle.updateReportParameters(indicator_init_map["Arbetsmiljö"]);
+            });
+        }
 
-                            export_canvas = document.createElement('canvas');
-
-                            export_canvas.width = kartaImage.width + stapelImage.width;
-                            export_canvas.height = 150 + Math.max(kartaImage.height, stapelImage.height);
-
-                            ctx = export_canvas.getContext('2d');
-
-                            ctx.drawImage(kartaImage, 0, 150);
-                            ctx.drawImage(stapelImage, kartaImage.width, 150);
-
-                            var title_lines = iframe_title_div_innerHTML.split('<br>')
-                            start_y_position = 31
-                            for (i = 0; i < title_lines.length; i++) {
-                                var line_span = title_lines[i].match(/<.*?\/span>/gm);
-                                var line_text = "";
-                                for (var j = 0; j < line_span.length; j++) {
-                                    line_text = line_text.concat(line_span[j].match(/.*>(.+)</m)[1]);
-                                }
-                                if (i == 0) {
-                                    ctx.font = "bold 22px Arial";
-                                    ctx.fillText(line_text, 10, start_y_position);
-                                    start_y_position = start_y_position + 25;
-                                } else {
-                                    ctx.font = "15px Arial";
-                                    ctx.fillText(line_text, 10, start_y_position);
-                                    start_y_position = start_y_position + 18;
-                                }
-                            }
-                            var dataURL = export_canvas.toDataURL(type = 'image/png');
-                            var a = document.createElement("a");
-                            a.href = dataURL;
-                            a.download = "Bild Folkhälsokollen";
-                            a.click();
-                            // Clear canvas
-                            ctx.clearRect(0, 0, export_canvas.width, export_canvas.height);
-                        }
-
-                        kartaImage.onload = function () {
-                            imagesLoaded++;
-                            if (imagesLoaded == 2) {
-                                createKartaScreenShot()
-                            }
-                        }
-
-                        stapelImage.onload = function () {
-                            imagesLoaded++;
-                            if (imagesLoaded == 2) {
-                                createKartaScreenShot()
-                            }
-                        }
-
-                        kartaImage.src = event.data.content.karta;
-                        stapelImage.src = event.data.content.stapel;
-
+        //Receive data from two iframes;
+        var iframe_title_div_innerHTML
+        window.addEventListener('message', (event) => {
+            disableScrollDoubleClickOutline();
+            if (typeof (event.data) == 'object') {
+                switch (event.data.type) {
+                    case "openUrl":
+                        var win = window.open(event.data.content, '_blank');
+                        win.focus();
                         break;
-            }
-        }
-    });
+                    case "changeParameter":
+                        sasReport.getReportHandle().then((reportHandle) => {
+                            reportHandle.updateReportParameters(event.data.content);
+                        });
+                        break;
+                    case "screenshotInfo":
+                        iframe_title_div_innerHTML = event.data.content["title_div"];
+                        var menus = document.querySelectorAll("[aria-haspopup='listbox']");
+                        menus.forEach(element => {
+                            if (element.innerText in event.data.content) {
+                                var menuName = element.innerText;
+                                element.querySelector(".sas_components-Select-Select_label").innerText = event.data.content[element.innerText];
+                                element.setAttribute("title", menuName);
+                            } else if (element.getAttribute("title") in event.data.content) {
+                                element.querySelector(".sas_components-Select-Select_label").innerText = event.data.content[element.getAttribute("title")];
+                            }
+                        })
+                        break;
+                    case "defaultOmradeChanged":
+                        var rx = /(.+)_.+/g;
+                        var omrade_page = rx.exec(Object.keys(event.data.content)[0])[1]
+                        switch (omrade_page) {
+                            case "stapel":
+                                stapelCurrentOmrade = Object.values(event.data.content)[0];
+                                sasReport.getReportHandle().then((reportHandle) => {
+                                    reportHandle.updateReportParameters({
+                                        'linje_Område': ['Stockholms län', Object.values(event.data.content)[0]],
+                                        'table_Område': ['Stockholms län', Object.values(event.data.content)[0]]
+                                    });
+                                });
+                                defaultOmradeWhenIndicatorChanged['stapel_Område'] = Object.values(event.data.content)[0];
+                                defaultOmradeWhenIndicatorChanged['linje_Område'] = ['Stockholms län', Object.values(event.data.content)[0]]; 
+                                defaultOmradeWhenIndicatorChanged['table_Område'] = ['Stockholms län', Object.values(event.data.content)[0]]; 
+                                break;
+                            case "linje":
+                                parameterTobeChanged = {}
+                                parameterTobeChanged['table_Område'] = Object.values(event.data.content)[0];
+                                defaultOmradeWhenIndicatorChanged['linje_Område'] = Object.values(event.data.content)[0];
+                                defaultOmradeWhenIndicatorChanged['table_Område'] = Object.values(event.data.content)[0]; 
+                                if (!(Object.values(event.data.content)[0].includes(stapelCurrentOmrade))) {
+                                    parameterTobeChanged['stapel_Område'] = Object.values(event.data.content)[0][Object.values(event.data.content)[0].length - 1];
+                                    defaultOmradeWhenIndicatorChanged['stapel_Område'] = Object.values(event.data.content)[0][Object.values(event.data.content)[0].length - 1]; 
+                                    stapelCurrentOmrade = Object.values(event.data.content)[0][Object.values(event.data.content)[0].length - 1];
+                                }
+                                sasReport.getReportHandle().then((reportHandle) => {
+                                    reportHandle.updateReportParameters(parameterTobeChanged);
+                                });
+                                break;
+                            case "table":
+                                parameterTobeChanged = {}
+                                parameterTobeChanged['linje_Område'] = Object.values(event.data.content)[0];
+                                defaultOmradeWhenIndicatorChanged['table_Område'] = Object.values(event.data.content)[0]; 
+                                defaultOmradeWhenIndicatorChanged['linje_Område'] = Object.values(event.data.content)[0]; 
+                                if (!(Object.values(event.data.content)[0].includes(stapelCurrentOmrade))) {
+                                    parameterTobeChanged['stapel_Område'] = Object.values(event.data.content)[0][Object.values(event.data.content)[0].length - 1];
+                                    defaultOmradeWhenIndicatorChanged['stapel_Område'] = Object.values(event.data.content)[0][Object.values(event.data.content)[0].length - 1];
+                                    stapelCurrentOmrade = Object.values(event.data.content)[0][Object.values(event.data.content)[0].length - 1];
+                                }
+                                sasReport.getReportHandle().then((reportHandle) => {
+                                    reportHandle.updateReportParameters(parameterTobeChanged);
+                                });
+                                break;
+                        }
 
+                        case "screenshotKarta":
+                            var kartaImage = new Image();
+                            var stapelImage = new Image();
+                            var imagesLoaded = 0
 
-    // This is the js script for downloading the report as Image from browser
-    document.getElementsByTagName("sas-report")[0].addEventListener("click", e => {
-        if (e.target.title ==
-            "Klicka här för att spara en bild av din visualisering. Bilden laddas ned som en jpg-fil på din dator."
-        ) {
+                            function createKartaScreenShot() {
 
-            var export_canvas = document.createElement('canvas');
-            var figure_canvases = document.getElementsByTagName('canvas');
-            var ctx;
-            if (figure_canvases.length != 0) { //Get image data from SAS VA SDK 
-                export_canvas.width = figure_canvases[0].width;
-                export_canvas.height = 150 + figure_canvases[0].height;
-                ctx = export_canvas.getContext('2d');
+                                export_canvas = document.createElement('canvas');
 
-                ctx.drawImage(figure_canvases[0], 0, 150);
-                var title_lines = iframe_title_div_innerHTML.split('<br>')
-                start_y_position = 31
-                for (i = 0; i < title_lines.length; i++) {
-                    var line_span = title_lines[i].match(/<.*?\/span>/gm);
-                    var line_text = "";
-                    for (var j = 0; j < line_span.length; j++) {
-                        line_text = line_text.concat(line_span[j].match(/.*>(.+)</m)[1]);
-                    }
-                    if (i == 0) {
-                        ctx.font = "bold 22px Arial";
-                        ctx.fillText(line_text, 10, start_y_position);
-                        start_y_position = start_y_position + 25;
-                    } else {
-                        ctx.font = "15px Arial";
-                        ctx.fillText(line_text, 10, start_y_position);
-                        start_y_position = start_y_position + 18;
-                    }
+                                export_canvas.width = kartaImage.width + stapelImage.width;
+                                export_canvas.height = 150 + Math.max(kartaImage.height, stapelImage.height);
+
+                                ctx = export_canvas.getContext('2d');
+
+                                ctx.drawImage(kartaImage, 0, 150);
+                                ctx.drawImage(stapelImage, kartaImage.width, 150);
+
+                                var title_lines = iframe_title_div_innerHTML.split('<br>')
+                                start_y_position = 31
+                                for (i = 0; i < title_lines.length; i++) {
+                                    var line_span = title_lines[i].match(/<.*?\/span>/gm);
+                                    var line_text = "";
+                                    for (var j = 0; j < line_span.length; j++) {
+                                        line_text = line_text.concat(line_span[j].match(/.*>(.+)</m)[1]);
+                                    }
+                                    if (i == 0) {
+                                        ctx.font = "bold 22px Arial";
+                                        ctx.fillText(line_text, 10, start_y_position);
+                                        start_y_position = start_y_position + 25;
+                                    } else {
+                                        ctx.font = "15px Arial";
+                                        ctx.fillText(line_text, 10, start_y_position);
+                                        start_y_position = start_y_position + 18;
+                                    }
+                                }
+                                var dataURL = export_canvas.toDataURL(type = 'image/png');
+                                var a = document.createElement("a");
+                                a.href = dataURL;
+                                a.download = "Bild Folkhälsokollen";
+                                a.click();
+                                // Clear canvas
+                                ctx.clearRect(0, 0, export_canvas.width, export_canvas.height);
+                            }
+
+                            kartaImage.onload = function () {
+                                imagesLoaded++;
+                                if (imagesLoaded == 2) {
+                                    createKartaScreenShot()
+                                }
+                            }
+
+                            stapelImage.onload = function () {
+                                imagesLoaded++;
+                                if (imagesLoaded == 2) {
+                                    createKartaScreenShot()
+                                }
+                            }
+
+                            kartaImage.src = event.data.content.karta;
+                            stapelImage.src = event.data.content.stapel;
+
+                            break;
                 }
-                var dataURL = export_canvas.toDataURL(type = 'image/png');
-                var a = document.createElement("a");
-                a.href = dataURL;
-                a.download = "Bild Folkhälsokollen";
-                a.click();
-
-                // Clear canvas
-                ctx.clearRect(0, 0, export_canvas.width, export_canvas.height);
-            } else { //Get image data from iframe
-                document.getElementsByTagName('iframe')[2].contentWindow.postMessage(message = {
-                    'type': 'takeScreenShot'
-                }, targetOrigin = '*')
             }
-        } else if (e.target.title == 'Hjälp') {
-            window.open(
-                'https://www.folkhalsokollen.se/sa-har-gor-du/', "_blank");
-        }
+        });
+
+
+        // This is the js script for downloading the report as Image from browser
+        document.getElementsByTagName("sas-report")[0].addEventListener("click", e => {
+            if (e.target.title ==
+                "Klicka här för att spara en bild av din visualisering. Bilden laddas ned som en jpg-fil på din dator."
+            ) {
+
+                var export_canvas = document.createElement('canvas');
+                var figure_canvases = document.getElementsByTagName('canvas');
+                var ctx;
+                if (figure_canvases.length != 0) { //Get image data from SAS VA SDK 
+                    export_canvas.width = figure_canvases[0].width;
+                    export_canvas.height = 150 + figure_canvases[0].height;
+                    ctx = export_canvas.getContext('2d');
+
+                    ctx.drawImage(figure_canvases[0], 0, 150);
+                    var title_lines = iframe_title_div_innerHTML.split('<br>')
+                    start_y_position = 31
+                    for (i = 0; i < title_lines.length; i++) {
+                        var line_span = title_lines[i].match(/<.*?\/span>/gm);
+                        var line_text = "";
+                        for (var j = 0; j < line_span.length; j++) {
+                            line_text = line_text.concat(line_span[j].match(/.*>(.+)</m)[1]);
+                        }
+                        if (i == 0) {
+                            ctx.font = "bold 22px Arial";
+                            ctx.fillText(line_text, 10, start_y_position);
+                            start_y_position = start_y_position + 25;
+                        } else {
+                            ctx.font = "15px Arial";
+                            ctx.fillText(line_text, 10, start_y_position);
+                            start_y_position = start_y_position + 18;
+                        }
+                    }
+                    var dataURL = export_canvas.toDataURL(type = 'image/png');
+                    var a = document.createElement("a");
+                    a.href = dataURL;
+                    a.download = "Bild Folkhälsokollen";
+                    a.click();
+
+                    // Clear canvas
+                    ctx.clearRect(0, 0, export_canvas.width, export_canvas.height);
+                } else { //Get image data from iframe
+                    document.getElementsByTagName('iframe')[2].contentWindow.postMessage(message = {
+                        'type': 'takeScreenShot'
+                    }, targetOrigin = '*')
+                }
+            } else if (e.target.title == 'Hjälp') {
+                window.open(
+                    'https://www.folkhalsokollen.se/sa-har-gor-du/', "_blank");
+            }
+        });
     });
-});
+})
