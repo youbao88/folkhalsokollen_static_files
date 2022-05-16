@@ -1,7 +1,7 @@
 const indicator_name_parameter_map = {
   'Vaccination mot covid-19': {
     'karta': {
-      'karta_Tidsperiod': 'Mars 2022',
+      'karta_Tidsperiod': 'April 2022',
       'karta_Kön': ['Kvinnor', 'Män'],
       'karta_Åldersgrupp': ['0-24 år',
         '25-44 år',
@@ -12,7 +12,7 @@ const indicator_name_parameter_map = {
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': 'Mars 2022',
+      'stapel_Tidsperiod': 'April 2022',
       'stapel_Kön': ['Kvinnor', 'Män']
     },
     'linje': {
@@ -26,7 +26,7 @@ const indicator_name_parameter_map = {
       ]
     },
     'tabell': {
-      'table_Tidsperiod': 'Mars 2022',
+      'table_Tidsperiod': 'April 2022',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['0-24 år',
         '25-44 år',
