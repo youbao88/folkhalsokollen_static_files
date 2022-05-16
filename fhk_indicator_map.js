@@ -1334,7 +1334,7 @@ const indicator_name_parameter_map = {
       'tabel_Kön': ['Kvinnor', 'Män']
     }
   },
-  'Vaccinerade mot säsongsinfluensa': {
+  'Vaccination mot säsongsinfluensa': {
     'karta': {
       'karta_Tidsperiod': '2021–2022',
       'karta_Kön': ['Kvinnor', 'Män'],
