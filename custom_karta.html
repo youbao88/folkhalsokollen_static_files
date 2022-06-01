@@ -640,7 +640,24 @@
                 if (event.data && event.data.type && event.data.type == "takeScreenShot") {
                     var stapelBase64 = barchart.toBase64Image();
 
-                    var mapBase64 = document.getElementsByTagName('canvas')[0].toDataURL()
+                    //Resize the map canvas to be the same width as barchart
+                    var mapCanvasOriginal = document.getElementsByTagName('canvas')[0];
+                    var mapHeightWidthRatio = mapCanvasOriginal.height/mapCanvasOriginal.width;
+
+                    var mapCanvasResized = document.createElement("canvas");
+                    var mapContextResized = mapCanvasResized.getContext("2d");
+
+
+                    var targetHeight = barchart.height;
+                    var targetWidth = barchart.height/mapHeightWidthRatio;
+
+                    mapCanvasResized.height = targetHeight;
+                    mapCanvasResized.width = targetWidth;
+
+                    mapContextResized.drawImage(mapCanvasOriginal, 0,0,targetWidth, targetHeight);
+                    var mapBase64 = mapCanvasResized.toDataURL();
+
+
 
                     var messageToMain = {
                         type: 'screenshotKarta',
