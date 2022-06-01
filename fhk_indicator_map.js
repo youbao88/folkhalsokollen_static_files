@@ -688,7 +688,7 @@ const indicator_name_parameter_map = {
       'tabel_Kön': ['Kvinnor', 'Män']
     }
   },
-  'Rädsla': {
+  'Rädsla att gå ut ensam': {
     'karta': {
       'karta_Tidsperiod': '2021',
       'karta_Kön': ['Kvinnor', 'Män'],
@@ -1334,7 +1334,7 @@ const indicator_name_parameter_map = {
       'tabel_Kön': ['Kvinnor', 'Män']
     }
   },
-  'Depression och ångest': {
+  'Depression och ångest (diagnostiserad)': {
     'karta': {
       'karta_Tidsperiod': '2019',
       'karta_Kön': ['Kvinnor', 'Män'],
@@ -2003,7 +2003,7 @@ const indicator_init_map = {
   },
   "Psykisk ohälsa": {
     indikator_group: "Psykisk ohälsa",
-    indikator_name: "Depression och ångest",
+    indikator_name: "Depression och ångest (diagnostiserad)",
     indikator_category: "Ej valbart",
     karta_Tidsperiod: "2019",
     karta_Kön: ["Kvinnor", "Män"],
