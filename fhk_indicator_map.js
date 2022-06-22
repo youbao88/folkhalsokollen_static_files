@@ -77,7 +77,7 @@ const indicator_name_parameter_map = {
   },
   'Vaccination mot covid-19': {
     'karta': {
-      'karta_Tidsperiod': 'April 2022',
+      'karta_Tidsperiod': 'Maj 2022',
       'karta_Kön': ['Kvinnor', 'Män'],
       'karta_Åldersgrupp': ['0-24 år',
         '25-44 år',
@@ -88,7 +88,7 @@ const indicator_name_parameter_map = {
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': 'April 2022',
+      'stapel_Tidsperiod': 'Maj 2022',
       'stapel_Kön': ['Kvinnor', 'Män']
     },
     'linje': {
@@ -102,7 +102,7 @@ const indicator_name_parameter_map = {
       ]
     },
     'tabell': {
-      'table_Tidsperiod': 'April 2022',
+      'table_Tidsperiod': 'Maj 2022',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['0-24 år',
         '25-44 år',
@@ -1336,24 +1336,24 @@ const indicator_name_parameter_map = {
   },
   'Depression och ångest (diagnostiserad)': {
     'karta': {
-      'karta_Tidsperiod': '2019',
+      'karta_Tidsperiod': '2021',
       'karta_Kön': ['Kvinnor', 'Män'],
-      'karta_Åldersgrupp': ['18-29 år', '30-49 år', '50-64 år', '65+ år']
+      'karta_Åldersgrupp': ['18-29 år', '30-44 år', '45-64 år', '65+ år'] 
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': '2019',
+      'stapel_Tidsperiod': '2021',
       'stapel_Kön': ['Kvinnor', 'Män']
     },
     'linje': {
       'linje_Kön': ['Kvinnor', 'Män'],
       'linje_Område': ['Stockholms län', 'Botkyrka'],
-      'linje_Åldersgrupp': ['18-29 år', '30-49 år', '50-64 år', '65+ år']
+      'linje_Åldersgrupp': ['18-29 år', '30-44 år', '45-64 år', '65+ år'] 
     },
     'tabell': {
-      'table_Tidsperiod': '2019',
+      'table_Tidsperiod': '2021',
       'table_Område': 'Stockholms län',
-      'tabel_Åldersgrupp': ['18-29 år', '30-49 år', '50-64 år', '65+ år'],
+      'tabel_Åldersgrupp': ['18-29 år', '30-44 år', '45-64 år', '65+ år'],
       'tabel_Kön': ['Kvinnor', 'Män']
     }
   },
