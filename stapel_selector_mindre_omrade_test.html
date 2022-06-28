@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+
+<head>
+    <title>
+        stapel_selector
+    </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <style>
+        body {
+            font-family: Arial, Verdana, Helvetica;
+            font-size: 0.9rem;
+            background-color: transparent;
+        }
+
+        .selectorContainer {
+            padding: 20px;
+        }
+
+        .selectorTextWrap {
+            background-color: rgb(97, 35, 97);
+            padding: 8px;
+            margin-top: 13px;
+            margin-bottom: 0px;
+            width: 100%;
+        }
+
+        .selectorText {
+            color: #FFFFFF;
+            font-size: 12.0pt;
+        }
+
+        .selectorDropdown {
+            background-color: #FFFFFF;
+            margin-top: 0px;
+            width: 100%;
+            padding: 16px;
+        }
+
+        .mySelectpicker {
+            margin: auto;
+            border: 1px solid #b0b8bc;
+            border-radius: 0;
+            background-color: #FFFFFF;
+        }
+
+        .mySelectpicker:hover {
+            background-color: #b0b8bc;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .center {
+            margin: auto !important;
+        }
+
+        .bootstrap-select .dropdown-menu {
+            max-width: 100% !important;
+        }
+
+        .bootstrap-select .dropdown-menu li a {
+            padding-left: 15px !important;
+        }
+
+        .dropdown-item .active .selected {
+            font-weight: normal;
+        }
+
+        .selected {
+            font-weight: bold;
+        }
+
+        .check-mark {
+            font-size: 0.8rem;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="selectorContainer">
+        <div class='selectorWrap'>
+            <div class='selectorTextWrap'>
+                <span class='selectorText'>4. Välj tidsperiod</span>
+            </div>
+            <div class='selectorDropdown'>
+                <select class="selectpicker show-tick" id='stapel_tidsperiod' data-style='mySelectpicker'
+                    data-width='100%' sas-parameter='stapel_Tidsperiod'>
+                </select>
+            </div>
+        </div>
+        <div class='selectorWrap'>
+            <div class='selectorTextWrap'>
+                <span class='selectorText'>5. Välj kön</span>
+            </div>
+            <div class='selectorDropdown'>
+                <select class="selectpicker" id='stapel_kon' multiple data-style='mySelectpicker' data-width='100%'
+                    data-actions-box="true" data-select-all-text='välj alla' sas-parameter='stapel_Kön'>
+                </select>
+            </div>
+        </div>
+        <div class='selectorWrap'>
+            <div class='selectorTextWrap'>
+                <span class='selectorText'>6. Välj område</span>
+            </div>
+            <div class='selectorDropdown'>
+                <select class="selectpicker" id='stapel_omrade' data-live-search="true" data-style='mySelectpicker'
+                    data-width='100%' data-live-search-placeholder='Sök område' sas-parameter='stapel_Område'>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+    <script>
+        const omradeSubTextMap = {
+            "Botkyrka": "kommun",
+            "Bromma": "stadsdel",
+            "Danderyd": "kommun",
+            "Ekerö": "kommun",
+            "Enskede-Årsta-Vantör": "stadsdel",
+            "Farsta": "stadsdel",
+            "Haninge": "kommun",
+            "Huddinge": "kommun",
+            "Hägersten-Älvsjö": "stadsdel",
+            "Hässelby-Vällingby": "stadsdel",
+            "Järfälla": "kommun",
+            "Kungsholmen": "stadsdel",
+            "Lidingö": "kommun",
+            "Nacka": "kommun",
+            "Norrmalm": "stadsdel",
+            "Norrtälje": "kommun",
+            "Nykvarn": "kommun",
+            "Nynäshamn": "kommun",
+            "Rinkeby-Kista": "stadsdel",
+            "Salem": "kommun",
+            "Sigtuna": "kommun",
+            "Skarpnäck": "stadsdel",
+            "Skärholmen": "stadsdel",
+            "Sollentuna": "kommun",
+            "Solna": "kommun",
+            "Spånga-Tensta": "stadsdel",
+            "Stockholm": "kommun",
+            "Stockholms län": "län",
+            "Sundbyberg": "kommun",
+            "Södermalm": "stadsdel",
+            "Södertälje": "kommun",
+            "Tyresö": "kommun",
+            "Täby": "kommun",
+            "Upplands Väsby": "kommun",
+            "Upplands-Bro": "kommun",
+            "Vallentuna": "kommun",
+            "Vaxholm": "kommun",
+            "Värmdö": "kommun",
+            "Östermalm": "stadsdel",
+            "Österåker": "kommun"
+        };
+        const monthOrder = ['Januari', 'Februari', 'Mars', 'April', 'Maj', 'Juni', 'Juli', 'Augusti', 'September',
+            'Oktober', 'November', 'December'
+        ]
+        const allaOmrade = {
+            'Stockholms län': [],
+            'Stockholm': [],
+            'Botkyrka': ['Alby',
+                'Fittja',
+                'Grödinge/Vårsta',
+                'Hallunda-Norsborg centrala',
+                'Hallunda-Norsborg övr omr',
+                'Storvreten',
+                'Tullinge',
+                'Tumba övr'
+            ],
+            'Bromma': ['Abrahamsberg-Riksby-Åkeshov-Åkeslund',
+                'Alvik-Smedslätten-Stora Mossen-Ulvsunda-Äppelviken',
+                'Beckomberga-Bällsta',
+                'Blackeberg',
+                'Bromma Kyrka-Ängby',
+                'Mariehäll',
+                'Traneberg-Ulvsunda Industriområde',
+                'Ålsten-Nockeby'
+            ],
+            'Danderyd': ['Djursholm',
+                'Enebyberg-Klingsta',
+                'Mörby-Danderyds k:a',
+                'Stocksund'
+            ],
+            'Ekerö': ['Ekerö övrigt', 'Träkvista-Tappström'],
+            'Enskede-Årsta-Vantör': ['Enskede',
+                'Hagsätra',
+                'Högdalen-Bandhagen',
+                'Johanneshov',
+                'Rågsved',
+                'Stureby-Örby',
+                'Årsta',
+                'Östberga-Valla Gärde'
+            ],
+            'Farsta': ['Farsta',
+                'Farsta strand-Larsboda',
+                'Gubbängen-Tallkrogen-Svedmyra',
+                'Hökarängen-Fagersjö',
+                'Sköndal'
+            ],
+            'Haninge': ['Brandbergen',
+                'Dalarö-Haninge glesbygd',
+                'Handen',
+                'Jordbro',
+                'Tungelsta',
+                'Vega-Kolartorp',
+                'Vendelsö-Norrby',
+                'Vendelsömalm-N Söderby',
+                'Västerhaninge'
+            ],
+            'Huddinge': ['Flemmingsberg',
+                'Fullersta',
+                'Länna-Vidja',
+                'Segeltorp-Smista',
+                'Sjödalen-Balingsnäs',
+                'Skogås',
+                'Snättringe-Glömsta',
+                'Stuvsta',
+                'Trångsund',
+                'Vårby-Masmo'
+            ],
+            'Hägersten-Älvsjö': ['Aspudden',
+                'Fruängen',
+                'Gröndal',
+                'Herängen-Långbro',
+                'Hägersten',
+                'Liljeholmen',
+                'Midsommarkransen-Västberga',
+                'Mälarhöjden',
+                'Solberga',
+                'Västertorp',
+                'Älvsjö-Liseberg'
+            ],
+            'Hässelby-Vällingby': ['Grimsta-Vällingby',
+                'Hässelby Gård',
+                'Hässelby Strand',
+                'Hässelby Villastad',
+                'Kälvesta-Nälsta-Vinsta',
+                'Råcksta'
+            ],
+            'Järfälla': ['Barkarby',
+                'Jakobsbergs C-Vibblaby',
+                'Kallhäll',
+                'Kallhäll omland',
+                'Mellersta Järfälla',
+                'Tallbohov-Hammaren',
+                'Veddesta',
+                'Viksjö'
+            ],
+            'Kungsholmen': ['Fredhäll-Essingen',
+                'Kristineberg-Marieberg',
+                'Kungsholm',
+                'Stadshagen',
+                'Östra S:t Göran'
+            ],
+            'Lidingö': ['Larsberg-Baggeby-Bodal-Gångsätra',
+                'Lidingö nordväst',
+                'Lidingö östra',
+                'Torsvik-Herserud-Hersby-Mosstorp'
+            ],
+            'Nacka': ['Björknäs-Eknäs',
+                'Ektorp-Skuru-Duvnäs',
+                'Finntorp-Nysätra',
+                'Fisksätra',
+                'Henriksdal-Jarlaberg',
+                'Kummelnäs-Mensättra',
+                'Lännersta-Boo',
+                'Nacka C-Jarlaberg-Nacka strand',
+                'Orminge-Krokhöjden',
+                'Saltsjöbaden',
+                'Älta'
+            ],
+            'Norrmalm': ['Gustav Vasa',
+                'Jakob-Klara-Adolf Fredrik-Södra Johannes',
+                'Norra Johannes',
+                'Västra Matteus',
+                'Östra Matteus'
+            ],
+            'Norrtälje': ['Hallstavik-Väddö',
+                'Norrtälje norra landsbygden',
+                'Norrtälje stad norra',
+                'Norrtälje stad södra',
+                'Norrtälje södra landsbygden',
+                'Rimbo-Gottröra-Finsta'
+            ],
+            'Nykvarn': ['Nykvarn'],
+            'Nynäshamn': ['Nynäshamn stad yttre',
+                'Nynäshamn-Sorunda glesbygd',
+                'Nynäshamns stad centrala',
+                'Ösmo'
+            ],
+            'Rinkeby-Kista': ['Akalla', 'Husby', 'Kista', 'Rinkeby'],
+            'Salem': ['Rönninge', 'Salemstaden'],
+            'Sigtuna': ['Märsta omland',
+                'Norra Märsta',
+                'Sigtuna',
+                'Södra Märsta',
+                'Valsta C-Norra'
+            ],
+            'Skarpnäck': ['Bagarmossen',
+                'Björkhagen-Kärrtorp-Enskededalen',
+                'Hammarbyhöjden',
+                'Skarpnäck'
+            ],
+            'Skärholmen': ['Bredäng', 'Skärholmen', 'Sätra', 'Vårberg'],
+            'Sollentuna': ['Bagarby-Sollentuna C',
+                'Edsberg',
+                'Helenelund',
+                'Häggvik',
+                'Norrviken-Vaxmora-Viby',
+                'Rotebro',
+                'Tureberg-Falkberget-Sjöberg'
+            ],
+            'Solna': ['Bergshamra-Ulriksdal',
+                'Centrala Solna',
+                'Frösunda-Hagalund',
+                'Huvudsta',
+                'Järva-Bagartorp',
+                'Råsunda-Näckrosen'
+            ],
+            'Spånga-Tensta': ['Bromsten-Flysta-Sundby', 'Lunda-Solhem', 'Tensta'],
+            'Sundbyberg': ['Centrala Sundbyberg',
+                'Hallonbergen-Ör',
+                'Lilla Alby-Bällstaån',
+                'Rissne',
+                'Storskogen-Tule-Duvbo',
+                'Ursvik-Brotorp'
+            ],
+            'Södermalm': ['Mariatorget-Södra station',
+                'Norra Högalid',
+                'Sofia',
+                'Södra Hammarbyhamnen',
+                'Södra Högalid',
+                'Västra Katarina',
+                'Östra Katarina-Gamla stan'
+            ],
+            'Södertälje': ['Brunnsäng-Grusåsen',
+                'Fornhöjden-Glasberga',
+                'Geneta',
+                'Hovsjö-Saltskog-Södra',
+                'Hölö-Mölnbo',
+                'Järna-Pershagen',
+                'Ronna-Lina Hage',
+                'Rosenlund-Östertälje',
+                'Södertälje kommun norra',
+                'Södertälje stad centrala',
+                'Södertälje stad västra'
+            ],
+            'Tyresö': ['Bollmora västra',
+                'Bollmora östra-Krusboda',
+                'Trollbäcken-Lindalen',
+                'Tyresö östra'
+            ],
+            'Täby': ['Centrala Täby',
+                'Ensta-Ella-Visinge',
+                'Gribbylund-Arninge-Täby glesbygd',
+                'Lahäll-Näsbypark',
+                'Roslags-Näsby-Ella gård-Skarpäng',
+                'Täby Kyrkby',
+                'Viggbyholm-Hägernäs'
+            ],
+            'Upplands Väsby': ['Bollstanäs-Fresta glesbygd',
+                'Odenslunda-Skälby-Frestaby',
+                'Runby-Eds glesbygd',
+                'Stora Väsby',
+                'Väsby C-Smedby'
+            ],
+            'Upplands-Bro': ['Bro tätort', 'Brunna-Upplands Bro norra', 'Kungsängen'],
+            'Vallentuna': ['Bällsta', 'Vallentuna landsbygd', 'Vallentuna-Ormsta'],
+            'Vaxholm': ['Vaxolm'],
+            'Värmdö': ['Gustavsberg',
+                'Ingarö',
+                'Mörtnäs-Hemmesta',
+                'Värmdölandet-Djurö-Skärgården'
+            ],
+            'Östermalm': ['Engelbrekts k:a',
+                'Gärdet-Djurgården',
+                'Hedvig Eleonora',
+                'Hjorthagen-Värtahamnen',
+                'Oscars k:a',
+                'Tekniska Högskolan-Universitetet'
+            ],
+            'Österåker': ['Åkersberga-Österskär',
+                'Österåker Nordost',
+                'Österåker Syd',
+                'Österåker Väst'
+            ]
+        }
+        Array.prototype.contains = function (v) {
+            if (Array.isArray(v)) {
+                return v.every(ai => this.includes(ai));
+            } else {
+                for (var i = 0; i < this.length; i++) {
+                    if (this[i] === v) return true;
+                }
+                return false;
+            }
+        };
+
+        $('.selectpicker').selectpicker();
+        $('.bs-deselect-all').addClass('hide');
+        $('.bs-select-all').addClass('center');
+
+        Array.prototype.unique = function () {
+            var arr = [];
+            for (var i = 0; i < this.length; i++) {
+                if (!arr.contains(this[i])) {
+                    arr.push(this[i]);
+                }
+            }
+            return arr;
+        }
+        const unzip = arr =>
+            arr.reduce(
+                (acc, val) => (val.forEach((v, i) => acc[i].push(v)), acc),
+                Array.from({
+                    length: Math.max(...arr.map(x => x.length))
+                }).map(x => [])
+            );
+        $('.selectpicker').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
+            if ($(this).val().length < 1) {
+                $(this).val(previousValue);
+                $(this).selectpicker('refresh');
+            } else {
+                parameterName = e.target.attributes['sas-parameter'].textContent;
+                sendMessage = {
+                    'type': 'changeParameter',
+                    'content': {
+                        [parameterName]: $(this).val()
+                    }
+                }
+                window.parent.postMessage(message = sendMessage, targetOrigin = '*');
+                if (['linje_Område', 'stapel_Område', 'table_Område'].includes(parameterName)) {
+                    sendMessage = {
+                        'type': 'defaultOmradeChanged',
+                        'content': {
+                            [parameterName]: $(this).val()
+                        }
+                    }
+                    window.parent.postMessage(message = sendMessage, targetOrigin = '*');
+                }
+            }
+        });
+
+        function sendLinkMessage(link_url) {
+            window.parent.postMessage(message = link_url, targetOrigin = '*');
+        }
+        if (window.addEventListener) {
+            // For standards-compliant web browsers
+            window.addEventListener("message", onMessage, false);
+        } else {
+            window.attachEvent("onmessage", onMessage);
+        }
+
+
+
+        // Retrieve data and begin processing
+        function onMessage(event) {
+
+            if (event && event.data) {
+
+                const unzippedData = unzip(event.data.data);
+
+                const konUnique = unzippedData[0].unique().sort();
+                const tidPeriodUnique = unzippedData[1].unique();
+                if (tidPeriodUnique[0].length == 4) {
+                    var tidPeriodUniqueSorted = tidPeriodUnique.sort()
+                } else {
+                    function tidsperiodsort(x, y) {
+                        if (x == "Hela 2020") {
+                            return -1
+                        } else {
+                            if (y == "Hela 2020") {
+                                return 1
+                            } else {
+                                if (x.split(" ")[1] == y.split(" ")[1]) {
+                                    console.log(monthOrder.indexOf(x.split(" ")[0]) - monthOrder.indexOf(y.split(
+                                        " ")[0]))
+                                    return monthOrder.indexOf(x.split(" ")[0]) - monthOrder.indexOf(y.split(" ")[0])
+                                } else {
+                                    return x.split(" ")[1] - y.split(" ")[1]
+                                }
+                            }
+                        }
+                    }
+                    var tidPeriodUniqueSorted = tidPeriodUnique.sort(tidsperiodsort);
+                }
+                const omradeUnique = unzippedData[2].unique().sort(function (x, y) {
+                    return x == "Stockholms län" ? -1 : y == "Stockholms län" ? 1 : 0;
+                });
+
+                $('#stapel_kon').empty();
+                konUnique.forEach(element => {
+                    $('#stapel_kon').append(
+                        `<option value="${element}" data-tokens="${element}">${element}</option>`)
+                });
+                $('#stapel_kon').selectpicker('refresh');
+
+                if (konUnique.contains(event.data.parameters.find(o => o.label == 'stapel_Kön').value)) {
+                    $('#stapel_kon').val(event.data.parameters.find(o => o.label == 'stapel_Kön').value).selectpicker(
+                        'refresh');
+                } else {
+                    $('#stapel_kon').val(konUnique).selectpicker(
+                        'refresh');
+                    sendMessage = {
+                        'type': 'changeParameter',
+                        'content': {
+                            stapel_Kön: konUnique
+                        }
+                    }
+                    window.parent.postMessage(message = sendMessage, targetOrigin = '*');
+                }
+
+                $('#stapel_tidsperiod').empty();
+                tidPeriodUniqueSorted.forEach(element => {
+                    $('#stapel_tidsperiod').append(
+                        `<option value="${element}" data-tokens="${element}">${element}</option>`)
+                });
+                $('#stapel_tidsperiod').selectpicker('refresh');
+
+                if (tidPeriodUniqueSorted.contains(event.data.parameters.find(o => o.label == 'stapel_Tidsperiod')
+                        .value)) {
+                    $('#stapel_tidsperiod').val(event.data.parameters.find(o => o.label == 'stapel_Tidsperiod').value)
+                        .selectpicker(
+                            'refresh');
+                } else {
+                    $('#stapel_tidsperiod').val(tidPeriodUniqueSorted[0]).selectpicker(
+                        'refresh');
+                    sendMessage = {
+                        'type': 'changeParameter',
+                        'content': {
+                            stapel_Tidsperiod: tidPeriodUniqueSorted[0]
+                        }
+                    }
+                    window.parent.postMessage(message = sendMessage, targetOrigin = '*');
+                }
+
+
+                $('#stapel_omrade').empty();
+                if (omradeUnique.length <= 40) {
+                    omradeUnique.forEach(element => {
+                        $('#stapel_omrade').append(
+                            `<option value="${element}" data-tokens="${element}" data-subtext="${omradeSubTextMap[element]}">${element}</option>`
+                        )
+                    });
+                } else {
+                    for (const [key, values] of Object.entries(allaOmrade)) {
+                        $('#stapel_omrade').append(
+                            `<option value="${key}" data-tokens="${key}" data-subtext="${omradeSubTextMap[key]}" style = "font-weight: bold" >${key}</option>`
+                        )
+                        if (values.length != 0) {
+                            values.forEach(element => {
+                                $('#stapel_omrade').append(
+                                    `<option value="${element}" data-tokens="${key}"+" "+"${element}" data-subtext="kommundel">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${element}</option>`
+                                )
+                            })
+                        }
+                    }
+                }
+                $('#stapel_omrade').selectpicker('refresh');
+                if (omradeUnique.contains(event.data.parameters.find(o => o.label == 'stapel_Område').value)) {
+                    $('#stapel_omrade').val(event.data.parameters.find(o => o.label == 'stapel_Område').value)
+                        .selectpicker(
+                            'refresh');
+                } else {
+                    $('#stapel_omrade').val(omradeUnique[0]).selectpicker(
+                        'refresh');
+                    sendMessage = {
+                        'type': 'changeParameter',
+                        'content': {
+                            stapel_Område: omradeUnique[0]
+                        }
+                    }
+                    window.parent.postMessage(message = sendMessage, targetOrigin = '*');
+                }
+            }
+        }
+    </script>
+</body>
