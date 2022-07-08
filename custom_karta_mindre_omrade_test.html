@@ -143,6 +143,7 @@
         var legend;
         var info;
         var currentjson;
+        var tileLayer;
 
         var stadsdelarList = [
             'Bromma', 'Enskede-Årsta-Vantör', 'Farsta', 'Hägersten-Älvsjö', 'Hässelby-Vällingby',
@@ -268,7 +269,7 @@
                     });
 
 
-                    const tileLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    tileLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                         maxZoom: 19,
                         attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
                     })
