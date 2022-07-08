@@ -15,6 +15,7 @@
     <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-image/v0.0.4/leaflet-image.js'></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
     <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+    <script src="https://kit.fontawesome.com/f12bd0d7ad.js" crossorigin="anonymous"></script>
     <style>
         body {
             font-family: Arial, Verdana, Helvetica;
@@ -354,7 +355,7 @@
 
                     //Initialize center button
                     var centerButton = L.easyButton(
-                        "<span class='centerButton' title = 'reset view'>&curren;</span>",
+                        "<span class='fas fa-arrow-rotate-right' title = 'Uppdatera kartan'></span>",
                         function () {
                             //center the view
                             mymap.fitBounds(currentjson.getBounds());
@@ -362,7 +363,8 @@
                     centerButton.addTo(mymap);
                     //Initialize go-back button
                     var goBackButton = L.easyButton(
-                        "<span class='goBackButton' title = 'Go back'>&larrhk;</span>",
+                        "<span class='fas fa-arrow-left' title = 'Gå bakåt'></span>",
+                        // "<i class='goBackButton fa-solid fa-arrow-rotate-left' title = 'Go back'></span>",
                         function () {
                             //Reset map
 
