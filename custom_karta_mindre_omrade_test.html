@@ -267,13 +267,10 @@
                     });
 
 
-                    var tileLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    const tileLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                         maxZoom: 19,
                         attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
                     })
-                    if (isOnMindre) {
-                        tileLayer.addTo(mymap);
-                    }
 
                     function getColor(d) {
                         interval = (current_value_max - current_value_min) / 5
@@ -374,6 +371,7 @@
 
                             secondjson.remove();
                             simpleGeojson.remove();
+                            tileLayer.remove();
                             geojson = L.geoJson(stockholm_kommun_sorted, {
                                 style: style,
                                 onEachFeature: onEachFeature
@@ -559,6 +557,7 @@
                                 }
                                 barchart.update();
                                 mymap.fitBounds(secondjson.getBounds());
+                                tileLayer.addTo(mymap);
                                 isOnKommun = false;
                             } else {
                                 if (e.target) {
@@ -1010,7 +1009,7 @@
                         onEachFeature: onEachFeature
                     })
                     secondjson.addTo(mymap);
-
+                    tileLayer.addTo(mymap);
                     legend.remove();
                     legend.addTo(mymap);
                     currentjson = secondjson;
