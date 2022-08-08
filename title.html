@@ -51,13 +51,24 @@
         .tooltip:hover .tooltiptext {
             visibility: visible;
         }
+        #openMerInfo{
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+        #openMerInfo:hover{
+            text-decoration: underline;
+        }
     </style>
 </head>
 
 <body>
-    <div id="iframe_title_div" style="position:fixed; top: 20%; left: 0%; font-family: Arial, Helvetica, sans-serif;">
+    <div id="iframe_title_div" style="position:fixed; top: 3%; left: 0%; font-family: Arial, Helvetica, sans-serif;">
     </div>
     <script>
+        const indicatorNameWithMindreOmråde = [
+            'Boendeform', 'Familjetyp', 'Födelseland', 'Åldersgrupper', 'Ohälsotal', 'Slutenvårdstillfällen',
+            'Öppenvårdsbesök', 'Ekonomiskt bistånd', 'Huvudsaklig sysselsättning', 'Inkomstnivå','Utbildningsnivå'
+        ]
         function combineAgeInterval(originalInterval) {
             var ålder_interval = [];
             for (var j = 0; j < originalInterval.length; j++) {
@@ -151,6 +162,7 @@
                 }
                 var parameters = event.data.parameters;
                 var advanced_report = false;
+                let isOnKarta = true;
                 for (var i = 0; i < parameters.length; i++) {
                     if (parameters[i]['label'] == "selection_option") {
                         if (parameters[i]['value'] == 'på') {
@@ -169,6 +181,9 @@
                     var parameter_value = parameters[i]['value'];
                     messageToMain[parameter_name] = parameter_value;
 
+                    if (parameter_name == 'Område'){
+                        isOnKarta = false;
+                    }
                     if (indicator_name == "Åldersgrupper" && parameter_name ==
                         "Åldersgrupp") { //hide "Åldersgrupp" subtitle if indicator is "Ålderesgrupper"
                         continue
@@ -209,6 +224,20 @@
                     `<span style="font-size: 0.9rem">Enhet: </span><span style="font-size: 0.9rem; font-weight:bold">${value_unit}`;
                 // Send page information back to the main server in order to create it as an image
                 var iframe_title_div = document.getElementById('iframe_title_div');
+                div.innerHTML += "<br><a id = 'openMerInfo''> Definition och mer information </a>";
+                console.log(indicator_name);
+                if (isOnKarta){
+                    if (indicatorNameWithMindreOmråde.includes(indicator_name)){
+                        div.innerHTML += "<br><span style='font-size: 0.9rem; font-weight: bold'>Tillgänglig nivå: län, kommun/stadsdel, kommundel</span>";
+                    }else{
+                        div.innerHTML += "<br><span style='font-size: 0.9rem; font-weight: bold'>Tillgänglig nivå: län, kommun/stadsdel</span>";
+                    }
+                }
+                document.getElementById('openMerInfo').onclick = function(){
+                    window.parent.postMessage(message = {
+                        type: 'openMerInfo'
+                    }, targetOrigin = '*');
+                };
                 messageToMain["title_div"] = iframe_title_div.innerHTML;
                 sendMessage = {
                     type: 'screenshotInfo',
