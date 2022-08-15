@@ -1,7 +1,7 @@
 const indicator_name_parameter_map = {
   'Dödsfall med covid-19': {
     'karta': {
-      'karta_Tidsperiod': 'Hela 2021',
+      'karta_Tidsperiod': 'Juni 2022',
       'karta_Kön': ['Kvinnor', 'Män'],
       'karta_Åldersgrupp': ['0-24 år',
         '25-44 år',
@@ -12,7 +12,7 @@ const indicator_name_parameter_map = {
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': 'Hela 2021',
+      'stapel_Tidsperiod': 'Juni 2022',
       'stapel_Kön': ['Kvinnor', 'Män']
     },
     'linje': {
@@ -26,7 +26,7 @@ const indicator_name_parameter_map = {
       ]
     },
     'tabell': {
-      'table_Tidsperiod': 'Hela 2021',
+      'table_Tidsperiod': 'Juni 2022',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['0-24 år',
         '25-44 år',
@@ -39,7 +39,7 @@ const indicator_name_parameter_map = {
   },
   'Slutenvård med covid-19': {
     'karta': {
-      'karta_Tidsperiod': 'Hela 2021',
+      'karta_Tidsperiod': 'Juni 2022',
       'karta_Kön': ['Kvinnor', 'Män'],
       'karta_Åldersgrupp': ['0-24 år',
         '25-44 år',
@@ -50,7 +50,7 @@ const indicator_name_parameter_map = {
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': 'Hela 2021',
+      'stapel_Tidsperiod': 'Juni 2022',
       'stapel_Kön': ['Kvinnor', 'Män']
     },
     'linje': {
@@ -64,7 +64,7 @@ const indicator_name_parameter_map = {
       ]
     },
     'tabell': {
-      'table_Tidsperiod': 'Hela 2021',
+      'table_Tidsperiod': 'Juni 2022',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['0-24 år',
         '25-44 år',
@@ -77,7 +77,7 @@ const indicator_name_parameter_map = {
   },
   'Vaccination mot covid-19': {
     'karta': {
-      'karta_Tidsperiod': 'Maj 2022',
+      'karta_Tidsperiod': 'Juni 2022',
       'karta_Kön': ['Kvinnor', 'Män'],
       'karta_Åldersgrupp': ['0-24 år',
         '25-44 år',
@@ -88,7 +88,7 @@ const indicator_name_parameter_map = {
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': 'Maj 2022',
+      'stapel_Tidsperiod': 'Juni 2022',
       'stapel_Kön': ['Kvinnor', 'Män']
     },
     'linje': {
@@ -102,7 +102,7 @@ const indicator_name_parameter_map = {
       ]
     },
     'tabell': {
-      'table_Tidsperiod': 'Maj 2022',
+      'table_Tidsperiod': 'Juni 2022',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['0-24 år',
         '25-44 år',
@@ -1987,16 +1987,16 @@ const indicator_init_map = {
     indikator_group: "Covid-19",
     indikator_name: "Dödsfall med covid-19",
     indikator_category: "Ej valbart",
-    karta_Tidsperiod: "Hela 2021",
+    karta_Tidsperiod: "Juni 2022",
     karta_Kön: ["Kvinnor", "Män"],
     karta_Åldersgrupp: ["0-24 år", "25-44 år", "45-64 år", "65-79 år", "80+ år"],
     stapel_Område: "Stockholms län",
-    stapel_Tidsperiod: "Hela 2021",
+    stapel_Tidsperiod: "Juni 2022",
     stapel_Kön: ["Kvinnor", "Män"],
     linje_Område: ["Stockholms län", "Botkyrka"],
     linje_Kön: ["Kvinnor", "Män"],
     linje_Åldersgrupp: ["0-24 år", "25-44 år", "45-64 år", "65-79 år", "80+ år"],
-    table_Tidsperiod: "Hela 2021",
+    table_Tidsperiod: "Juni 2022",
     table_Område: "Stockholms län",
     tabel_Åldersgrupp: ["0-24 år", "25-44 år", "45-64 år", "65-79 år", "80+ år"],
     tabel_Kön: ["Kvinnor", "Män"]
