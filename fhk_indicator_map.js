@@ -1,7 +1,7 @@
 const indicator_name_parameter_map = {
   'Dödsfall med covid-19': {
     'karta': {
-      'karta_Tidsperiod': 'Juni 2022',
+      'karta_Tidsperiod': 'Augusti 2022',
       'karta_Kön': ['Kvinnor', 'Män'],
       'karta_Åldersgrupp': ['0-24 år',
         '25-44 år',
@@ -12,7 +12,7 @@ const indicator_name_parameter_map = {
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': 'Juni 2022',
+      'stapel_Tidsperiod': 'Augusti 2022',
       'stapel_Kön': ['Kvinnor', 'Män']
     },
     'linje': {
@@ -26,7 +26,7 @@ const indicator_name_parameter_map = {
       ]
     },
     'tabell': {
-      'table_Tidsperiod': 'Juni 2022',
+      'table_Tidsperiod': 'Augusti 2022',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['0-24 år',
         '25-44 år',
@@ -39,7 +39,7 @@ const indicator_name_parameter_map = {
   },
   'Slutenvård med covid-19': {
     'karta': {
-      'karta_Tidsperiod': 'Juni 2022',
+      'karta_Tidsperiod': 'Augusti 2022',
       'karta_Kön': ['Kvinnor', 'Män'],
       'karta_Åldersgrupp': ['0-24 år',
         '25-44 år',
@@ -50,7 +50,7 @@ const indicator_name_parameter_map = {
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': 'Juni 2022',
+      'stapel_Tidsperiod': 'Augusti 2022',
       'stapel_Kön': ['Kvinnor', 'Män']
     },
     'linje': {
@@ -64,7 +64,7 @@ const indicator_name_parameter_map = {
       ]
     },
     'tabell': {
-      'table_Tidsperiod': 'Juni 2022',
+      'table_Tidsperiod': 'Augusti 2022',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['0-24 år',
         '25-44 år',
@@ -77,7 +77,7 @@ const indicator_name_parameter_map = {
   },
   'Vaccination mot covid-19': {
     'karta': {
-      'karta_Tidsperiod': 'Juni 2022',
+      'karta_Tidsperiod': 'Augusti 2022',
       'karta_Kön': ['Kvinnor', 'Män'],
       'karta_Åldersgrupp': ['0-24 år',
         '25-44 år',
@@ -88,7 +88,7 @@ const indicator_name_parameter_map = {
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': 'Juni 2022',
+      'stapel_Tidsperiod': 'Augusti 2022',
       'stapel_Kön': ['Kvinnor', 'Män']
     },
     'linje': {
@@ -102,7 +102,7 @@ const indicator_name_parameter_map = {
       ]
     },
     'tabell': {
-      'table_Tidsperiod': 'Juni 2022',
+      'table_Tidsperiod': 'Augusti 2022',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['0-24 år',
         '25-44 år',
