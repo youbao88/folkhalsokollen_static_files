@@ -255,6 +255,7 @@
 
                     // For the choropleth
                     mymap = L.map('karta', {
+                        attributionControl: false,
                         preferCanvas: true,
                         gestureHandling: true,
                         gestureHandlingOptions: {
@@ -1041,24 +1042,29 @@
                 }
             } else {
                 if (event.data && event.data.type && event.data.type == "takeScreenShot") {
-                    var stapelBase64 = barchart.toBase64Image();
+
+                    let stapelCanvasOriginal = document.getElementsByTagName('canvas')[1];
+
 
                     //Resize the map canvas to be the same width as barchart
-                    var mapCanvasOriginal = document.getElementsByTagName('canvas')[0];
-                    var mapHeightWidthRatio = mapCanvasOriginal.height / mapCanvasOriginal.width;
-
-                    var mapCanvasResized = document.createElement("canvas");
-                    var mapContextResized = mapCanvasResized.getContext("2d");
+                    let mapCanvasOriginal = document.getElementsByTagName('canvas')[0];
 
 
-                    var targetHeight = barchart.height;
-                    var targetWidth = barchart.height / mapHeightWidthRatio;
+                    let mapHeightWidthRatio = mapCanvasOriginal.height / mapCanvasOriginal.width;
+
+                    let mapCanvasResized = document.createElement("canvas");
+                    let mapContextResized = mapCanvasResized.getContext("2d");
+
+
+                    let targetHeight = stapelCanvasOriginal.height;
+                    let targetWidth = stapelCanvasOriginal.height / mapHeightWidthRatio;
 
                     mapCanvasResized.height = targetHeight;
                     mapCanvasResized.width = targetWidth;
 
                     mapContextResized.drawImage(mapCanvasOriginal, 0, 0, targetWidth, targetHeight);
-                    var mapBase64 = mapCanvasResized.toDataURL();
+                    let mapBase64 = mapCanvasResized.toDataURL();
+                    let stapelBase64 = stapelCanvasOriginal.toDataURL();
 
 
 

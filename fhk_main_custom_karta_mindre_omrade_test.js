@@ -369,9 +369,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 export_canvas.height = 150 + Math.max(kartaImage.height, stapelImage.height);
 
                                 ctx = export_canvas.getContext('2d');
+                                ctx.fillStyle = "#ffffff"; //Set the background color as white
+                                ctx.fillRect(0, 0, export_canvas.width, export_canvas.height); //Set the bacground color
 
                                 ctx.drawImage(kartaImage, 0, 150);
                                 ctx.drawImage(stapelImage, kartaImage.width, 150);
+
+                                ctx.fillStyle = "#000000"; //Set the font color as black
 
                                 let title_lines = iframe_title_div_innerHTML.split('<br>');
                                 let start_y_position = 31;
@@ -442,7 +446,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     export_canvas.height = 150 + figure_canvases[0].height;
                     ctx = export_canvas.getContext('2d');
 
+                    ctx.fillStyle = "#ffffff"; //Set the background color as white
+                    ctx.fillRect(0, 0, export_canvas.width, export_canvas.height); //Set the bacground color
+
                     ctx.drawImage(figure_canvases[0], 0, 150);
+                    ctx.fillStyle = "#000000"; //Set the font color as black
                     let title_lines = iframe_title_div_innerHTML.split('<br>')
                     start_y_position = 31
                     for (let i = 0; i < title_lines.length; i++) {
