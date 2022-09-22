@@ -71,7 +71,7 @@
         ]
         function combineAgeInterval(originalInterval) {
             var ålder_interval = [];
-            for (var j = 0; j < originalInterval.length; j++) {
+            for (let j = 0; j < originalInterval.length; j++) {
                 var interval = originalInterval[j].replace(" år", "");
                 if (interval.charAt(interval.length - 1) == "+") { //if tne interval is like 'XX+'
                     ålder_interval.push([interval.replace("+", ""), "+"]);
@@ -83,7 +83,7 @@
 
             var ålder_interval_processed = [];
             ålder_interval_processed.push(ålder_interval[0]);
-            for (var j = 1; j < ålder_interval.length; j++) {
+            for (let j = 1; j < ålder_interval.length; j++) {
                 if (parseInt(ålder_interval[j][0]) - 1 == parseInt(ålder_interval_processed[ålder_interval_processed
                         .length - 1][1])) {
                     ålder_interval_processed[ålder_interval_processed.length - 1][1] = ålder_interval[j][1];
@@ -93,7 +93,7 @@
             }
 
             var ålder_interval_output = [];
-            for (var j = 0; j < ålder_interval_processed.length; j++) {
+            for (let j = 0; j < ålder_interval_processed.length; j++) {
                 if (ålder_interval_processed[j][1] != "+") {
                     ålder_interval_output.push(
                         `${ålder_interval_processed[j][0]}-${ålder_interval_processed[j][1]} år`);
@@ -162,7 +162,6 @@
                 }
                 var parameters = event.data.parameters;
                 var advanced_report = false;
-                let isOnKarta = true;
                 for (var i = 0; i < parameters.length; i++) {
                     if (parameters[i]['label'] == "selection_option") {
                         if (parameters[i]['value'] == 'på') {
@@ -225,13 +224,10 @@
                 // Send page information back to the main server in order to create it as an image
                 var iframe_title_div = document.getElementById('iframe_title_div');
                 div.innerHTML += "<br><a id = 'openMerInfo''> Definition och mer information </a>";
-                console.log(indicator_name);
-                if (isOnKarta){
-                    if (indicatorNameWithMindreOmråde.includes(indicator_name)){
-                        div.innerHTML += "<br><span style='font-size: 0.9rem; font-weight: bold'>Tillgänglig nivå: län, kommun/stadsdel, kommundel</span>";
-                    }else{
-                        div.innerHTML += "<br><span style='font-size: 0.9rem; font-weight: bold'>Tillgänglig nivå: län, kommun/stadsdel</span>";
-                    }
+                if (indicatorNameWithMindreOmråde.includes(indicator_name)){
+                    div.innerHTML += "<br><span style='font-size: 0.9rem; font-weight: bold'>Tillgänglig nivå: län, kommun/stadsdel, kommundel</span>";
+                }else{
+                    div.innerHTML += "<br><span style='font-size: 0.9rem; font-weight: bold'>Tillgänglig nivå: län, kommun/stadsdel</span>";
                 }
                 document.getElementById('openMerInfo').onclick = function(){
                     window.parent.postMessage(message = {
