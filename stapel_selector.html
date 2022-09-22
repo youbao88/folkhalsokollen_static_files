@@ -243,7 +243,7 @@
         // Retrieve data and begin processing
         function onMessage(event) {
 
-            if (event && event.data) {
+            if (event && event.data && event.data.data) {
 
                 const unzippedData = unzip(event.data.data);
 
