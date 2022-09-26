@@ -145,6 +145,7 @@
         var currentjson;
         var tileLayer;
         var isOnMindre;
+        var event_rows;
 
         const stadsdelarList = [
             'Bromma', 'Enskede-Årsta-Vantör', 'Farsta', 'Hägersten-Älvsjö', 'Hässelby-Vällingby',
@@ -184,7 +185,7 @@
                 first_level_data = {};
                 const stockholm_json = await getJson();
 
-                let event_rows = event.data.data;
+                event_rows = event.data.data;
                 for (let i = 0; i < event_rows.length; i++) {
                     if (firstLevelAreaList.includes(event_rows[i][2])) {
                         if (first_level_data[event_rows[i][2]] == undefined) {
@@ -863,6 +864,8 @@
                         }
                     })
                 } else {
+                    //If the user already clicked on the mindre omrade level, the data would be refreshed and the map
+                    //will automatically be zommed to the clicked omrade.
                     function getColor(d) {
                         let interval = (current_value_max - current_value_min) / 5
                         return d >= current_value_min + 4 * interval ? '#297b7b' :
