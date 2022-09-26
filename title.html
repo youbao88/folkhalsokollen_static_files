@@ -225,9 +225,9 @@
                 var iframe_title_div = document.getElementById('iframe_title_div');
                 div.innerHTML += "<br><a id = 'openMerInfo''> Definition och mer information </a>";
                 if (indicatorNameWithMindreOmråde.includes(indicator_name)){
-                    div.innerHTML += "<br><span style='font-size: 0.9rem; font-weight: bold'>Tillgänglig nivå: län, kommun/stadsdel, kommundel</span>";
+                    div.innerHTML += "<br><span style='font-size: 0.9rem; font-weight: normal'>Tillgänglig nivå: </span><span style='font-size: 0.9rem; font-weight: bold'>län, kommun/stadsdel, kommundel</span>";
                 }else{
-                    div.innerHTML += "<br><span style='font-size: 0.9rem; font-weight: bold'>Tillgänglig nivå: län, kommun/stadsdel</span>";
+                    div.innerHTML += "<br><span style='font-size: 0.9rem; font-weight: normal'>Tillgänglig nivå: </span><span style='font-size: 0.9rem; font-weight: bold'>län, kommun/stadsdel</span>";
                 }
                 document.getElementById('openMerInfo').onclick = function(){
                     window.parent.postMessage(message = {
