@@ -142,6 +142,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
         .sasTipTable > tbody > tr > td{
             border: none ! important;
         }
+        .sas_components-ReportContainer-BreadcrumbHack_hack{
+            display: none ! important;
+        }
+        .sas_components-ObjectToolbar-ObjectToolbar_wrapper{
+            display: none ! important;
+        }
 `;
     var styleSheet = document.createElement("style");
     styleSheet.type = "text/css";
@@ -188,7 +194,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         //Add hover effect to the icons
         let icons = document.getElementsByClassName('sas_components-Image-Image_clickable sas_components-Image-Image_scale sas_components-Image-Image_span')
         for (let i = 0; i < icons.length; i++) {
-            if ((icons[i].title == "Hjälp") || icons[i].title == "Klicka här för att spara en bild av din visualisering. Bilden laddas ned som en jpg-fil på din dator.") {
+                if ((icons[i].title == "Hjälp") || icons[i].title == "Klicka här för att spara en bild av din visualisering. Bilden laddas ned som en jpg-fil på din dator." || icons[i].title == "Klicka här för att spara en Excel fil.") {
                 icons[i].parentNode.parentNode.parentNode.classList.add("tool_icon");
             } else {
                 let icon_div = icons[i].parentNode.parentNode.parentNode.parentNode;
@@ -199,7 +205,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         }
 
         //Hide mer info link
-        document.getElementsByClassName('sas_BirdText-BirdText_bird-text-link')[0].hidden = true;
+        document.getElementsByClassName('sas_components-BirdText-BirdText_text')[0].hidden = true;
     }
     window.addEventListener('vaReportComponents.loaded', function () {
 
@@ -299,16 +305,17 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         break;
                     case "screenshotInfo":
                         iframe_title_div_innerHTML = event.data.content["title_div"];
-                        let menus = document.querySelectorAll("[aria-haspopup='listbox']");
-                        menus.forEach(element => {
-                            if (element.innerText in event.data.content) {
-                                let menuName = element.innerText;
-                                element.querySelector(".sas_components-Select-Select_label").innerText = event.data.content[element.innerText];
-                                element.setAttribute("title", menuName);
-                            } else if (element.getAttribute("title") in event.data.content) {
-                                element.querySelector(".sas_components-Select-Select_label").innerText = event.data.content[element.getAttribute("title")];
-                            }
-                        })
+                        document.getElementsByClassName("sas_components-Select-Select_label")[2].innerText = event.data.content['Kategori'];
+                        // let menus = document.querySelectorAll("[aria-haspopup='listbox']");
+                        // menus.forEach(element => {
+                        //     if (element.innerText in event.data.content) {
+                        //         let menuName = element.innerText;
+                        //         element.querySelector(".sas_components-Select-Select_label").innerText = event.data.content[element.innerText];
+                        //         element.setAttribute("title", menuName);
+                        //     } else if (element.getAttribute("title") in event.data.content) {
+                        //         element.querySelector(".sas_components-Select-Select_label").innerText = event.data.content[element.getAttribute("title")];
+                        //     }
+                        // })
                         break;
                     case "defaultOmradeChanged":
                         var rx = /(.+)_.+/g;
@@ -424,7 +431,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                             stapelImage.src = event.data.content.stapel;
                             break;
                         case 'openMerInfo':
-                            document.getElementsByClassName('sas_BirdText-BirdText_bird-text-link')[0].click();
+                            document.querySelectorAll('a[class^="span"]')[0].click();
                             break
 
                 }
@@ -484,9 +491,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         'type': 'takeScreenShot'
                     }, targetOrigin = '*')
                 }
-            } else if (e.target.title == 'Hjälp') {
-                window.open(
-                    'https://www.folkhalsokollen.se/sa-har-gor-du/', "_blank");
+            } else if (e.target.title == 'Klicka här för att spara en Excel fil.') {
+                sasReport.getReportHandle().then(reportHandle => {
+                    reportHandle.getObjectHandle('ve2627').then(objecetHandle => {
+                        objecetHandle.exportData('XLSX').then(excelUrl => {
+                            let win = window.open(excelUrl, '_blank');
+                            win.focus();
+                        });
+                    })
+                })
             }
         });
     });
