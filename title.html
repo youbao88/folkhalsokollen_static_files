@@ -140,7 +140,7 @@
                 div.innerHTML +=
                     `<span id = "big_title" style="font-size: 1.1rem; font-weight: bold">${indicator_name}</h1>`;
                 if (rows[0][1] !== 'Ej valbart') {
-                    div.innerHTML += ': ';
+                    div.innerHTML += '<span style="font-size: 1.1rem; font-weight: bold">: </span>';
                     indicator_filter = [];
                     for (var i = 0; i < rows.length; i++) {
                         indicator_filter.push(rows[i][1]);
