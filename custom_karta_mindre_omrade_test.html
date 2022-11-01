@@ -140,6 +140,7 @@
         var second_value_sorted;
         var current_value_max;
         var current_value_min;
+        var isSupressed;
         var legend;
         var info;
         var currentjson;
@@ -169,7 +170,9 @@
         const firstlevellist = [];
 
         async function getJson() {
-            let response = await fetch("https://cdn.statically.io/gh/youbao88/folkhalsokollen_static_files/6ce7774461ee5379f4bd1d70696c3c501dd0fe68/stockholm_smaller_area_no_holes_simplify_complex_no_small_island.json");
+            let response = await fetch(
+                "https://cdn.statically.io/gh/youbao88/folkhalsokollen_static_files/6ce7774461ee5379f4bd1d70696c3c501dd0fe68/stockholm_smaller_area_no_holes_simplify_complex_no_small_island.json"
+            );
             let data = await response.json()
             return data;
         };
@@ -221,14 +224,28 @@
                     return output;
                 }
 
+
                 first_label_sorted = Object.keys(first_level_data).sort(function (a, b) {
+                    if (first_level_data[a] == '.') return 1;
+                    if (first_level_data[b] == '.') return -1;
                     return first_level_data[b] - first_level_data[a]
                 });
                 first_value_sorted = Object.values(first_level_data).sort(function (a, b) {
+                    if (a == '.') return 1;
+                    if (b == '.') return -1;
                     return b - a
                 });
-                current_value_max = Math.max.apply(Math, Object.values(first_level_data));
-                current_value_min = Math.min.apply(Math, Object.values(first_level_data));
+                if (first_value_sorted.includes('.')) {
+                    isSupressed = true;
+                } else {
+                    isSupressed = false;
+                }
+                current_value_max = Math.max.apply(Math, Object.values(first_level_data).filter(function (e) {
+                    return e !== '.'
+                }));
+                current_value_min = Math.min.apply(Math, Object.values(first_level_data).filter(function (e) {
+                    return e !== '.'
+                }));
 
                 first_backgroundColor = generate_color(first_label_sorted);
                 let current_bar_selection_index = null;
@@ -272,17 +289,19 @@
                     });
 
 
-                    tileLayer = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-                        id: 'outdoors-v11',
-                        accessToken: 'pk.eyJ1IjoibWluaGFvemhvdSIsImEiOiJjbDZkcDUwdTMwMDlhM2txYzVnNjlndGJ1In0.pNM75PZvZEXrzCAPnYKpbg',
-                        maxZoom: 19,
-                        tileSize: 512,
-                        zoomOffset: -1
-                    })
+                    tileLayer = L.tileLayer(
+                        'https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+                            id: 'outdoors-v11',
+                            accessToken: 'pk.eyJ1IjoibWluaGFvemhvdSIsImEiOiJjbDZkcDUwdTMwMDlhM2txYzVnNjlndGJ1In0.pNM75PZvZEXrzCAPnYKpbg',
+                            maxZoom: 19,
+                            tileSize: 512,
+                            zoomOffset: -1
+                        })
 
                     function getColor(d) {
                         let interval = (current_value_max - current_value_min) / 5
-                        return d >= current_value_min + 4 * interval ? '#297b7b' :
+                        return d == '.' ? '#D3D3D3' :
+                            d >= current_value_min + 4 * interval ? '#297b7b' :
                             d >= current_value_min + 3 * interval ? '#529494' :
                             d >= current_value_min + 2 * interval ? '#7fb0b0' :
                             d >= current_value_min + 1 * interval ? '#c3dada' :
@@ -335,12 +354,12 @@
                     // method that we will use to update the control based on feature properties passed
                     info.update = function (props) {
                         this._div.innerHTML = (props ? '<b>Omräde:</b>' + props.omr_namn +
-                            '<br /><b> Värde: </b>' +
-                            props
-                            .value.toLocaleString('sv-SE', {
-                                minimumFractionDigits: 2,
-                                maximumFractionDigits: 2
-                            }) + '</br><b>Enhet: </b>' + unit : ' ')
+                            '<br /><b> Värde: </b>' + (props.value == '.' ? '*' : props
+                                .value.toLocaleString('sv-SE', {
+                                    minimumFractionDigits: 2,
+                                    maximumFractionDigits: 2
+                                })) +
+                            '</br><b>Enhet: </b>' + unit : ' ')
                     };
 
                     //Create static info div when clicked
@@ -377,6 +396,11 @@
 
                             current_value_max = Math.max.apply(Math, Object.values(first_level_data));
                             current_value_min = Math.min.apply(Math, Object.values(first_level_data));
+                            if (first_value_sorted.includes('.')) {
+                                isSupressed = true;
+                            } else {
+                                isSupressed = false;
+                            }
 
                             secondjson.remove();
                             simpleGeojson.remove();
@@ -415,13 +439,6 @@
 
                             simpleGeojson = L.geoJson(stockholm_kommun_sorted, {
                                 style: simple_style,
-                                // onEachFeature: function (feature, layer) {
-                                //     layer.bindTooltip(feature.properties.omr_namn, {
-                                //         permanent: true,
-                                //         direction: 'center',
-                                //         className: 'omradeLabel'
-                                //     })
-                                // }
                             });
                         })
 
@@ -510,7 +527,11 @@
                                     second_level_data));
                                 current_value_min = Math.min.apply(Math, Object.values(
                                     second_level_data));
-
+                                if (second_value_sorted.includes('.')) {
+                                    isSupressed = true;
+                                } else {
+                                    isSupressed = false;
+                                }
                                 let second_backgroundColor = generate_color(
                                     second_label_sorted);
 
@@ -610,13 +631,6 @@
                     }
                     simpleGeojson = L.geoJson(stockholm_kommun_sorted, {
                         style: simple_style,
-                        // onEachFeature: function (feature, layer) {
-                        //     layer.bindTooltip(feature.properties.omr_namn, {
-                        //         permanent: true,
-                        //         direction: 'center',
-                        //         className: 'omradeLabel'
-                        //     })
-                        // }
                     });
 
                     geojson = L.geoJson(stockholm_kommun_sorted, {
@@ -645,6 +659,11 @@
                         div.innerHTML +=
                             '<h4 style = "text-align: center; font-weight: bold; margin : 0px 8px 8px 8px">Värde</h4>'
 
+                        // if there exists supressed value, add one more colored square op top
+                        console.log(isSupressed);
+                        if (isSupressed) {
+                            div.innerHTML += '<i style="background: #D3D3D3; opacity: 0.85"></i> * <br>';
+                        }
                         // loop through our density intervals and generate a label with a colored square for each interval
                         for (let i = 0; i < grades.length; i++) {
                             div.innerHTML +=
@@ -757,7 +776,9 @@
                             labels: first_label_sorted,
                             datasets: [{
                                 label: 'Värde',
-                                data: first_value_sorted,
+                                data: first_value_sorted.map(function (item) {
+                                    return item == '.' ? null : item;
+                                }),
                                 backgroundColor: generate_color(
                                     first_label_sorted),
                                 borderColor: generate_color(
@@ -772,10 +793,14 @@
                             plugins: {
                                 datalabels: {
                                     formatter: function (value, context) {
-                                        return value.toLocaleString('sv-SE', {
-                                            minimumFractionDigits: 2,
-                                            maximumFractionDigits: 2
-                                        });
+                                        if (value == null) {
+                                            return '*';
+                                        } else {
+                                            return value.toLocaleString('sv-SE', {
+                                                minimumFractionDigits: 2,
+                                                maximumFractionDigits: 2
+                                            });
+                                        }
                                     },
                                     anchor: 'end',
                                     align: 'end',
@@ -808,11 +833,11 @@
                                             return 'Enhet: ' + unit;
                                         },
                                         label: function (t, d) {
-                                            return 'Värde: ' + t.raw
+                                            return 'Värde: ' + (t.raw == null ? '*' : t.raw
                                                 .toLocaleString('sv-SE', {
                                                     minimumFractionDigits: 2,
                                                     maximumFractionDigits: 2
-                                                })
+                                                }))
                                         }
                                     }
                                 }
@@ -820,7 +845,7 @@
                             maintainAspectRatio: false,
                             layout: {
                                 padding: {
-                                    right: 40 
+                                    right: 40
                                 }
                             },
                             indexAxis: 'y',
@@ -868,7 +893,8 @@
                     //will automatically be zommed to the clicked omrade.
                     function getColor(d) {
                         let interval = (current_value_max - current_value_min) / 5
-                        return d >= current_value_min + 4 * interval ? '#297b7b' :
+                        return d == '.'? '#D3D3D3':
+                            d >= current_value_min + 4 * interval ? '#297b7b' :
                             d >= current_value_min + 3 * interval ? '#529494' :
                             d >= current_value_min + 2 * interval ? '#7fb0b0' :
                             d >= current_value_min + 1 * interval ? '#c3dada' :
@@ -1030,7 +1056,9 @@
                         labels: second_label_sorted,
                         datasets: [{
                             label: 'Värde',
-                            data: second_value_sorted,
+                            data: second_value_sorted.map(function (item) {
+                                return item == '.' ? null : item;
+                            }),
                             backgroundColor: generate_color(
                                 second_label_sorted),
                             borderColor: generate_color(
