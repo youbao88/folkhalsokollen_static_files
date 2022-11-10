@@ -194,7 +194,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         //Add hover effect to the icons
         let icons = document.getElementsByClassName('sas_components-Image-Image_clickable sas_components-Image-Image_scale sas_components-Image-Image_span')
         for (let i = 0; i < icons.length; i++) {
-            if ((icons[i].title == "Hjälp") || icons[i].title == "Klicka här för att spara en bild av din visualisering. Bilden laddas ned som en jpg-fil på din dator." || icons[i].title == "Klicka här för att spara en Excel fil.") {
+                if ((icons[i].title == "Hjälp") || icons[i].title == "Klicka här för att spara en bild av din visualisering. Bilden laddas ned som en jpg-fil på din dator." || icons[i].title == "Klicka här för att spara en Excel fil.") {
                 icons[i].parentNode.parentNode.parentNode.classList.add("tool_icon");
             } else {
                 let icon_div = icons[i].parentNode.parentNode.parentNode.parentNode;
@@ -362,6 +362,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 });
                                 break;
                         }
+
                         case "screenshotKarta":
                             let kartaImage = new Image();
                             let stapelImage = new Image();
@@ -425,6 +426,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                     createKartaScreenShot()
                                 }
                             }
+
                             kartaImage.src = event.data.content.karta;
                             stapelImage.src = event.data.content.stapel;
                             break;
@@ -501,4 +503,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
         });
     });
+    var sasVaSDKScript = document.createElement("script");
+    sasVaSDKScript.type = "text/javascript";
+    sasVaSDKScript.src = "https://cdn.jsdelivr.net/npm/@sassoftware/va-report-components@1.12.0/dist/umd/va-report-components.min.js";
+    document.head.append(sasVaSDKScript);
 })
