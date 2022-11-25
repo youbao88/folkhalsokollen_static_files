@@ -28,11 +28,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
         opacity: 1.0 !important;
         border: 1px solid #f5f3f0 !important;
     }
-            .lds-ring {
+    .lds-ring {
             display: block;
             width: 80px;
             height: 80px;
-            margin: auto
+            margin: auto;
         }
 
         .lds-ring div {
@@ -116,7 +116,38 @@ document.addEventListener("DOMContentLoaded", function (event) {
         .sas_components-Popper-Popper_popper-pane > div > div{
             height: 240px ! important;
         }
-
+        .ErrorMessageTitle{
+            text-align: left;
+            display: flex;
+            margin: auto;
+            font-size: 4rem;
+            font-family:Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+        .ErrorMessageMain{
+            text-align: left;
+            display: flex;
+            margin: 10px;
+            font-size: 2rem;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+        .indent{
+            padding-left: 4rem;
+        }
+        .biggerSpace{
+            padding-top: 2rem;
+        }
+        .thirdPartyErrorDiv{
+            height: 790px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #customErrorDiv{
+            width: 80%;
+        }
+        
         /* Following CSS controls the style of 'mer-information' pop-up window*/ 
 
         .sas_components-Heading-Heading_text{
@@ -147,13 +178,60 @@ document.addEventListener("DOMContentLoaded", function (event) {
         }
         .sas_components-ObjectToolbar-ObjectToolbar_wrapper{
             display: none ! important;
-        }
-`;
+        }`;
     var styleSheet = document.createElement("style");
     styleSheet.type = "text/css";
     styleSheet.innerText = styles;
     document.head.appendChild(styleSheet);
 
+    iframe = document.createElement('iframe');
+    iframe.src = 'https://rawcdn.githack.com/youbao88/folkhalsokollen_static_files/cb60ff854ce087e4b99d71e2bb63dc3d920742e8/3rdpartycookiecheckstart.html';
+    iframe.style.display = 'none';
+    document.body.appendChild(iframe);
+    var receiveMessage = function (evt) {
+        if (evt.data === 'MM:3PCunsupported') {
+            console.log('third party cookies are not supported');
+            let sasReport = document.getElementsByTagName("sas-report")[0];
+            let thirdPartyErrorDiv = sasReport.appendChild(document.createElement('div'));
+            thirdPartyErrorDiv.setAttribute('id', 'thirdPartyErrorDiv');
+            thirdPartyErrorDiv.style.cssText = `
+            height: 790px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            width: 80%;
+            `
+            let wrapDiv = thirdPartyErrorDiv.appendChild(document.createElement('div'));
+            wrapDiv.innerHTML = `
+                    <div class = 'ErrorMessageTitle'>
+                <img src="https://img.icons8.com/emoji/50/null/warning-emoji.png"/ style = "margin: 5px"><span style = 'margin-top: auto; margin-bottom: auto'>Fel: Tredjeparts-cookies är blockerade</span>
+                </div>
+                <div class = 'ErrorMessageMain'>
+                <span>Det har uppstått ett fel mellan Folkhälsokollen och webbläsaren. Du kan behöva tillåta cookies från tredje part för att åtgärda problemet. Prova något av följande alternativ:</span>
+                </div>
+                <div class = 'ErrorMessageMain indent'>
+                <span>1. Ladda om sidan</span>
+                </div>
+                <div class = 'ErrorMessageMain indent'>
+                <span>2. Cookies är blockerade, läs mer&nbsp;</span><a href = "https://www.folkhalsokollen.se/" target="_blank">Guide: Tillåt kakor i webbläsarens inställningar</a>
+                </div>
+                <div class = 'ErrorMessageMain indent biggerSpace'>
+                    <span>Kontakta <a href = "mailto: folkhalsokollen.slso@regionstockholm.se">folkhalsokollen.slso@regionstockholm.se</a> om felet kvarstår.</span>
+                </div>
+                `
+        } else if (evt.data === 'MM:3PCsupported') {
+            console.log('third party cookies are supported');
+            var sasVaSDKScript = document.createElement("script");
+            sasVaSDKScript.type = "text/javascript";
+            sasVaSDKScript.src = "https://cdn.jsdelivr.net/npm/@sassoftware/va-report-components@1.12.0/dist/umd/va-report-components.min.js";
+            document.head.append(sasVaSDKScript);
+        }
+    };
+    window.addEventListener("message", receiveMessage, false, {
+        once: true
+    });
 
     function disableScrollDoubleClickOutline() {
         let canvases = Array.from(document.getElementsByTagName('canvas'));
@@ -194,7 +272,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         //Add hover effect to the icons
         let icons = document.getElementsByClassName('sas_components-Image-Image_clickable sas_components-Image-Image_scale sas_components-Image-Image_span')
         for (let i = 0; i < icons.length; i++) {
-                if ((icons[i].title == "Hjälp") || icons[i].title == "Klicka här för att spara en bild av din visualisering. Bilden laddas ned som en jpg-fil på din dator." || icons[i].title == "Klicka här för att spara en Excel fil.") {
+            if ((icons[i].title == "Hjälp") || icons[i].title == "Klicka här för att spara en bild av din visualisering. Bilden laddas ned som en jpg-fil på din dator." || icons[i].title == "Klicka här för att spara en Excel fil.") {
                 icons[i].parentNode.parentNode.parentNode.classList.add("tool_icon");
             } else {
                 let icon_div = icons[i].parentNode.parentNode.parentNode.parentNode;
@@ -251,6 +329,33 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 </div>
             `
             }
+            let errorMessageDiv = document.querySelector('[title^="Unable to"], [title^="Det går inte"]');
+            if ((errorMessageDiv != null)) {
+                errorMessageDiv.style.display = 'none';
+                let sasMainPanel = document.getElementsByClassName('sas_components-Pane-Pane_pane')[0];
+                let customErrorDiv = sasMainPanel.appendChild(document.createElement('div'));
+                customErrorDiv.setAttribute('id', 'customErrorDiv');
+                customErrorDiv.innerHTML = `
+             <div class = 'ErrorMessageTitle'>
+                <img src="https://img.icons8.com/emoji/50/null/warning-emoji.png"/ style = "margin: 5px"><span style = 'margin-top: auto; margin-bottom: auto'>Fel: Verktyget kunde inte läsas in</span>
+                </div>
+                <div class = 'ErrorMessageMain'>
+                <span>Det har uppstått ett fel mellan Folkhälsokollen och webbläsaren. Du kan försöka åtgärda problemet genom att göra något av följande:</span>
+                </div>
+                <div class = 'ErrorMessageMain indent'>
+                <span>1. Om underhåll pågår: vänta en stund och försök igen senare.</span>
+                </div>
+                </div>
+                <div class = 'ErrorMessageMain indent'>
+                <span>2. Prova att öppna Folkhälsokollen i en annan webbläsare.</span>
+                </div>
+                <div class = 'ErrorMessageMain indent biggerSpace'>
+                    <span>Kontakta <a href = "mailto: folkhalsokollen.slso@regionstockholm.se" style = "color: #27769f;">folkhalsokollen.slso@regionstockholm.se</a> om felet kvarstår.</span>
+                </div> 
+                `
+                observer_loading.disconnect();
+            }
+
             let indicator_control = document.querySelector('[aria-controls="sas_RC-Dropdown-list-1"]')
             if (indicator_control) {
                 observer_change_indicator.observe(indicator_control.getElementsByClassName('sas_components-Select-Select_label')[0], {
@@ -503,8 +608,4 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
         });
     });
-    var sasVaSDKScript = document.createElement("script");
-    sasVaSDKScript.type = "text/javascript";
-    sasVaSDKScript.src = "https://cdn.jsdelivr.net/npm/@sassoftware/va-report-components@1.12.0/dist/umd/va-report-components.min.js";
-    document.head.append(sasVaSDKScript);
 })
