@@ -133,7 +133,6 @@
 
         function onMessage(event) {
             if (event && event.data) {
-                console.log(event.data.data)
                 var div = document.getElementById("iframe_title_div");
                 var rows = event.data.data;
                 var messageToMain = {};
@@ -169,7 +168,6 @@
                     div.innerHTML += '<br>';
                 }
                 var parameters = event.data.parameters;
-                console.log(parameters);
                 var advanced_report = false;
                 for (var i = 0; i < parameters.length; i++) {
                     if (parameters[i]['label'] == "selection_option") {
@@ -239,8 +237,6 @@
                 value_unit = rows[0][2];
                 div.innerHTML +=
                     `<span style="font-size: 0.9rem">Enhet: </span><span style="font-size: 0.9rem; font-weight:bold">${value_unit}</span>`;
-                console.log(isOnKarta);
-                console.log(isOnTable);
                 if (isOnKarta || isOnTable) {
                     if (indicator_name == 'Amning vid 4 månaders ålder') {
                         div.innerHTML += `
