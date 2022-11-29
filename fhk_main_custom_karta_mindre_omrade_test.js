@@ -206,7 +206,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             let wrapDiv = thirdPartyErrorDiv.appendChild(document.createElement('div'));
             wrapDiv.innerHTML = `
                     <div class = 'ErrorMessageTitle'>
-                <img src="https://img.icons8.com/emoji/50/null/warning-emoji.png"/ style = "margin: 5px"><span style = 'margin-top: auto; margin-bottom: auto'>Fel: Tredjeparts-cookies är blockerade</span>
+                <img src="https://img.icons8.com/emoji/50/null/warning-emoji.png"/ style = "margin: 5px"><span style = 'margin-top: auto; margin-bottom: auto'>Fel: Tredjepartscookies är blockerade</span>
                 </div>
                 <div class = 'ErrorMessageMain'>
                 <span>Det har uppstått ett fel mellan Folkhälsokollen och webbläsaren. Du kan behöva tillåta cookies från tredje part för att åtgärda problemet. Prova något av följande alternativ:</span>
@@ -215,7 +215,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 <span>1. Ladda om sidan</span>
                 </div>
                 <div class = 'ErrorMessageMain indent'>
-                <span>2. Cookies är blockerade, läs mer&nbsp;</span><a href = "https://www.folkhalsokollen.se/" target="_blank">Guide: Tillåt kakor i webbläsarens inställningar</a>
+                <span>2. Cookies är blockerade, läs mer&nbsp;</span><a href = "https://www.folkhalsokollen.se/hantera-kakor" target="_blank">Guide: Tillåt cookies i webbläsarens inställningar</a>
                 </div>
                 <div class = 'ErrorMessageMain indent biggerSpace'>
                     <span>Kontakta <a href = "mailto: folkhalsokollen.slso@regionstockholm.se">folkhalsokollen.slso@regionstockholm.se</a> om felet kvarstår.</span>

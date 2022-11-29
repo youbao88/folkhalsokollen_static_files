@@ -828,13 +828,13 @@ const indicator_name_parameter_map = {
   },
   'Förväntad medellivslängd': {
     'karta': {
-      'karta_Tidsperiod': '2020',
+      'karta_Tidsperiod': '2021',
       'karta_Kön': ['Samtliga'],
       'karta_Åldersgrupp': ['Samtliga']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': '2020',
+      'stapel_Tidsperiod': '2021',
       'stapel_Kön': ['Samtliga']
     },
     'linje': {
@@ -843,7 +843,7 @@ const indicator_name_parameter_map = {
       'linje_Åldersgrupp': ['Samtliga']
     },
     'tabell': {
-      'table_Tidsperiod': '2020',
+      'table_Tidsperiod': '2021',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['Samtliga'],
       'tabel_Kön': ['Samtliga']
@@ -943,13 +943,13 @@ const indicator_name_parameter_map = {
   },
   'Anmälda våldsbrott': {
     'karta': {
-      'karta_Tidsperiod': '2020',
+      'karta_Tidsperiod': '2021',
       'karta_Kön': ['Samtliga'],
       'karta_Åldersgrupp': ['Samtliga']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': '2020',
+      'stapel_Tidsperiod': '2021',
       'stapel_Kön': ['Samtliga']
     },
     'linje': {
@@ -958,7 +958,7 @@ const indicator_name_parameter_map = {
       'linje_Åldersgrupp': ['Samtliga']
     },
     'tabell': {
-      'table_Tidsperiod': '2020',
+      'table_Tidsperiod': '2021',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['Samtliga'],
       'tabel_Kön': ['Samtliga']
@@ -1998,16 +1998,16 @@ const indicator_init_map = {
     indikator_group: "Sociala relationer, demokrati och miljö",
     indikator_name: "Anmälda våldsbrott",
     indikator_category: "Ej valbart",
-    karta_Tidsperiod: "2020",
+    karta_Tidsperiod: "2021",
     karta_Kön: "Samtliga",
     karta_Åldersgrupp: "Samtliga",
     stapel_Område: "Stockholms län",
-    stapel_Tidsperiod: "2020",
+    stapel_Tidsperiod: "2021",
     stapel_Kön: "Samtliga",
     linje_Område: ["Stockholms län", "Botkyrka"],
     linje_Kön: "Samtliga",
     linje_Åldersgrupp: "Samtliga",
-    table_Tidsperiod: "2020",
+    table_Tidsperiod: "2021",
     table_Område: "Stockholms län",
     tabel_Åldersgrupp: "Samtliga",
     tabel_Kön: "Samtliga"
