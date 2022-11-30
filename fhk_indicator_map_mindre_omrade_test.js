@@ -1309,6 +1309,52 @@ const indicator_name_parameter_map = {
       'tabel_Kön': ['Kvinnor', 'Män']
     }
   },
+  'ADHD (diagnostiserad)': {
+    'karta': {
+      'karta_Tidsperiod': '2021',
+      'karta_Kön': ['Kvinnor', 'Män'],
+      'karta_Åldersgrupp': ['0-17 år', '18-29 år'] 
+    },
+    'stapel': {
+      'stapel_Område': 'Stockholms län',
+      'stapel_Tidsperiod': '2021',
+      'stapel_Kön': ['Kvinnor', 'Män']
+    },
+    'linje': {
+      'linje_Kön': ['Kvinnor', 'Män'],
+      'linje_Område': ['Stockholms län', 'Botkyrka'],
+      'linje_Åldersgrupp': ['0-17 år', '18-29 år']  
+    },
+    'tabell': {
+      'table_Tidsperiod': '2021',
+      'table_Område': 'Stockholms län',
+      'tabel_Åldersgrupp': ['0-17 år', '18-29 år'] ,
+      'tabel_Kön': ['Kvinnor', 'Män']
+    }
+  },
+  'Autism (diagnostiserad)': {
+    'karta': {
+      'karta_Tidsperiod': '2021',
+      'karta_Kön': ['Kvinnor', 'Män'],
+      'karta_Åldersgrupp': ['0-17 år', '18-29 år'] 
+    },
+    'stapel': {
+      'stapel_Område': 'Stockholms län',
+      'stapel_Tidsperiod': '2021',
+      'stapel_Kön': ['Kvinnor', 'Män']
+    },
+    'linje': {
+      'linje_Kön': ['Kvinnor', 'Män'],
+      'linje_Område': ['Stockholms län', 'Botkyrka'],
+      'linje_Åldersgrupp': ['0-17 år', '18-29 år'] 
+    },
+    'tabell': {
+      'table_Tidsperiod': '2021',
+      'table_Område': 'Stockholms län',
+      'tabel_Åldersgrupp': ['0-17 år', '18-29 år'],
+      'tabel_Kön': ['Kvinnor', 'Män']
+    }
+  },
   'Depression och ångest (diagnostiserad)': {
     'karta': {
       'karta_Tidsperiod': '2021',
@@ -1978,20 +2024,20 @@ const indicator_init_map = {
   },
   "Psykisk ohälsa": {
     indikator_group: "Psykisk ohälsa",
-    indikator_name: "Depression och ångest (diagnostiserad)",
+    indikator_name: "ADHD (diagnostiserad)",
     indikator_category: "Ej valbart",
     karta_Tidsperiod: "2021",
     karta_Kön: ["Kvinnor", "Män"],
-    karta_Åldersgrupp: ['18-29 år', '30-44 år', '45-64 år', '65+ år'],
+    karta_Åldersgrupp: ['0-17 år', '18-29 år'],
     stapel_Område: "Stockholms län",
     stapel_Tidsperiod: "2021",
     stapel_Kön: ["Kvinnor", "Män"],
     linje_Område: ["Stockholms län", "Botkyrka"],
     linje_Kön: ["Kvinnor", "Män"],
-    linje_Åldersgrupp: ['18-29 år', '30-44 år', '45-64 år', '65+ år'],
+    linje_Åldersgrupp: ['0-17 år', '18-29 år'],
     table_Tidsperiod: "2021",
     table_Område: "Stockholms län",
-    tabel_Åldersgrupp: ['18-29 år', '30-44 år', '45-64 år', '65+ år'],
+    tabel_Åldersgrupp: ['0-17 år', '18-29 år'],
     tabel_Kön: ["Kvinnor", "Män"]
   },
   "Sociala relationer, demokrati och miljö": {

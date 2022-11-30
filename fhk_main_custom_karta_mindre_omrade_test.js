@@ -215,7 +215,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 <span>1. Ladda om sidan</span>
                 </div>
                 <div class = 'ErrorMessageMain indent'>
-                <span>2. Cookies är blockerade, läs mer&nbsp;</span><a href = "https://www.folkhalsokollen.se/hantera-kakor" target="_blank">Guide: Tillåt cookies i webbläsarens inställningar</a>
+                <span>2. Cookies är blockerade, läs mer&nbsp;</span><a href = "https://www.folkhalsokollen.se/hantera-kakor" target="_blank">Hantera kakor i din webbläsare</a>
                 </div>
                 <div class = 'ErrorMessageMain indent biggerSpace'>
                     <span>Kontakta <a href = "mailto: folkhalsokollen.slso@regionstockholm.se">folkhalsokollen.slso@regionstockholm.se</a> om felet kvarstår.</span>
