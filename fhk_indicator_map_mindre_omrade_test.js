@@ -1309,7 +1309,7 @@ const indicator_name_parameter_map = {
       'tabel_Kön': ['Kvinnor', 'Män']
     }
   },
-  'ADHD (diagnostiserad)': {
+  'Adhd (diagnostiserad)': {
     'karta': {
       'karta_Tidsperiod': '2021',
       'karta_Kön': ['Kvinnor', 'Män'],
@@ -1332,7 +1332,7 @@ const indicator_name_parameter_map = {
       'tabel_Kön': ['Kvinnor', 'Män']
     }
   },
-  'Autism (diagnostiserad)': {
+  'Autismspektrumtillstånd (diagnostiserad)': {
     'karta': {
       'karta_Tidsperiod': '2021',
       'karta_Kön': ['Kvinnor', 'Män'],
@@ -2024,7 +2024,7 @@ const indicator_init_map = {
   },
   "Psykisk ohälsa": {
     indikator_group: "Psykisk ohälsa",
-    indikator_name: "ADHD (diagnostiserad)",
+    indikator_name: "Adhd (diagnostiserad)",
     indikator_category: "Ej valbart",
     karta_Tidsperiod: "2021",
     karta_Kön: ["Kvinnor", "Män"],
