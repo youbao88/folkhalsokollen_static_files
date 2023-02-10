@@ -920,13 +920,13 @@ const indicator_name_parameter_map = {
   },
   'Bröstcancer': {
     'karta': {
-      'karta_Tidsperiod': '2020',
+      'karta_Tidsperiod': '2021',
       'karta_Kön': ['Kvinnor'],
       'karta_Åldersgrupp': ['0-54 år', '55+ år']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': '2020',
+      'stapel_Tidsperiod': '2021',
       'stapel_Kön': ['Kvinnor']
     },
     'linje': {
@@ -935,7 +935,7 @@ const indicator_name_parameter_map = {
       'linje_Åldersgrupp': ['0-54 år', '55+ år']
     },
     'tabell': {
-      'table_Tidsperiod': '2020',
+      'table_Tidsperiod': '2021',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['0-54 år', '55+ år'],
       'tabel_Kön': ['Kvinnor']
@@ -966,13 +966,13 @@ const indicator_name_parameter_map = {
   },
   'Tjock- och ändtarmscancer': {
     'karta': {
-      'karta_Tidsperiod': '2020',
+      'karta_Tidsperiod': '2021',
       'karta_Kön': ['Kvinnor', 'Män'],
       'karta_Åldersgrupp': ['0-54 år', '55+ år']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': '2020',
+      'stapel_Tidsperiod': '2021',
       'stapel_Kön': ['Kvinnor', 'Män']
     },
     'linje': {
@@ -981,7 +981,7 @@ const indicator_name_parameter_map = {
       'linje_Åldersgrupp': ['0-54 år', '55+ år']
     },
     'tabell': {
-      'table_Tidsperiod': '2020',
+      'table_Tidsperiod': '2021',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['0-54 år', '55+ år'],
       'tabel_Kön': ['Kvinnor', 'Män']
@@ -1012,13 +1012,13 @@ const indicator_name_parameter_map = {
   },
   'Prostatacancer': {
     'karta': {
-      'karta_Tidsperiod': '2020',
+      'karta_Tidsperiod': '2021',
       'karta_Kön': ['Män'],
       'karta_Åldersgrupp': ['0-54 år', '55+ år']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': '2020',
+      'stapel_Tidsperiod': '2021',
       'stapel_Kön': ['Män']
     },
     'linje': {
@@ -1027,7 +1027,7 @@ const indicator_name_parameter_map = {
       'linje_Åldersgrupp': ['0-54 år', '55+ år']
     },
     'tabell': {
-      'table_Tidsperiod': '2020',
+      'table_Tidsperiod': '2021',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['0-54 år', '55+ år'],
       'tabel_Kön': ['Män']
@@ -1035,13 +1035,13 @@ const indicator_name_parameter_map = {
   },
   'Lungcancer': {
     'karta': {
-      'karta_Tidsperiod': '2020',
+      'karta_Tidsperiod': '2021',
       'karta_Kön': ['Kvinnor', 'Män'],
       'karta_Åldersgrupp': ['0-54 år', '55+ år']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': '2020',
+      'stapel_Tidsperiod': '2021',
       'stapel_Kön': ['Kvinnor', 'Män']
     },
     'linje': {
@@ -1050,7 +1050,7 @@ const indicator_name_parameter_map = {
       'linje_Åldersgrupp': ['0-54 år', '55+ år']
     },
     'tabell': {
-      'table_Tidsperiod': '2020',
+      'table_Tidsperiod': '2021',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['0-54 år', '55+ år'],
       'tabel_Kön': ['Kvinnor', 'Män']
@@ -1265,13 +1265,13 @@ const indicator_name_parameter_map = {
   },
   'Hjärtinfarkt (ålder nyinsjuknade)': {
     'karta': {
-      'karta_Tidsperiod': '2019',
+      'karta_Tidsperiod': '2020',
       'karta_Kön': ['Kvinnor', 'Män'],
       'karta_Åldersgrupp': ['Ej valbart']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': '2019',
+      'stapel_Tidsperiod': '2020',
       'stapel_Kön': ['Kvinnor', 'Män']
     },
     'linje': {
@@ -1280,7 +1280,7 @@ const indicator_name_parameter_map = {
       'linje_Åldersgrupp': ['Ej valbart']
     },
     'tabell': {
-      'table_Tidsperiod': '2019',
+      'table_Tidsperiod': '2020',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['Ej valbart'],
       'tabel_Kön': ['Kvinnor', 'Män']
@@ -1288,13 +1288,13 @@ const indicator_name_parameter_map = {
   },
     'Stroke (ålder nyinsjuknade)': {
     'karta': {
-      'karta_Tidsperiod': '2019',
+      'karta_Tidsperiod': '2020',
       'karta_Kön': ['Kvinnor', 'Män'],
       'karta_Åldersgrupp': ['Ej valbart']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': '2019',
+      'stapel_Tidsperiod': '2020',
       'stapel_Kön': ['Kvinnor', 'Män']
     },
     'linje': {
@@ -1303,7 +1303,7 @@ const indicator_name_parameter_map = {
       'linje_Åldersgrupp': ['Ej valbart']
     },
     'tabell': {
-      'table_Tidsperiod': '2019',
+      'table_Tidsperiod': '2020',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['Ej valbart'],
       'tabel_Kön': ['Kvinnor', 'Män']
@@ -1403,13 +1403,13 @@ const indicator_name_parameter_map = {
   },
   'Röstande i kommunval': {
     'karta': {
-      'karta_Tidsperiod': '2018',
+      'karta_Tidsperiod': '2022',
       'karta_Kön': ['Samtliga'],
       'karta_Åldersgrupp': ['Samtliga']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': '2018',
+      'stapel_Tidsperiod': '2022',
       'stapel_Kön': ['Samtliga']
     },
     'linje': {
@@ -1418,7 +1418,7 @@ const indicator_name_parameter_map = {
       'linje_Åldersgrupp': ['Samtliga']
     },
     'tabell': {
-      'table_Tidsperiod': '2018',
+      'table_Tidsperiod': '2022',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['Samtliga'],
       'tabel_Kön': ['Samtliga']
