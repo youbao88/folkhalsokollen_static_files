@@ -1,4 +1,27 @@
 const indicator_name_parameter_map = {
+  'Gymnasiebehörighet': {
+    'karta': {
+      'karta_Tidsperiod': '2021',
+      'karta_Kön': ['Kvinnor', 'Män'],
+      'karta_Åldersgrupp': 'Ej valbart' 
+    },
+    'stapel': {
+      'stapel_Område': 'Stockholms län',
+      'stapel_Tidsperiod': '2021',
+      'stapel_Kön': ['Kvinnor', 'Män']
+    },
+    'linje': {
+      'linje_Kön': ['Kvinnor', 'Män'],
+      'linje_Område': ['Stockholms län', 'Botkyrka'],
+      'linje_Åldersgrupp': 'Ej valbart' 
+    },
+    'tabell': {
+      'table_Tidsperiod': '2021',
+      'table_Område': 'Stockholms län',
+      'tabel_Åldersgrupp': 'Ej valbart',
+      'tabel_Kön': ['Kvinnor', 'Män']
+    }
+  },
   'Dödsfall med covid-19': {
     'karta': {
       'karta_Tidsperiod': 'Oktober 2022',
