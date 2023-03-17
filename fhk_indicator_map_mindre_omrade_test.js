@@ -22,9 +22,9 @@ const indicator_name_parameter_map = {
       'tabel_Kön': ['Kvinnor', 'Män']
     }
   },
-  'Dödsfall med covid-19': {
+  'Dödsfall på grund av covid-19': {
     'karta': {
-      'karta_Tidsperiod': 'Oktober 2022',
+      'karta_Tidsperiod': '2022',
       'karta_Kön': ['Kvinnor', 'Män'],
       'karta_Åldersgrupp': ['0-24 år',
         '25-44 år',
@@ -35,7 +35,7 @@ const indicator_name_parameter_map = {
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': 'Oktober 2022',
+      'stapel_Tidsperiod': '2022',
       'stapel_Kön': ['Kvinnor', 'Män']
     },
     'linje': {
@@ -49,7 +49,7 @@ const indicator_name_parameter_map = {
       ]
     },
     'tabell': {
-      'table_Tidsperiod': 'Oktober 2022',
+      'table_Tidsperiod': '2022',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['0-24 år',
         '25-44 år',
@@ -62,7 +62,7 @@ const indicator_name_parameter_map = {
   },
   'Slutenvård med covid-19': {
     'karta': {
-      'karta_Tidsperiod': 'Oktober 2022',
+      'karta_Tidsperiod': '2022',
       'karta_Kön': ['Kvinnor', 'Män'],
       'karta_Åldersgrupp': ['0-24 år',
         '25-44 år',
@@ -73,7 +73,7 @@ const indicator_name_parameter_map = {
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': 'Oktober 2022',
+      'stapel_Tidsperiod': '2022',
       'stapel_Kön': ['Kvinnor', 'Män']
     },
     'linje': {
@@ -87,7 +87,7 @@ const indicator_name_parameter_map = {
       ]
     },
     'tabell': {
-      'table_Tidsperiod': 'Oktober 2022',
+      'table_Tidsperiod': '2022',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['0-24 år',
         '25-44 år',
@@ -435,7 +435,7 @@ const indicator_name_parameter_map = {
       'tabel_Kön': ['Kvinnor', 'Män']
     }
   },
-  'Övervikt och fetma': {
+  'Övervikt och obesitas': {
     'karta': {
       'karta_Tidsperiod': '2021',
       'karta_Kön': ['Kvinnor', 'Män'],
@@ -1102,19 +1102,19 @@ const indicator_name_parameter_map = {
       'tabel_Kön': ['Samtliga']
     }
   },
-  'Övervikt och fetma 4-åringar': {
+  'Övervikt och obesitas 4-åringar': {
     'karta': {
       'karta_Tidsperiod': '2021',
-      'karta_Kön': ['Flickar', 'Pojkar'],
+      'karta_Kön': ['Flickor', 'Pojkar'],
       'karta_Åldersgrupp': ['Samtliga']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
       'stapel_Tidsperiod': '2021',
-      'stapel_Kön': ['Flickar', 'Pojkar']
+      'stapel_Kön': ['Flickor', 'Pojkar']
     },
     'linje': {
-      'linje_Kön': ['Flickar', 'Pojkar'],
+      'linje_Kön': ['Flickor', 'Pojkar'],
       'linje_Område': ['Stockholms län', 'Botkyrka'],
       'linje_Åldersgrupp': ['Samtliga']
     },
@@ -1122,7 +1122,7 @@ const indicator_name_parameter_map = {
       'table_Tidsperiod': '2021',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['Samtliga'],
-      'tabel_Kön': ['Flickar', 'Pojkar']
+      'tabel_Kön': ['Flickor', 'Pojkar']
     }
   },
   'Vaccinationstäckning MPR': {
@@ -2029,18 +2029,18 @@ const indicator_init_map = {
   },
   "Covid-19": {
     indikator_group: "Covid-19",
-    indikator_name: "Dödsfall med covid-19",
+    indikator_name: "Dödsfall på grund av covid-19",
     indikator_category: "Ej valbart",
-    karta_Tidsperiod: "Oktober 2022",
+    karta_Tidsperiod: "2022",
     karta_Kön: ["Kvinnor", "Män"],
     karta_Åldersgrupp: ["0-24 år", "25-44 år", "45-64 år", "65-79 år", "80+ år"],
     stapel_Område: "Stockholms län",
-    stapel_Tidsperiod: "Oktober 2022",
+    stapel_Tidsperiod: "2022",
     stapel_Kön: ["Kvinnor", "Män"],
     linje_Område: ["Stockholms län", "Botkyrka"],
     linje_Kön: ["Kvinnor", "Män"],
     linje_Åldersgrupp: ["0-24 år", "25-44 år", "45-64 år", "65-79 år", "80+ år"],
-    table_Tidsperiod: "Oktober 2022",
+    table_Tidsperiod: "2022",
     table_Område: "Stockholms län",
     tabel_Åldersgrupp: ["0-24 år", "25-44 år", "45-64 år", "65-79 år", "80+ år"],
     tabel_Kön: ["Kvinnor", "Män"]
