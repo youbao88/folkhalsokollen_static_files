@@ -138,13 +138,13 @@ const indicator_name_parameter_map = {
   },
   'Vaccination mot säsongsinfluensa': {
     'karta': {
-      'karta_Tidsperiod': '2021–2022',
+      'karta_Tidsperiod': '2022–2023',
       'karta_Kön': ['Kvinnor', 'Män'],
       'karta_Åldersgrupp': ['65+ år']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': '2021–2022',
+      'stapel_Tidsperiod': '2022–2023',
       'stapel_Kön': ['Kvinnor', 'Män']
     },
     'linje': {
@@ -153,7 +153,7 @@ const indicator_name_parameter_map = {
       'linje_Åldersgrupp': ['65+ år']
     },
     'tabell': {
-      'table_Tidsperiod': '2021–2022',
+      'table_Tidsperiod': '2022–2023',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['65+ år'],
       'tabel_Kön': ['Kvinnor', 'Män']
