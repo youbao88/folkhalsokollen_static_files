@@ -115,6 +115,7 @@
         </div>
     </div>
     <script>
+        //Add event listener for sas va compoenent
         if (window.addEventListener) {
             // For standards-compliant web browsers
             window.addEventListener("message", onMessage, false);
@@ -148,12 +149,14 @@
         var isOnMindre;
         var event_rows;
 
+        //List of Stockholm stadsdelar
         const stadsdelarList = [
             'Bromma', 'Enskede-Årsta-Vantör', 'Farsta', 'Hägersten-Älvsjö', 'Hässelby-Vällingby',
             'Kungsholmen',
             'Norrmalm', 'Rinkeby-Kista',
             'Skarpnäck', 'Skärholmen', 'Spånga-Tensta', 'Södermalm', 'Östermalm'
         ];
+        //List of Stockholm kommun
         const firstLevelAreaList = ['Botkyrka', 'Bromma', 'Danderyd', 'Ekerö', 'Enskede-Årsta-Vantör',
             'Farsta',
             'Haninge', 'Huddinge', 'Hägersten-Älvsjö', 'Hässelby-Vällingby', 'Järfälla', 'Kungsholmen',
@@ -169,6 +172,7 @@
         ];
         const firstlevellist = [];
 
+        //Get shape file
         async function getJson() {
             let response = await fetch(
                 "https://cdn.statically.io/gh/youbao88/folkhalsokollen_static_files/c3277beb4c20e19ac712231537faf9f46bd28dfb/stockholm_smaller_area_no_holes_simplify_complex_no_small_island.json"
@@ -179,16 +183,19 @@
 
         async function onMessage(event) {
             if (event && event.data && event.data.data) {
+                //Use the length of the data (number of areas) to determain if the indicator supports mindre område
                 if (event.data.data.length <= 40) {
                     isOnMindre = false;
                 } else {
                     isOnMindre = true;
                 }
 
+                //Create empty first_level_data object to store the first level (kommun) data
                 first_level_data = {};
                 const stockholm_json = await getJson();
 
                 event_rows = event.data.data;
+                //Put data into first_level_data object by whose key is the area name and the value is the indicator value
                 for (let i = 0; i < event_rows.length; i++) {
                     if (firstLevelAreaList.includes(event_rows[i][2])) {
                         if (first_level_data[event_rows[i][2]] == undefined) {
@@ -198,8 +205,18 @@
                         }
                     }
                 }
+
+                //Round the values in two digit decimal place
+                for (let objectName in first_level_data) {
+                    if (first_level_data[objectName] != '.') {
+                        first_level_data[objectName] = Math.round(first_level_data[objectName] * 100) / 100
+                    }
+                };
+
+                //Get unit info
                 let unit = event_rows[0][0];
 
+                //Create a function for bar chart display color
                 function generate_color(labels) {
                     let output = []
                     for (let i = 0; i < labels.length; i++) {
@@ -212,6 +229,7 @@
                     return output
                 }
 
+                //Create a function for bar chart hover color
                 function generate_hover_color(labels) {
                     let output = [];
                     for (let i = 0; i < labels.length; i++) {
@@ -224,22 +242,27 @@
                     return output;
                 }
 
-
+                //Sort the values in the first_level_data and return label name
                 first_label_sorted = Object.keys(first_level_data).sort(function (a, b) {
                     if (first_level_data[a] == '.') return 1;
                     if (first_level_data[b] == '.') return -1;
                     return first_level_data[b] - first_level_data[a]
                 });
+
+                //Sort the values in the first_level_data and return the value
                 first_value_sorted = Object.values(first_level_data).sort(function (a, b) {
                     if (a == '.') return 1;
                     if (b == '.') return -1;
                     return b - a
                 });
+                //Determain if the data contains 'missing value'(.)
                 if (first_value_sorted.includes('.')) {
                     isSupressed = true;
                 } else {
                     isSupressed = false;
                 }
+
+                //Get the max and min value
                 current_value_max = Math.max.apply(Math, Object.values(first_level_data).filter(function (e) {
                     return e !== '.'
                 }));
@@ -254,7 +277,7 @@
                 stockholm_kommun_sorted = stockholm_kommun.sort((a, b) => (first_label_sorted
                     .indexOf(a
                         .properties.omr_namn) - first_label_sorted.indexOf(b.properties
-                        .omr_namn)))
+                            .omr_namn)))
                 for (let i = 0; i < stockholm_kommun_sorted.length; i++) {
                     omrade = stockholm_kommun_sorted[i].properties.omr_namn
                     stockholm_kommun_sorted[i].properties.value = first_level_data[omrade]
@@ -291,22 +314,22 @@
 
                     tileLayer = L.tileLayer(
                         'https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-                            id: 'outdoors-v11',
-                            accessToken: 'pk.eyJ1IjoibWluaGFvemhvdSIsImEiOiJjbDZkcDUwdTMwMDlhM2txYzVnNjlndGJ1In0.pNM75PZvZEXrzCAPnYKpbg',
-                            maxZoom: 19,
-                            tileSize: 512,
-                            zoomOffset: -1
-                        })
+                        id: 'outdoors-v11',
+                        accessToken: 'pk.eyJ1IjoibWluaGFvemhvdSIsImEiOiJjbDZkcDUwdTMwMDlhM2txYzVnNjlndGJ1In0.pNM75PZvZEXrzCAPnYKpbg',
+                        maxZoom: 19,
+                        tileSize: 512,
+                        zoomOffset: -1
+                    })
 
                     function getColor(d) {
                         let interval = (current_value_max - current_value_min) / 5
                         return d == '.' ? '#D3D3D3' :
                             d >= current_value_min + 4 * interval ? '#297b7b' :
-                            d >= current_value_min + 3 * interval ? '#529494' :
-                            d >= current_value_min + 2 * interval ? '#7fb0b0' :
-                            d >= current_value_min + 1 * interval ? '#c3dada' :
-                            d >= current_value_min ? '#e2eded' :
-                            '#ffffff';
+                                d >= current_value_min + 3 * interval ? '#529494' :
+                                    d >= current_value_min + 2 * interval ? '#7fb0b0' :
+                                        d >= current_value_min + 1 * interval ? '#c3dada' :
+                                            d >= current_value_min ? '#e2eded' :
+                                                '#ffffff';
                     }
 
                     function style(feature) {
@@ -497,7 +520,7 @@
                                 clickedOmrade = barchart.data.labels[e[0].index]
                             }
                             if (isOnKommun & (clickedOmrade != 'Stockholms län') & (clickedOmrade !=
-                                    'Stockholm')) {
+                                'Stockholm')) {
                                 //Delete original layer and add detail layer
                                 geojson.remove(); //Remove main layer
                                 simpleGeojson.remove();
@@ -514,6 +537,11 @@
                                         second_level_data[event_rows[i][2]] = event_rows[i][1];
                                     }
                                 }
+                                for (let objectName in second_level_data) {
+                                    if (second_level_data[objectName] != '.') {
+                                        second_level_data[objectName] = Math.round(second_level_data[objectName] * 100) / 100
+                                    }
+                                };
                                 second_label_sorted = Object.keys(second_level_data).sort(
                                     function (a, b) {
                                         return second_level_data[b] - second_level_data[a]
@@ -537,10 +565,10 @@
 
                                 let second_json_data_sorted = second_json_data.sort((a, b) => (
                                     second_label_sorted
-                                    .indexOf(a
-                                        .properties.omr_namn) - second_label_sorted
-                                    .indexOf(b.properties
-                                        .omr_namn)))
+                                        .indexOf(a
+                                            .properties.omr_namn) - second_label_sorted
+                                                .indexOf(b.properties
+                                                    .omr_namn)))
                                 for (let i = 0; i < second_json_data_sorted.length; i++) {
                                     omrade = second_json_data_sorted[i].properties.omr_namn
                                     second_json_data_sorted[i].properties.value =
@@ -595,7 +623,7 @@
                                     mymap.fitBounds(e.target.getBounds());
                                 } else {
                                     for (let [key, value] of Object.entries(currentjson
-                                            ._layers)) {
+                                        ._layers)) {
                                         if (value.feature.properties.omr_namn ==
                                             clickedOmrade) {
                                             mymap.fitBounds(value.getBounds());
@@ -611,7 +639,7 @@
                                 mymap.fitBounds(e.target.getBounds());
                             } else {
                                 for (const [key, value] of Object.entries(currentjson
-                                        ._layers)) {
+                                    ._layers)) {
                                     if (value.feature.properties.omr_namn ==
                                         barchart.data.labels[e[0].index]) {
                                         mymap.fitBounds(value.getBounds());
@@ -650,11 +678,11 @@
                         let div = L.DomUtil.create('div', 'legend'),
                             interval = (current_value_max - current_value_min) / 5
                         grades = [current_value_min, current_value_min + 1 * interval,
-                                current_value_min +
-                                2 *
-                                interval, current_value_min + 3 * interval,
-                                current_value_min + 4 * interval
-                            ],
+                            current_value_min +
+                            2 *
+                            interval, current_value_min + 3 * interval,
+                            current_value_min + 4 * interval
+                        ],
                             labels = [];
                         div.innerHTML +=
                             '<h4 style = "text-align: center; font-weight: bold; margin : 0px 8px 8px 8px">Värde</h4>'
@@ -723,7 +751,7 @@
                             } else {
                                 currentjson.eachLayer(function (layer) {
                                     if (stadsdelarList.includes(layer.feature.properties
-                                            .omr_namn)) {
+                                        .omr_namn)) {
                                         layer.setStyle({
                                             weight: 3,
                                             color: '#666',
@@ -893,13 +921,13 @@
                     //will automatically be zommed to the clicked omrade.
                     function getColor(d) {
                         let interval = (current_value_max - current_value_min) / 5
-                        return d == '.'? '#D3D3D3':
+                        return d == '.' ? '#D3D3D3' :
                             d >= current_value_min + 4 * interval ? '#297b7b' :
-                            d >= current_value_min + 3 * interval ? '#529494' :
-                            d >= current_value_min + 2 * interval ? '#7fb0b0' :
-                            d >= current_value_min + 1 * interval ? '#c3dada' :
-                            d >= current_value_min ? '#e2eded' :
-                            '#ffffff';
+                                d >= current_value_min + 3 * interval ? '#529494' :
+                                    d >= current_value_min + 2 * interval ? '#7fb0b0' :
+                                        d >= current_value_min + 1 * interval ? '#c3dada' :
+                                            d >= current_value_min ? '#e2eded' :
+                                                '#ffffff';
                     }
 
                     function style_transparent(feature) {
@@ -962,7 +990,7 @@
                             mymap.fitBounds(e.target.getBounds());
                         } else {
                             for (const [key, value] of Object.entries(currentjson
-                                    ._layers)) {
+                                ._layers)) {
                                 if (value.feature.properties.omr_namn ==
                                     barchart.data.labels[e[0].index]) {
                                     mymap.fitBounds(value.getBounds());
@@ -989,6 +1017,11 @@
                             }
                         }
                     }
+                    for (let objectName in first_level_data) {
+                        if (first_level_data[objectName] != '.') {
+                            first_level_data[objectName] = Math.round(first_level_data[objectName] * 100) / 100
+                        }
+                    };
                     first_label_sorted = Object.keys(first_level_data).sort(function (a, b) {
                         return first_level_data[b] - first_level_data[a]
                     })
@@ -998,7 +1031,7 @@
                     stockholm_kommun_sorted = stockholm_kommun.sort((a, b) => (first_label_sorted
                         .indexOf(a
                             .properties.omr_namn) - first_label_sorted.indexOf(b.properties
-                            .omr_namn)));
+                                .omr_namn)));
                     for (i = 0; i < stockholm_kommun_sorted.length; i++) {
                         omrade = stockholm_kommun_sorted[i].properties.omr_namn
                         stockholm_kommun_sorted[i].properties.value = first_level_data[omrade]
@@ -1013,6 +1046,11 @@
                             second_level_data[event_rows[i][2]] = event_rows[i][1]
                         }
                     }
+                    for (let objectName in second_level_data) {
+                        if (second_level_data[objectName] != '.') {
+                            second_level_data[objectName] = Math.round(second_level_data[objectName] * 100) / 100
+                        }
+                    };
                     second_label_sorted = Object.keys(second_level_data).sort(
                         function (a, b) {
                             return second_level_data[b] - second_level_data[a]
@@ -1032,10 +1070,10 @@
 
                     second_json_data_sorted = second_json_data.sort((a, b) => (
                         second_label_sorted
-                        .indexOf(a
-                            .properties.omr_namn) - second_label_sorted
-                        .indexOf(b.properties
-                            .omr_namn)))
+                            .indexOf(a
+                                .properties.omr_namn) - second_label_sorted
+                                    .indexOf(b.properties
+                                        .omr_namn)))
                     for (let i = 0; i < second_json_data_sorted.length; i++) {
                         omrade = second_json_data_sorted[i].properties.omr_namn
                         second_json_data_sorted[i].properties.value =

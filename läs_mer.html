@@ -21,6 +21,7 @@
             cursor: pointer;
             text-align: left;
         }
+
         ul {
             list-style-position: outside;
             padding-left: 30px;
@@ -73,15 +74,15 @@
                     div.innerHTML += "<span style='font-weight: bold;' title = 'definition'>Definition: </span>" + `${data[2]}` + "<br><br>";
                     const kallas = data[3].split(';')
                     div.innerHTML += "<span style='font-weight: bold'>Källa: </span>"
-                    for (let kalla of kallas){
+                    for (let kalla of kallas) {
                         var _kalla_url = källa_url_map[kalla.trim()];
                         if (_kalla_url == 'undefined') {
                             var kalla_url = null;
                         } else {
                             var kalla_url = _kalla_url;
                         }
-                            div.innerHTML += `<button class = "buttonLink" title = ${kalla_url} role = "link">${kalla}</button>`
-                            div.innerHTML += "; "
+                        div.innerHTML += `<button class = "buttonLink" title = ${kalla_url} role = "link">${kalla}</button>`
+                        div.innerHTML += "; "
                     }
                     div.innerHTML += "<br><br>"
                     div.innerHTML += "<span style='font-weight: bold'>Läs mer</a>" + "<br>";
@@ -92,8 +93,9 @@
                             break
                         }
                         list.innerHTML +=
-                            `<li><button class = "buttonLink" title = ${data[i+1]} role = "link">${data[i]}</button></li>`;
+                            `<li><button class = "buttonLink" title = ${data[i + 1]} role = "link">${data[i]}</button></li>`;
                     }
+                    div.innerHTML = "<div style='font-size: 1rem'>" + div.innerHTML + "</div>"
                 } else {
                     div.innerHTML += "<span style='font-weight: bold;'>information not available so far</span>"
                 }
@@ -102,9 +104,10 @@
                     var buttonUrl = element.getAttribute('title');
 
                     element.addEventListener('click', () => {
-                        window.parent.postMessage(message = {type: 'openUrl', content: buttonUrl}, targetOrigin = '*');
+                        window.parent.postMessage(message = { type: 'openUrl', content: buttonUrl }, targetOrigin = '*');
                     })
                 })
+
             }
         }
     </script>
