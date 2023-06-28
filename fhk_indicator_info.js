@@ -1,3 +1,14 @@
+const källa_url_map = {
+                'Socialstyrelsens dödsorsaksstatistik': 'https://www.folkhalsokollen.se/datakallor/socialstyrelsens-dodsorsaksstatistik',
+                'VAL-databaserna': 'https://www.folkhalsokollen.se/datakallor/val-databaserna',
+                'Region Stockholms folkhälsoenkät': 'https://www.folkhalsokollen.se/datakallor/region-Stockholms-folkhalsoenkat',
+                'Barnhälsovårdens årsrapport': 'https://www.folkhalsokollen.se/datakallor/barnhalsovardens-arsrapport',
+                'Statistiska centralbyrån (SCB)': 'https://www.folkhalsokollen.se/datakallor/sociodemografiska-data',
+                'Databas över anmälda brott, Brottsförebyggande rådet (Brå)': 'https://www.folkhalsokollen.se/datakallor/brottsforebyggande-radet',
+                'Regionalt cancercentrum Stockholm Gotland (RCC)': 'https://www.folkhalsokollen.se/datakallor/cancerdata',
+                'SmiNet, Skatteverket': 'https://www.folkhalsokollen.se/datakallor/sminet',
+                'Institutet för miljömedicin (IMM)': 'https://www.folkhalsokollen.se/datakallor/institutet-for-miljomedicin'
+            }
 const indicator_info = {
   "Dödsfall på grund av covid-19": {
     definition:
