@@ -329,7 +329,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         icons[i].title ==
           "Klicka här för att spara en bild av din visualisering. Bilden laddas ned som en jpg-fil på din dator." ||
         icons[i].title == "Klicka här för att spara en Excel fil." ||
-        icons[i].title == 'dela'
+        icons[i].title == "dela"
       ) {
         icons[i].parentNode.parentNode.parentNode.classList.add("tool_icon");
       } else {
@@ -448,6 +448,21 @@ document.addEventListener("DOMContentLoaded", function (event) {
           }
         );
         observer_loading.disconnect();
+        // Open the page
+        if (statusParametersEncoded) {
+          let pageIndexMap = {
+            karta: 0,
+            stapel: 1,
+            linje: 2,
+            tabell: 3,
+          };
+          let pageToBeOpen = JSON.parse(atob(statusParametersEncoded[1]))[
+            "page"
+          ];
+          document
+            .getElementsByClassName("sas_components-Image-Image_clickable")
+            [pageIndexMap[pageToBeOpen]].click();
+        }
       }
     });
 
@@ -480,6 +495,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     } else {
       if (statusParametersEncoded) {
         shareParameters = JSON.parse(atob(statusParametersEncoded[1]));
+        delete shareParameters["page"];
         sasReport.getReportHandle().then((reportHandle) => {
           reportHandle.updateReportParameters(
             JSON.parse(atob(statusParametersEncoded[1]))
@@ -806,6 +822,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
             });
           });
         } else if (e.target.title == "dela") {
+          let rx = /.+\/(.+)_selector.+/g;
+          let current_visualization_type = rx.exec(
+            document.getElementsByTagName("iframe")[0].src
+          )[1];
+          shareParameters["page"] = current_visualization_type;
           shareParameters["indikator_group"] = document
             .querySelector('[aria-controls="sas_RC-Dropdown-list-0"]')
             .getElementsByClassName(
@@ -816,12 +837,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
             .getElementsByClassName(
               "sas_components-Select-Select_label"
             )[0].innerText;
-          if (currentUrl.includes("webbverktyg-test")) {  //for test page
+          if (currentUrl.includes("webbverktyg-test")) {
+            //for test page
             var shareURL =
               "https://www.folkhalsokollen.se/webbverktyg/webbverktyg-test/?status=" +
               btoa(JSON.stringify(shareParameters));
-              console.log(shareParameters);
-          } else {  //for prod page
+          } else {
+            //for prod page
             var shareURL =
               "https://www.folkhalsokollen.se/webbverktyg/?status=" +
               btoa(JSON.stringify(shareParameters));
@@ -830,7 +852,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             width: "70em",
             showConfirmButton: false,
             showCloseButton: true,
-            html: `<div style = "font-size: 2rem; margin-bottom: 10px"> You can use this link to share Folkhälsokollen with parameters you have selected</div>
+            html: `<div style = "font-size: 2rem; margin-bottom: 10px">Använd den här länken för att dela sidan med de data du har valt</div>
             <div>
 <input id = "inputUrl" type="text" value="${shareURL}" readonly style="width: 90%; font-size: 1.5rem"> </div>
 <button  type="button" id="copyButton" class="swal2-confirm swal2-styled" style="font-size: 1.5rem; margin-top: 10px ; background-color: #612361;" onclick = "copyUrl()"><div><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#ffffff}</style><path d="M280 64h40c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128C0 92.7 28.7 64 64 64h40 9.6C121 27.5 153.3 0 192 0s71 27.5 78.4 64H280zM64 112c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16H320c8.8 0 16-7.2 16-16V128c0-8.8-7.2-16-16-16H304v24c0 13.3-10.7 24-24 24H192 104c-13.3 0-24-10.7-24-24V112H64zm128-8a24 24 0 1 0 0-48 24 24 0 1 0 0 48z"/></svg> Copy</div></button>

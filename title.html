@@ -143,7 +143,7 @@
                 div.innerHTML = '';
                 var indicator_name = rows[0][0];
 
-                messageToMain['Kategori'] = rows[0][1]
+                messageToMain['Kategori'] = rows.map(i=>i[1])
 
                 div.innerHTML +=
                     `<span id = "big_title" style="font-size: 1.1rem; font-weight: bold">${indicator_name}</h1>`;
