@@ -12,7 +12,7 @@ function copyUrl() {
   navigator.clipboard.writeText(copyText.value);
   let copyButton = document.getElementById("copyButton");
   copyButton.style.backgroundColor = "#5cb85c";
-  copyButton.innerHTML = `<div><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#ffffff}</style><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg> Copied</div>`;
+  copyButton.innerHTML = `<div><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#ffffff}</style><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg> Kopierade</div>`;
 }
 document.addEventListener("DOMContentLoaded", function (event) {
   //Disable animation and set the background of loading page to transparent
@@ -821,7 +821,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
               });
             });
           });
-        } else if (e.target.title == "dela") {
+        } else if (e.target.title == "Använd den här länken för att dela sidan med de data du har valt.") {
           let rx = /.+\/(.+)_selector.+/g;
           let current_visualization_type = rx.exec(
             document.getElementsByTagName("iframe")[0].src
@@ -855,7 +855,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             html: `<div style = "font-size: 2rem; margin-bottom: 10px">Använd den här länken för att dela sidan med de data du har valt</div>
             <div>
 <input id = "inputUrl" type="text" value="${shareURL}" readonly style="width: 90%; font-size: 1.5rem"> </div>
-<button  type="button" id="copyButton" class="swal2-confirm swal2-styled" style="font-size: 1.5rem; margin-top: 10px ; background-color: #612361;" onclick = "copyUrl()"><div><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#ffffff}</style><path d="M280 64h40c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128C0 92.7 28.7 64 64 64h40 9.6C121 27.5 153.3 0 192 0s71 27.5 78.4 64H280zM64 112c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16H320c8.8 0 16-7.2 16-16V128c0-8.8-7.2-16-16-16H304v24c0 13.3-10.7 24-24 24H192 104c-13.3 0-24-10.7-24-24V112H64zm128-8a24 24 0 1 0 0-48 24 24 0 1 0 0 48z"/></svg> Copy</div></button>
+<button  type="button" id="copyButton" class="swal2-confirm swal2-styled" style="font-size: 1.5rem; margin-top: 10px ; background-color: #612361;" onclick = "copyUrl()"><div><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#ffffff}</style><path d="M280 64h40c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128C0 92.7 28.7 64 64 64h40 9.6C121 27.5 153.3 0 192 0s71 27.5 78.4 64H280zM64 112c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16H320c8.8 0 16-7.2 16-16V128c0-8.8-7.2-16-16-16H304v24c0 13.3-10.7 24-24 24H192 104c-13.3 0-24-10.7-24-24V112H64zm128-8a24 24 0 1 0 0-48 24 24 0 1 0 0 48z"/></svg> Kopiera</div></button>
 `,
           });
         }
