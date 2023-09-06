@@ -329,7 +329,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         icons[i].title ==
           "Klicka här för att spara en bild av din visualisering. Bilden laddas ned som en jpg-fil på din dator." ||
         icons[i].title == "Klicka här för att spara en Excel fil." ||
-        icons[i].title == "dela"
+        icons[i].title == "Använd den här länken för att dela sidan med de data du har valt."
       ) {
         icons[i].parentNode.parentNode.parentNode.classList.add("tool_icon");
       } else {
