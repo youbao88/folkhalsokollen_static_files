@@ -246,6 +246,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 `;
     } else if (evt.data === "MM:3PCsupported") {
       console.log("third party cookies are supported");
+
+      var base64ScriptJs = document.createElement("script");
+      base64ScriptJs.src =
+        "https://cdn.jsdelivr.net/npm/js-base64@3.7.5/base64.min.js";
+      document.head.append(base64ScriptJs);
+
       var popupScriptJs = document.createElement("script");
       popupScriptJs.src =
         "https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.all.min.js";
@@ -256,6 +262,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         "https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css";
       popupScriptCss.rel = "stylesheet";
       document.head.append(popupScriptCss);
+
 
       var sasVaSDKScript = document.createElement("script");
       sasVaSDKScript.type = "text/javascript";
@@ -456,7 +463,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             linje: 2,
             tabell: 3,
           };
-          let pageToBeOpen = JSON.parse(atob(statusParametersEncoded[1]))[
+          let pageToBeOpen = JSON.parse(Base64.decode(statusParametersEncoded[1]))[
             "page"
           ];
           document
@@ -494,11 +501,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
       });
     } else {
       if (statusParametersEncoded) {
-        shareParameters = JSON.parse(atob(statusParametersEncoded[1]));
+        shareParameters = JSON.parse(Base64.decode(statusParametersEncoded[1]));
         delete shareParameters["page"];
         sasReport.getReportHandle().then((reportHandle) => {
           reportHandle.updateReportParameters(
-            JSON.parse(atob(statusParametersEncoded[1]))
+            JSON.parse(Base64.decode(statusParametersEncoded[1]))
           );
         });
       } else {
@@ -841,12 +848,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
             //for test page
             var shareURL =
               "https://www.folkhalsokollen.se/webbverktyg/webbverktyg-test/?status=" +
-              btoa(JSON.stringify(shareParameters));
+              Base64.encode(JSON.stringify(shareParameters));
           } else {
             //for prod page
+            console.log(encodeURIComponent(JSON.stringify(shareParameters)))
             var shareURL =
               "https://www.folkhalsokollen.se/webbverktyg/?status=" +
-              btoa(JSON.stringify(shareParameters));
+              Base64.encode(JSON.stringify(shareParameters));
           }
           Swal.fire({
             width: "70em",
