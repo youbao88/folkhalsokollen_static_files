@@ -1,14 +1,22 @@
 const källa_url_map = {
-                'Socialstyrelsens dödsorsaksstatistik': 'https://www.folkhalsokollen.se/datakallor/socialstyrelsens-dodsorsaksstatistik',
-                'VAL-databaserna': 'https://www.folkhalsokollen.se/datakallor/val-databaserna',
-                'Region Stockholms folkhälsoenkät': 'https://www.folkhalsokollen.se/datakallor/region-Stockholms-folkhalsoenkat',
-                'Barnhälsovårdens årsrapport': 'https://www.folkhalsokollen.se/datakallor/barnhalsovardens-arsrapport',
-                'Statistiska centralbyrån (SCB)': 'https://www.folkhalsokollen.se/datakallor/sociodemografiska-data',
-                'Databas över anmälda brott, Brottsförebyggande rådet (Brå)': 'https://www.folkhalsokollen.se/datakallor/brottsforebyggande-radet',
-                'Regionalt cancercentrum Stockholm Gotland (RCC)': 'https://www.folkhalsokollen.se/datakallor/cancerdata',
-                'SmiNet, Skatteverket': 'https://www.folkhalsokollen.se/datakallor/sminet',
-                'Institutet för miljömedicin (IMM)': 'https://www.folkhalsokollen.se/datakallor/institutet-for-miljomedicin'
-            }
+  "Socialstyrelsens dödsorsaksstatistik":
+    "https://www.folkhalsokollen.se/datakallor/socialstyrelsens-dodsorsaksstatistik",
+  "VAL-databaserna":
+    "https://www.folkhalsokollen.se/datakallor/val-databaserna",
+  "Region Stockholms folkhälsoenkät":
+    "https://www.folkhalsokollen.se/datakallor/region-Stockholms-folkhalsoenkat",
+  "Barnhälsovårdens årsrapport":
+    "https://www.folkhalsokollen.se/datakallor/barnhalsovardens-arsrapport",
+  "Statistiska centralbyrån (SCB)":
+    "https://www.folkhalsokollen.se/datakallor/sociodemografiska-data",
+  "Databas över anmälda brott, Brottsförebyggande rådet (Brå)":
+    "https://www.folkhalsokollen.se/datakallor/brottsforebyggande-radet",
+  "Regionalt cancercentrum Stockholm Gotland (RCC)":
+    "https://www.folkhalsokollen.se/datakallor/cancerdata",
+  "SmiNet, Skatteverket": "https://www.folkhalsokollen.se/datakallor/sminet",
+  "Institutet för miljömedicin (IMM)":
+    "https://www.folkhalsokollen.se/datakallor/institutet-for-miljomedicin",
+};
 const indicator_info = {
   "Dödsfall på grund av covid-19": {
     definition:
@@ -26,30 +34,6 @@ const indicator_info = {
       "Rapport 2022:7 Centrum för epidemiologi och samhällsmedicin (CES): Strategier för att öka vaccinationstäckningen - en kunskapsöversikt (pdf, folkhalsoguiden.se)",
     läsa_mer_1_link:
       "https://www.folkhalsokollen.se/globalassets/verksamheter/forskning-och-utveckling/centrum-for-epidemiologi-och-samhallsmedicin/folkhalsoguiden/rapporter-och-faktablad/rapport-2022.7-strategier-for-att-oka-vaccinationstackningen---ef.pdf",
-  },
-  "Skjutit upp eller avstått vård p.g.a. coronapandemin": {
-    definition:
-      "Andel (%) individer som uppger att de har skjutit upp eller avstått från vård på grund av coronapandemin. \n\nVård inkluderar sjukvården, tandvården och besök hos psykolog eller terapeut.",
-    källa: "Region Stockholms folkhälsoenkät",
-    läsa_mer_1_text:
-      "Vård för psykisk ohälsa under\ncovid-19-pandemin (rapport 2021:3), Centrum för epidemologi och samhällsmedicin  (CES) (pdf)  ",
-    läsa_mer_1_link:
-      "https://www.folkhalsoguiden.se/globalassets/verksamheter/forskning-och-utveckling/centrum-for-epidemiologi-och-samhallsmedicin/folkhalsoguiden/rapporter-och-faktablad/rapport-2021.3-vard-for-psykisk-ohalsa-under-covid-19-pandemin.pdf",
-    läsa_mer_2_text:
-      "Rapporter om covid-19, utgivna av Centrum för epidemiologi och samhällsmedicin (CES).",
-    läsa_mer_2_link: "https://www.folkhalsoguiden.se/covid19",
-    läsa_mer_3_text:
-      "Vård för psykisk ohälsa under coronapandemin, från pandemins utbrott till slutet av 2021 (rapport 2022:16) Centrum för epidemiologi och samhällsmedicin (CES) (pdf)",
-    läsa_mer_3_link:
-      "https://www.ces.regionstockholm.se/globalassets/verksamheter/forskning-och-utveckling/centrum-for-epidemiologi-och-samhallsmedicin/folkhalsoguiden/rapporter-och-faktablad/rapport-2022.16-vard-for-psykisk-ohalsa-under-coronapandemin-fran-pandemins-utbrott-till-slutet-av-2021.pdf",
-  },
-  "Långvarig covid-19 (hög påverkan)": {
-    definition:
-      "Andel (%) individer som uppger att de har haft covid-19-symtom i mer än sex veckor, vilket medfört att arbetsförmågan varit nedsatt eller att de har hindrats i andra dagliga sysselsättningar i hög grad.",
-    källa: "Region Stockholms folkhälsoenkät",
-    läsa_mer_1_text:
-      "Rapporter om covid-19, utgivna av Centrum för epidemiologi och samhällsmedicin (CES). ",
-    läsa_mer_1_link: "https://www.folkhalsoguiden.se/covid19",
   },
   "Slutenvård med covid-19": {
     definition:
@@ -249,15 +233,32 @@ const indicator_info = {
     läsa_mer_1_link:
       "https://www.folkhalsokollen.se/globalassets/verksamheter/forskning-och-utveckling/centrum-for-epidemiologi-och-samhallsmedicin/folkhalsoguiden/rapporter-och-faktablad/rapport-2021.10-ensamhet-i-stockholms-lan_resultat-fran-stockholms-lans-folkhalsokohort.pdf",
   },
-  "Tillit till andra människor": {
+  "Tillit till polisen": {
     definition:
-      "Andel (%) individer som uppger att de kan lita på de flesta människor som bor i sitt bostadsområde.",
-    källa: "Region Stockholms folkhälsoenkät",
+      "Andel (%) individer som uppger att de har ganska stort eller mycket stort förtroende för polisen.",
+    källa: "Region Stockholm Folkhälsoenkät",
+    läsa_mer_1_text:
+      "Folkhälsorapport 2023. Sociala och ekonomiska förutsättningar, sociala relationer. Centrum för epidemiologi och samhällsmedicin (CES)",
+    läsa_mer_1_link:
+      "https://www.folkhalsorapportstockholm.se/rapporten2/sociala-och-ekonomiska-forutsattningar/sociala-relationer/",
   },
-  "Tillit till institutioner": {
+  "Tillit till riksdagen": {
     definition:
-      "Andel (%) individer som uppger att de har ganska stort eller mycket stort förtroende för sjukvården, polisen och riksdagen.",
-    källa: "Region Stockholms folkhälsoenkät",
+      "Andel (%) individer som uppger att de har ganska stort eller mycket stort förtroende för riksdagen.",
+    källa: "Region Stockholm Folkhälsoenkät",
+    läsa_mer_1_text:
+      "Folkhälsorapport 2023. Sociala och ekonomiska förutsättningar, sociala relationer. Centrum för epidemiologi och samhällsmedicin (CES)",
+    läsa_mer_1_link:
+      "https://www.folkhalsorapportstockholm.se/rapporten2/sociala-och-ekonomiska-forutsattningar/sociala-relationer/",
+  },
+  "Tillit till sjukvården": {
+    definition:
+      "Andel (%) individer som uppger att de har ganska stort eller mycket stort förtroende för sjukvården.",
+    källa: "Region Stockholm Folkhälsoenkät",
+    läsa_mer_1_text:
+      "Folkhälsorapport 2023. Sociala och ekonomiska förutsättningar, sociala relationer. Centrum för epidemiologi och samhällsmedicin (CES)",
+    läsa_mer_1_link:
+      "https://www.folkhalsorapportstockholm.se/rapporten2/sociala-och-ekonomiska-forutsattningar/sociala-relationer/",
   },
   "Rädsla att gå ut ensam": {
     definition:
