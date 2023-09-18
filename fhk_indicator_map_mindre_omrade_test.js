@@ -297,7 +297,7 @@ const indicator_name_parameter_map = {
       'tabel_Kön': ['Kvinnor', 'Män']
     }
   },
-  'Tillit till institutioner': {
+  'Tillit till polisen': {
     'karta': {
       'karta_Tidsperiod': '2021',
       'karta_Kön': ['Kvinnor', 'Män'],
@@ -1861,15 +1861,15 @@ const indicator_name_parameter_map = {
       'tabel_Kön': ['Kvinnor', 'Män']
     }
   },
-  'Tillit till andra människor': {
+  'Tillit till riksdagen': {
     'karta': {
-      'karta_Tidsperiod': '2018',
+      'karta_Tidsperiod': '2021',
       'karta_Kön': ['Kvinnor', 'Män'],
       'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': '2018',
+      'stapel_Tidsperiod': '2021',
       'stapel_Kön': ['Kvinnor', 'Män']
     },
     'linje': {
@@ -1878,7 +1878,31 @@ const indicator_name_parameter_map = {
       'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
     },
     'tabell': {
-      'table_Tidsperiod': '2018',
+      'table_Tidsperiod': '2021',
+      'table_Område': 'Stockholms län',
+      'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
+      'tabel_Kön': ['Kvinnor', 'Män']
+    }
+  },
+
+  'Tillit till sjukvården': {
+    'karta': {
+      'karta_Tidsperiod': '2021',
+      'karta_Kön': ['Kvinnor', 'Män'],
+      'karta_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+    },
+    'stapel': {
+      'stapel_Område': 'Stockholms län',
+      'stapel_Tidsperiod': '2021',
+      'stapel_Kön': ['Kvinnor', 'Män']
+    },
+    'linje': {
+      'linje_Kön': ['Kvinnor', 'Män'],
+      'linje_Område': ['Stockholms län', 'Botkyrka'],
+      'linje_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år']
+    },
+    'tabell': {
+      'table_Tidsperiod': '2021',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['16-44 år', '45-64 år', '65+ år'],
       'tabel_Kön': ['Kvinnor', 'Män']
