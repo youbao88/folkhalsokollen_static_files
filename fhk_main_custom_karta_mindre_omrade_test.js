@@ -346,11 +346,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
         }
       }
     }
-
-    //Hide mer info link
-    document.getElementsByClassName(
-      "sas_components-BirdText-BirdText_text"
-    )[0].hidden = true;
   }
   window.addEventListener("vaReportComponents.loaded", function () {
     let shareParameters;
