@@ -2175,7 +2175,7 @@ const id_indicator = {
   138415: "Hälso- och sjukvård",
   138365: "Levnadsvanor",
   138419: "Psykisk ohälsa",
-  138421: "Sociala relationer, demokrati och miljö",
+  138421: "Sociala relationer, trygghet och demokrati",
   138422: "Utbildning, sysselsättning och inkomst",
   138426: "Äldres hälsa",
 };

@@ -236,7 +236,7 @@ const indicator_info = {
   "Tillit till polisen": {
     definition:
       "Andel (%) individer som uppger att de har ganska stort eller mycket stort förtroende för polisen.",
-    källa: "Region Stockholm Folkhälsoenkät",
+    källa: "Region Stockholms folkhälsoenkät",
     läsa_mer_1_text:
       "Folkhälsorapport 2023. Sociala och ekonomiska förutsättningar, sociala relationer. Centrum för epidemiologi och samhällsmedicin (CES)",
     läsa_mer_1_link:
@@ -245,7 +245,7 @@ const indicator_info = {
   "Tillit till riksdagen": {
     definition:
       "Andel (%) individer som uppger att de har ganska stort eller mycket stort förtroende för riksdagen.",
-    källa: "Region Stockholm Folkhälsoenkät",
+    källa: "Region Stockholms folkhälsoenkät",
     läsa_mer_1_text:
       "Folkhälsorapport 2023. Sociala och ekonomiska förutsättningar, sociala relationer. Centrum för epidemiologi och samhällsmedicin (CES)",
     läsa_mer_1_link:
@@ -254,7 +254,7 @@ const indicator_info = {
   "Tillit till sjukvården": {
     definition:
       "Andel (%) individer som uppger att de har ganska stort eller mycket stort förtroende för sjukvården.",
-    källa: "Region Stockholm Folkhälsoenkät",
+    källa: "Region Stockholms folkhälsoenkät",
     läsa_mer_1_text:
       "Folkhälsorapport 2023. Sociala och ekonomiska förutsättningar, sociala relationer. Centrum för epidemiologi och samhällsmedicin (CES)",
     läsa_mer_1_link:
