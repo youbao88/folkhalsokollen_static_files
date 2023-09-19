@@ -2157,7 +2157,7 @@ const indicator_init_map = {
     tabel_Kön: ["Kvinnor", "Män"]
   },
   "Sociala relationer, trygghet och demokrati": {
-    indikator_group: "Sociala relationer, demokrati och miljö",
+    indikator_group: "Sociala relationer, trygghet och demokrati",
     indikator_name: "Anmälda våldsbrott",
     indikator_category: "Ej valbart",
     karta_Tidsperiod: "2021",
