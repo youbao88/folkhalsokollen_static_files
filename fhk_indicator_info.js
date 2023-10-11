@@ -102,46 +102,6 @@ const indicator_info = {
     läsa_mer_1_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/sociala-och-ekonomiska-forutsattningar/utbildning/",
   },
-  "Ekonomiska svårigheter": {
-    definition:
-      "Andelen (%) individer som uppger att de haft svårigheter att klara de löpande utgifterna för bland annat mat, hyra och räkningar under de senaste tolv månaderna.\n",
-    källa: "Region Stockholms folkhälsoenkät",
-    läsa_mer_1_text:
-      "Folkhälsorapport 2023 – utbildning, Centrum för epidemiologi och samhällsmedicin (CES)",
-    läsa_mer_1_link:
-      "https://www.folkhalsorapportstockholm.se/rapporten2/sociala-och-ekonomiska-forutsattningar/inkomst/",
-    läsa_mer_2_text:
-      "Hälsa och livsvillkor bland personer i hemlöshet i Stockholms län 2019. En enkätintervjustudie. Centrum för epidemiologi och samhälsmedicin (CES)",
-    läsa_mer_2_link:
-      "https://www.ces.regionstockholm.se/globalassets/verksamheter/forskning-och-utveckling/centrum-for-epidemiologi-och-samhallsmedicin/folkhalsoguiden/rapporter-och-faktablad/rapport-2022.9-halsa-och-livsvillkor-bland-personer-i-hemloshet---tk.pdf",
-  },
-  "Oro för att förlora sitt arbete": {
-    definition:
-      "Andelen (%) individer som uppger att de är oroliga för att förlora sitt arbete inom det närmaste året, av de som förvärvsarbetar.",
-    källa: "Region Stockholms folkhälsoenkät",
-    läsa_mer_1_text:
-      "Folkhälsorapport 2023 – arbete, Centrum för epidemiologi och samhällsmedicin (CES)",
-    läsa_mer_1_link:
-      "https://www.folkhalsorapportstockholm.se/rapporten2/sociala-och-ekonomiska-forutsattningar/arbete/",
-  },
-  "Avstått läkemedel på grund av dålig ekonomi": {
-    definition:
-      "Andel (%) individer som uppger att de har avstått från att hämta ut läkemedel (ordinerade av läkare) under de senaste tolv månaderna, på grund av dålig ekonomi.",
-    källa: "Region Stockholms folkhälsoenkät",
-    läsa_mer_1_text:
-      "Folkhälsorapport 2023 – inkomst, Centrum för epidemiologi och samhällsmedicin (CES)",
-    läsa_mer_1_link:
-      "https://www.folkhalsorapportstockholm.se/rapporten2/sociala-och-ekonomiska-forutsattningar/inkomst/",
-  },
-  "Avstått vård på grund av dålig ekonomi": {
-    definition:
-      "Andel (%) individer som uppger att de, trots upplevt behov, har avstått från att besöka sjukvården under de senaste tolv månaderna, på grund av dålig ekonomi.",
-    källa: "Region Stockholms folkhälsoenkät",
-    läsa_mer_1_text:
-      "Folkhälsorapport 2023 – inkomst, Centrum för epidemiologi och samhällsmedicin (CES)",
-    läsa_mer_1_link:
-      "https://www.folkhalsorapportstockholm.se/rapporten2/sociala-och-ekonomiska-forutsattningar/inkomst/",
-  },
   "Amning vid 4 månaders ålder": {
     definition:
       "Andel (%) barn inom barnhälsovården som enbart eller delvis får bröstmjölk vid fyra månaders ålder. Barn som får enbart bröstmjölk och eventuella mineraler, vitaminer eller läkemedel, räknas som enbart ammande barn. Barn som får bröstmjölk, men också smakportioner, välling, bröstmjölksersättning eller hela måltider bestående av annan kost räknas som delvis ammande.",
@@ -236,7 +196,7 @@ const indicator_info = {
   "Tillit till polisen": {
     definition:
       "Andel (%) individer som uppger att de har ganska stort eller mycket stort förtroende för polisen.",
-    källa: "Region Stockholms folkhälsoenkät",
+    källa: "Region Stockholm Folkhälsoenkät",
     läsa_mer_1_text:
       "Folkhälsorapport 2023. Sociala och ekonomiska förutsättningar, sociala relationer. Centrum för epidemiologi och samhällsmedicin (CES)",
     läsa_mer_1_link:
@@ -245,7 +205,7 @@ const indicator_info = {
   "Tillit till riksdagen": {
     definition:
       "Andel (%) individer som uppger att de har ganska stort eller mycket stort förtroende för riksdagen.",
-    källa: "Region Stockholms folkhälsoenkät",
+    källa: "Region Stockholm Folkhälsoenkät",
     läsa_mer_1_text:
       "Folkhälsorapport 2023. Sociala och ekonomiska förutsättningar, sociala relationer. Centrum för epidemiologi och samhällsmedicin (CES)",
     läsa_mer_1_link:
@@ -254,7 +214,7 @@ const indicator_info = {
   "Tillit till sjukvården": {
     definition:
       "Andel (%) individer som uppger att de har ganska stort eller mycket stort förtroende för sjukvården.",
-    källa: "Region Stockholms folkhälsoenkät",
+    källa: "Region Stockholm Folkhälsoenkät",
     läsa_mer_1_text:
       "Folkhälsorapport 2023. Sociala och ekonomiska förutsättningar, sociala relationer. Centrum för epidemiologi och samhällsmedicin (CES)",
     läsa_mer_1_link:
@@ -361,6 +321,24 @@ const indicator_info = {
     läsa_mer_1_link:
       "https://www.folkhalsomyndigheten.se/smittskydd-beredskap/vaccinationer/vacciner-a-o/influensa/",
   },
+  "Avstått läkemedel på grund av dålig ekonomi": {
+    definition:
+      "Andel (%) individer som uppger att de har avstått från att hämta ut läkemedel (ordinerade av läkare) under de senaste tolv månaderna, på grund av dålig ekonomi.",
+    källa: "Region Stockholms folkhälsoenkät",
+    läsa_mer_1_text:
+      "Folkhälsorapport 2023 – inkomst, Centrum för epidemiologi och samhällsmedicin (CES)",
+    läsa_mer_1_link:
+      "https://www.folkhalsorapportstockholm.se/rapporten2/sociala-och-ekonomiska-forutsattningar/inkomst/",
+  },
+  "Avstått vård på grund av dålig ekonomi": {
+    definition:
+      "Andel (%) individer som uppger att de, trots upplevt behov, har avstått från att besöka sjukvården under de senaste tolv månaderna, på grund av dålig ekonomi.",
+    källa: "Region Stockholms folkhälsoenkät",
+    läsa_mer_1_text:
+      "Folkhälsorapport 2023 – inkomst, Centrum för epidemiologi och samhällsmedicin (CES)",
+    läsa_mer_1_link:
+      "https://www.folkhalsorapportstockholm.se/rapporten2/sociala-och-ekonomiska-forutsattningar/inkomst/",
+  },
   Öppenvårdsbesök: {
     definition:
       "Antal öppenvårdsbesök per 1 000 invånare inom primärvård, psykiatri och somatisk specialistvård (hemsjukvård, palliativ vård, BVC, MVC och kommunal sjukvård ingår inte). Öppenvårdsbesök avser journalförda kontakter med sjukvårdsmottagningar, i form av fysiskt besök, telefonkontakt eller nätläkarbesök. Vårdvolymerna kan ibland variera i viss mån mellan åren på grund av förändringar i vårdorganisationen eller registreringsrutiner, men också på grund av slumpvariationer i sjukdomars förekomst.",
@@ -373,7 +351,7 @@ const indicator_info = {
   },
   "Psykisk ohälsa": {
     definition:
-      'Andel (%) individer som lider av psykisk ohälsa mätt med Kessler Psychological Distress Scale (K6). K6 består av sex frågor om psykisk ohälsa under de senaste 30 dagarna och hur stor del av tiden besvären funnits. Ett värde på 8 eller mer räknas som psykisk ohälsa.<br><br><b>Varför syns inte utvecklingen över tid?</b><br>Sedan 1990 har den psykiska ohälsan i Stockholms län mätts med tolvfrågorsversionen av General Health Questionnaire (GHQ-12). I senaste folkhälsoenkäten, Hälsa Stockholm 2021, ersättes GHQ-12 med ett motsvarande mätverktyg: sexfrågorsversionen av Kessler Psychological Distress Scale (K6)<br>Både GHQ-12 och K6 är utvecklade som screeningsinstrument för psykisk ohälsa, men skiljer sig i längd, svarsalternativ och till viss del i innehåll. På grund av skillnaderna kan man inte direkt jämföra ett visst värde i GHQ-12 med ett visst värde i K6, och vice versa. Folkhälsokollen redovisar därför enbart data för 2021 mätt med K6.<br><br><b>Se utvecklingen över tid på länsnivå</b><br>Ett visst urval av deltagarna i 2021 års folkhälsoenkät (de som ingår i Stockholm Public Health Cohort) har fått besvara GHQ-12-frågorna i enkäten. Det gör att vi kan redovisa en tidstrend för psykisk hälsa på länsnivå.<br><br><button class="buttonLink" title="https://www.folkhalsokollen.se/webbverktyg/psykisk-halsa-over-tid-i-stockholms-lan" role="link">Tidstrend för psykisk ohälsa på länsnivå och information om GHQ-12 och K6</button>\n',
+      'Andel (%) individer som lider av psykisk ohälsa mätt med Kessler Psychological Distress Scale (K6). K6 består av sex frågor om psykisk ohälsa under de senaste 30 dagarna och hur stor del av tiden besvären funnits. Ett värde på 8 eller mer räknas som psykisk ohälsa.<br><br><b>Varför syns inte utvecklingen över tid?</b><br>Sedan 1990 har den psykiska ohälsan i Stockholms län mätts med tolvfrågorsversionen av General Health Questionnaire (GHQ-12). I senaste folkhälsoenkäten, Hälsa Stockholm 2021, ersättes GHQ-12 med ett motsvarande mätverktyg: sexfrågorsversionen av Kessler Psychological Distress Scale (K6)<br>Både GHQ-12 och K6 är utvecklade som screeningsinstrument för psykisk ohälsa, men skiljer sig i längd, svarsalternativ och till viss del i innehåll. På grund av skillnaderna kan man inte direkt jämföra ett visst värde i GHQ-12 med ett visst värde i K6, och vice versa. Folkhälsokollen redovisar därför enbart data för 2021 mätt med K6.<br><br><b>Se utvecklingen över tid på länsnivå</b><br>Ett visst urval av deltagarna i 2021 års folkhälsoenkät (de som ingår i Stockholm Public Health Cohort) har fått besvara GHQ-12-frågorna i enkäten. Det gör att vi kan redovisa en tidstrend för psykisk hälsa på länsnivå.<br><br><button class="buttonLink" title="https://www.folkhalsokollen.se/webbverktyg/psykisk-halsa-over-tid-i-stockholms-lan" role="link" onclick="window.open(\'https://www.folkhalsokollen.se/webbverktyg/psykisk-halsa-over-tid-i-stockholms-lan\', \'_blank\')">Tidstrend för psykisk ohälsa på länsnivå och information om GHQ-12 och K6</button>\n',
     källa: "Region Stockholms folkhälsoenkät",
     läsa_mer_1_text: "Uppdrag Psykisk Hälsa i Stockholms län",
     läsa_mer_1_link: "https://www.uppdragpsykiskhalsa.se/stockholmslan/",
@@ -528,46 +506,6 @@ const indicator_info = {
     läsa_mer_3_link:
       "https://www.regeringen.se/rattsliga-dokument/skrivelse/2022/03/skr.-202122213",
   },
-  "Användning av annan narkotika än hasch eller marijuana": {
-    definition:
-      "Andel (%) individer som uppger att de har använt annan narkotika än hasch eller marijuana (t.ex. amfetamin, kokain, heroin, ecstacy eller LSD) det senaste året.",
-    källa: "Region Stockholms folkhälsoenkät",
-    läsa_mer_1_text:
-      "Folkhälsorapport 2023 – narkotikavanor, Centrum för epidemiologi och samhällsmedicin (CES)",
-    läsa_mer_1_link:
-      "https://www.folkhalsorapportstockholm.se/rapporten2/levnadsvanor/droganvandning/",
-    läsa_mer_2_text:
-      "Strategi och handlingsplan för ANDT-arbetet i Stockholms län 2017–2020",
-    läsa_mer_2_link:
-      "https://www.lansstyrelsen.se/stockholm/om-oss/vara-tjanster/publikationer/2017/strategi-och-handlingsplan-for-andt-arbetet-i-stockholms-lan-2017-2020.html",
-    läsa_mer_3_text:
-      "Rapporter om cannabis och unga vuxna i Stockhholms län, utgivna av Centrum för epidemiologi och samhällsmedicin (CES).",
-    läsa_mer_3_link:
-      "https://www.folkhalsoguiden.se/material/rapporter/rapporter-om-cannabis-och-unga-vuxna/",
-    "Läs mer text 4": "Regeringens nationella ANDT-strategi 2021-2025",
-    "Läs mer link 4":
-      "https://www.regeringen.se/rattsliga-dokument/skrivelse/2022/03/skr.-202122213",
-  },
-  "Användning av narkotikaklassificerade läkemedel": {
-    definition:
-      "Andel (%) individer som uppger att de har använt receptbelagda mediciner på annat sätt än läkare ordinerat (t.ex. Tramadol eller bensodiazepiner) det senaste året.",
-    källa: "Region Stockholms folkhälsoenkät",
-    läsa_mer_1_text:
-      "Folkhälsorapport 2023 – narkotikavanor, Centrum för epidemiologi och samhällsmedicin (CES)",
-    läsa_mer_1_link:
-      "https://www.folkhalsorapportstockholm.se/rapporten2/levnadsvanor/droganvandning/",
-    läsa_mer_2_text:
-      "Strategi och handlingsplan för ANDT-arbetet i Stockholms län 2017–2020",
-    läsa_mer_2_link:
-      "https://www.lansstyrelsen.se/stockholm/om-oss/vara-tjanster/publikationer/2017/strategi-och-handlingsplan-for-andt-arbetet-i-stockholms-lan-2017-2020.html",
-    läsa_mer_3_text:
-      "Rapporter om cannabis och unga vuxna i Stockhholms län, utgivna av Centrum för epidemiologi och samhällsmedicin (CES).",
-    läsa_mer_3_link:
-      "https://www.folkhalsoguiden.se/material/rapporter/rapporter-om-cannabis-och-unga-vuxna/",
-    "Läs mer text 4": "Regeringens nationella ANDT-strategi 2021-2025",
-    "Läs mer link 4":
-      "https://www.regeringen.se/rattsliga-dokument/skrivelse/2022/03/skr.-202122213",
-  },
   "Röker dagligen": {
     definition:
       "Andel (%) individer som uppger att de röker dagligen. Rökning avser tobaksvaror såsom cigaretter, cigariller och piptobak.",
@@ -661,17 +599,9 @@ const indicator_info = {
     läsa_mer_3_link:
       "https://www.folkhalsoguiden.se/amnesomraden/levnadsvanor/matguiden/mat-och-halsa/",
   },
-  "Riskabla spelvanor": {
+  Sömnsvårigheter: {
     definition:
-      "Andel (%) individer som uppger spelvanor som definieras som riskabla spelvanor. Riskabla spelvanor definieras som de som uppger att de under det senaste halvåret ibland, ofta eller nästan alltid har spelat för mer än de verkligen haft råd att förlora, behövt spela med större summor för att få samma känsla av spänning, återvänt en annan dag för att försöka vinna tillbaka pengarna de förlorat eller lånat pengar eller sålt något för att ha pengar att spela för.",
-    källa: "Region Stockholms folkhälsoenkät",
-    läsa_mer_1_text: "Beroendecentrum – spelberoende",
-    läsa_mer_1_link:
-      "https://www.beroendecentrum.se/vard-hos-oss/spelberoende/",
-  },
-  "Begränsade sjukdom": {
-    definition:
-      "Andel (%) individer som uppger att de har en långvarig sjukdom, besvär efter olycksfall, funktionshinder eller annat långvarigt hälsoproblem som har medfört att arbetsförmågan är nedsatt eller har hindrat andra dagliga sysselsättningar i hög grad eller i någon mån.",
+      "Andel (%) individer som uppger att de har lätta eller svåra besvär av sömnsvårigheter.",
     källa: "Region Stockholms folkhälsoenkät",
   },
   "Självskattad hälsa": {
@@ -736,11 +666,7 @@ const indicator_info = {
     läsa_mer_3_link:
       "https://www.ces.regionstockholm.se/globalassets/verksamheter/forskning-och-utveckling/centrum-for-epidemiologi-och-samhallsmedicin/folkhalsoguiden/rapporter-och-faktablad/rapport-2022.3-den-ojamlika-obestitasvardentga.pdf",
   },
-  Sömnsvårigheter: {
-    definition:
-      "Andel (%) individer som uppger att de har lätta eller svåra besvär av sömnsvårigheter.",
-    källa: "Region Stockholms folkhälsoenkät",
-  },
+  nan: {},
   Tandhälsa: {
     definition:
       "Andel (%) individer som uppger att de har varken bra eller dålig, dålig eller mycket dålig tandhälsa.",

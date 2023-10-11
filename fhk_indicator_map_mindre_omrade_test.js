@@ -1,13 +1,13 @@
 const indicator_name_parameter_map = {
   'Gymnasiebehörighet': {
     'karta': {
-      'karta_Tidsperiod': '2021',
+      'karta_Tidsperiod': '2022',
       'karta_Kön': ['Kvinnor', 'Män'],
       'karta_Åldersgrupp': 'Ej valbart'
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': '2021',
+      'stapel_Tidsperiod': '2022',
       'stapel_Kön': ['Kvinnor', 'Män']
     },
     'linje': {
@@ -16,7 +16,7 @@ const indicator_name_parameter_map = {
       'linje_Åldersgrupp': 'Ej valbart'
     },
     'tabell': {
-      'table_Tidsperiod': '2021',
+      'table_Tidsperiod': '2022',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': 'Ej valbart',
       'tabel_Kön': ['Kvinnor', 'Män']
@@ -782,13 +782,13 @@ const indicator_name_parameter_map = {
   },
   'Öppenvårdsbesök': {
     'karta': {
-      'karta_Tidsperiod': '2021',
+      'karta_Tidsperiod': '2022',
       'karta_Kön': ['Kvinnor', 'Män'],
       'karta_Åldersgrupp': ['0-24 år', '25-49 år', '50-69 år', '70+ år']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': '2021',
+      'stapel_Tidsperiod': '2022',
       'stapel_Kön': ['Kvinnor', 'Män']
     },
     'linje': {
@@ -797,7 +797,7 @@ const indicator_name_parameter_map = {
       'linje_Åldersgrupp': ['0-24 år', '25-49 år', '50-69 år', '70+ år']
     },
     'tabell': {
-      'table_Tidsperiod': '2021',
+      'table_Tidsperiod': '2022',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['0-24 år', '25-49 år', '50-69 år', '70+ år'],
       'tabel_Kön': ['Kvinnor', 'Män']
@@ -805,13 +805,13 @@ const indicator_name_parameter_map = {
   },
   'Slutenvårdstillfällen': {
     'karta': {
-      'karta_Tidsperiod': '2021',
+      'karta_Tidsperiod': '2022',
       'karta_Kön': ['Kvinnor', 'Män'],
       'karta_Åldersgrupp': ['0-24 år', '25-49 år', '50-69 år', '70+ år']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': '2021',
+      'stapel_Tidsperiod': '2022',
       'stapel_Kön': ['Kvinnor', 'Män']
     },
     'linje': {
@@ -820,7 +820,7 @@ const indicator_name_parameter_map = {
       'linje_Åldersgrupp': ['0-24 år', '25-49 år', '50-69 år', '70+ år']
     },
     'tabell': {
-      'table_Tidsperiod': '2021',
+      'table_Tidsperiod': '2022',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['0-24 år', '25-49 år', '50-69 år', '70+ år'],
       'tabel_Kön': ['Kvinnor', 'Män']
@@ -828,13 +828,13 @@ const indicator_name_parameter_map = {
   },
   'Familjetyp': {
     'karta': {
-      'karta_Tidsperiod': '2021',
+      'karta_Tidsperiod': '2022',
       'karta_Kön': ['Kvinnor', 'Män'],
       'karta_Åldersgrupp': ['0-24 år', '25-44 år', '45-64 år', '65+ år']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': '2021',
+      'stapel_Tidsperiod': '2022',
       'stapel_Kön': ['Kvinnor', 'Män']
     },
     'linje': {
@@ -843,7 +843,7 @@ const indicator_name_parameter_map = {
       'linje_Åldersgrupp': ['0-24 år', '25-44 år', '45-64 år', '65+ år']
     },
     'tabell': {
-      'table_Tidsperiod': '2021',
+      'table_Tidsperiod': '2022',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['0-24 år', '25-44 år', '45-64 år', '65+ år'],
       'tabel_Kön': ['Kvinnor', 'Män']
@@ -851,13 +851,13 @@ const indicator_name_parameter_map = {
   },
   'Förväntad medellivslängd': {
     'karta': {
-      'karta_Tidsperiod': '2021',
+      'karta_Tidsperiod': '2022',
       'karta_Kön': ['Samtliga'],
       'karta_Åldersgrupp': ['Samtliga']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': '2021',
+      'stapel_Tidsperiod': '2022',
       'stapel_Kön': ['Samtliga']
     },
     'linje': {
@@ -866,7 +866,7 @@ const indicator_name_parameter_map = {
       'linje_Åldersgrupp': ['Samtliga']
     },
     'tabell': {
-      'table_Tidsperiod': '2021',
+      'table_Tidsperiod': '2022',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['Samtliga'],
       'tabel_Kön': ['Samtliga']
@@ -874,13 +874,13 @@ const indicator_name_parameter_map = {
   },
   'Åldersgrupper': {
     'karta': {
-      'karta_Tidsperiod': '2021',
+      'karta_Tidsperiod': '2022',
       'karta_Kön': ['Kvinnor', 'Män'],
       'karta_Åldersgrupp': ['Se indikatorn']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': '2021',
+      'stapel_Tidsperiod': '2022',
       'stapel_Kön': ['Kvinnor', 'Män']
     },
     'linje': {
@@ -889,7 +889,7 @@ const indicator_name_parameter_map = {
       'linje_Åldersgrupp': ['Se indikatorn']
     },
     'tabell': {
-      'table_Tidsperiod': '2021',
+      'table_Tidsperiod': '2022',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['Se indikatorn'],
       'tabel_Kön': ['Kvinnor', 'Män']
@@ -897,13 +897,13 @@ const indicator_name_parameter_map = {
   },
   'Födelseland': {
     'karta': {
-      'karta_Tidsperiod': '2021',
+      'karta_Tidsperiod': '2022',
       'karta_Kön': ['Kvinnor', 'Män'],
       'karta_Åldersgrupp': ['0-24 år', '25-44 år', '45-64 år', '65+ år']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': '2021',
+      'stapel_Tidsperiod': '2022',
       'stapel_Kön': ['Kvinnor', 'Män']
     },
     'linje': {
@@ -912,7 +912,7 @@ const indicator_name_parameter_map = {
       'linje_Åldersgrupp': ['0-24 år', '25-44 år', '45-64 år', '65+ år']
     },
     'tabell': {
-      'table_Tidsperiod': '2021',
+      'table_Tidsperiod': '2022',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['0-24 år', '25-44 år', '45-64 år', '65+ år'],
       'tabel_Kön': ['Kvinnor', 'Män']
@@ -920,13 +920,13 @@ const indicator_name_parameter_map = {
   },
   'Utbildningsnivå': {
     'karta': {
-      'karta_Tidsperiod': '2021',
+      'karta_Tidsperiod': '2022',
       'karta_Kön': ['Kvinnor', 'Män'],
       'karta_Åldersgrupp': ['25-44 år', '45-64 år', '65+ år']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': '2021',
+      'stapel_Tidsperiod': '2022',
       'stapel_Kön': ['Kvinnor', 'Män']
     },
     'linje': {
@@ -935,7 +935,7 @@ const indicator_name_parameter_map = {
       'linje_Åldersgrupp': ['25-44 år', '45-64 år', '65+ år']
     },
     'tabell': {
-      'table_Tidsperiod': '2021',
+      'table_Tidsperiod': '2022',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['25-44 år', '45-64 år', '65+ år'],
       'tabel_Kön': ['Kvinnor', 'Män']
@@ -966,13 +966,13 @@ const indicator_name_parameter_map = {
   },
   'Anmälda våldsbrott': {
     'karta': {
-      'karta_Tidsperiod': '2021',
+      'karta_Tidsperiod': '2022',
       'karta_Kön': ['Samtliga'],
       'karta_Åldersgrupp': ['Samtliga']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': '2021',
+      'stapel_Tidsperiod': '2022',
       'stapel_Kön': ['Samtliga']
     },
     'linje': {
@@ -981,7 +981,7 @@ const indicator_name_parameter_map = {
       'linje_Åldersgrupp': ['Samtliga']
     },
     'tabell': {
-      'table_Tidsperiod': '2021',
+      'table_Tidsperiod': '2022',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['Samtliga'],
       'tabel_Kön': ['Samtliga']
@@ -1081,13 +1081,13 @@ const indicator_name_parameter_map = {
   },
   'Anmälan socialtjänst via BVC': {
     'karta': {
-      'karta_Tidsperiod': '2021',
+      'karta_Tidsperiod': '2022',
       'karta_Kön': ['Samtliga'],
       'karta_Åldersgrupp': ['Samtliga']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': '2021',
+      'stapel_Tidsperiod': '2022',
       'stapel_Kön': ['Samtliga']
     },
     'linje': {
@@ -1096,7 +1096,7 @@ const indicator_name_parameter_map = {
       'linje_Åldersgrupp': ['Samtliga']
     },
     'tabell': {
-      'table_Tidsperiod': '2021',
+      'table_Tidsperiod': '2022',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['Samtliga'],
       'tabel_Kön': ['Samtliga']
@@ -1104,13 +1104,13 @@ const indicator_name_parameter_map = {
   },
   'Övervikt och obesitas 4-åringar': {
     'karta': {
-      'karta_Tidsperiod': '2021',
+      'karta_Tidsperiod': '2022',
       'karta_Kön': ['Flickor', 'Pojkar'],
       'karta_Åldersgrupp': ['Samtliga']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': '2021',
+      'stapel_Tidsperiod': '2022',
       'stapel_Kön': ['Flickor', 'Pojkar']
     },
     'linje': {
@@ -1119,7 +1119,7 @@ const indicator_name_parameter_map = {
       'linje_Åldersgrupp': ['Samtliga']
     },
     'tabell': {
-      'table_Tidsperiod': '2021',
+      'table_Tidsperiod': '2022',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['Samtliga'],
       'tabel_Kön': ['Flickor', 'Pojkar']
@@ -1127,13 +1127,13 @@ const indicator_name_parameter_map = {
   },
   'Vaccinationstäckning MPR': {
     'karta': {
-      'karta_Tidsperiod': '2021',
+      'karta_Tidsperiod': '2022',
       'karta_Kön': ['Samtliga'],
       'karta_Åldersgrupp': ['Samtliga']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': '2021',
+      'stapel_Tidsperiod': '2022',
       'stapel_Kön': ['Samtliga']
     },
     'linje': {
@@ -1142,7 +1142,7 @@ const indicator_name_parameter_map = {
       'linje_Åldersgrupp': ['Samtliga']
     },
     'tabell': {
-      'table_Tidsperiod': '2021',
+      'table_Tidsperiod': '2022',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['Samtliga'],
       'tabel_Kön': ['Samtliga']
@@ -1150,13 +1150,13 @@ const indicator_name_parameter_map = {
   },
   'Exponering för tobaksrök vid 8 månaders ålder': {
     'karta': {
-      'karta_Tidsperiod': '2021',
+      'karta_Tidsperiod': '2022',
       'karta_Kön': ['Samtliga'],
       'karta_Åldersgrupp': ['Samtliga']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': '2021',
+      'stapel_Tidsperiod': '2022',
       'stapel_Kön': ['Samtliga']
     },
     'linje': {
@@ -1165,7 +1165,7 @@ const indicator_name_parameter_map = {
       'linje_Åldersgrupp': ['Samtliga']
     },
     'tabell': {
-      'table_Tidsperiod': '2021',
+      'table_Tidsperiod': '2022',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['Samtliga'],
       'tabel_Kön': ['Samtliga']
@@ -1173,13 +1173,13 @@ const indicator_name_parameter_map = {
   },
   'Amning vid 4 månaders ålder': {
     'karta': {
-      'karta_Tidsperiod': '2021',
+      'karta_Tidsperiod': '2022',
       'karta_Kön': ['Samtliga'],
       'karta_Åldersgrupp': ['Samtliga']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': '2021',
+      'stapel_Tidsperiod': '2022',
       'stapel_Kön': ['Samtliga']
     },
     'linje': {
@@ -1188,7 +1188,7 @@ const indicator_name_parameter_map = {
       'linje_Åldersgrupp': ['Samtliga']
     },
     'tabell': {
-      'table_Tidsperiod': '2021',
+      'table_Tidsperiod': '2022',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['Samtliga'],
       'tabel_Kön': ['Samtliga']
@@ -1196,13 +1196,13 @@ const indicator_name_parameter_map = {
   },
   'Kariesfria 3-åringar': {
     'karta': {
-      'karta_Tidsperiod': '2021',
+      'karta_Tidsperiod': '2022',
       'karta_Kön': ['Samtliga'],
       'karta_Åldersgrupp': ['Samtliga']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': '2021',
+      'stapel_Tidsperiod': '2022',
       'stapel_Kön': ['Samtliga']
     },
     'linje': {
@@ -1211,7 +1211,7 @@ const indicator_name_parameter_map = {
       'linje_Åldersgrupp': ['Samtliga']
     },
     'tabell': {
-      'table_Tidsperiod': '2021',
+      'table_Tidsperiod': '2022',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['Samtliga'],
       'tabel_Kön': ['Samtliga']
@@ -1219,13 +1219,13 @@ const indicator_name_parameter_map = {
   },
   'Inkomstnivå': {
     'karta': {
-      'karta_Tidsperiod': '2020',
+      'karta_Tidsperiod': '2021',
       'karta_Kön': ['Kvinnor', 'Män'],
       'karta_Åldersgrupp': ['25-44 år', '45-64 år', '65+ år']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': '2020',
+      'stapel_Tidsperiod': '2021',
       'stapel_Kön': ['Kvinnor', 'Män']
     },
     'linje': {
@@ -1234,7 +1234,7 @@ const indicator_name_parameter_map = {
       'linje_Åldersgrupp': ['25-44 år', '45-64 år', '65+ år']
     },
     'tabell': {
-      'table_Tidsperiod': '2020',
+      'table_Tidsperiod': '2021',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['25-44 år', '45-64 år', '65+ år'],
       'tabel_Kön': ['Kvinnor', 'Män']
@@ -1242,13 +1242,13 @@ const indicator_name_parameter_map = {
   },
   'Boendeform': {
     'karta': {
-      'karta_Tidsperiod': '2020',
+      'karta_Tidsperiod': '2021',
       'karta_Kön': ['Kvinnor', 'Män'],
       'karta_Åldersgrupp': ['0-24 år', '25-44 år', '45-64 år', '65+ år']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': '2020',
+      'stapel_Tidsperiod': '2021',
       'stapel_Kön': ['Kvinnor', 'Män']
     },
     'linje': {
@@ -1257,7 +1257,7 @@ const indicator_name_parameter_map = {
       'linje_Åldersgrupp': ['0-24 år', '25-44 år', '45-64 år', '65+ år']
     },
     'tabell': {
-      'table_Tidsperiod': '2020',
+      'table_Tidsperiod': '2021',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['0-24 år', '25-44 år', '45-64 år', '65+ år'],
       'tabel_Kön': ['Kvinnor', 'Män']
@@ -1265,13 +1265,13 @@ const indicator_name_parameter_map = {
   },
   'Huvudsaklig sysselsättning': {
     'karta': {
-      'karta_Tidsperiod': '2020',
+      'karta_Tidsperiod': '2021',
       'karta_Kön': ['Kvinnor', 'Män'],
       'karta_Åldersgrupp': ['25-44 år', '45-64 år']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': '2020',
+      'stapel_Tidsperiod': '2021',
       'stapel_Kön': ['Kvinnor', 'Män']
     },
     'linje': {
@@ -1280,7 +1280,7 @@ const indicator_name_parameter_map = {
       'linje_Åldersgrupp': ['25-44 år', '45-64 år']
     },
     'tabell': {
-      'table_Tidsperiod': '2020',
+      'table_Tidsperiod': '2021',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['25-44 år', '45-64 år'],
       'tabel_Kön': ['Kvinnor', 'Män']
@@ -1403,13 +1403,13 @@ const indicator_name_parameter_map = {
   },
   'Ohälsodagar': {
     'karta': {
-      'karta_Tidsperiod': '2020',
+      'karta_Tidsperiod': '2021',
       'karta_Kön': ['Kvinnor', 'Män'],
       'karta_Åldersgrupp': ['25-44 år', '45-64 år']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': '2020',
+      'stapel_Tidsperiod': '2021',
       'stapel_Kön': ['Kvinnor', 'Män']
     },
     'linje': {
@@ -1418,7 +1418,7 @@ const indicator_name_parameter_map = {
       'linje_Åldersgrupp': ['25-44 år', '45-64 år']
     },
     'tabell': {
-      'table_Tidsperiod': '2020',
+      'table_Tidsperiod': '2021',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['25-44 år', '45-64 år'],
       'tabel_Kön': ['Kvinnor', 'Män']
@@ -2214,16 +2214,16 @@ const indicator_init_map = {
     indikator_group: "Demografi",
     indikator_name: "Åldersgrupper",
     indikator_category: ["0-6 år", "7-12 år", "13-19 år"],
-    karta_Tidsperiod: "2021",
+    karta_Tidsperiod: "2022",
     karta_Kön: ["Kvinnor", "Män"],
     karta_Åldersgrupp: "Se indikatorn",
     stapel_Område: "Stockholms län",
-    stapel_Tidsperiod: "2021",
+    stapel_Tidsperiod: "2022",
     stapel_Kön: ["Kvinnor", "Män"],
     linje_Område: ["Stockholms län", "Botkyrka"],
     linje_Kön: ["Kvinnor", "Män"],
     linje_Åldersgrupp: "Se indikatorn",
-    table_Tidsperiod: "2021",
+    table_Tidsperiod: "2022",
     table_Område: "Stockholms län",
     tabel_Åldersgrupp: "Se indikatorn",
     tabel_Kön: ["Kvinnor", "Män"]
@@ -2232,16 +2232,16 @@ const indicator_init_map = {
     indikator_group: "Barns hälsa",
     indikator_name: "Amning vid 4 månaders ålder",
     indikator_category: "Ej valbart",
-    karta_Tidsperiod: "2021",
+    karta_Tidsperiod: "2022",
     karta_Kön: "Samtliga",
     karta_Åldersgrupp: "Samtliga",
     stapel_Område: "Stockholms län",
-    stapel_Tidsperiod: "2021",
+    stapel_Tidsperiod: "2022",
     stapel_Kön: "Samtliga",
     linje_Område: ["Stockholms län", "Botkyrka"],
     linje_Kön: "Samtliga",
     linje_Åldersgrupp: "Samtliga",
-    table_Tidsperiod: "2021",
+    table_Tidsperiod: "2022",
     table_Område: "Stockholms län",
     tabel_Åldersgrupp: "Samtliga",
     tabel_Kön: "Samtliga"
