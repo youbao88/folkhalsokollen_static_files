@@ -1012,13 +1012,13 @@ const indicator_name_parameter_map = {
   },
   'Ekonomiskt bistånd': {
     'karta': {
-      'karta_Tidsperiod': '2020',
+      'karta_Tidsperiod': '2021',
       'karta_Kön': ['Kvinnor', 'Män'],
       'karta_Åldersgrupp': ['25-44 år', '45-64 år', '65+ år']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': '2020',
+      'stapel_Tidsperiod': '2021',
       'stapel_Kön': ['Kvinnor', 'Män']
     },
     'linje': {
@@ -1027,7 +1027,7 @@ const indicator_name_parameter_map = {
       'linje_Åldersgrupp': ['25-44 år', '45-64 år', '65+ år']
     },
     'tabell': {
-      'table_Tidsperiod': '2020',
+      'table_Tidsperiod': '2021',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['25-44 år', '45-64 år', '65+ år'],
       'tabel_Kön': ['Kvinnor', 'Män']
@@ -2176,20 +2176,20 @@ const indicator_init_map = {
   },
   "Utbildning, sysselsättning och inkomst": {
     indikator_group: "Utbildning, sysselsättning och inkomst",
-    indikator_name: "Ekonomiska svårigheter",
+    indikator_name: "Ekonomiskt bistånd",
     indikator_category: "Ej valbart",
-    karta_Tidsperiod: "2018",
+    karta_Tidsperiod: "2021",
     karta_Kön: ["Kvinnor", "Män"],
-    karta_Åldersgrupp: ["16-44 år", "45-64 år", "65+ år"],
+    karta_Åldersgrupp: ["25-44 år", "45-64 år", "65+ år"],
     stapel_Område: "Stockholms län",
-    stapel_Tidsperiod: "2018",
+    stapel_Tidsperiod: "2021",
     stapel_Kön: ["Kvinnor", "Män"],
     linje_Område: ["Stockholms län", "Botkyrka"],
     linje_Kön: ["Kvinnor", "Män"],
-    linje_Åldersgrupp: ["16-44 år", "45-64 år", "65+ år"],
-    table_Tidsperiod: "2018",
+    linje_Åldersgrupp: ["25-44 år", "45-64 år", "65+ år"],
+    table_Tidsperiod: "2021",
     table_Område: "Stockholms län",
-    tabel_Åldersgrupp: ["16-44 år", "45-64 år", "65+ år"],
+    tabel_Åldersgrupp: ["25-44 år", "45-64 år", "65+ år"],
     tabel_Kön: ["Kvinnor", "Män"]
   },
   "Arbetsmiljö": {

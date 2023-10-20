@@ -69,7 +69,7 @@ const indicator_info = {
   },
   "Ekonomiskt bistånd": {
     definition:
-      "Andel (%) individer som fått ekonomiskt bistånd (tidigare socialbidrag) i högst sex månader eller mer än sex månader.",
+      "Andel (%) individer som fått ekonomiskt bistånd i form av försörjningsstöd.",
     källa: "Statistiska centralbyrån (SCB) ",
     läsa_mer_1_text:
       "Folkhälsorapport 2023 – inkomst, Centrum för epidemiologi och samhällsmedicin (CES)",
