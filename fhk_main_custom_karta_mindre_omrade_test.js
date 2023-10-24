@@ -1,3 +1,258 @@
+const JSONCrushSwap = (string, forward = 1) => {
+  // swap out characters for lesser used ones that wont get escaped
+  const swapGroups = [
+    ['"', "'"],
+    ["':", "!"],
+    [",'", "~"],
+    ["}", ")", "\\", "\\"],
+    ["{", "(", "\\", "\\"],
+  ];
+
+  const swapInternal = (string, g) => {
+    let regex = new RegExp(
+      `${(g[2] ? g[2] : "") + g[0]}|${(g[3] ? g[3] : "") + g[1]}`,
+      "g"
+    );
+    return string.replace(regex, ($1) => ($1 === g[0] ? g[1] : g[0]));
+  };
+
+  // need to be able to swap characters in reverse direction for uncrush
+  if (forward)
+    for (let i = 0; i < swapGroups.length; ++i)
+      string = swapInternal(string, swapGroups[i]);
+  else
+    for (let i = swapGroups.length; i--; )
+      string = swapInternal(string, swapGroups[i]);
+
+  return string;
+};
+function crush(jsonObject, maxSubstringLength = 50) {
+  const replacements = {
+    indikator_group: "a",
+    indikator_name: "b",
+    indikator_category: "c",
+    karta_Tidsperiod: "1a",
+    karta_Kön: "1b",
+    karta_Åldersgrupp: "1c",
+    stapel_Område: "2a",
+    stapel_Tidsperiod: "2b",
+    stapel_Kön: "2c",
+    linje_Område: "3a",
+    linje_Kön: "3b",
+    linje_Åldersgrupp: "3c",
+    table_Tidsperiod: "4a",
+    table_Område: "4b",
+    tabel_Åldersgrupp: "4c",
+    tabel_Kön: "4d",
+    page: "d",
+  };
+  const jsonObjectReplacedArray = Object.keys(jsonObject).map((key) => {
+    const newKey = replacements[key] || key;
+    return { [newKey]: jsonObject[key] };
+  });
+  const josnObjectReplaced = jsonObjectReplacedArray.reduce((a, b) =>
+    Object.assign({}, a, b)
+  );
+  string = JSON.stringify(josnObjectReplaced);
+  const delimiter = "\u0001"; // used to split parts of crushed string
+  const JSCrush = (string, replaceCharacters) => {
+    // JSCrush Algorithm (repleace repeated substrings with single characters)
+    let replaceCharacterPos = replaceCharacters.length;
+    let splitString = "";
+
+    const ByteLength = (string) =>
+      encodeURI(encodeURIComponent(string)).replace(/%../g, "i").length;
+    const HasUnmatchedSurrogate = (string) => {
+      // check ends of string for unmatched surrogate pairs
+      let c1 = string.charCodeAt(0);
+      let c2 = string.charCodeAt(string.length - 1);
+      return (c1 >= 0xdc00 && c1 <= 0xdfff) || (c2 >= 0xd800 && c2 <= 0xdbff);
+    };
+
+    // count instances of substrings
+    let substringCount = {};
+    for (
+      let substringLength = 2;
+      substringLength < maxSubstringLength;
+      substringLength++
+    )
+      for (let i = 0; i < string.length - substringLength; ++i) {
+        let substring = string.substr(i, substringLength);
+
+        // don't recount if already in list
+        if (substringCount[substring]) continue;
+
+        // prevent breaking up unmatched surrogates
+        if (HasUnmatchedSurrogate(substring)) continue;
+
+        // count how many times the substring appears
+        let count = 1;
+        for (
+          let substringPos = string.indexOf(substring, i + substringLength);
+          substringPos >= 0;
+          ++count
+        )
+          substringPos = string.indexOf(
+            substring,
+            substringPos + substringLength
+          );
+
+        // add to list if it appears multiple times
+        if (count > 1) substringCount[substring] = count;
+      }
+
+    while (true) {
+      // loop while string can be crushed more
+      // get the next character that is not in the string
+      for (
+        ;
+        replaceCharacterPos-- &&
+        string.includes(replaceCharacters[replaceCharacterPos]);
+
+      ) {}
+      if (replaceCharacterPos < 0) break; // ran out of replacement characters
+      let replaceCharacter = replaceCharacters[replaceCharacterPos];
+
+      // find the longest substring to replace
+      let bestSubstring;
+      let bestLengthDelta = 0;
+      let replaceByteLength = ByteLength(replaceCharacter);
+      for (let substring in substringCount) {
+        // calculate change in length of string if it substring was replaced
+        let count = substringCount[substring];
+        let lengthDelta =
+          (count - 1) * ByteLength(substring) - (count + 1) * replaceByteLength;
+        if (!splitString.length) lengthDelta -= ByteLength(delimiter); // include the delimiter length
+        if (lengthDelta <= 0) delete substringCount[substring];
+        else if (lengthDelta > bestLengthDelta) {
+          bestSubstring = substring;
+          bestLengthDelta = lengthDelta;
+        }
+      }
+      if (!bestSubstring) break; // string can't be compressed further
+
+      // create new string with the split character
+      string =
+        string.split(bestSubstring).join(replaceCharacter) +
+        replaceCharacter +
+        bestSubstring;
+      splitString = replaceCharacter + splitString;
+
+      // update substring count list after the replacement
+      let newSubstringCount = {};
+      for (let substring in substringCount) {
+        // make a new substring with the replacement
+        let newSubstring = substring
+          .split(bestSubstring)
+          .join(replaceCharacter);
+
+        // count how many times the new substring appears
+        let count = 0;
+        for (let i = string.indexOf(newSubstring); i >= 0; ++count)
+          i = string.indexOf(newSubstring, i + newSubstring.length);
+
+        // add to list if it appears multiple times
+        if (count > 1) newSubstringCount[newSubstring] = count;
+      }
+      substringCount = newSubstringCount;
+    }
+
+    return { a: string, b: splitString };
+  };
+
+  // create a string of replacement characters
+  let characters = [];
+
+  // prefer replacing with characters that will not be escaped by encodeURIComponent
+  const unescapedCharacters = `-_.!~*'()`;
+  for (let i = 127; --i; ) {
+    if (
+      (i >= 48 && i <= 57) || // 0-9
+      (i >= 65 && i <= 90) || // A-Z
+      (i >= 97 && i <= 122) || // a-z
+      unescapedCharacters.includes(String.fromCharCode(i))
+    )
+      characters.push(String.fromCharCode(i));
+  }
+
+  // pick from extended set last
+  for (let i = 32; i < 255; ++i) {
+    let c = String.fromCharCode(i);
+    if (c != "\\" && !characters.includes(c)) characters.unshift(c);
+  }
+
+  // remove delimiter if it is found in the string
+  string = string.replace(new RegExp(delimiter, "g"), "");
+
+  // swap out common json characters
+  string = JSONCrushSwap(string);
+
+  // crush with JS crush
+  const crushed = JSCrush(string, characters);
+
+  // insert delimiter between JSCrush parts
+  let crushedString = crushed.a;
+  if (crushed.b.length) crushedString += delimiter + crushed.b;
+
+  // fix issues with some links not being recognized properly
+  crushedString += "_";
+
+  // return crushed string
+  return crushedString;
+}
+
+function uncrush(string) {
+  // remove last character
+  string = string.substring(0, string.length - 1);
+
+  // unsplit the string using the delimiter
+  const stringParts = string.split("\u0001");
+
+  // JSUncrush algorithm
+  let uncrushedString = stringParts[0];
+  if (stringParts.length > 1) {
+    let splitString = stringParts[1];
+    for (let character of splitString) {
+      // split the string using the current splitCharacter
+      let splitArray = uncrushedString.split(character);
+
+      // rejoin the string with the last element from the split
+      uncrushedString = splitArray.join(splitArray.pop());
+    }
+  }
+
+  // unswap the json characters in reverse direction
+  const unreplacedString = JSONCrushSwap(uncrushedString, 0);
+  const unreplacedJson = JSON.parse(unreplacedString);
+  const replacements = {
+    a: "indikator_group",
+    b: "indikator_name",
+    c: "indikator_category",
+    "1a": "karta_Tidsperiod",
+    "1b": "karta_Kön",
+    "1c": "karta_Åldersgrupp",
+    "2a": "stapel_Område",
+    "2b": "stapel_Tidsperiod",
+    "2c": "stapel_Kön",
+    "3a": "linje_Område",
+    "3b": "linje_Kön",
+    "3c": "linje_Åldersgrupp",
+    "4a": "table_Tidsperiod",
+    "4b": "table_Område",
+    "4c": "tabel_Åldersgrupp",
+    "4d": "tabel_Kön",
+    d: "page",
+  };
+  const jsonObjectReplacedArray = Object.keys(unreplacedJson).map((key) => {
+    const newKey = replacements[key] || key;
+    return { [newKey]: unreplacedJson[key] };
+  });
+  const replacedJson = jsonObjectReplacedArray.reduce((a, b) =>
+    Object.assign({}, a, b)
+  );
+  return replacedJson;
+}
+
 function update(target, src) {
   const res = {};
   Object.keys(target).forEach(
@@ -263,7 +518,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
       popupScriptCss.rel = "stylesheet";
       document.head.append(popupScriptCss);
 
-
       var sasVaSDKScript = document.createElement("script");
       sasVaSDKScript.type = "text/javascript";
       sasVaSDKScript.src =
@@ -336,7 +590,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
         icons[i].title ==
           "Klicka här för att spara en bild av din visualisering. Bilden laddas ned som en jpg-fil på din dator." ||
         icons[i].title == "Klicka här för att spara en Excel fil." ||
-        icons[i].title == "Använd den här länken för att dela sidan med de data du har valt."
+        icons[i].title ==
+          "Använd den här länken för att dela sidan med de data du har valt."
       ) {
         icons[i].parentNode.parentNode.parentNode.classList.add("tool_icon");
       } else {
@@ -352,6 +607,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     let sasReport = document.getElementById("my-report");
     let stapelCurrentOmrade = "Stockholms län";
     let defaultOmradeWhenIndicatorChanged = {};
+    let page_to_open;
 
     observer_change_indicator = new MutationObserver((mutationRecords) => {
       sasReport.getReportHandle().then((reportHandle) => {
@@ -458,12 +714,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
             linje: 2,
             tabell: 3,
           };
-          let pageToBeOpen = JSON.parse(Base64.decode(statusParametersEncoded[1]))[
-            "page"
-          ];
           document
             .getElementsByClassName("sas_components-Image-Image_clickable")
-            [pageIndexMap[pageToBeOpen]].click();
+            [pageIndexMap[page_to_open]].click();
         }
       }
     });
@@ -496,12 +749,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
       });
     } else {
       if (statusParametersEncoded) {
-        shareParameters = JSON.parse(Base64.decode(statusParametersEncoded[1]));
+        if (statusParametersEncoded[1].startsWith("(")){
+        shareParameters = uncrush(decodeURIComponent(statusParametersEncoded[1]));
+        }else{
+          shareParameters = JSON.parse(Base64.decode(statusParametersEncoded[1]));
+        }
+        page_to_open = shareParameters["page"];
         delete shareParameters["page"];
         sasReport.getReportHandle().then((reportHandle) => {
-          reportHandle.updateReportParameters(
-            JSON.parse(Base64.decode(statusParametersEncoded[1]))
-          );
+          reportHandle.updateReportParameters(shareParameters);
         });
       } else {
         sasReport.getReportHandle().then((reportHandle) => {
@@ -823,7 +1079,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
               });
             });
           });
-        } else if (e.target.title == "Använd den här länken för att dela sidan med de data du har valt.") {
+        } else if (
+          e.target.title ==
+          "Använd den här länken för att dela sidan med de data du har valt."
+        ) {
           let rx = /.+\/(.+)_selector.+/g;
           let current_visualization_type = rx.exec(
             document.getElementsByTagName("iframe")[0].src
@@ -843,13 +1102,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
             //for test page
             var shareURL =
               "https://www.folkhalsokollen.se/webbverktyg/webbverktyg-test/?status=" +
-              Base64.encode(JSON.stringify(shareParameters));
+              encodeURIComponent(crush(shareParameters));
           } else {
             //for prod page
-            console.log(encodeURIComponent(JSON.stringify(shareParameters)))
             var shareURL =
               "https://www.folkhalsokollen.se/webbverktyg/?status=" +
-              Base64.encode(JSON.stringify(shareParameters));
+              encodeURIComponent(crush(shareParameters));
           }
           Swal.fire({
             width: "70em",
