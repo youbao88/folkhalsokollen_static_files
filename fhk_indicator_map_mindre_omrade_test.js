@@ -734,7 +734,7 @@ const indicator_name_parameter_map = {
       'tabel_Kön': ['Kvinnor', 'Män']
     }
   },
-  'Begränsade sjukdom': {
+  'Begränsande sjukdom': {
     'karta': {
       'karta_Tidsperiod': '2021',
       'karta_Kön': ['Kvinnor', 'Män'],
@@ -2086,7 +2086,7 @@ const indicator_init_map = {
   },
   "Hälsa och sjukdom": {
     indikator_group: "Hälsa och sjukdom",
-    indikator_name: "Begränsade sjukdom",
+    indikator_name: "Begränsande sjukdom",
     indikator_category: "Ej valbart",
     karta_Tidsperiod: "2021",
     karta_Kön: ["Kvinnor", "Män"],
