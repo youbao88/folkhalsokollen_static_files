@@ -1334,13 +1334,13 @@ const indicator_name_parameter_map = {
   },
   'Adhd (diagnostiserad)': {
     'karta': {
-      'karta_Tidsperiod': '2021',
+      'karta_Tidsperiod': '2022',
       'karta_Kön': ['Kvinnor', 'Män'],
       'karta_Åldersgrupp': ['0-17 år', '18-29 år']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': '2021',
+      'stapel_Tidsperiod': '2022',
       'stapel_Kön': ['Kvinnor', 'Män']
     },
     'linje': {
@@ -1349,7 +1349,7 @@ const indicator_name_parameter_map = {
       'linje_Åldersgrupp': ['0-17 år', '18-29 år']
     },
     'tabell': {
-      'table_Tidsperiod': '2021',
+      'table_Tidsperiod': '2022',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['0-17 år', '18-29 år'],
       'tabel_Kön': ['Kvinnor', 'Män']
@@ -1357,13 +1357,13 @@ const indicator_name_parameter_map = {
   },
   'Autismspektrumtillstånd (diagnostiserad)': {
     'karta': {
-      'karta_Tidsperiod': '2021',
+      'karta_Tidsperiod': '2022',
       'karta_Kön': ['Kvinnor', 'Män'],
       'karta_Åldersgrupp': ['0-17 år', '18-29 år']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': '2021',
+      'stapel_Tidsperiod': '2022',
       'stapel_Kön': ['Kvinnor', 'Män']
     },
     'linje': {
@@ -1372,7 +1372,7 @@ const indicator_name_parameter_map = {
       'linje_Åldersgrupp': ['0-17 år', '18-29 år']
     },
     'tabell': {
-      'table_Tidsperiod': '2021',
+      'table_Tidsperiod': '2022',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['0-17 år', '18-29 år'],
       'tabel_Kön': ['Kvinnor', 'Män']
@@ -1380,13 +1380,13 @@ const indicator_name_parameter_map = {
   },
   'Depression och ångest (diagnostiserad)': {
     'karta': {
-      'karta_Tidsperiod': '2021',
+      'karta_Tidsperiod': '2022',
       'karta_Kön': ['Kvinnor', 'Män'],
       'karta_Åldersgrupp': ['18-29 år', '30-44 år', '45-64 år', '65+ år']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': '2021',
+      'stapel_Tidsperiod': '2022',
       'stapel_Kön': ['Kvinnor', 'Män']
     },
     'linje': {
@@ -1395,7 +1395,7 @@ const indicator_name_parameter_map = {
       'linje_Åldersgrupp': ['18-29 år', '30-44 år', '45-64 år', '65+ år']
     },
     'tabell': {
-      'table_Tidsperiod': '2021',
+      'table_Tidsperiod': '2022',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['18-29 år', '30-44 år', '45-64 år', '65+ år'],
       'tabel_Kön': ['Kvinnor', 'Män']
@@ -2142,16 +2142,16 @@ const indicator_init_map = {
     indikator_group: "Psykisk ohälsa",
     indikator_name: "Adhd (diagnostiserad)",
     indikator_category: "Ej valbart",
-    karta_Tidsperiod: "2021",
+    karta_Tidsperiod: "2022",
     karta_Kön: ["Kvinnor", "Män"],
     karta_Åldersgrupp: ['0-17 år', '18-29 år'],
     stapel_Område: "Stockholms län",
-    stapel_Tidsperiod: "2021",
+    stapel_Tidsperiod: "2022",
     stapel_Kön: ["Kvinnor", "Män"],
     linje_Område: ["Stockholms län", "Botkyrka"],
     linje_Kön: ["Kvinnor", "Män"],
     linje_Åldersgrupp: ['0-17 år', '18-29 år'],
-    table_Tidsperiod: "2021",
+    table_Tidsperiod: "2022",
     table_Område: "Stockholms län",
     tabel_Åldersgrupp: ['0-17 år', '18-29 år'],
     tabel_Kön: ["Kvinnor", "Män"]
