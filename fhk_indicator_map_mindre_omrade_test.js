@@ -943,24 +943,24 @@ const indicator_name_parameter_map = {
   },
   'Bröstcancer': {
     'karta': {
-      'karta_Tidsperiod': '2021',
+      'karta_Tidsperiod': '2022',
       'karta_Kön': ['Kvinnor'],
-      'karta_Åldersgrupp': ['0-54 år', '55+ år']
+      'karta_Åldersgrupp': ['0+ år']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': '2021',
+      'stapel_Tidsperiod': '2022',
       'stapel_Kön': ['Kvinnor']
     },
     'linje': {
       'linje_Kön': ['Kvinnor'],
       'linje_Område': ['Stockholms län', 'Botkyrka'],
-      'linje_Åldersgrupp': ['0-54 år', '55+ år']
+      'linje_Åldersgrupp': ['0+ år']
     },
     'tabell': {
-      'table_Tidsperiod': '2021',
+      'table_Tidsperiod': '2022',
       'table_Område': 'Stockholms län',
-      'tabel_Åldersgrupp': ['0-54 år', '55+ år'],
+      'tabel_Åldersgrupp': ['0+ år'],
       'tabel_Kön': ['Kvinnor']
     }
   },
@@ -989,24 +989,24 @@ const indicator_name_parameter_map = {
   },
   'Tjock- och ändtarmscancer': {
     'karta': {
-      'karta_Tidsperiod': '2021',
+      'karta_Tidsperiod': '2022',
       'karta_Kön': ['Kvinnor', 'Män'],
-      'karta_Åldersgrupp': ['0-54 år', '55+ år']
+      'karta_Åldersgrupp': ['0+ år']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': '2021',
+      'stapel_Tidsperiod': '2022',
       'stapel_Kön': ['Kvinnor', 'Män']
     },
     'linje': {
       'linje_Kön': ['Kvinnor', 'Män'],
       'linje_Område': ['Stockholms län', 'Botkyrka'],
-      'linje_Åldersgrupp': ['0-54 år', '55+ år']
+      'linje_Åldersgrupp': ['0+ år']
     },
     'tabell': {
-      'table_Tidsperiod': '2021',
+      'table_Tidsperiod': '2022',
       'table_Område': 'Stockholms län',
-      'tabel_Åldersgrupp': ['0-54 år', '55+ år'],
+      'tabel_Åldersgrupp': ['0+ år'],
       'tabel_Kön': ['Kvinnor', 'Män']
     }
   },
@@ -1035,47 +1035,47 @@ const indicator_name_parameter_map = {
   },
   'Prostatacancer': {
     'karta': {
-      'karta_Tidsperiod': '2021',
+      'karta_Tidsperiod': '2022',
       'karta_Kön': ['Män'],
-      'karta_Åldersgrupp': ['0-54 år', '55+ år']
+      'karta_Åldersgrupp': ['0+ år']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': '2021',
+      'stapel_Tidsperiod': '2022',
       'stapel_Kön': ['Män']
     },
     'linje': {
       'linje_Kön': ['Män'],
       'linje_Område': ['Stockholms län', 'Botkyrka'],
-      'linje_Åldersgrupp': ['0-54 år', '55+ år']
+      'linje_Åldersgrupp': ['0+ år']
     },
     'tabell': {
-      'table_Tidsperiod': '2021',
+      'table_Tidsperiod': '2022',
       'table_Område': 'Stockholms län',
-      'tabel_Åldersgrupp': ['0-54 år', '55+ år'],
+      'tabel_Åldersgrupp': ['0+ år'],
       'tabel_Kön': ['Män']
     }
   },
   'Lungcancer': {
     'karta': {
-      'karta_Tidsperiod': '2021',
+      'karta_Tidsperiod': '2022',
       'karta_Kön': ['Kvinnor', 'Män'],
-      'karta_Åldersgrupp': ['0-54 år', '55+ år']
+      'karta_Åldersgrupp': ['0+ år']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
-      'stapel_Tidsperiod': '2021',
+      'stapel_Tidsperiod': '2022',
       'stapel_Kön': ['Kvinnor', 'Män']
     },
     'linje': {
       'linje_Kön': ['Kvinnor', 'Män'],
       'linje_Område': ['Stockholms län', 'Botkyrka'],
-      'linje_Åldersgrupp': ['0-54 år', '55+ år']
+      'linje_Åldersgrupp': ['0+ år']
     },
     'tabell': {
-      'table_Tidsperiod': '2021',
+      'table_Tidsperiod': '2022',
       'table_Område': 'Stockholms län',
-      'tabel_Åldersgrupp': ['0-54 år', '55+ år'],
+      'tabel_Åldersgrupp': ['0+ år'],
       'tabel_Kön': ['Kvinnor', 'Män']
     }
   },
@@ -1375,6 +1375,29 @@ const indicator_name_parameter_map = {
       'table_Tidsperiod': '2022',
       'table_Område': 'Stockholms län',
       'tabel_Åldersgrupp': ['0-17 år', '18-29 år'],
+      'tabel_Kön': ['Kvinnor', 'Män']
+    }
+  },
+  'Beroende och skadligt bruk (diagnosticerad)': {
+    'karta': {
+      'karta_Tidsperiod': '2022',
+      'karta_Kön': ['Kvinnor', 'Män'],
+      'karta_Åldersgrupp': ['18-44 år', '45+ år']
+    },
+    'stapel': {
+      'stapel_Område': 'Stockholms län',
+      'stapel_Tidsperiod': '2022',
+      'stapel_Kön': ['Kvinnor', 'Män']
+    },
+    'linje': {
+      'linje_Kön': ['Kvinnor', 'Män'],
+      'linje_Område': ['Stockholms län', 'Botkyrka'],
+      'linje_Åldersgrupp': ['18-44 år', '45+ år']
+    },
+    'tabell': {
+      'table_Tidsperiod': '2022',
+      'table_Område': 'Stockholms län',
+      'tabel_Åldersgrupp': ['18-44', '45+ år'],
       'tabel_Kön': ['Kvinnor', 'Män']
     }
   },

@@ -802,6 +802,7 @@ const indicator_info = {
     läsa_mer_2_link:
       "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20223-den-ojamlika-obesitasvarden/",
   },
+  nan: {},
   Tandhälsa: {
     definition:
       "Andel (%) individer som uppger att de har varken bra eller dålig, dålig eller mycket dålig tandhälsa.",
@@ -997,5 +998,14 @@ const indicator_info = {
       "Tillgång till bostadsnära grönska i befolkningen. Rapport 2022:04. Centrum för arbets- och miljömedicin (CAMM).",
     "Läs mer link 4":
       "https://www.folkhalsoguiden.se/publikationer/camm-rapport-2022-tillgang-till-bostadsnara--gronska-i-befolkningen/",
+  },
+  "Beroende och skadligt bruk (diagnosticerad)": {
+    definition:
+      "Andel (%) individer, 18 år eller äldre, som vårdats inom regionfinansierad öppen- eller slutenvård med diagnosen psykiska störningar och beteendestörningar orsakade av psykoaktiva substanser (ICD-10-diagnos F10-F16, F18-F19).Denna diagnosgrupp innehåller huvudsakligen psykiska problem orsakade av beroende och skadligt bruk av alkohol eller droger.<br><br>Observera att eftersom data bygger på rapporterade diagnoser från vården skulle skillnader mellan områden eller över tid, delvis kunna bero på skillnader i registreringen av diagnoser. Måttet redovisar individer med en registrerad diagnos och täcker därför inte hela andelen som har problem. De som inte söker vård för sina problem får heller ingen registrerad diagnos. Säkerheten i talen är mindre i de kommuner eller stadsdelar med en mindre befolkningsstorlek, som till exempel i Salem, Nykvarn och Vaxholm.",
+    källa: "VAL-databaserna",
+    läsa_mer_1_text:
+      "Nationella riktlinjer för vård och stöd vid missbruk och beroende, Socialstyrelsen",
+    läsa_mer_1_link:
+      "https://www.socialstyrelsen.se/globalassets/sharepoint-dokument/artikelkatalog/nationella-riktlinjer/2019-1-16.pdf",
   },
 };
