@@ -857,7 +857,7 @@ const indicator_info = {
     läsa_mer_2_link:
       "https://www.cancercentrum.se/globalassets/vara-uppdrag/strategisk-utvecklingsplan/stockholm---gotland/regional-cancerplan-rcc-stockholm-gotland-2020-2023.pdf ",
   },
-  "Tjock- och ändtarmscancer ": {
+  "Tjock- och ändtarmscancer": {
     definition:
       "Antal nya fall av tjock- och ändtarmscancer per 100 000 invånare. Som årtal beräknas tidpunkten för första diagnosen under perioden 2006–2019 ur Cancerregistret. ",
     källa: "Regionalt cancercentrum Stockholm Gotland (RCC)",

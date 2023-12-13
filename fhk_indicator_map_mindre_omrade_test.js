@@ -945,7 +945,7 @@ const indicator_name_parameter_map = {
     'karta': {
       'karta_Tidsperiod': '2022',
       'karta_Kön': ['Kvinnor'],
-      'karta_Åldersgrupp': ['0+ år']
+      'karta_Åldersgrupp': ['Samtliga']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
@@ -955,12 +955,12 @@ const indicator_name_parameter_map = {
     'linje': {
       'linje_Kön': ['Kvinnor'],
       'linje_Område': ['Stockholms län', 'Botkyrka'],
-      'linje_Åldersgrupp': ['0+ år']
+      'linje_Åldersgrupp': ['Samtliga']
     },
     'tabell': {
       'table_Tidsperiod': '2022',
       'table_Område': 'Stockholms län',
-      'tabel_Åldersgrupp': ['0+ år'],
+      'tabel_Åldersgrupp': ['Samtliga'],
       'tabel_Kön': ['Kvinnor']
     }
   },
@@ -991,7 +991,7 @@ const indicator_name_parameter_map = {
     'karta': {
       'karta_Tidsperiod': '2022',
       'karta_Kön': ['Kvinnor', 'Män'],
-      'karta_Åldersgrupp': ['0+ år']
+      'karta_Åldersgrupp': ['Samtliga']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
@@ -1001,12 +1001,12 @@ const indicator_name_parameter_map = {
     'linje': {
       'linje_Kön': ['Kvinnor', 'Män'],
       'linje_Område': ['Stockholms län', 'Botkyrka'],
-      'linje_Åldersgrupp': ['0+ år']
+      'linje_Åldersgrupp': ['Samtliga']
     },
     'tabell': {
       'table_Tidsperiod': '2022',
       'table_Område': 'Stockholms län',
-      'tabel_Åldersgrupp': ['0+ år'],
+      'tabel_Åldersgrupp': ['Samtliga'],
       'tabel_Kön': ['Kvinnor', 'Män']
     }
   },
@@ -1037,7 +1037,7 @@ const indicator_name_parameter_map = {
     'karta': {
       'karta_Tidsperiod': '2022',
       'karta_Kön': ['Män'],
-      'karta_Åldersgrupp': ['0+ år']
+      'karta_Åldersgrupp': ['Samtliga']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
@@ -1047,12 +1047,12 @@ const indicator_name_parameter_map = {
     'linje': {
       'linje_Kön': ['Män'],
       'linje_Område': ['Stockholms län', 'Botkyrka'],
-      'linje_Åldersgrupp': ['0+ år']
+      'linje_Åldersgrupp': ['Samtliga']
     },
     'tabell': {
       'table_Tidsperiod': '2022',
       'table_Område': 'Stockholms län',
-      'tabel_Åldersgrupp': ['0+ år'],
+      'tabel_Åldersgrupp': ['Samtliga'],
       'tabel_Kön': ['Män']
     }
   },
@@ -1060,7 +1060,7 @@ const indicator_name_parameter_map = {
     'karta': {
       'karta_Tidsperiod': '2022',
       'karta_Kön': ['Kvinnor', 'Män'],
-      'karta_Åldersgrupp': ['0+ år']
+      'karta_Åldersgrupp': ['Samtliga']
     },
     'stapel': {
       'stapel_Område': 'Stockholms län',
@@ -1070,12 +1070,12 @@ const indicator_name_parameter_map = {
     'linje': {
       'linje_Kön': ['Kvinnor', 'Män'],
       'linje_Område': ['Stockholms län', 'Botkyrka'],
-      'linje_Åldersgrupp': ['0+ år']
+      'linje_Åldersgrupp': ['Samtliga']
     },
     'tabell': {
       'table_Tidsperiod': '2022',
       'table_Område': 'Stockholms län',
-      'tabel_Åldersgrupp': ['0+ år'],
+      'tabel_Åldersgrupp': ['Samtliga'],
       'tabel_Kön': ['Kvinnor', 'Män']
     }
   },
