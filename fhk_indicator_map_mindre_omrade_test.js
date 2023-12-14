@@ -60,7 +60,7 @@ const indicator_name_parameter_map = {
       'tabel_Kön': ['Kvinnor', 'Män']
     }
   },
-  'Slutenvård med covid-19': {
+  'Sjukhusinläggning med covid-19': {
     'karta': {
       'karta_Tidsperiod': '2022',
       'karta_Kön': ['Kvinnor', 'Män'],

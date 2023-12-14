@@ -27,7 +27,7 @@ const indicator_info = {
     läsa_mer_1_link:
       "https://www.ces.regionstockholm.se/rapporter/rapporter-om-covid-19/",
   },
-  "Vaccination mot covid-19 (minst två doser)": {
+  "Vaccination mot covid-19 (minst 2 doser)": {
     definition:
       "Antal (%) som fått minst två doser vaccin mot covid-19. Antalet är kumulativt, det vill säga att till exempel antalet i 2022 innehåller totalt antal personer som har fått vaccinet till och med december 2022.",
     källa: "VAL-databaserna ",
