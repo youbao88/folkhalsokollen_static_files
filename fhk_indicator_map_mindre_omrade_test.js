@@ -1033,6 +1033,52 @@ const indicator_name_parameter_map = {
       'tabel_Kön': ['Kvinnor', 'Män']
     }
   },
+  '24-åringar med bristfällig utbildning': {
+    'karta': {
+      'karta_Tidsperiod': '2022',
+      'karta_Kön': ['Kvinnor', 'Män'],
+      'karta_Åldersgrupp': 'Ej valbart' 
+    },
+    'stapel': {
+      'stapel_Område': 'Stockholms län',
+      'stapel_Tidsperiod': '2022',
+      'stapel_Kön': ['Kvinnor', 'Män']
+    },
+    'linje': {
+      'linje_Kön': ['Kvinnor', 'Män'],
+      'linje_Område': ['Stockholms län', 'Botkyrka'],
+      'linje_Åldersgrupp': 'Ej valbart' 
+    },
+    'tabell': {
+      'table_Tidsperiod': '2022',
+      'table_Område': 'Stockholms län',
+      'tabel_Åldersgrupp': 'Ej valbart',
+      'tabel_Kön': ['Kvinnor', 'Män'] 
+    }
+  },
+  'Barn i familjer med låg inkomst': {
+    'karta': {
+      'karta_Tidsperiod': '2021',
+      'karta_Kön': 'Samtliga',
+      'karta_Åldersgrupp': ['0-4 år', '10-14 år', '15-19 år', '5-9 år'] 
+    },
+    'stapel': {
+      'stapel_Område': 'Stockholms län',
+      'stapel_Tidsperiod': '2021',
+      'stapel_Kön': 'Samtliga' 
+    },
+    'linje': {
+      'linje_Kön': 'Samtliga',
+      'linje_Område': ['Stockholms län', 'Botkyrka'],
+      'linje_Åldersgrupp': ['0-4 år', '10-14 år', '15-19 år', '5-9 år'] 
+    },
+    'tabell': {
+      'table_Tidsperiod': '2021',
+      'table_Område': 'Stockholms län',
+      'tabel_Åldersgrupp': ['0-4 år', '10-14 år', '15-19 år', '5-9 år'],
+      'tabel_Kön': 'Samtliga' 
+    }
+  },
   'Prostatacancer': {
     'karta': {
       'karta_Tidsperiod': '2022',
@@ -1746,6 +1792,29 @@ const indicator_name_parameter_map = {
       'tabel_Kön': ['Kvinnor', 'Män']
     }
   },
+    'Fallskada': {
+    'karta': {
+      'karta_Tidsperiod': '2022',
+      'karta_Kön': ['Kvinnor', 'Män'],
+      'karta_Åldersgrupp': ['65-84 år', '85+ år']
+    },
+    'stapel': {
+      'stapel_Område': 'Stockholms län',
+      'stapel_Tidsperiod': '2022',
+      'stapel_Kön': ['Kvinnor', 'Män']
+    },
+    'linje': {
+      'linje_Kön': ['Kvinnor', 'Män'],
+      'linje_Område': ['Stockholms län', 'Botkyrka'],
+      'linje_Åldersgrupp':['65-84 år', '85+ år'] 
+    },
+    'tabell': {
+      'table_Tidsperiod': '2022',
+      'table_Område': 'Stockholms län',
+      'tabel_Åldersgrupp': ['65-84 år', '85+ år'],
+      'tabel_Kön': ['Kvinnor', 'Män']
+    }
+  },
   'Hjälp med personlig omvårdnad': {
     'karta': {
       'karta_Tidsperiod': '2018',
@@ -2199,20 +2268,20 @@ const indicator_init_map = {
   },
   "Utbildning, sysselsättning och inkomst": {
     indikator_group: "Utbildning, sysselsättning och inkomst",
-    indikator_name: "Ekonomiskt bistånd",
+    indikator_name: "24-åringar med bristfällig utbildning",
     indikator_category: "Ej valbart",
-    karta_Tidsperiod: "2021",
+    karta_Tidsperiod: "2022",
     karta_Kön: ["Kvinnor", "Män"],
-    karta_Åldersgrupp: ["25-44 år", "45-64 år", "65+ år"],
+    karta_Åldersgrupp: "Ej valbart",
     stapel_Område: "Stockholms län",
-    stapel_Tidsperiod: "2021",
+    stapel_Tidsperiod: "2022",
     stapel_Kön: ["Kvinnor", "Män"],
     linje_Område: ["Stockholms län", "Botkyrka"],
     linje_Kön: ["Kvinnor", "Män"],
-    linje_Åldersgrupp: ["25-44 år", "45-64 år", "65+ år"],
-    table_Tidsperiod: "2021",
+    linje_Åldersgrupp: "Ej valbart",
+    table_Tidsperiod: "2022",
     table_Område: "Stockholms län",
-    tabel_Åldersgrupp: ["25-44 år", "45-64 år", "65+ år"],
+    tabel_Åldersgrupp: "Ej valbart",
     tabel_Kön: ["Kvinnor", "Män"]
   },
   "Arbetsmiljö": {

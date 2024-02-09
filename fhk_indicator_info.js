@@ -102,6 +102,24 @@ const indicator_info = {
     läsa_mer_1_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/sociala-och-ekonomiska-forutsattningar/inkomst/",
   },
+  "24-åringar med bristfällig utbildning": {
+    definition:
+      "Andel (%) 24-åringar där högsta utbildning inte motsvarar treårig gymnasieutbildning eller tvåårig yrkesinriktad gymnasieutbildning.",
+    källa: "Statistiska centralbyrån (SCB) ",
+    läsa_mer_1_text:
+      "Utbildning - nyckeln till arbete. Sveriges kommuner och regioner (SKR)",
+    läsa_mer_1_link:
+      "https://skr.se/download/18.45167e4317e2b341b24bb50d/1642783429505/7585-365-9.pdf",
+  },
+  "Barn i familjer med låg inkomst": {
+    definition:
+      "Andel (%) som lever i familjer där inkomster efter skatt och bidrag inte räcker till nödvändiga levnadsomkostnader, som mat, kläder, el och boende, enligt Statistikmyndigheten SCB:s beräkning av inkomst för skälig levnadsnivå.",
+    källa: "Statistikmyndigheten (SCB)",
+    läsa_mer_1_text:
+      "Folkhälsorapport 2023 – Inkomst, Centrum för epidemiologi och samhällsmedicin (CES)",
+    läsa_mer_1_link:
+      "https://www.folkhalsorapportstockholm.se/rapporten2/sociala-och-ekonomiska-forutsattningar/inkomst/",
+  },
   Utbildningsnivå: {
     definition:
       "Andel (%) individer med förgymnasial, gymnasial eller eftergymnasial utbildning som högsta utbildningsnivå.",
@@ -140,7 +158,7 @@ const indicator_info = {
   },
   "Övervikt och obesitas 4-åringar": {
     definition:
-      "Andel (%) fyraåringar med övervikt och obesitas. Övervikt (utan obesitas) definieras som ISO-BMI 25–30 och obesitas definieras som ISO-BMI 30 eller mer. ISO-BMI är ett BMI som är anpassat för barn från två års ålder. Observera att det kan förekomma brister i data för olika år och man ska vara försiktig med att dra slutsatser från de år och område det gäller för. Data är inkomplett för: Södertälje (2016–2017), Norrtälje (2017, 2018, 2021), Sigtuna (2017), Skärholmen (2017, 2021, 2022), Österåker (2021) , Rinkeby-Kista (2021).\n",
+      "\nAndel (%) fyraåringar med övervikt och obesitas. Övervikt (utan obesitas) definieras som ISO-BMI 25–30 och obesitas definieras som ISO-BMI 30 eller mer. ISO-BMI är ett BMI som är anpassat för barn från två års ålder. Observera att det kan förekomma brister i data för olika år och man ska vara försiktig med att dra slutsatser från de år och område det gäller för. Data är inkomplett för: Södertälje (2016–2017), Norrtälje (2017, 2018, 2021), Sigtuna (2017), Skärholmen (2017, 2021, 2022), Österåker (2021) , Rinkeby-Kista (2021).\n",
     källa: "Barnhälsovårdens årsrapport ",
     läsa_mer_1_text:
       "Årsrapport – barnhälsovård i Stockholms län 2022, Region Stockholm.",
@@ -341,7 +359,7 @@ const indicator_info = {
       "Andel (%) individer som uppger att de har fallit omkull och skadat sig under de senaste sex månaderna oavsett påverkan på vardagslivet.",
     källa: "Region Stockholms folkhälsoenkät",
     läsa_mer_1_text:
-      "Folkhälsorapport 2023 – Fallolyckor. Centrum för epidemiologi och samhällsmedicin (CES).",
+      "Folkhälsorapport 2023 – Fallskador. Centrum för epidemiologi och samhällsmedicin (CES).",
     läsa_mer_1_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/sjukdomar-och-skador/fallolyckor/",
     läsa_mer_2_text: "Fallolyckor - Socialstyrelsen (socialstyrelsen.se)",
@@ -357,13 +375,22 @@ const indicator_info = {
       "Andel (%) individer som uppger att de har fallit omkull och skadat sig under de senaste sex månaderna, och att skadan eller skadorna har påverkat deras vardagsaktiviteter i någon grad eller hög grad.",
     källa: "Region Stockholms folkhälsoenkät",
     läsa_mer_1_text:
-      "Folkhälsorapport 2023– fallolyckor, Centrum för epidemiologi och samhällsmedicin (CES)",
+      "Folkhälsorapport 2023 – fallskador, Centrum för epidemiologi och samhällsmedicin (CES)",
     läsa_mer_1_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/sjukdomar-och-skador/fallolyckor/",
     läsa_mer_2_text:
       "Hur mår de allra äldsta i Stockholms län? Rapport 2023:6. Centrum för epidemiologi och samhällsmedicin (CES).",
     läsa_mer_2_link:
       "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20236-hur-mar-de-allra-aldsta/",
+  },
+  Fallskada: {
+    definition:
+      "Andel (%) individer, 65 år eller äldre, som vårdats inom regionfinansierad öppen- eller slutenvård med lågenergifall (ICD-10 diagnoskoder: W00, W01, W05, W06, W07, W08, W09, W10, W17, W18, W19).",
+    källa: "VAL-databaserna",
+    läsa_mer_1_text:
+      "Folkhälsorapport 2023 – fallskador, Centrum för epidemiologi och samhällsmedicin (CES)",
+    läsa_mer_1_link:
+      "https://www.folkhalsorapportstockholm.se/rapporten2/sjukdomar-och-skador/fallolyckor/",
   },
   "Otillräcklig hjälp i vardagslivet": {
     definition:
