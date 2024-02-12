@@ -2142,20 +2142,20 @@ const indicator_name_parameter_map = {
 const indicator_init_map = {
   "Äldres hälsa": {
     indikator_group: "Äldres hälsa",
-    indikator_name: "Fallolyckor",
+    indikator_name: "Fallskada",
     indikator_category: "Ej valbart",
-    karta_Tidsperiod: "2018",
+    karta_Tidsperiod: "2022",
     karta_Kön: ["Kvinnor", "Män"],
-    karta_Åldersgrupp: "65+ år",
+    karta_Åldersgrupp: ["65-84 år", "85+ år"],
     stapel_Område: "Stockholms län",
-    stapel_Tidsperiod: "2018",
+    stapel_Tidsperiod: "2022",
     stapel_Kön: ["Kvinnor", "Män"],
     linje_Område: ["Stockholms län", "Botkyrka"],
     linje_Kön: ["Kvinnor", "Män"],
-    linje_Åldersgrupp: "65+ år",
-    table_Tidsperiod: "2018",
+    linje_Åldersgrupp: ["65-84 år", "85+ år"],
+    table_Tidsperiod: "2022",
     table_Område: "Stockholms län",
-    tabel_Åldersgrupp: "65+ år",
+    tabel_Åldersgrupp: ["65-84 år", "85+ år"],
     tabel_Kön: ["Kvinnor", "Män"]
   },
   "Levnadsvanor": {
