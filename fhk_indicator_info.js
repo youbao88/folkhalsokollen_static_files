@@ -16,35 +16,10 @@ const källa_url_map = {
   "SmiNet, Skatteverket": "https://www.folkhalsokollen.se/datakallor/sminet",
   "Institutet för miljömedicin (IMM)":
     "https://www.folkhalsokollen.se/datakallor/institutet-for-miljomedicin",
+  Stockholmsenkäten:
+    "https://www.folkhalsokollen.se/datakallor/stockholmsenkaten/",
 };
 const indicator_info = {
-  "Dödsfall på grund av covid-19": {
-    definition:
-      "Antal dödsfall per 10 000 invånare med covid-19  som underliggande dödsorsak.",
-    källa: " Socialstyrelsens dödsorsaksstatistik",
-    läsa_mer_1_text:
-      "Rapporter om covid-19, utgivna av Centrum för epidemiologi och samhällsmedicin (CES). ",
-    läsa_mer_1_link:
-      "https://www.ces.regionstockholm.se/rapporter/rapporter-om-covid-19/",
-  },
-  "Vaccination mot covid-19 (minst 2 doser)": {
-    definition:
-      "Antal (%) som fått minst två doser vaccin mot covid-19. Antalet är kumulativt, det vill säga att till exempel antalet i 2022 innehåller totalt antal personer som har fått vaccinet till och med december 2022.",
-    källa: "VAL-databaserna ",
-    läsa_mer_1_text:
-      "Strategier för att öka vaccinationstäckningen – en kunskapsöversikt. Rapport 2022:7. Centrum för epidemiologi och dsamhällsmedicin (CES).",
-    läsa_mer_1_link:
-      "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20227-strategier-for-att-oka-vaccinationstackningen--en-kunskapsoversikt/",
-  },
-  "Sjukhusinläggning med covid-19": {
-    definition:
-      "Antal slutenvårdstillfällen (dvs. inläggning på sjukhus) per 10 000 invånare med covid-19 som huvuddiagnos.",
-    källa: "VAL-databaserna ",
-    läsa_mer_1_text:
-      "Rapporter om covid-19, utgivna av Centrum för epidemiologi och samhällsmedicin (CES).",
-    läsa_mer_1_link:
-      "https://www.ces.regionstockholm.se/rapporter/rapporter-om-covid-19/",
-  },
   Boendeform: {
     definition:
       "Andel (%) individer som bor i hyresrätt, bostadsrätt eller eget småhus.",
@@ -639,9 +614,6 @@ const indicator_info = {
       "Cannabisrelaterad vård bland unga vuxna. Rapport 2022:6. Centrum för epidemiologi och samhällsmedicin (CES).",
     "Läs mer link 5":
       "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20226-cannabisrelaterad-vard-bland-unga-vuxna/",
-    "Unnamed: 19": "Regeringens nationella ANDT-strategi 2021-2025",
-    "Unnamed: 20":
-      "https://www.regeringen.se/rattsliga-dokument/skrivelse/2022/03/skr.-202122213",
   },
   "Röker dagligen": {
     definition:
@@ -935,6 +907,34 @@ const indicator_info = {
     läsa_mer_2_link:
       "https://www.cancercentrum.se/globalassets/vara-uppdrag/strategisk-utvecklingsplan/stockholm---gotland/regional-cancerplan-rcc-stockholm-gotland-2020-2023.pdf ",
   },
+  "Dödsfall på grund av covid-19": {
+    definition:
+      "Antal dödsfall per 10 000 invånare med covid-19  som underliggande dödsorsak.",
+    källa: " Socialstyrelsens dödsorsaksstatistik",
+    läsa_mer_1_text:
+      "Rapporter om covid-19, utgivna av Centrum för epidemiologi och samhällsmedicin (CES). ",
+    läsa_mer_1_link:
+      "https://www.ces.regionstockholm.se/rapporter/rapporter-om-covid-19/",
+    läsa_mer_2_text: "Covid-19",
+    läsa_mer_2_link: "Död",
+    läsa_mer_3_text: "Dödsfall på grund av covid-19",
+    läsa_mer_3_link:
+      "Antal dödsfall per 10 000 invånare med covid-19  som underliggande dödsorsak.",
+    "Läs mer text 4": " Socialstyrelsens dödsorsaksstatistik",
+    "Läs mer text 5":
+      "Rapporter om covid-19, utgivna av Centrum för epidemiologi och samhällsmedicin (CES). ",
+    "Läs mer link 5":
+      "https://www.ces.regionstockholm.se/rapporter/rapporter-om-covid-19/",
+  },
+  "Sjukhusinläggning med covid-19": {
+    definition:
+      "Antal slutenvårdstillfällen (dvs. inläggning på sjukhus) per 10 000 invånare med covid-19 som huvuddiagnos.",
+    källa: "VAL-databaserna ",
+    läsa_mer_1_text:
+      "Rapporter om covid-19, utgivna av Centrum för epidemiologi och samhällsmedicin (CES).",
+    läsa_mer_1_link:
+      "https://www.ces.regionstockholm.se/rapporter/rapporter-om-covid-19/",
+  },
   Gymnasiebehörighet: {
     definition:
       "Procentandelen elever med ett slutbetyg från grundskolan som ger behörighet till något av de nationella gymnasieprogrammen (inkl. yrkesprogrammen), av de elever som slutfört sin grundskoleutbildning under våren respektive år. Uppgiften anges utifrån elevens boendeort, inte skolornas geografiska placering. </br></br>Notera: Måttet är inte helt jämförbart med Skolverkets statistik. Andelen behöriga påverkas bl. a. av andelen nyligen invandrade, med ofullständiga kunskaper i svenska",
@@ -946,6 +946,14 @@ const indicator_info = {
       "Folkhälsorapport 2023 - Utbildning. Centrum för epidemiologi och samhällsmedicin (CES).",
     läsa_mer_2_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/sociala-och-ekonomiska-forutsattningar/utbildning/",
+  },
+  Livsvillkorsindex: {
+    definition:
+      ' Livsvilkorindex är ett index som synliggör skillnader i sociala och ekonomiska förhållanden mellan bostadsområden. Indexet används bara för att jämföra olika områden med varandra och bygger på en sammanställning av sju olika variabler:<br><ol style="font-style: italic"><li>Andel som varit arbetslösa det senaste året;</li><li>Andel som erhållit ekonomiskt bistånd det senaste året;</li><li> Andel med förgymnasial utbildning;</li><li> Andel ensamstående föräldrar;</li><li> Andel utrikesfödda;</li><li> Medianinkomst;</li><li>Genomsnittlig boyta.</li></ol> Variablerna har standardiserats och vägts tillsammans för att sammanfatta så mycket av variationen i de olika variablerna som möjligt i ett index, ett så kallat livsvilkorindex. Indexet är ett relativt mått. Det innebär att ett områdes värde bara kan tolkas i jämförelse med andra områden som mäts med samma mått, och kan inte förstås som en oberoende siffra. Livsvillkorindexet är standardiserat så att det genomsnittliga värdet för Stockholms län är 100. Det innebär att alla områden som har ett värde under 100 präglas av mer sårbara livsvillkor än genomsnittet i länet och alla områden med värden över 100 präglas av mindre sårbara livsvillkor än genomsnittet i länet. Det vill säga, desto lägre värden, desto sämre är de genomsnittliga sociala och ekonomiska förhållanden i området (i termer av de sju variablerna som indexet bygger på) i jämförelse med andra områden i Stockholms län.',
+    källa: "Statistiska centralbyrån (SCB)",
+    läsa_mer_1_text:
+      "Länsstyrelsen Stockholm, 2024. Regional lägesbild: Om livsvillkor, brott, narkotika samt otrygghet i Stockholms län 2023.",
+    läsa_mer_1_link: "https://catalog.lansstyrelsen.se/store/39/resource/455",
   },
   "Besvär av trafikbuller i bostad": {
     definition:
@@ -1034,5 +1042,129 @@ const indicator_info = {
       "Nationella riktlinjer för vård och stöd vid missbruk och beroende, Socialstyrelsen",
     läsa_mer_1_link:
       "https://www.socialstyrelsen.se/globalassets/sharepoint-dokument/artikelkatalog/nationella-riktlinjer/2019-1-16.pdf",
+  },
+  "Röker e-cigaretter (grundskola åk 9)": {
+    definition:
+      "Andel (%) elever i grundskola årskurs 9 som uppger att de röker e-cigaretter. \nE-cigaretter, även kallat ”vejp” är en apparat som laddas med vätska som ofta är fylld med nikotin. Nikotin är beroendeframkallande och nikotinets egenskaper kan påverka hälsan negativt. ",
+    källa: "Stockholmsenkäten",
+    läsa_mer_1_text:
+      "Folkhälsorapport 2023 – Rökning, Centrum för epidemiologi och samhällsmedicin (CES)",
+    läsa_mer_1_link:
+      "https://www.folkhalsorapportstockholm.se/rapporten2/levnadsvanor/rokning/",
+    läsa_mer_2_text: "Sluta-röka-linjen",
+    läsa_mer_2_link: "https://www.slutarokalinjen.se/",
+    läsa_mer_3_text: "Hälsoområde Tobak, Elevhälsoportalen skola",
+    läsa_mer_3_link:
+      "https://www.elevhalsoportalen.se/skola/halsoomraden/tobak/  ",
+    "Läs mer text 4":
+      "Kunskap om tobaks- och nikotinprodukters skadeverkningar. Rapport, Folkhälsomyndigheten 2023.",
+    "Läs mer link 4":
+      "https://www.folkhalsomyndigheten.se/contentassets/6ab2ab5dabe64ccab994e8b472331c6d/kunskap-tobaks-nikotinprodukters-skadeverkningar.pdf",
+  },
+  "Röker e-cigaretter (gymnasiet år 2)": {
+    definition:
+      "Andel (%) elever i gymnasiet år 2 som uppger att de röker e-cigaretter. \nE-cigaretter, även kallat ”vejp” är en apparat som laddas med vätska som ofta är fylld med nikotin. Nikotin är beroendeframkallande och nikotinets egenskaper kan påverka hälsan negativt. ",
+    källa: "Stockholmsenkäten",
+    läsa_mer_1_text:
+      "Folkhälsorapport 2023 – Rökning, Centrum för epidemiologi och samhällsmedicin (CES)",
+    läsa_mer_1_link:
+      "https://www.folkhalsorapportstockholm.se/rapporten2/levnadsvanor/rokning/",
+    läsa_mer_2_text: "Sluta-röka-linjen",
+    läsa_mer_2_link: "https://www.slutarokalinjen.se/",
+    läsa_mer_3_text: "Hälsoområde Tobak, Elevhälsoportalen skola",
+    läsa_mer_3_link:
+      "https://www.elevhalsoportalen.se/skola/halsoomraden/tobak/  ",
+    "Läs mer text 4":
+      "Kunskap om tobaks- och nikotinprodukters skadeverkningar. Rapport, Folkhälsomyndigheten 2023.",
+    "Läs mer link 4":
+      "https://www.folkhalsomyndigheten.se/contentassets/6ab2ab5dabe64ccab994e8b472331c6d/kunskap-tobaks-nikotinprodukters-skadeverkningar.pdf",
+  },
+  "Använder vitt snus (grundskola åk 9)": {
+    definition:
+      "Andel (%) elever i grundskola årskurs 9 som uppger att de snusar vitt snus eller nikotinpåse. Vitt snus benämns ofta som tobaksfritt med nikotin. Nikotin är beroendeframkallande och nikotinets egenskaper kan påverka hälsan negativt. ",
+    källa: "Stockholmsenkäten",
+    läsa_mer_1_text:
+      "Folkhälsorapport 2023 – Rökning, Centrum för epidemiologi och samhällsmedicin (CES)",
+    läsa_mer_1_link:
+      "https://www.folkhalsorapportstockholm.se/rapporten2/levnadsvanor/rokning/",
+    läsa_mer_2_text: "Sluta-röka-linjen",
+    läsa_mer_2_link: "https://www.slutarokalinjen.se/",
+    läsa_mer_3_text: "Hälsoområde Tobak, Elevhälsoportalen skola",
+    läsa_mer_3_link:
+      "https://www.elevhalsoportalen.se/skola/halsoomraden/tobak/  ",
+    "Läs mer text 4":
+      "Kunskap om tobaks- och nikotinprodukters skadeverkningar. Rapport, Folkhälsomyndigheten 2023.",
+    "Läs mer link 4":
+      "https://www.folkhalsomyndigheten.se/contentassets/6ab2ab5dabe64ccab994e8b472331c6d/kunskap-tobaks-nikotinprodukters-skadeverkningar.pdf",
+  },
+  "Använder vitt snus (gymnasiet år 2)": {
+    definition:
+      "Andel (%) elever i gymnasiet år 2 som uppger att de snusar vitt snus eller nikotinpåse. Vitt snus benämns ofta som tobaksfritt med nikotin. Nikotin är beroendeframkallande och nikotinets egenskaper kan påverka hälsan negativt. ",
+    källa: "Stockholmsenkäten",
+    läsa_mer_1_text:
+      "Folkhälsorapport 2023 – Rökning, Centrum för epidemiologi och samhällsmedicin (CES)",
+    läsa_mer_1_link:
+      "https://www.folkhalsorapportstockholm.se/rapporten2/levnadsvanor/rokning/",
+    läsa_mer_2_text: "Sluta-röka-linjen",
+    läsa_mer_2_link: "https://www.slutarokalinjen.se/",
+    läsa_mer_3_text: "Hälsoområde Tobak, Elevhälsoportalen skola",
+    läsa_mer_3_link:
+      "https://www.elevhalsoportalen.se/skola/halsoomraden/tobak/  ",
+    "Läs mer text 4":
+      "Kunskap om tobaks- och nikotinprodukters skadeverkningar. Rapport, Folkhälsomyndigheten 2023.",
+    "Läs mer link 4":
+      "https://www.folkhalsomyndigheten.se/contentassets/6ab2ab5dabe64ccab994e8b472331c6d/kunskap-tobaks-nikotinprodukters-skadeverkningar.pdf",
+  },
+  "Ångestkänslor (grundskola åk 9)": {
+    definition:
+      "Andel (%) elever i grundskola årskurs 9 som uppger att de ganska ofta eller väldigt ofta känner sig rädda utan att veta varför. \nObservera att Upplands-Bro svar för 2020 baseras på skolkommun i stället för hemkommun.",
+    källa: "Stockholmsenkäten",
+    läsa_mer_1_text: "Hälsoområde Psykisk hälsa, Elevhälsoportalen",
+    läsa_mer_1_link:
+      "https://www.elevhalsoportalen.se/skola/halsoomraden/psykisk-halsa/",
+    läsa_mer_2_text: "Barn & unga, Uppdrag psykisk hälsa",
+    läsa_mer_2_link:
+      "https://www.uppdragpsykiskhalsa.se/stockholmslan/barn-unga/",
+    läsa_mer_3_text:
+      "Folkhälsorapport 2023 – Ångest och depression, Centrum för epidemiologi och samhällsmedicin (CES)",
+    läsa_mer_3_link:
+      "https://www.folkhalsorapportstockholm.se/rapporten2/sjukdomar-och-skador/angest-och-depression/ ",
+  },
+  "Ångestkänslor (gymnasiet år 2)": {
+    definition:
+      "Andel (%) elever i gymnasiet år 2 som uppger att de ganska ofta eller väldigt ofta känner sig rädda utan att veta varför.\nObservera att Upplands-Bro svar för 2020 baseras på skolkommun i stället för hemkommun.",
+    källa: "Stockholmsenkäten",
+    läsa_mer_1_text: "Hälsoområde Psykisk hälsa, Elevhälsoportalen",
+    läsa_mer_1_link:
+      "https://www.elevhalsoportalen.se/skola/halsoomraden/psykisk-halsa/",
+    läsa_mer_2_text: "Barn & unga, Uppdrag psykisk hälsa",
+    läsa_mer_2_link:
+      "https://www.uppdragpsykiskhalsa.se/stockholmslan/barn-unga/",
+    läsa_mer_3_text:
+      "Folkhälsorapport 2023 – Ångest och depression, Centrum för epidemiologi och samhällsmedicin (CES)",
+    läsa_mer_3_link:
+      "https://www.folkhalsorapportstockholm.se/rapporten2/sjukdomar-och-skador/angest-och-depression/ ",
+  },
+  "Huvudvärk (grundskola åk 9)": {
+    definition:
+      "Andel (%) elever i grundskola årskurs 9 som uppger att de har huvudvärk en gång i veckan eller oftare. \nObservera att Upplands-Bro svar för 2020 baseras på skolkommun i stället för hemkommun.",
+    källa: "Stockholmsenkäten",
+    läsa_mer_1_text:
+      "Folkhälsorapport 2023 – Smärta, Centrum för epidemiologi och samhällsmedicin (CES)",
+    läsa_mer_1_link:
+      "https://www.folkhalsorapportstockholm.se/rapporten2/sjukdomar-och-skador/smarta/ ",
+    läsa_mer_2_text: "Metodstöd för elevhälsan. Uppdrag psykisk hälsa.   ",
+    läsa_mer_2_link: "https://metodstod.se/metoder/huvudvark/",
+  },
+  "Huvudvärk (gymnasiet år 2)": {
+    definition:
+      "Andel (%) elever i gymnasiet år 2 som uppger att de har huvudvärk en gång i veckan eller oftare.  Observera att Upplands-Bro svar för 2020 baseras på skolkommun i stället för hemkommun.",
+    källa: "Stockholmsenkäten",
+    läsa_mer_1_text:
+      "Folkhälsorapport 2023 – Smärta, Centrum för epidemiologi och samhällsmedicin (CES)",
+    läsa_mer_1_link:
+      "https://www.folkhalsorapportstockholm.se/rapporten2/sjukdomar-och-skador/smarta/ ",
+    läsa_mer_2_text: "Metodstöd för elevhälsan. Uppdrag psykisk hälsa.   ",
+    läsa_mer_2_link: "https://metodstod.se/metoder/huvudvark/",
   },
 };
