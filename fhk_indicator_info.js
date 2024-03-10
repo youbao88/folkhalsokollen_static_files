@@ -186,7 +186,7 @@ const indicator_info = {
       "https://www.folkhalsoguiden.se/publikationer/ces-sexuella-trakasserier-i-stockholms-lan/",
     läsa_mer_4_text:
       "Folkhälsorapport 2023 - Sociala relationer. Centrum för epidemiologi och samhällsmedicin (CES).",
-    "läsa_mer_4_text.1":
+    läsa_mer_4_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/sociala-och-ekonomiska-forutsattningar/sociala-relationer/",
   },
   "Utsatthet för hot och våld": {
@@ -398,7 +398,7 @@ const indicator_info = {
       "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20227-strategier-for-att-oka-vaccinationstackningen--en-kunskapsoversikt/",
     läsa_mer_4_text:
       "Hur mår de allra äldsta i Stockholms län? Rapport 2023:6. Centrum för epidemiologi och samhällsmedicin (CES).",
-    "läsa_mer_4_text.1":
+    läsa_mer_4_link:
       "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20236-hur-mar-de-allra-aldsta/",
   },
   "Avstått läkemedel på grund av dålig ekonomi": {
@@ -445,11 +445,11 @@ const indicator_info = {
       "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20236-stigma-kring-psykisk-ohalsa/",
     läsa_mer_4_text:
       "Psykisk ohälsa och psykiskt välbefinnande i befolkningen. Rapport 2023:4. Centrum för epidemiologi och samhällsmedicin (CES).",
-    "läsa_mer_4_text.1":
+    läsa_mer_4_link:
       "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20234-psykisk-ohalsa-och-psykiskt-valbefinnande-i-befolkningen/",
     läsa_mer_5_text:
       "Psykisk ohälsa i Stockholms län. Rapport 2022:13. Centrum för epidemiologi och samhällsmedicin (CES).",
-    "läsa_mer_5_text.1":
+    läsa_mer_5_link:
       "https://www.folkhalsoguiden.se/publikationer/ces-rapport-2022-13-psykisk-ohalsa-i-stockholms-lan/",
   },
   Självmordstankar: {
@@ -512,11 +512,11 @@ const indicator_info = {
       "https://psykiatristod.se/regionala-vardprogram/depression",
     läsa_mer_4_text:
       "Stigma kring psykisk ohälsa. Rapport 2023:6. Centrum för epidemiologi och samhällsmedicin (CES).",
-    "läsa_mer_4_text.1":
+    läsa_mer_4_link:
       "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20236-stigma-kring-psykisk-ohalsa/",
     läsa_mer_5_text:
       "Psykisk ohälsa och psykiskt välbefinnande i befolkningen. Rapport 2023:4. Centrum för epidemiologi och samhällsmedicin (CES).",
-    "läsa_mer_5_text.1":
+    läsa_mer_5_link:
       "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20234-psykisk-ohalsa-och-psykiskt-valbefinnande-i-befolkningen/",
   },
   "Adhd (diagnostiserad)": {
@@ -608,11 +608,11 @@ const indicator_info = {
       "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20222-cannabisbrottens-geografi-i-stockholms-lan/",
     läsa_mer_4_text:
       "Ungas uppfattning om cannabis. Rapport 2022:4. Centrum för epidemiologi och samhällsmedicin (CES).",
-    "läsa_mer_4_text.1":
+    läsa_mer_4_link:
       "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20224-ungas-uppfattning-om-cannabis/",
     läsa_mer_5_text:
       "Cannabisrelaterad vård bland unga vuxna. Rapport 2022:6. Centrum för epidemiologi och samhällsmedicin (CES).",
-    "läsa_mer_5_text.1":
+    läsa_mer_5_link:
       "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20226-cannabisrelaterad-vard-bland-unga-vuxna/",
   },
   "Röker dagligen": {
@@ -630,11 +630,11 @@ const indicator_info = {
       "https://www.folkhalsorapportstockholm.se/rapporten2/levnadsvanor/rokning/",
     läsa_mer_4_text:
       "Kostnadsfria nikotinläkemedel som stöd till rökstopp. Rapport 2022:10. Centrum för epidemiologi och samhällsmedicin (CES).",
-    "läsa_mer_4_text.1":
+    läsa_mer_4_link:
       "https://www.folkhalsoguiden.se/publikationer/ces-rapport-202210/",
     läsa_mer_5_text:
       "Stöd till rökavvänjning i grupper med låg socioekonomi. Rapport 2023:1. Centrum för epidemiologi och samhällsmedicin (CES).",
-    "läsa_mer_5_text.1":
+    läsa_mer_5_link:
       "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20231-stod-till-rokavvanjning-i-grupper-med-lag-socioekonomi/",
   },
   "Snusar dagligen": {
@@ -718,7 +718,7 @@ const indicator_info = {
     läsa_mer_3_link: "https://www.folkhalsoguiden.se/matguiden/mat-och-halsa/",
     läsa_mer_4_text:
       "Matvanor, idrott och vikt bland elever från 100 grundskolor i Stockholms län. Rapport 2020:7. Centrum för epidemiologi och samhällsmedicin (CES).",
-    "läsa_mer_4_text.1":
+    läsa_mer_4_link:
       "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20207-matvanor-idrott-och-vikt-bland-elever---fran-100-grundskolor-i-stockholms-lan/",
   },
   Sömnsvårigheter: {
@@ -923,7 +923,7 @@ const indicator_info = {
     läsa_mer_4_text: " Socialstyrelsens dödsorsaksstatistik",
     läsa_mer_5_text:
       "Rapporter om covid-19, utgivna av Centrum för epidemiologi och samhällsmedicin (CES). ",
-    "läsa_mer_5_text.1":
+    läsa_mer_5_link:
       "https://www.ces.regionstockholm.se/rapporter/rapporter-om-covid-19/",
   },
   "Sjukhusinläggning med covid-19": {
@@ -990,7 +990,7 @@ const indicator_info = {
       "https://www.who.int/europe/publications/i/item/9789289053563",
     läsa_mer_4_text:
       "Omgivningsbuller och hälsa. Faktablad 2020. Centrum för arbets- och miljömedicin (CAMM).",
-    "läsa_mer_4_text.1":
+    läsa_mer_4_link:
       "https://www.folkhalsoguiden.se/publikationer/omgivningsbuller--och-halsa/",
   },
   "Exponeras för luftföroreningar": {
@@ -1011,7 +1011,7 @@ const indicator_info = {
       "https://www.who.int/news-room/feature-stories/detail/what-are-the-who-air-quality-guidelines",
     läsa_mer_4_text:
       "Luftföroreningar och hälsa. Fakablad 2018. Centrum för arbets- och miljömedicin (CAMM).",
-    "läsa_mer_4_text.1":
+    läsa_mer_4_link:
       "https://www.folkhalsoguiden.se/publikationer/luftfororeningar-och-halsa/",
   },
   "Tillgång till grönska i närområdet": {
@@ -1031,7 +1031,7 @@ const indicator_info = {
     läsa_mer_3_link: "https://apps.who.int/iris/handle/10665/345751",
     läsa_mer_4_text:
       "Tillgång till bostadsnära grönska i befolkningen. Rapport 2022:04. Centrum för arbets- och miljömedicin (CAMM).",
-    "läsa_mer_4_text.1":
+    läsa_mer_4_link:
       "https://www.folkhalsoguiden.se/publikationer/camm-rapport-2022-tillgang-till-bostadsnara--gronska-i-befolkningen/",
   },
   "Beroende och skadligt bruk (diagnostiserad)": {
@@ -1058,7 +1058,7 @@ const indicator_info = {
       "https://www.elevhalsoportalen.se/skola/halsoomraden/tobak/  ",
     läsa_mer_4_text:
       "Kunskap om tobaks- och nikotinprodukters skadeverkningar. Rapport, Folkhälsomyndigheten 2023.",
-    "läsa_mer_4_text.1":
+    läsa_mer_4_link:
       "https://www.folkhalsomyndigheten.se/contentassets/6ab2ab5dabe64ccab994e8b472331c6d/kunskap-tobaks-nikotinprodukters-skadeverkningar.pdf",
   },
   "Röker e-cigaretter (gymnasiet år 2)": {
@@ -1076,7 +1076,7 @@ const indicator_info = {
       "https://www.elevhalsoportalen.se/skola/halsoomraden/tobak/  ",
     läsa_mer_4_text:
       "Kunskap om tobaks- och nikotinprodukters skadeverkningar. Rapport, Folkhälsomyndigheten 2023.",
-    "läsa_mer_4_text.1":
+    läsa_mer_4_link:
       "https://www.folkhalsomyndigheten.se/contentassets/6ab2ab5dabe64ccab994e8b472331c6d/kunskap-tobaks-nikotinprodukters-skadeverkningar.pdf",
   },
   "Använder vitt snus (grundskola åk 9)": {
@@ -1094,7 +1094,7 @@ const indicator_info = {
       "https://www.elevhalsoportalen.se/skola/halsoomraden/tobak/  ",
     läsa_mer_4_text:
       "Kunskap om tobaks- och nikotinprodukters skadeverkningar. Rapport, Folkhälsomyndigheten 2023.",
-    "läsa_mer_4_text.1":
+    läsa_mer_4_link:
       "https://www.folkhalsomyndigheten.se/contentassets/6ab2ab5dabe64ccab994e8b472331c6d/kunskap-tobaks-nikotinprodukters-skadeverkningar.pdf",
   },
   "Använder vitt snus (gymnasiet år 2)": {
@@ -1112,7 +1112,7 @@ const indicator_info = {
       "https://www.elevhalsoportalen.se/skola/halsoomraden/tobak/  ",
     läsa_mer_4_text:
       "Kunskap om tobaks- och nikotinprodukters skadeverkningar. Rapport, Folkhälsomyndigheten 2023.",
-    "läsa_mer_4_text.1":
+    läsa_mer_4_link:
       "https://www.folkhalsomyndigheten.se/contentassets/6ab2ab5dabe64ccab994e8b472331c6d/kunskap-tobaks-nikotinprodukters-skadeverkningar.pdf",
   },
   "Ångestkänslor (grundskola åk 9)": {
