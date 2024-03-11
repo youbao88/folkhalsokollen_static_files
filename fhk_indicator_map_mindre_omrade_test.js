@@ -2331,6 +2331,29 @@ const indicator_name_parameter_map = {
       tabel_Kön: ["Flickor", "Pojkar"],
     },
   },
+  "Livsvillkorsindex": {
+    karta: {
+      karta_Tidsperiod: "2021",
+      karta_Kön: "Samtliga",
+      karta_Åldersgrupp: "Samtliga",
+    },
+    stapel: {
+      stapel_Område: "Stockholms län",
+      stapel_Tidsperiod: "2021",
+      stapel_Kön: "Samtliga",
+    },
+    linje: {
+      linje_Kön: "Samtliga",
+      linje_Område: ["Stockholms län", "Botkyrka"],
+      linje_Åldersgrupp: "Samtliga",
+    },
+    tabell: {
+      table_Tidsperiod: "2021",
+      table_Område: "Stockholms län",
+      tabel_Åldersgrupp: "Samtliga",
+      tabel_Kön: "Samtliga",
+    },
+  },
 };
 const indicator_init_map = {
   "Äldres hälsa": {
