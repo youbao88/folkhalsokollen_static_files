@@ -239,7 +239,10 @@
                 div.innerHTML +=
                     `<span style="font-size: 0.9rem">Enhet: </span><span style="font-size: 0.9rem; font-weight:bold">${value_unit}</span>`;
                 if (isOnKarta || isOnTable) {
-                    if (indicator_name == 'Amning vid 4 månaders ålder') {
+                    if (['Amning vid 4 månaders ålder', 'Ångestkänslor (grundskola åk 9)', 'Ångestkänslor (gymnasiet år 2)',
+                    'Använder vitt snus (grundskola åk 9)', 'Använder vitt snus (gymnasiet år 2)',
+                    'Huvudvärk (grundskola åk 9)', 'Huvudvärk (gymnasiet år 2)',
+                    'Röker e-cigaretter (grundskola åk 9)', 'Röker e-cigaretter (gymnasiet år 2)'].includes(indicator_name)) {
                         div.innerHTML += `
                     <span style="font-size: 0.9rem; font-weight:normal"> (Om uppgifter saknas anges asterisk * )</span>
                     `
