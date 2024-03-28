@@ -2371,7 +2371,7 @@ const indicator_name_parameter_map = {
       linje_Åldersgrupp: ["65+ år"],
     },
     tabell: {
-      table_Tidsperiod: "2021",
+      table_Tidsperiod: "2022",
       table_Område: "Stockholms län",
       tabel_Åldersgrupp: ["65+ år"],
       tabel_Kön: ["Kvinnor", "Män"],
