@@ -401,6 +401,19 @@ const indicator_info = {
     läsa_mer_4_link:
       "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20236-hur-mar-de-allra-aldsta/",
   },
+  "Demens (diagnostiserad)": {
+    definition:
+      "Andel (%) individer, 65 år eller äldre, som vårdats inom regionfinansierad öppen- eller slutenvård med demens. Demens utgörs av demens vid Alzheimers sjukdom (ICD-10 F00), vaskulär demens (ICD-10 F01), demens vid andra sjukdomar (ICD-10 F02), ospecificerad demens (ICD-10 F03) samt, eller Alzheimers sjukdom (ICD-10 G30).\xa0",
+    källa: "VAL-databaserna",
+    läsa_mer_1_text:
+      "Folkhälsorapport 2023 – demens, Centrum för epidemiologi och samhällsmedicin (CES)",
+    läsa_mer_1_link:
+      "https://www.folkhalsorapportstockholm.se/rapporten2/sjukdomar-och-skador/demens/",
+    läsa_mer_2_text:
+      "Hur mår de allra äldsta i Stockholms län? Rapport 2023:6. Centrum för epidemiologi och samhällsmedicin (CES).",
+    läsa_mer_2_link:
+      "https://www.folkhalsoguiden.se/4a4d82/globalassets/verksamheter/forskning-och-utveckling/centrum-for-epidemiologi-och-samhallsmedicin/folkhalsoguiden/rapporter-och-faktablad/rapport-2023.6-hur-mar-de-allra-aldsta-i-stockholms-lan.pdf",
+  },
   "Avstått läkemedel på grund av dålig ekonomi": {
     definition:
       "Andel (%) individer som uppger att de har avstått från att hämta ut läkemedel (ordinerade av läkare) under de senaste tolv månaderna, på grund av dålig ekonomi.",
@@ -1045,7 +1058,7 @@ const indicator_info = {
   },
   "Röker e-cigaretter (grundskola åk 9)": {
     definition:
-      "Andel (%) elever i grundskola årskurs 9 som uppger att de röker e-cigaretter. \nE-cigaretter, även kallat ”vejp” är en apparat som laddas med vätska som ofta är fylld med nikotin. Nikotin är beroendeframkallande och nikotinets egenskaper kan påverka hälsan negativt. ",
+      "Andel (%) elever i grundskola årskurs 9 som uppger att de röker e-cigaretter dagligen eller ibland.\nE-cigaretter, även kallat ”vejp” är en apparat som laddas med vätska som ofta är fylld med nikotin. Nikotin är beroendeframkallande och nikotinets egenskaper kan påverka hälsan negativt. ",
     källa: "Stockholmsenkäten",
     läsa_mer_1_text:
       "Folkhälsorapport 2023 – Rökning, Centrum för epidemiologi och samhällsmedicin (CES)",
@@ -1063,7 +1076,7 @@ const indicator_info = {
   },
   "Röker e-cigaretter (gymnasiet år 2)": {
     definition:
-      "Andel (%) elever i gymnasiet år 2 som uppger att de röker e-cigaretter. \nE-cigaretter, även kallat ”vejp” är en apparat som laddas med vätska som ofta är fylld med nikotin. Nikotin är beroendeframkallande och nikotinets egenskaper kan påverka hälsan negativt. ",
+      "Andel (%) elever i gymnasiet år 2 som uppger att de röker e-cigaretter dagligen eller ibland. \nE-cigaretter, även kallat ”vejp” är en apparat som laddas med vätska som ofta är fylld med nikotin. Nikotin är beroendeframkallande och nikotinets egenskaper kan påverka hälsan negativt. ",
     källa: "Stockholmsenkäten",
     läsa_mer_1_text:
       "Folkhälsorapport 2023 – Rökning, Centrum för epidemiologi och samhällsmedicin (CES)",

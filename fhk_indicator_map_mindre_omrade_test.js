@@ -65,7 +65,7 @@ const indicator_name_parameter_map = {
   },
   "Sjukhusinläggning med covid-19": {
     karta: {
-      karta_Tidsperiod: "2022",
+      karta_Tidsperiod: "2023",
       karta_Kön: ["Kvinnor", "Män"],
       karta_Åldersgrupp: [
         "0-24 år",
@@ -77,7 +77,7 @@ const indicator_name_parameter_map = {
     },
     stapel: {
       stapel_Område: "Stockholms län",
-      stapel_Tidsperiod: "2022",
+      stapel_Tidsperiod: "2023",
       stapel_Kön: ["Kvinnor", "Män"],
     },
     linje: {
@@ -92,7 +92,7 @@ const indicator_name_parameter_map = {
       ],
     },
     tabell: {
-      table_Tidsperiod: "2022",
+      table_Tidsperiod: "2023",
       table_Område: "Stockholms län",
       tabel_Åldersgrupp: [
         "0-24 år",
@@ -147,13 +147,13 @@ const indicator_name_parameter_map = {
   },
   "Vaccination mot säsongsinfluensa": {
     karta: {
-      karta_Tidsperiod: "2022–2023",
+      karta_Tidsperiod: "2023-2024",
       karta_Kön: ["Kvinnor", "Män"],
       karta_Åldersgrupp: ["65+ år"],
     },
     stapel: {
       stapel_Område: "Stockholms län",
-      stapel_Tidsperiod: "2022–2023",
+      stapel_Tidsperiod: "2023-2024",
       stapel_Kön: ["Kvinnor", "Män"],
     },
     linje: {
@@ -162,7 +162,7 @@ const indicator_name_parameter_map = {
       linje_Åldersgrupp: ["65+ år"],
     },
     tabell: {
-      table_Tidsperiod: "2022–2023",
+      table_Tidsperiod: "2023-2024",
       table_Område: "Stockholms län",
       tabel_Åldersgrupp: ["65+ år"],
       tabel_Kön: ["Kvinnor", "Män"],
@@ -2354,24 +2354,47 @@ const indicator_name_parameter_map = {
       tabel_Kön: "Samtliga",
     },
   },
+    "Demens (diagnostiserad)": {
+    karta: {
+      karta_Tidsperiod: "2022",
+      karta_Kön: ["Kvinnor", "Män"],
+      karta_Åldersgrupp: ["65+ år"],
+    },
+    stapel: {
+      stapel_Område: "Stockholms län",
+      stapel_Tidsperiod: "2022",
+      stapel_Kön: ["Kvinnor", "Män"],
+    },
+    linje: {
+      linje_Kön: ["Kvinnor", "Män"],
+      linje_Område: ["Stockholms län", "Botkyrka"],
+      linje_Åldersgrupp: ["65+ år"],
+    },
+    tabell: {
+      table_Tidsperiod: "2021",
+      table_Område: "Stockholms län",
+      tabel_Åldersgrupp: ["65+ år"],
+      tabel_Kön: ["Kvinnor", "Män"],
+    },
+  },
 };
 const indicator_init_map = {
   "Äldres hälsa": {
     indikator_group: "Äldres hälsa",
-    indikator_name: "Fallskada",
+    indikator_name: "Demens (diagnostiserad)",
     indikator_category: "Ej valbart",
     karta_Tidsperiod: "2022",
     karta_Kön: ["Kvinnor", "Män"],
-    karta_Åldersgrupp: ["65-84 år", "85+ år"],
+    karta_Åldersgrupp: ["65+ år"],
     stapel_Område: "Stockholms län",
     stapel_Tidsperiod: "2022",
     stapel_Kön: ["Kvinnor", "Män"],
     linje_Område: ["Stockholms län", "Botkyrka"],
     linje_Kön: ["Kvinnor", "Män"],
-    linje_Åldersgrupp: ["65-84 år", "85+ år"],
+    linje_Åldersgrupp: ["65+ år"],
     table_Tidsperiod: "2022",
     table_Område: "Stockholms län",
-    tabel_Åldersgrupp: ["65-84 år", "85+ år"],
+    tabel_Åldersgrupp: ["65+ år"],
     tabel_Kön: ["Kvinnor", "Män"],
   },
   Levnadsvanor: {
