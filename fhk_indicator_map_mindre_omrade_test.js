@@ -1343,13 +1343,13 @@ const indicator_name_parameter_map = {
   },
   "Hjärtinfarkt (ålder nyinsjuknade)": {
     karta: {
-      karta_Tidsperiod: "2021",
+      karta_Tidsperiod: "2022",
       karta_Kön: ["Kvinnor", "Män"],
       karta_Åldersgrupp: ["Ej valbart"],
     },
     stapel: {
       stapel_Område: "Stockholms län",
-      stapel_Tidsperiod: "2021",
+      stapel_Tidsperiod: "2022",
       stapel_Kön: ["Kvinnor", "Män"],
     },
     linje: {
@@ -1358,7 +1358,7 @@ const indicator_name_parameter_map = {
       linje_Åldersgrupp: ["Ej valbart"],
     },
     tabell: {
-      table_Tidsperiod: "2021",
+      table_Tidsperiod: "2022",
       table_Område: "Stockholms län",
       tabel_Åldersgrupp: ["Ej valbart"],
       tabel_Kön: ["Kvinnor", "Män"],
@@ -1366,13 +1366,13 @@ const indicator_name_parameter_map = {
   },
   "Stroke (ålder nyinsjuknade)": {
     karta: {
-      karta_Tidsperiod: "2021",
+      karta_Tidsperiod: "2022",
       karta_Kön: ["Kvinnor", "Män"],
       karta_Åldersgrupp: ["Ej valbart"],
     },
     stapel: {
       stapel_Område: "Stockholms län",
-      stapel_Tidsperiod: "2021",
+      stapel_Tidsperiod: "2022",
       stapel_Kön: ["Kvinnor", "Män"],
     },
     linje: {
@@ -1381,7 +1381,7 @@ const indicator_name_parameter_map = {
       linje_Åldersgrupp: ["Ej valbart"],
     },
     tabell: {
-      table_Tidsperiod: "2021",
+      table_Tidsperiod: "2022",
       table_Område: "Stockholms län",
       tabel_Åldersgrupp: ["Ej valbart"],
       tabel_Kön: ["Kvinnor", "Män"],
