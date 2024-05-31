@@ -153,20 +153,20 @@
         const stadsdelarList = [
             'Bromma', 'Enskede-Årsta-Vantör', 'Farsta', 'Hägersten-Älvsjö', 'Hässelby-Vällingby',
             'Kungsholmen',
-            'Norrmalm', 'Rinkeby-Kista',
-            'Skarpnäck', 'Skärholmen', 'Spånga-Tensta', 'Södermalm', 'Östermalm'
+            'Norra innerstades', 'Järva',
+            'Skarpnäck', 'Skärholmen', 'Södermalm'
         ];
         //List of Stockholm kommun
         const firstLevelAreaList = ['Botkyrka', 'Bromma', 'Danderyd', 'Ekerö', 'Enskede-Årsta-Vantör',
             'Farsta',
             'Haninge', 'Huddinge', 'Hägersten-Älvsjö', 'Hässelby-Vällingby', 'Järfälla', 'Kungsholmen',
             'Lidingö',
-            'Nacka', 'Norrmalm', 'Norrtälje', 'Nykvarn', 'Nynäshamn', 'Rinkeby-Kista', 'Salem',
+            'Nacka', 'Norra Innerstaden', 'Norrtälje', 'Nykvarn', 'Nynäshamn', 'Salem',
             'Sigtuna',
             'Skarpnäck', 'Skärholmen',
-            'Sollentuna', 'Solna', 'Spånga-Tensta', 'Sundbyberg', 'Södermalm', 'Södertälje', 'Tyresö',
+            'Sollentuna', 'Solna', 'Järva', 'Sundbyberg', 'Södermalm', 'Södertälje', 'Tyresö',
             'Täby',
-            'Upplands Väsby', 'Upplands-Bro', 'Vallentuna', 'Vaxholm', 'Värmdö', 'Östermalm',
+            'Upplands Väsby', 'Upplands-Bro', 'Vallentuna', 'Vaxholm', 'Värmdö',
             'Österåker',
             'Stockholms län', 'Stockholm'
         ];
@@ -175,7 +175,7 @@
         //Get shape file
         async function getJson() {
             let response = await fetch(
-                "https://cdn.statically.io/gh/youbao88/folkhalsokollen_static_files/c3277beb4c20e19ac712231537faf9f46bd28dfb/stockholm_smaller_area_no_holes_simplify_complex_no_small_island.json"
+                "https://cdn.statically.io/gh/youbao88/folkhalsokollen_static_files/42ab89f98ff4c2cf774f226e2b6bb7aa596c48d1/fhk_karta_merged_240531.json"
             );
             let data = await response.json()
             return data;
