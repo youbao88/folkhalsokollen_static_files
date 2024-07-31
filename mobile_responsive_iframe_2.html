@@ -36,6 +36,10 @@
             curr_minute +
             ":" +
             curr_second;
+          window.parent.postMessage(
+            (message = "visualization_updated"),
+            (targetOrigin = "*")
+          );
         }
       }
     </script>
