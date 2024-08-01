@@ -16,7 +16,7 @@
       let currentIndicator = null;
       function onMessage(event) {
         if (event && event.data && event.data.data) {
-          let newIndicator = event.data.parameters.value;
+          let newIndicator = event.data.parameters[0].value;
           if (currentIndicator == null || newIndicator != currentIndicator) {
             window.parent.postMessage(
               (message = "selector_updated"),
