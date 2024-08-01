@@ -13,32 +13,37 @@
       } else {
         window.attachEvent("onmessage", onMessage);
       }
+      let currentIndicator = null;
       function onMessage(event) {
         if (event && event.data && event.data.data) {
-          let d = new Date();
-          let curr_date = d.getDate();
-          let curr_month = d.getMonth();
-          let curr_year = d.getFullYear();
-          let curr_hour = d.getHours();
-          let curr_minute = d.getMinutes();
-          let curr_second = d.getSeconds();
-          document.getElementById("status").innerText =
-            "Selection updated at " +
-            curr_year +
-            "-" +
-            curr_month +
-            "-" +
-            curr_date +
-            " " +
-            curr_hour +
-            ":" +
-            curr_minute +
-            ":" +
-            curr_second;
-          window.parent.postMessage(
-            (message = "selector_updated"),
-            (targetOrigin = "*")
-          );
+          let newIndicator = event.data.parameters.value;
+          if (currentIndicator == null || newIndicator != currentIndicator) {
+            window.parent.postMessage(
+              (message = "selector_updated"),
+              (targetOrigin = "*")
+            );
+            currentIndicator = newIndicator;
+            let d = new Date();
+            let curr_date = d.getDate();
+            let curr_month = d.getMonth();
+            let curr_year = d.getFullYear();
+            let curr_hour = d.getHours();
+            let curr_minute = d.getMinutes();
+            let curr_second = d.getSeconds();
+            document.getElementById("status").innerText =
+              "Selection updated at " +
+              curr_year +
+              "-" +
+              curr_month +
+              "-" +
+              curr_date +
+              " " +
+              curr_hour +
+              ":" +
+              curr_minute +
+              ":" +
+              curr_second;
+          }
         }
       }
     </script>
