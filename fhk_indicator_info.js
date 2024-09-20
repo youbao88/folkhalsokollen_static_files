@@ -55,7 +55,7 @@ const indicator_info = {
       "Andel (%) individer som fått ekonomiskt bistånd i form av försörjningsstöd.",
     källa: "Statistiska centralbyrån (SCB) ",
     läsa_mer_1_text:
-      "Folkhälsorapport 2023 – inkomst, Centrum för epidemiologi och samhällsmedicin (CES)",
+      "Folkhälsorapport 2023 – Inkomst, Centrum för epidemiologi och samhällsmedicin (CES)",
     läsa_mer_1_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/sociala-och-ekonomiska-forutsattningar/inkomst/",
   },
@@ -64,7 +64,7 @@ const indicator_info = {
       "Andel (%) individer som studerar eller får sin huvudsakliga inkomst från förvärvsarbete, andel som får sin huvudsakliga inkomst från arbetslöshetsersättning (arbetslös) och andel som får sin huvudsakliga inkomst från förtidspension eller sjukpenning (sjukskriven)",
     källa: "Statistiska centralbyrån (SCB) ",
     läsa_mer_1_text:
-      "Folkhälsorapport 2023 – arbete, Centrum för epidemiologi och samhällsmedicin (CES)",
+      "Folkhälsorapport 2023 – Arbete, Centrum för epidemiologi och samhällsmedicin (CES)",
     läsa_mer_1_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/sociala-och-ekonomiska-forutsattningar/arbete/",
   },
@@ -109,54 +109,54 @@ const indicator_info = {
       "Andel (%) barn inom barnhälsovården som enbart eller delvis får bröstmjölk vid fyra månaders ålder. Barn som får enbart bröstmjölk och eventuella mineraler, vitaminer eller läkemedel, räknas som enbart ammande barn. Barn som får bröstmjölk, men också smakportioner, välling, bröstmjölksersättning eller hela måltider bestående av annan kost räknas som delvis ammande. Observera att det kan förekomma brister i data för olika år och man ska vara försiktig med att dra slutsatser från de år och område det gäller för. Data är inkomplett eller osäkra för: Norrtälje (år 2016–2018), Sigtuna (år 2016), Vallentuna (2020), Sollentuna (2021–2022), Solna (2021–2022), Haninge (2021), Tyresö (2021), Kungsholmen (2022).",
     källa: "Barnhälsovårdens årsrapport ",
     läsa_mer_1_text:
-      "Årsrapport – barnhälsovård i Stockholms län 2022, Region Stockholm.",
+      "Årsrapport – barnhälsovård i Stockholms län 2023, Region Stockholm.",
     läsa_mer_1_link:
-      "https://kunskapsstodforvardgivare.se/download/18.3bc843dd18851928cf725bb8/1686724139915/2022_%C3%85rsrapport.pdf",
+      "https://kunskapsstodforvardgivare.se/download/18.28eeaa311900ff142db87ea/1718694895552/%C3%85rsrapport%20Barnh%C3%A4lsov%C3%A5rd%C2%A02023.pdf",
   },
   "Exponering för tobaksrök vid 8 månaders ålder": {
     definition:
       "Andel (%) barn vars mamma, pappa eller annan person som stadigvarande bor i familjen rökte dagligen när barnet var fyra veckor och när en uppföljningen gjordes vid åtta månaders ålder. Observera att det kan förekomma brister i data för olika år och man ska vara försiktig med att dra slutsatser från de år och område det gäller för. Data är inkomplett för: Norrtälje (2016–2018), Sigtuna (2016), Skärholmen (2017), Kungsholmen (2022).",
     källa: "Barnhälsovårdens årsrapport ",
     läsa_mer_1_text:
-      "Årsrapport – barnhälsovård i Stockholms län 2022, Region Stockholm.",
+      "Årsrapport – barnhälsovård i Stockholms län 2023, Region Stockholm.",
     läsa_mer_1_link:
-      "https://kunskapsstodforvardgivare.se/download/18.3bc843dd18851928cf725bb8/1686724139915/2022_%C3%85rsrapport.pdf",
+      "https://kunskapsstodforvardgivare.se/download/18.28eeaa311900ff142db87ea/1718694895552/%C3%85rsrapport%20Barnh%C3%A4lsov%C3%A5rd%C2%A02023.pdf",
   },
   "Kariesfria 3-åringar": {
     definition:
       "Andel (%) treåringar utan kariesskadade tänder. Med skadade tänder avses tänder som har hål (karies), som dragits ut på grund av karies eller som fått fyllningar på grund av tidigare hål.",
     källa: "Barnhälsovårdens årsrapport ",
     läsa_mer_1_text:
-      "Årsrapport – barnhälsovård i Stockholms län 2022, Region Stockholm.",
+      "Årsrapport – barnhälsovård i Stockholms län 2023, Region Stockholm.",
     läsa_mer_1_link:
-      "https://kunskapsstodforvardgivare.se/download/18.3bc843dd18851928cf725bb8/1686724139915/2022_%C3%85rsrapport.pdf",
+      "https://kunskapsstodforvardgivare.se/download/18.28eeaa311900ff142db87ea/1718694895552/%C3%85rsrapport%20Barnh%C3%A4lsov%C3%A5rd%C2%A02023.pdf",
   },
   "Övervikt och obesitas 4-åringar": {
     definition:
-      "\nAndel (%) fyraåringar med övervikt och obesitas. Övervikt (utan obesitas) definieras som ISO-BMI 25–30 och obesitas definieras som ISO-BMI 30 eller mer. ISO-BMI är ett BMI som är anpassat för barn från två års ålder. Observera att det kan förekomma brister i data för olika år och man ska vara försiktig med att dra slutsatser från de år och område det gäller för. Data är inkomplett för: Södertälje (2016–2017), Norrtälje (2017, 2018, 2021), Sigtuna (2017), Skärholmen (2017, 2021, 2022), Österåker (2021) , Rinkeby-Kista (2021).\n",
+      "\nAndel (%) fyraåringar med övervikt och obesitas. Övervikt (utan obesitas) definieras som ISO-BMI 25–30 och obesitas definieras som ISO-BMI 30 eller mer. ISO-BMI är ett BMI som är anpassat för barn från två års ålder. Observera att det kan förekomma brister i data för olika år och man ska vara försiktig med att dra slutsatser från de år och område det gäller för. Data är inkomplett för: Södertälje (2016–2017), Norrtälje (2017, 2018, 2021), Sigtuna (2017), Skärholmen (2017, 2021, 2022, 2023), Österåker (2021) , Rinkeby-Kista (2021).\n",
     källa: "Barnhälsovårdens årsrapport ",
     läsa_mer_1_text:
-      "Årsrapport – barnhälsovård i Stockholms län 2022, Region Stockholm.",
+      "Årsrapport – barnhälsovård i Stockholms län 2023, Region Stockholm.",
     läsa_mer_1_link:
-      "https://kunskapsstodforvardgivare.se/download/18.3bc843dd18851928cf725bb8/1686724139915/2022_%C3%85rsrapport.pdf",
+      "https://kunskapsstodforvardgivare.se/download/18.28eeaa311900ff142db87ea/1718694895552/%C3%85rsrapport%20Barnh%C3%A4lsov%C3%A5rd%C2%A02023.pdf",
   },
   "Anmälan socialtjänst via BVC": {
     definition:
       "Andel (%) barn i åldrarna 0–5 år per årskull kring vilka Barnavårdscentralen (BVC) gjort orosanmälan till socialtjänsten. Observera att det kan förekomma brister i data för olika år och man ska vara försiktig med att dra slutsatser från de år och område det gäller för. Data är inkomplett för: Norrtälje (år 2017–2018) och Kungsholmen (2022).",
     källa: "Barnhälsovårdens årsrapport ",
     läsa_mer_1_text:
-      "Årsrapport – barnhälsovård i Stockholms län 2022, Region Stockholm.",
+      "Årsrapport – barnhälsovård i Stockholms län 2023, Region Stockholm.",
     läsa_mer_1_link:
-      "https://kunskapsstodforvardgivare.se/download/18.3bc843dd18851928cf725bb8/1686724139915/2022_%C3%85rsrapport.pdf",
+      "https://kunskapsstodforvardgivare.se/download/18.28eeaa311900ff142db87ea/1718694895552/%C3%85rsrapport%20Barnh%C3%A4lsov%C3%A5rd%C2%A02023.pdf",
   },
   "Vaccinationstäckning MPR": {
     definition:
       "Andel (%) barn per årskull som har vaccinerats mot mässling, påssjuka och röda hund (MPR) med minst en dos. Data för år 2022 gäller barn födda 2020 och så vidare. Observera att det kan förekomma brister i data för olika år och man ska vara försiktig med att dra slutsatser från de år och område det gäller för. Data är inkomplett för: Norrtälje (2016–2018), Sigtuna (2016), Kungsholmen (2022).",
     källa: "Barnhälsovårdens årsrapport ",
     läsa_mer_1_text:
-      "Årsrapport – barnhälsovård i Stockholms län 2022, Region Stockholm.",
+      "Årsrapport – barnhälsovård i Stockholms län 2023, Region Stockholm.",
     läsa_mer_1_link:
-      "https://kunskapsstodforvardgivare.se/download/18.3bc843dd18851928cf725bb8/1686724139915/2022_%C3%85rsrapport.pdf",
+      "https://kunskapsstodforvardgivare.se/download/18.28eeaa311900ff142db87ea/1718694895552/%C3%85rsrapport%20Barnh%C3%A4lsov%C3%A5rd%C2%A02023.pdf",
     läsa_mer_2_text:
       "Strategier för att öka vaccinationstäckningen – en kunskapsöversikt. Rapport 2022:7. Centrum för epidemiologi och dsamhällsmedicin (CES).",
     läsa_mer_2_link:
@@ -194,26 +194,34 @@ const indicator_info = {
       "Andel (%) individer som uppger att de har utsatts för fysiskt våld under de senaste tolv månaderna.",
     källa: "Region Stockholms folkhälsoenkät",
     läsa_mer_1_text:
-      "Strategi för att förebygga och bekämpa våld i Stockholms län 2020–2026, Länsstyrelsen",
-    läsa_mer_1_link:
-      "https://www.lansstyrelsen.se/stockholm/om-oss/vara-tjanster/publikationer/2019/strategi-for-att-forebygga-och-bekampa-vald-i-stockholms-lan---strategi-2020-2026.html",
-    läsa_mer_2_text:
       "Folkhälsorapport 2023 - Sociala relationer. Centrum för epidemiologi och samhällsmedicin (CES).",
-    läsa_mer_2_link:
+    läsa_mer_1_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/sociala-och-ekonomiska-forutsattningar/sociala-relationer/",
+    läsa_mer_2_text:
+      "Strategi för att förebygga och bekämpa våld i Stockholms län 2020–2026, Länsstyrelsen",
+    läsa_mer_2_link:
+      "https://www.lansstyrelsen.se/stockholm/om-oss/vara-tjanster/publikationer/2019/strategi-for-att-forebygga-och-bekampa-vald-i-stockholms-lan---strategi-2020-2026.html",
     läsa_mer_3_text:
       "Sexuella trakasserier i Stockholms län. Rapport 2022:14. Centrum för epidemiologi och samhällsmedicin (CES).",
     läsa_mer_3_link:
-      "CES Rapport 2022:14 Sexuella trakasserier i Stockholms län (folkhalsoguiden.se)",
+      "https://www.folkhalsoguiden.se/publikationer/ces-sexuella-trakasserier-i-stockholms-lan/",
   },
   Ensamhet: {
     definition:
       "Andel (%) individer som uppger att de besväras av ensamhet minst en gång i veckan.",
     källa: "Region Stockholms folkhälsoenkät",
     läsa_mer_1_text:
-      "Ensamhet i Stockholms län (rapport 2021:10), Centrum för epidemiologi och samhällsmedicin (CES)",
+      "Folkhälsorapport 2023 - Sociala relationer. Centrum för epidemiologi och samhällsmedicin (CES).",
     läsa_mer_1_link:
-      "https://www.folkhalsokollen.se/globalassets/verksamheter/forskning-och-utveckling/centrum-for-epidemiologi-och-samhallsmedicin/folkhalsoguiden/rapporter-och-faktablad/rapport-2021.10-ensamhet-i-stockholms-lan_resultat-fran-stockholms-lans-folkhalsokohort.pdf",
+      "https://www.folkhalsorapportstockholm.se/rapporten2/sociala-och-ekonomiska-forutsattningar/sociala-relationer/",
+    läsa_mer_2_text:
+      "Ensamhet i Stockholms län (rapport 2021:10), Centrum för epidemiologi och samhällsmedicin (CES).",
+    läsa_mer_2_link:
+      "https://www.folkhalsoguiden.se/publikationer/ces-rapport-202110-ensamhet-i-stockholms-lan/",
+    läsa_mer_3_text:
+      "Strategier för att förebygga ensamhet hos äldre. Rapport 2021:11. Centrum för epidemiologi och samhällsmedicin (CES).",
+    läsa_mer_3_link:
+      "https://www.folkhalsoguiden.se/publikationer/ces-rapport-202111-strategier-for-att-forebygga-ensamhet-hos-aldre/",
   },
   "Tillit till polisen": {
     definition:
@@ -266,7 +274,7 @@ const indicator_info = {
     läsa_mer_2_text:
       "Sexuella trakasserier i Stockholms län. Rapport 2022:14. Centrum för epidemiologi och samhällsmedicin (CES).",
     läsa_mer_2_link:
-      "CES Rapport 2022:14 Sexuella trakasserier i Stockholms län (folkhalsoguiden.se)",
+      "https://www.folkhalsoguiden.se/publikationer/ces-sexuella-trakasserier-i-stockholms-lan/",
   },
   "Trafikbuller i bostad": {
     definition:
@@ -291,16 +299,8 @@ const indicator_info = {
       "Andel (%) individer som uppger att de behöver hjälp med att ta sig fram utomhus.",
     källa: "Region Stockholms folkhälsoenkät",
     läsa_mer_1_text:
-      "Hur mår Stockholmarna efter 65? – Beskrivning av hälsa och levnadsvanor 2002–2018 (rapport 2019:3), Äldrecentrum",
-    läsa_mer_1_link:
-      "2019_3 framsida Hur mår stockholmarna efter 65_en beskrivning av äldres hälsa och levnadsvanor 2002-2018_rev (aldrecentrum.se)",
-    läsa_mer_2_text:
-      "StockholmSNAC 2019 – en beskrivning av äldreomsorgstagarna och omsorgens omfattning i Stockholms stad 2019 (rapport 2020:2), Äldrecentrum",
-    läsa_mer_2_link:
-      "https://www.aldrecentrum.se/sites/default/files/publication/pdf/stockholmsnac2019_rapport_200408-v2.pdf",
-    läsa_mer_3_text:
       "Hur mår de allra äldsta i Stockholms län? Rapport 2023:6. Centrum för epidemiologi och samhällsmedicin (CES).",
-    läsa_mer_3_link:
+    läsa_mer_1_link:
       "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20236-hur-mar-de-allra-aldsta/",
   },
   "Hjälp med hushållssysslor": {
@@ -308,12 +308,8 @@ const indicator_info = {
       "Andel (%) individer som uppger att de behöver hjälp med hushållssysslor.",
     källa: "Region Stockholms folkhälsoenkät",
     läsa_mer_1_text:
-      "StockholmSNAC 2019 – en beskrivning av äldreomsorgstagarna och omsorgens omfattning i Stockholms stad 2019 (rapport 2020:2), Äldrecentrum",
-    läsa_mer_1_link:
-      "https://www.aldrecentrum.se/sites/default/files/publication/pdf/stockholmsnac2019_rapport_200408-v2.pdf",
-    läsa_mer_2_text:
       "Hur mår de allra äldsta i Stockholms län? Rapport 2023:6. Centrum för epidemiologi och samhällsmedicin (CES).",
-    läsa_mer_2_link:
+    läsa_mer_1_link:
       "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20236-hur-mar-de-allra-aldsta/",
   },
   "Hjälp med personlig omvårdnad": {
@@ -321,12 +317,8 @@ const indicator_info = {
       "Andel (%) individer som uppger att de behöver hjälp med att bada, duscha eller gå på toaletten.",
     källa: "Region Stockholms folkhälsoenkät",
     läsa_mer_1_text:
-      "StockholmSNAC 2019 – en beskrivning av äldreomsorgstagarna och omsorgens omfattning i Stockholms stad 2019 (rapport 2020:2), Äldrecentrum",
-    läsa_mer_1_link:
-      "https://www.aldrecentrum.se/sites/default/files/publication/pdf/stockholmsnac2019_rapport_200408-v2.pdf",
-    läsa_mer_2_text:
       "Hur mår de allra äldsta i Stockholms län? Rapport 2023:6. Centrum för epidemiologi och samhällsmedicin (CES).",
-    läsa_mer_2_link:
+    läsa_mer_1_link:
       "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20236-hur-mar-de-allra-aldsta/",
   },
   Fallolyckor: {
@@ -363,7 +355,7 @@ const indicator_info = {
       "Andel (%) individer, 65 år eller äldre, som vårdats inom regionfinansierad öppen- eller slutenvård med lågenergifall (ICD-10 diagnoskoder: W00, W01, W05, W06, W07, W08, W09, W10, W17, W18, W19).",
     källa: "VAL-databaserna",
     läsa_mer_1_text:
-      "Folkhälsorapport 2023 – fallskador, Centrum för epidemiologi och samhällsmedicin (CES)",
+      "Folkhälsorapport 2023 – Fallskador, Centrum för epidemiologi och samhällsmedicin (CES)",
     läsa_mer_1_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/sjukdomar-och-skador/fallolyckor/",
   },
@@ -372,12 +364,8 @@ const indicator_info = {
       "Andel (%) individer som uppger att de skulle behöva mer hjälp än de får med hushållssysslor, att bada eller duscha, att gå på toaletten eller att ta sig fram utomhus.   ",
     källa: "Region Stockholms folkhälsoenkät",
     läsa_mer_1_text:
-      "StockholmSNAC 2019 – en beskrivning av äldreomsorgstagarna och omsorgens omfattning i Stockholms stad 2019 (rapport 2020:2), Äldrecentrum",
-    läsa_mer_1_link:
-      "https://www.aldrecentrum.se/sites/default/files/publication/pdf/stockholmsnac2019_rapport_200408-v2.pdf",
-    läsa_mer_2_text:
       "Hur mår de allra äldsta i Stockholms län? Rapport 2023:6. Centrum för epidemiologi och samhällsmedicin (CES).",
-    läsa_mer_2_link:
+    läsa_mer_1_link:
       "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20236-hur-mar-de-allra-aldsta/",
   },
   "Vaccination mot säsongsinfluensa": {
@@ -406,20 +394,20 @@ const indicator_info = {
       "Andel (%) individer, 65 år eller äldre, som vårdats inom regionfinansierad öppen- eller slutenvård med demens. Demens utgörs av demens vid Alzheimers sjukdom (ICD-10 F00), vaskulär demens (ICD-10 F01), demens vid andra sjukdomar (ICD-10 F02), ospecificerad demens (ICD-10 F03) samt, eller Alzheimers sjukdom (ICD-10 G30).\xa0",
     källa: "VAL-databaserna",
     läsa_mer_1_text:
-      "Folkhälsorapport 2023 – demens, Centrum för epidemiologi och samhällsmedicin (CES)",
+      "Folkhälsorapport 2023 – Demens, Centrum för epidemiologi och samhällsmedicin (CES)",
     läsa_mer_1_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/sjukdomar-och-skador/demens/",
     läsa_mer_2_text:
       "Hur mår de allra äldsta i Stockholms län? Rapport 2023:6. Centrum för epidemiologi och samhällsmedicin (CES).",
     läsa_mer_2_link:
-      "https://www.folkhalsoguiden.se/4a4d82/globalassets/verksamheter/forskning-och-utveckling/centrum-for-epidemiologi-och-samhallsmedicin/folkhalsoguiden/rapporter-och-faktablad/rapport-2023.6-hur-mar-de-allra-aldsta-i-stockholms-lan.pdf",
+      "\xa0https://www.folkhalsoguiden.se/4a4d82/globalassets/verksamheter/forskning-och-utveckling/centrum-for-epidemiologi-och-samhallsmedicin/folkhalsoguiden/rapporter-och-faktablad/rapport-2023.6-hur-mar-de-allra-aldsta-i-stockholms-lan.pdf",
   },
   "Avstått läkemedel på grund av dålig ekonomi": {
     definition:
       "Andel (%) individer som uppger att de har avstått från att hämta ut läkemedel (ordinerade av läkare) under de senaste tolv månaderna, på grund av dålig ekonomi.",
     källa: "Region Stockholms folkhälsoenkät",
     läsa_mer_1_text:
-      "Folkhälsorapport 2023 – inkomst, Centrum för epidemiologi och samhällsmedicin (CES)",
+      "Folkhälsorapport 2023 – Inkomst, Centrum för epidemiologi och samhällsmedicin (CES)",
     läsa_mer_1_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/sociala-och-ekonomiska-forutsattningar/inkomst/",
   },
@@ -428,7 +416,7 @@ const indicator_info = {
       "Andel (%) individer som uppger att de, trots upplevt behov, har avstått från att besöka sjukvården under de senaste tolv månaderna, på grund av dålig ekonomi.",
     källa: "Region Stockholms folkhälsoenkät",
     läsa_mer_1_text:
-      "Folkhälsorapport 2023 – inkomst, Centrum för epidemiologi och samhällsmedicin (CES)",
+      "Folkhälsorapport 2023 – Inkomst, Centrum för epidemiologi och samhällsmedicin (CES)",
     läsa_mer_1_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/sociala-och-ekonomiska-forutsattningar/inkomst/",
   },
@@ -442,14 +430,16 @@ const indicator_info = {
       "Antal slutenvårdstillfällen (dvs. inläggningar på sjukhus) per 1 000 invånare inom geriatrik, psykiatri och somatisk specialistvård (hemsjukvård, palliativ vård, förlossningsvård och intagningsavdelning på sjukhus ingår inte). Vårdvolymerna kan ibland variera mellan åren på grund av förändringar i vårdorganisationen eller registreringsrutiner, men också på grund av slumpvariationer i sjukdomars förekomst.",
     källa: "VAL-databaserna ",
   },
+  nan: {},
   "Psykisk ohälsa": {
     definition:
       'Andel (%) individer som lider av psykisk ohälsa mätt med Kessler Psychological Distress Scale (K6). K6 består av sex frågor om psykisk ohälsa under de senaste 30 dagarna och hur stor del av tiden besvären funnits. Ett värde på 8 eller mer räknas som psykisk ohälsa.<br><br><b>Varför syns inte utvecklingen över tid?</b><br>Sedan 1990 har den psykiska ohälsan i Stockholms län mätts med tolvfrågorsversionen av General Health Questionnaire (GHQ-12). I senaste folkhälsoenkäten, Hälsa Stockholm 2021, ersättes GHQ-12 med ett motsvarande mätverktyg: sexfrågorsversionen av Kessler Psychological Distress Scale (K6)<br>Både GHQ-12 och K6 är utvecklade som screeningsinstrument för psykisk ohälsa, men skiljer sig i längd, svarsalternativ och till viss del i innehåll. På grund av skillnaderna kan man inte direkt jämföra ett visst värde i GHQ-12 med ett visst värde i K6, och vice versa. Folkhälsokollen redovisar därför enbart data för 2021 mätt med K6.<br><br><b>Se utvecklingen över tid på länsnivå</b><br>Ett visst urval av deltagarna i 2021 års folkhälsoenkät (de som ingår i Stockholm Public Health Cohort) har fått besvara GHQ-12-frågorna i enkäten. Det gör att vi kan redovisa en tidstrend för psykisk hälsa på länsnivå.<br><br><button class="buttonLink" title="https://www.folkhalsokollen.se/webbverktyg/psykisk-halsa-over-tid-i-stockholms-lan" role="link" onclick="window.open(\'https://www.folkhalsokollen.se/webbverktyg/psykisk-halsa-over-tid-i-stockholms-lan\', \'_blank\')">Tidstrend för psykisk ohälsa på länsnivå och information om GHQ-12 och K6</button>\n',
     källa: "Region Stockholms folkhälsoenkät",
-    läsa_mer_1_text: "Uppdrag Psykisk Hälsa i Stockholms län",
-    läsa_mer_1_link: "https://www.uppdragpsykiskhalsa.se/stockholmslan/",
+    läsa_mer_1_text: "Inriktning - Uppdrag Psykisk Hälsa i Stockholms län",
+    läsa_mer_1_link:
+      "https://www.uppdragpsykiskhalsa.se/stockholmslan/inriktning/",
     läsa_mer_2_text:
-      "Screening av psykisk ohälsa med Refugee Health Screener – en uppföljning av Region Stockholm (rapport 2020:2), Centrum för epidemiologi och samhällsmedicin (CES).",
+      "Screening av psykisk ohälsa med Refugee Health Screener – en uppföljning av Region Stockholm. Rapport 2020:2, Centrum för epidemiologi och samhällsmedicin (CES).",
     läsa_mer_2_link:
       "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20202-screening-av-psykisk-ohalsa-med-refugee-health-screener/",
     läsa_mer_3_text:
@@ -470,50 +460,56 @@ const indicator_info = {
       "Andel (%) individer som uppger att de har allvarligt övervägt att ta sitt liv det senaste året.",
     källa: "Region Stockholms folkhälsoenkät",
     läsa_mer_1_text:
-      "Tidigare vårdkonsumtion bland alla personer som dog suicid i Stockholms län år 2011 till 2016 (rapport 2021:2), Centrum för epidemiologi och samhällsmedicin (CES)",
+      "Folkhälsorapport 2023 – Självmord och självskador, Centrum för epidemiologi och samhällsmedicin (CES)",
     läsa_mer_1_link:
-      "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20212-tidigare-vardkonsumtion-bland-alla-personer-som-dog-i-suicid-i-stockholms-lan-ar-20112016/",
-    läsa_mer_2_text:
-      "Folkhälsorapport 2023 – självmord och självskador, Centrum för epidemiologi och samhällsmedicin (CES)",
-    läsa_mer_2_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/sjukdomar-och-skador/sjalvmord-och-sjalvskador/",
+    läsa_mer_2_text:
+      "Tidigare vårdkonsumtion bland alla personer som dog suicid i Stockholms län år 2011 till 2016. Rapport 2021:2, Centrum för epidemiologi och samhällsmedicin (CES)",
+    läsa_mer_2_link:
+      "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20212-tidigare-vardkonsumtion-bland-alla-personer-som-dog-i-suicid-i-stockholms-lan-ar-20112016/ ",
     läsa_mer_3_text:
       "Suicidkommunikation på digitala plattformar. Rapport 2021. Nationellt centrum för suicidforskning (NASP).",
     läsa_mer_3_link:
       "https://www.folkhalsoguiden.se/publikationer/nasp-suicidkommunikation-pa-digitala-plattformar/",
+    läsa_mer_4_text: "Inriktning - Uppdrag Psykisk Hälsa i Stockholms län",
+    läsa_mer_4_link:
+      "https://www.uppdragpsykiskhalsa.se/stockholmslan/inriktning/",
   },
   Självmordsförsök: {
     definition:
       "Andel (%) individer som uppger att de har försökt att ta sitt liv det senaste året. Data för år 2018 är exkluderade eftersom frågan i den enkäten avviker från andra år.",
     källa: "Region Stockholms folkhälsoenkät",
     läsa_mer_1_text:
-      "Tidigare vårdkonsumtion bland alla personer som dog suicid i Stockholms län år 2011 till 2016 (rapport 2021:2), Centrum för epidemiologi och samhällsmedicin (CES)",
+      "Folkhälsorapport 2023 – Självmord och självskador, Centrum för epidemiologi och samhällsmedicin (CES)",
     läsa_mer_1_link:
-      "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20212-tidigare-vardkonsumtion-bland-alla-personer-som-dog-i-suicid-i-stockholms-lan-ar-20112016/",
-    läsa_mer_2_text:
-      "Folkhälsorapport 2023 – självmord och självskador, Centrum för epidemiologi och samhällsmedicin (CES)",
-    läsa_mer_2_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/sjukdomar-och-skador/sjalvmord-och-sjalvskador/",
+    läsa_mer_2_text:
+      "Tidigare vårdkonsumtion bland alla personer som dog suicid i Stockholms län år 2011 till 2016.. Rapport 2021:2, Centrum för epidemiologi och samhällsmedicin (CES)",
+    läsa_mer_2_link:
+      "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20212-tidigare-vardkonsumtion-bland-alla-personer-som-dog-i-suicid-i-stockholms-lan-ar-20112016/",
     läsa_mer_3_text:
       "Suicidkommunikation på digitala plattformar. Rapport 2021. Nationellt centrum för suicidforskning (NASP).",
     läsa_mer_3_link:
       "https://www.folkhalsoguiden.se/publikationer/nasp-suicidkommunikation-pa-digitala-plattformar/",
+    läsa_mer_4_text: "Inriktning - Uppdrag Psykisk Hälsa i Stockholms län",
+    läsa_mer_4_link:
+      "https://www.uppdragpsykiskhalsa.se/stockholmslan/inriktning/",
   },
   "Spänd arbetssituation": {
     definition:
       "Andel (%) individer som har ett spänt arbete som definieras som höga arbetskrav i relation till låg kontroll över vad som ska utföras och hur. Höga arbetskrav definieras som de som uppger att de har inte tillräckligt med tid för att hinna med sina arbetsuppgifter eller uppger att det förekommer motstridiga krav i sitt arbete. Låg kontroll definieras som de som uppger att arbetet inte ger dem möjlighet att lära sig något nytt och att utvecklas i arbetet, att de inte har frihet att bestämma vad som ska utföras i sitt arbete eller hur det ska utföras.",
     källa: "Region Stockholms folkhälsoenkät",
     läsa_mer_1_text:
-      "Arbetshälsorapport Stockholms län 2020, Centrum för arbets- och miljömedicin (CAMM)",
+      "Arbetshälsorapport Stockholms län 2024, Centrum för arbets- och miljömedicin (CAMM)",
     läsa_mer_1_link:
-      "http://dok.slso.sll.se/CAMM/Rapportserien/2020/Arbetshalsorapport_Stockholms_lan_2020_tillg%C3%A4nglig.pdf",
+      "https://www.camm.regionstockholm.se/49a041/globalassets/verksamheter/forskning-och-utveckling/centrum-for-arbets--och-miljomedicin1/dokument/rapporter/ahr2024-tillganglighetsanpassad.pdf",
   },
   "Depression och ångest (diagnostiserad)": {
     definition:
       "Andel (%) individer, 18 år eller äldre, som vårdats inom regionfinansierad öppen- eller slutenvård med diagnosen depression, ångest eller stressrelaterade tillstånd (ICD-10-diagnos F32-F34, F38 F39, F40-F43). Observera att eftersom data bygger på rapporterade diagnoser från vården skulle skillnader mellan områden eller över tid, delvis kunna bero på skillnader i registreringen av diagnoser. Måttet redovisar individer med en registrerad diagnos och täcker därför inte hela andelen som lider av depression och ångest. Säkerheten i talen är mindre i de kommuner eller stadsdelar med en mindre befolkningsstorlek, som till exempel i Salem, Nykvarn och Vaxholm.",
     källa: "VAL-databaserna ",
     läsa_mer_1_text:
-      "Folkhälsorapport 2023 – depression och ångest, Centrum för epidemiologi och samhällsmedicin (CES)",
+      "Folkhälsorapport 2023 – Depression och ångest, Centrum för epidemiologi och samhällsmedicin (CES)",
     läsa_mer_1_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/sjukdomar-och-skador/angest-och-depression/",
     läsa_mer_2_text:
@@ -550,7 +546,7 @@ const indicator_info = {
       "Andel (%) individer, 0–17 år eller 18–29 år, som vårdats inom regionfinansierad öppen- eller slutenvård med diagnosen autismspektrumtillstånd (ICD-10-diagnos F84). Observera att eftersom data bygger på rapporterade diagnoser från vården skulle skillnader mellan områden eller över tid, delvis kunna bero på skillnader i registreringen av diagnoser. Måttet redovisar individer med en registrerad diagnos och täcker därför inte hela andelen som har autismspektrumtillstånd. Säkerheten i talen är mindre i de kommuner eller stadsdelar med en mindre befolkningsstorlek, som till exempel i Salem, Nykvarn och Vaxholm.",
     källa: "VAL-databaserna ",
     läsa_mer_1_text:
-      "Autismspektrumtillstånd och adhd bland barn och ungdomar i Stockholms län: Förekomst av diagnoser i befolkningen samt vårdkonsumtion (Rapport 2022:5), Centrum för epidemiologi och samhällsmedicin (CES)",
+      "Autismspektrumtillstånd och adhd bland barn och ungdomar i Stockholms län: Förekomst av diagnoser i befolkningen samt vårdkonsumtion.Rapport 2022:5, Centrum för epidemiologi och samhällsmedicin (CES)",
     läsa_mer_1_link:
       "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20225-autismspektrumtillstand-och-adhd-bland-barn-och-ungdomar-i-stockholms-lan-forekomst-av-diagnoser-i-befolkningen-samt-vardkonsumtion/",
     läsa_mer_2_text:
@@ -563,52 +559,52 @@ const indicator_info = {
       "Andel (%) individer som uppger att sitt arbete innebär att de jobbar rent kroppsligt, att de flera gånger om dagen måste lyfta minst 15 kilo åt gången, att de arbetar i vriden ställning eller arbetar med händerna upplyfta i höjd med axlarna eller högre mer än en fjärdedel av sin arbetstid.",
     källa: "Region Stockholms folkhälsoenkät",
     läsa_mer_1_text:
-      "Arbetshälsorapport Stockholms län 2020, Centrum för arbets- och miljömedicin (CAMM)",
+      "Arbetshälsorapport Stockholms län 2024, Centrum för arbets- och miljömedicin (CAMM)",
     läsa_mer_1_link:
-      "http://dok.slso.sll.se/CAMM/Rapportserien/2020/Arbetshalsorapport_Stockholms_lan_2020_tillg%C3%A4nglig.pdf",
+      "https://www.camm.regionstockholm.se/49a041/globalassets/verksamheter/forskning-och-utveckling/centrum-for-arbets--och-miljomedicin1/dokument/rapporter/ahr2024-tillganglighetsanpassad.pdf",
   },
   "Vibrationer på jobbet": {
     definition:
       "Andel (%) individer som uppger att de i sitt arbete använder vibrerande handhållna maskiner eller redskap minst fyra timmar per vecka och/eller utsätts för helkroppsvibrationer minst fyra timmar per vecka.",
     källa: "Region Stockholms folkhälsoenkät",
     läsa_mer_1_text:
-      "Arbetshälsorapport Stockholms län 2020, Centrum för arbets- och miljömedicin (CAMM)",
+      "Arbetshälsorapport Stockholms län 2024, Centrum för arbets- och miljömedicin (CAMM)",
     läsa_mer_1_link:
-      "http://dok.slso.sll.se/CAMM/Rapportserien/2020/Arbetshalsorapport_Stockholms_lan_2020_tillg%C3%A4nglig.pdf",
+      "https://www.camm.regionstockholm.se/49a041/globalassets/verksamheter/forskning-och-utveckling/centrum-for-arbets--och-miljomedicin1/dokument/rapporter/ahr2024-tillganglighetsanpassad.pdf",
   },
   Våtarbete: {
     definition:
       "Andel (%) individer som uppger att de genom sitt arbete har hudkontakt med vatten mer än två timmar per dag.",
     källa: "Region Stockholms folkhälsoenkät",
     läsa_mer_1_text:
-      "Arbetshälsorapport Stockholms län 2020, Centrum för arbets- och miljömedicin (CAMM)",
+      "Arbetshälsorapport Stockholms län 2024, Centrum för arbets- och miljömedicin (CAMM)",
     läsa_mer_1_link:
-      "http://dok.slso.sll.se/CAMM/Rapportserien/2020/Arbetshalsorapport_Stockholms_lan_2020_tillg%C3%A4nglig.pdf",
+      "https://www.camm.regionstockholm.se/49a041/globalassets/verksamheter/forskning-och-utveckling/centrum-for-arbets--och-miljomedicin1/dokument/rapporter/ahr2024-tillganglighetsanpassad.pdf",
   },
   "Buller på jobbet": {
     definition:
       "Andel (%) individer som uppger att de i sitt arbete måste använda en hög röst, mycket hög röst eller behöver skrika när de samtalar med andra på cirka 1  meters avstånd när det bullrar som mest på arbetsplatsen.",
     källa: "Region Stockholms folkhälsoenkät",
     läsa_mer_1_text:
-      "Arbetshälsorapport Stockholms län 2020, Centrum för arbets- och miljömedicin (CAMM)",
+      "Arbetshälsorapport Stockholms län 2024, Centrum för arbets- och miljömedicin (CAMM)",
     läsa_mer_1_link:
-      "http://dok.slso.sll.se/CAMM/Rapportserien/2020/Arbetshalsorapport_Stockholms_lan_2020_tillg%C3%A4nglig.pdf",
+      "https://www.camm.regionstockholm.se/49a041/globalassets/verksamheter/forskning-och-utveckling/centrum-for-arbets--och-miljomedicin1/dokument/rapporter/ahr2024-tillganglighetsanpassad.pdf",
   },
   "Luftförorening på jobbet": {
     definition:
       "Andel (%) individer som uppger att de i sitt arbete utsätts för damm, motoravgaser eller rök minst fyra timmar per vecka.",
     källa: "Region Stockholms folkhälsoenkät",
     läsa_mer_1_text:
-      "Arbetshälsorapport Stockholms län 2020, Centrum för arbets- och miljömedicin (CAMM)",
+      "Arbetshälsorapport Stockholms län 2024, Centrum för arbets- och miljömedicin (CAMM)",
     läsa_mer_1_link:
-      "http://dok.slso.sll.se/CAMM/Rapportserien/2020/Arbetshalsorapport_Stockholms_lan_2020_tillg%C3%A4nglig.pdf",
+      "https://www.camm.regionstockholm.se/49a041/globalassets/verksamheter/forskning-och-utveckling/centrum-for-arbets--och-miljomedicin1/dokument/rapporter/ahr2024-tillganglighetsanpassad.pdf",
   },
   "Användning av hasch eller marijuana": {
     definition:
       "Andel (%) individer som uppger att de har använt hasch eller marijuana det senaste året.",
     källa: "Region Stockholms folkhälsoenkät",
     läsa_mer_1_text:
-      "Folkhälsorapport 2023 – narkotikavanor, Centrum för epidemiologi och samhällsmedicin (CES)",
+      "Folkhälsorapport 2023 – Narkotikavanor, Centrum för epidemiologi och samhällsmedicin (CES)",
     läsa_mer_1_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/levnadsvanor/droganvandning/",
     läsa_mer_2_text:
@@ -627,20 +623,24 @@ const indicator_info = {
       "Cannabisrelaterad vård bland unga vuxna. Rapport 2022:6. Centrum för epidemiologi och samhällsmedicin (CES).",
     läsa_mer_5_link:
       "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20226-cannabisrelaterad-vard-bland-unga-vuxna/",
+    läsa_mer_6_text:
+      "Unga vuxnas cannabisbruk. Rapport 2023:10. Centrum för epidemiologi och samhällsmedicin (CES).",
+    läsa_mer_6_link:
+      "https://www.folkhalsoguiden.se/publikationer/rapport-202310-unga-vuxnas-cannabisbruk/",
   },
   "Röker dagligen": {
     definition:
       "Andel (%) individer som uppger att de röker dagligen. Rökning avser tobaksvaror såsom cigaretter, cigariller och piptobak.",
     källa: "Region Stockholms folkhälsoenkät",
-    läsa_mer_1_text: "Sluta-röka-linjen",
-    läsa_mer_1_link: "https://www.slutarokalinjen.se",
+    läsa_mer_1_text:
+      "Folkhälsorapport 2023 – Rökning, Centrum för epidemiologi och samhällsmedicin (CES)",
+    läsa_mer_1_link:
+      "https://www.folkhalsorapportstockholm.se/rapporten2/levnadsvanor/rokning/",
     läsa_mer_2_text: "Tobaksprevention (ces.regionstockholm.se)",
     läsa_mer_2_link:
       "https://www.ces.regionstockholm.se/projekt-och-uppdrag/tobaksprevention/",
-    läsa_mer_3_text:
-      "Folkhälsorapport 2023 – Rökning, Centrum för epidemiologi och samhällsmedicin (CES)",
-    läsa_mer_3_link:
-      "https://www.folkhalsorapportstockholm.se/rapporten2/levnadsvanor/rokning/",
+    läsa_mer_3_text: "Sluta-röka-linjen",
+    läsa_mer_3_link: "https://www.slutarokalinjen.se",
     läsa_mer_4_text:
       "Kostnadsfria nikotinläkemedel som stöd till rökstopp. Rapport 2022:10. Centrum för epidemiologi och samhällsmedicin (CES).",
     läsa_mer_4_link:
@@ -649,34 +649,38 @@ const indicator_info = {
       "Stöd till rökavvänjning i grupper med låg socioekonomi. Rapport 2023:1. Centrum för epidemiologi och samhällsmedicin (CES).",
     läsa_mer_5_link:
       "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20231-stod-till-rokavvanjning-i-grupper-med-lag-socioekonomi/",
+    läsa_mer_6_text:
+      "Metoder för rökavvänjning bland tonåringar och unga vuxna. Rapport 2023:7. Centrum för epidemiologi och samhällsmedicin (CES).",
+    läsa_mer_6_link:
+      "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20237-metoder-for-rokavvanjning-bland-tonaringar-och-unga-vuxna/",
   },
   "Snusar dagligen": {
     definition: "Andel (%) individer som uppger att de snusar dagligen.",
     källa: "Region Stockholms folkhälsoenkät",
-    läsa_mer_1_text: "Sluta-röka-linjen",
-    läsa_mer_1_link: "https://www.slutarokalinjen.se",
+    läsa_mer_1_text:
+      "Folkhälsorapport 2023 – Rökning. Centrum för epidemiologi och samhällsmedicin (CES).",
+    läsa_mer_1_link:
+      "https://www.folkhalsorapportstockholm.se/rapporten2/levnadsvanor/rokning/",
     läsa_mer_2_text: "Tobaksprevention (ces.regionstockholm.se)",
     läsa_mer_2_link:
       "https://www.ces.regionstockholm.se/projekt-och-uppdrag/tobaksprevention/",
-    läsa_mer_3_text:
-      "Folkhälsorapport 2023 – Rökning. Centrum för epidemiologi och samhällsmedicin (CES).",
-    läsa_mer_3_link:
-      "https://www.folkhalsorapportstockholm.se/rapporten2/levnadsvanor/rokning/",
+    läsa_mer_3_text: "Sluta-röka-linjen",
+    läsa_mer_3_link: "https://www.slutarokalinjen.se",
   },
   "Riskbruk alkohol": {
     definition:
       "Andel (%) individer som uppger en alkoholkonsumtion som definieras som riskbruk. Riskbruk är definierat som sex poäng eller mer för män och fem poäng eller mer för kvinnor i AUDIT-C skalan. AUDIT-C är ett kort screeningsinstrument för att ringa in riskbruk.",
     källa: "Region Stockholms folkhälsoenkät",
-    läsa_mer_1_text: "Alkohollinjen",
-    läsa_mer_1_link: "https://www.alkohollinjen.se/",
-    läsa_mer_2_text:
+    läsa_mer_1_text:
       "Folkhälsorapport 2023 – Alkoholvanor, Centrum för epidemiologi och samhällsmedicin (CES).",
-    läsa_mer_2_link:
+    läsa_mer_1_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/levnadsvanor/alkoholvanor/",
-    läsa_mer_3_text:
-      "\nStockholmarnas alkoholvanor. Rapport 2022:12. Centrum för epidemiologi och samhällsmedicin (CES).",
-    läsa_mer_3_link:
+    läsa_mer_2_text:
+      "Stockholmarnas alkoholvanor. Rapport 2022:12. Centrum för epidemiologi och samhällsmedicin (CES).\n",
+    läsa_mer_2_link:
       "https://www.folkhalsoguiden.se/publikationer/ces-rapport-202212/",
+    läsa_mer_3_text: "Alkoholhjälpen",
+    läsa_mer_3_link: "https://alkoholhjalpen.se/",
   },
   "Fysisk aktivitet": {
     definition:
@@ -729,15 +733,15 @@ const indicator_info = {
     läsa_mer_2_link: "https://www.skolmatsverige.se/",
     läsa_mer_3_text: "Matguiden - Mat och hälsa",
     läsa_mer_3_link: "https://www.folkhalsoguiden.se/matguiden/mat-och-halsa/",
-    läsa_mer_4_text:
-      "Matvanor, idrott och vikt bland elever från 100 grundskolor i Stockholms län. Rapport 2020:7. Centrum för epidemiologi och samhällsmedicin (CES).",
-    läsa_mer_4_link:
-      "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20207-matvanor-idrott-och-vikt-bland-elever---fran-100-grundskolor-i-stockholms-lan/",
   },
   Sömnsvårigheter: {
     definition:
       "Andel (%) individer som uppger att de har lätta eller svåra besvär av sömnsvårigheter.",
     källa: "Region Stockholms folkhälsoenkät",
+    läsa_mer_1_text:
+      "Sömnbrist kopplat till depression och suicidtankar bland ungdomar. Faktablad 2023, Nationellt centrum för suicidprevention (NASP)",
+    läsa_mer_1_link:
+      "https://www.folkhalsoguiden.se/publikationer/chis-faktablad---somnbrist-kopplat-till-depression-och-suicidtankar-hos-ungdomar/",
   },
   "Begränsande sjukdom": {
     definition:
@@ -748,14 +752,22 @@ const indicator_info = {
     läsa_mer_1_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/sjukdomar-och-skador/",
     läsa_mer_2_text:
-      "Hur mår de allra äldsta i Stockholms län? Rapport 2023:6. Centrum för epidemiologi och samhällsmedicin (CED)",
+      "Hur mår de allra äldsta i Stockholms län? Rapport 2023:6. Centrum för epidemiologi och samhällsmedicin (CES)",
     läsa_mer_2_link:
       "https://www.folkhalsoguiden.se/4a4d82/globalassets/verksamheter/forskning-och-utveckling/centrum-for-epidemiologi-och-samhallsmedicin/folkhalsoguiden/rapporter-och-faktablad/rapport-2023.6-hur-mar-de-allra-aldsta-i-stockholms-lan.pdf",
+    läsa_mer_3_text:
+      "Personer med omfattande funktionsnedsättning i Stockholms län. Rapport 2023:9. Centrum för epidemiologi och samhällsmedicin (CES)",
+    läsa_mer_3_link:
+      "\nhttps://www.folkhalsoguiden.se/publikationer/ces-rapport-20239-personer-med-omfattande-funktionsnedsattning-i-stockholms-lan/",
   },
   "Självskattad hälsa": {
     definition:
       "Andel (%) individer som bedömer sitt allmänna hälsotillstånd som någorlunda, dåligt eller mycket dåligt.",
     källa: "Region Stockholms folkhälsoenkät",
+    läsa_mer_1_text:
+      "Folkhälsorapport 2023 – Hälsoläget i Stockholms län, Centrum för epidemiologi och samhällsmedicin (CES).",
+    läsa_mer_1_link:
+      "https://www.folkhalsorapportstockholm.se/rapporten2/introduktion-och-metod/halsolaget-i-stockholms-lan/",
   },
   Ryggsmärta: {
     definition:
@@ -765,10 +777,6 @@ const indicator_info = {
       "Folkhälsorapport 2023 – Smärta, Centrum för epidemiologi och samhällsmedicin (CES)",
     läsa_mer_1_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/sjukdomar-och-skador/smarta/",
-    läsa_mer_2_text:
-      "Folkhälsorapport 2023 - Hälsoläget i Stockholm. Centrum för epidemiologi och samhällsmedicin (CES).",
-    läsa_mer_2_link:
-      "https://www.folkhalsorapportstockholm.se/rapporten2/introduktion-och-metod/halsolaget-i-stockholms-lan/",
   },
   Nacksmärta: {
     definition:
@@ -779,7 +787,7 @@ const indicator_info = {
     läsa_mer_1_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/sjukdomar-och-skador/smarta/",
     läsa_mer_2_text:
-      "Nacksmärta – orsaker och åtgärder, Rapport 2019:1, Centrum för epidemiologi och samhällsmedicin (CES).",
+      "Nacksmärta – orsaker och åtgärder. Rapport 2019:1, Centrum för epidemiologi och samhällsmedicin (CES).",
     läsa_mer_2_link:
       "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20191-nacksmarta--orsaker-och-atgarder/",
   },
@@ -794,8 +802,8 @@ const indicator_info = {
   },
   Diabetes: {
     definition:
-      "Andel (%) individer som uppger att de har diagnosen typ 1-diabetes eller typ 2-diabetes.",
-    källa: "Region Stockholms folkhälsoenkät",
+      "Antal individer per 100 000 som har fått vård med diagnosen diabetes typ 2 (diagnoskod E11, ICD-10)",
+    källa: "VAL-databaserna",
     läsa_mer_1_text:
       "Folkhälsorapport 2023 – Diabetes, Centrum för epidemiologi och samhällsmedicin (CES)",
     läsa_mer_1_link:
@@ -810,28 +818,46 @@ const indicator_info = {
     läsa_mer_1_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/riskfaktorer/overvikt/",
     läsa_mer_2_text:
-      "Den ojämlika obesitasvården (rapport 2022:3), Centrum för epidemiologi och samhällsmedicin (CES)",
+      "Den ojämlika obesitasvården. Rapport 2022:3, Centrum för epidemiologi och samhällsmedicin (CES)",
     läsa_mer_2_link:
       "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20223-den-ojamlika-obesitasvarden/",
   },
-  nan: {},
+  "Premenstruellt syndrom (PMS)": {
+    definition:
+      "Andel (%) kvinnor i åldern 16–40 år som uppger att de har måttliga till svåra besvär av PMS.",
+    källa: "Region Stockholms folkhälsoenkät",
+    läsa_mer_1_text:
+      "Folkhälsorapport 2023 – Gynekologiska sjukdomar, Centrum för epidemiologi och samhällsmedicin (CES)",
+    läsa_mer_1_link:
+      "https://www.folkhalsorapportstockholm.se/rapporten2/sjukdomar-och-skador/gynekologiska-sjukdomar/",
+    läsa_mer_2_text:
+      "Riktlinjer vid premenstruell dysforisk störning, PMDS. Janusinfo.se, Region Stockholm",
+    läsa_mer_2_link:
+      "https://janusinfo.se/behandling/expertgruppsutlatanden/kvinnosjukdomarochforlossning/kvinnosjukdomarochforlossning/riktlinjervidpremenstruelldysforiskstorningpmds.5.6081a39c160e9b387319f3.html",
+  },
   Tandhälsa: {
     definition:
       "Andel (%) individer som uppger att de har varken bra eller dålig, dålig eller mycket dålig tandhälsa.",
     källa: "Region Stockholms folkhälsoenkät",
+    läsa_mer_1_text:
+      "Tandhälsan hos barn och ungdomar i Stockholms län 2022. Raport, 2022, Hälso- och sjukvårdsförvaltningen, Region Stockholm.",
+    läsa_mer_1_link:
+      "https://akademiskbarntandvard.ki.se/wp-content/uploads/sites/141/2023/06/Tandhalsorapport-2022.pdf",
+    läsa_mer_2_text:
+      "Riktlinjer vid premenstruell dysforisk störning, PMDS - Janusinfo.se",
   },
   "Förväntad medellivslängd": {
     definition:
       "Antal år som i genomsnitt återstår att leva vid födseln för en person enligt den gällande dödligheten vid tidpunkten. Beräkningarna är gjorda av demografer vid Statistiska centralbyrån (SCB), på beställning av Tillväxt- och regionplaneförvaltningen, Region Stockholm.",
     källa: "Statistiska centralbyrån (SCB)",
     läsa_mer_1_text:
-      "Medellivslängden i Sverige, Statistiska Centralbyrån (SCB)",
+      "Folkhälsorapport 2023 - Hälsoläget i Stockholm. Centrum för epidemiologi och samhällsmedicin (CES). ",
     läsa_mer_1_link:
-      "https://www.scb.se/hitta-statistik/sverige-i-siffror/manniskorna-i-sverige/medellivslangd-i-sverige/",
+      "https://www.folkhalsorapportstockholm.se/rapporten2/introduktion-och-metod/halsolaget-i-stockholms-lan/ ",
     läsa_mer_2_text:
-      "Folkhälsorapport 2023 - Hälsoläget i Stockholm. Centrum för epidemiologi och samhällsmedicin (CES).",
+      "Medellivslängden i Sverige, Statistiska Centralbyrån (SCB)",
     läsa_mer_2_link:
-      "https://www.folkhalsorapportstockholm.se/rapporten2/introduktion-och-metod/halsolaget-i-stockholms-lan/",
+      "https://www.scb.se/hitta-statistik/sverige-i-siffror/manniskorna-i-sverige/medellivslangd-i-sverige/",
   },
   Ohälsodagar: {
     definition:
@@ -865,9 +891,9 @@ const indicator_info = {
     läsa_mer_1_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/sjukdomar-och-skador/cancer/ ",
     läsa_mer_2_text:
-      "Regional cancerplan Stockholm-Gotland 2020–2023, Regionalt cancercentrum Stockholm Gotland",
+      "Regional cancerplan Stockholm-Gotland 20204–2027, Regionalt cancercentrum Stockholm Gotland",
     läsa_mer_2_link:
-      "https://www.cancercentrum.se/globalassets/vara-uppdrag/strategisk-utvecklingsplan/stockholm---gotland/regional-cancerplan-rcc-stockholm-gotland-2020-2023.pdf ",
+      "https://cancercentrum.se/contentassets/c17be38bac8443d3b3e7599d5f58d13a/sjukvardsregional-cancerplan-2024-2027.pdf",
   },
   "Tjock- och ändtarmscancer": {
     definition:
@@ -878,22 +904,22 @@ const indicator_info = {
     läsa_mer_1_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/sjukdomar-och-skador/cancer/ ",
     läsa_mer_2_text:
-      "Regional cancerplan Stockholm-Gotland 2020–2023, Regionalt cancercentrum Stockholm Gotland",
+      "Regional cancerplan Stockholm-Gotland 2024–2027, Regionalt cancercentrum Stockholm Gotland",
     läsa_mer_2_link:
-      "https://www.cancercentrum.se/globalassets/vara-uppdrag/strategisk-utvecklingsplan/stockholm---gotland/regional-cancerplan-rcc-stockholm-gotland-2020-2023.pdf ",
+      "https://cancercentrum.se/contentassets/c17be38bac8443d3b3e7599d5f58d13a/sjukvardsregional-cancerplan-2024-2027.pdf",
   },
   Bröstcancer: {
     definition:
       "Antal nya fall av bröstcancer per 100 000 kvinnor. Som årtal beräknas tidpunkten för första diagnosen under perioden 2006–2019 ur Cancerregistret.",
     källa: "Regionalt cancercentrum Stockholm Gotland (RCC)",
     läsa_mer_1_text:
-      "Folkhälsorapport 2023 – cCancer, Centrum för epidemiologi och samhällsmedicin (CES)",
+      "Folkhälsorapport 2023 – Cancer, Centrum för epidemiologi och samhällsmedicin (CES)",
     läsa_mer_1_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/sjukdomar-och-skador/cancer/",
     läsa_mer_2_text:
-      "Regional cancerplan Stockholm-Gotland 2020–2023, Regionalt cancercentrum Stockholm Gotland",
+      "Regional cancerplan Stockholm-Gotland 2024–2027, Regionalt cancercentrum Stockholm Gotland",
     läsa_mer_2_link:
-      "https://www.cancercentrum.se/globalassets/vara-uppdrag/strategisk-utvecklingsplan/stockholm---gotland/regional-cancerplan-rcc-stockholm-gotland-2020-2023.pdf ",
+      "\nhttps://cancercentrum.se/contentassets/c17be38bac8443d3b3e7599d5f58d13a/sjukvardsregional-cancerplan-2024-2027.pdf",
   },
   Prostatacancer: {
     definition:
@@ -904,9 +930,9 @@ const indicator_info = {
     läsa_mer_1_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/sjukdomar-och-skador/cancer/ ",
     läsa_mer_2_text:
-      "Regional cancerplan Stockholm-Gotland 2020–2023, Regionalt cancercentrum Stockholm Gotland",
+      "Regional cancerplan Stockholm-Gotland 2024–2027, Regionalt cancercentrum Stockholm Gotland",
     läsa_mer_2_link:
-      "https://www.cancercentrum.se/globalassets/vara-uppdrag/strategisk-utvecklingsplan/stockholm---gotland/regional-cancerplan-rcc-stockholm-gotland-2020-2023.pdf ",
+      "https://cancercentrum.se/contentassets/c17be38bac8443d3b3e7599d5f58d13a/sjukvardsregional-cancerplan-2024-2027.pdf",
   },
   "Malignt hudmelanom": {
     definition: "Antal nya fall av malignt hudmelanom per 100 000 invånare.",
@@ -916,27 +942,17 @@ const indicator_info = {
     läsa_mer_1_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/sjukdomar-och-skador/cancer/ ",
     läsa_mer_2_text:
-      "Regional cancerplan Stockholm-Gotland 2020–2023, Regionalt cancercentrum Stockholm Gotland",
+      "Regional cancerplan Stockholm-Gotland 2024–2027, Regionalt cancercentrum Stockholm Gotland",
     läsa_mer_2_link:
-      "https://www.cancercentrum.se/globalassets/vara-uppdrag/strategisk-utvecklingsplan/stockholm---gotland/regional-cancerplan-rcc-stockholm-gotland-2020-2023.pdf ",
+      "https://cancercentrum.se/contentassets/c17be38bac8443d3b3e7599d5f58d13a/sjukvardsregional-cancerplan-2024-2027.pdf",
   },
   "Dödsfall på grund av covid-19": {
     definition:
       "Antal dödsfall per 10 000 invånare med covid-19  som underliggande dödsorsak.",
-    källa: " Socialstyrelsens dödsorsaksstatistik",
+    källa: "Socialstyrelsens dödsorsaksstatistik",
     läsa_mer_1_text:
       "Rapporter om covid-19, utgivna av Centrum för epidemiologi och samhällsmedicin (CES). ",
     läsa_mer_1_link:
-      "https://www.ces.regionstockholm.se/rapporter/rapporter-om-covid-19/",
-    läsa_mer_2_text: "Covid-19",
-    läsa_mer_2_link: "Död",
-    läsa_mer_3_text: "Dödsfall på grund av covid-19",
-    läsa_mer_3_link:
-      "Antal dödsfall per 10 000 invånare med covid-19  som underliggande dödsorsak.",
-    läsa_mer_4_text: " Socialstyrelsens dödsorsaksstatistik",
-    läsa_mer_5_text:
-      "Rapporter om covid-19, utgivna av Centrum för epidemiologi och samhällsmedicin (CES). ",
-    läsa_mer_5_link:
       "https://www.ces.regionstockholm.se/rapporter/rapporter-om-covid-19/",
   },
   "Sjukhusinläggning med covid-19": {
@@ -952,13 +968,13 @@ const indicator_info = {
     definition:
       "Procentandelen elever med ett slutbetyg från grundskolan som ger behörighet till något av de nationella gymnasieprogrammen (inkl. yrkesprogrammen), av de elever som slutfört sin grundskoleutbildning under våren respektive år. Uppgiften anges utifrån elevens boendeort, inte skolornas geografiska placering. </br></br>Notera: Måttet är inte helt jämförbart med Skolverkets statistik. Andelen behöriga påverkas bl. a. av andelen nyligen invandrade, med ofullständiga kunskaper i svenska",
     källa: "Statistiska centralbyrån (SCB) ",
-    läsa_mer_1_text: "Beskrivande statistik, Skolverkets statistikrapporter",
-    läsa_mer_1_link:
-      "https://www.skolverket.se/publikationsserier/beskrivande-statistik",
-    läsa_mer_2_text:
+    läsa_mer_1_text:
       "Folkhälsorapport 2023 - Utbildning. Centrum för epidemiologi och samhällsmedicin (CES).",
+    läsa_mer_1_link:
+      "https://www.folkhalsorapportstockholm.se/rapporten2/sociala-och-ekonomiska-forutsattningar/utbildning/ ",
+    läsa_mer_2_text: "Beskrivande statistik, Skolverkets statistikrapporter",
     läsa_mer_2_link:
-      "https://www.folkhalsorapportstockholm.se/rapporten2/sociala-och-ekonomiska-forutsattningar/utbildning/",
+      "https://www.skolverket.se/publikationsserier/beskrivande-statistik",
   },
   Livsvillkorsindex: {
     definition:
@@ -1052,8 +1068,16 @@ const indicator_info = {
       "Andel (%) individer, 18 år eller äldre, som vårdats inom regionfinansierad öppen- eller slutenvård med diagnosen psykiska störningar och beteendestörningar orsakade av psykoaktiva substanser (ICD-10-diagnos F10-F16, F18-F19).Denna diagnosgrupp innehåller huvudsakligen psykiska problem orsakade av beroende och skadligt bruk av alkohol eller droger.<br><br>Observera att eftersom data bygger på rapporterade diagnoser från vården skulle skillnader mellan områden eller över tid, delvis kunna bero på skillnader i registreringen av diagnoser. Måttet redovisar individer med en registrerad diagnos och täcker därför inte hela andelen som har problem. De som inte söker vård för sina problem får heller ingen registrerad diagnos. Säkerheten i talen är mindre i de kommuner eller stadsdelar med en mindre befolkningsstorlek, som till exempel i Salem, Nykvarn och Vaxholm.",
     källa: "VAL-databaserna",
     läsa_mer_1_text:
-      "Nationella riktlinjer för vård och stöd vid missbruk och beroende, Socialstyrelsen",
+      "Folkhälsorapport 2023 – Alkoholvanor, Centrum för epidemiologi och samhällsmedicin (CES)",
     läsa_mer_1_link:
+      "https://www.folkhalsorapportstockholm.se/rapporten2/levnadsvanor/alkoholvanor/",
+    läsa_mer_2_text:
+      "Folkhälsorapport 2023 – Narkotikavanor, Centrum för epidemiologi och samhällsmedicin (CES)",
+    läsa_mer_2_link:
+      "https://www.folkhalsorapportstockholm.se/rapporten2/levnadsvanor/droganvandning/",
+    läsa_mer_3_text:
+      "Nationella riktlinjer för vård och stöd vid missbruk och beroende, Socialstyrelsen",
+    läsa_mer_3_link:
       "https://www.socialstyrelsen.se/globalassets/sharepoint-dokument/artikelkatalog/nationella-riktlinjer/2019-1-16.pdf",
   },
   "Röker e-cigaretter (grundskola åk 9)": {
