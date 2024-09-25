@@ -800,7 +800,7 @@ const indicator_info = {
     läsa_mer_1_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/sjukdomar-och-skador/smarta/",
   },
-  Diabetes: {
+  "Diabetes (diagnostiserad)": {
     definition:
       "Antal individer per 100 000 som har fått vård med diagnosen diabetes typ 2 (diagnoskod E11, ICD-10)",
     källa: "VAL-databaserna",

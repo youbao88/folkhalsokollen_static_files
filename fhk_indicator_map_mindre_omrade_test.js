@@ -1594,7 +1594,7 @@ const indicator_name_parameter_map = {
       tabel_Kön: ["Kvinnor", "Män"],
     },
   },
-  Diabetes: {
+  "Diabetes (diagnostiserad)": {
     karta: {
       karta_Tidsperiod: "2022",
       karta_Kön: ["Kvinnor", "Män"],
