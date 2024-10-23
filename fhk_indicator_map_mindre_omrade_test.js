@@ -490,6 +490,29 @@ const indicator_name_parameter_map = {
       tabel_Kön: "Kvinnor",
     },
   },
+  "Deltagande i föräldraskapsstöd": {
+    karta: {
+      karta_Tidsperiod: "2023",
+      karta_Kön: "Kvinnor",
+      karta_Åldersgrupp: "Samtliga",
+    },
+    stapel: {
+      stapel_Område: "Stockholms län",
+      stapel_Tidsperiod: "2023",
+      stapel_Kön: "Kvinnor",
+    },
+    linje: {
+      linje_Kön: "Kvinnor",
+      linje_Område: ["Stockholms län", "Botkyrka"],
+      linje_Åldersgrupp: "Samtliga",
+    },
+    tabell: {
+      table_Tidsperiod: "2023",
+      table_Område: "Stockholms län",
+      tabel_Åldersgrupp: "Samtliga",
+      tabel_Kön: "Kvinnor",
+    },
+  },
   "Högt intag läsk, saft, sötade drycker": {
     karta: {
       karta_Tidsperiod: "2021",
@@ -883,13 +906,13 @@ const indicator_name_parameter_map = {
   },
   "Förväntad medellivslängd": {
     karta: {
-      karta_Tidsperiod: "2022",
+      karta_Tidsperiod: "2023",
       karta_Kön: ["Samtliga"],
       karta_Åldersgrupp: ["Samtliga"],
     },
     stapel: {
       stapel_Område: "Stockholms län",
-      stapel_Tidsperiod: "2022",
+      stapel_Tidsperiod: "2023",
       stapel_Kön: ["Samtliga"],
     },
     linje: {
@@ -898,7 +921,7 @@ const indicator_name_parameter_map = {
       linje_Åldersgrupp: ["Samtliga"],
     },
     tabell: {
-      table_Tidsperiod: "2022",
+      table_Tidsperiod: "2023",
       table_Område: "Stockholms län",
       tabel_Åldersgrupp: ["Samtliga"],
       tabel_Kön: ["Samtliga"],
@@ -2354,7 +2377,7 @@ const indicator_name_parameter_map = {
       tabel_Kön: ["Killar", "Tjejer"],
     },
   },
-  "Livsvillkorsindex": {
+  Livsvillkorsindex: {
     karta: {
       karta_Tidsperiod: "2021",
       karta_Kön: "Samtliga",
@@ -2377,7 +2400,7 @@ const indicator_name_parameter_map = {
       tabel_Kön: "Samtliga",
     },
   },
-    "Demens (diagnostiserad)": {
+  "Demens (diagnostiserad)": {
     karta: {
       karta_Tidsperiod: "2022",
       karta_Kön: ["Kvinnor", "Män"],

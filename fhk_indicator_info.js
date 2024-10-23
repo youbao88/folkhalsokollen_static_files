@@ -18,6 +18,8 @@ const källa_url_map = {
     "https://www.folkhalsokollen.se/datakallor/institutet-for-miljomedicin",
   Stockholmsenkäten:
     "https://www.folkhalsokollen.se/datakallor/stockholmsenkaten/",
+  Graviditetsregistret:
+    "https://www.folkhalsokollen.se/datakallor/graviditetsregistret/"
 };
 const indicator_info = {
   Boendeform: {
@@ -822,9 +824,36 @@ const indicator_info = {
     läsa_mer_2_link:
       "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20223-den-ojamlika-obesitasvarden/",
   },
-  "Premenstruellt syndrom (PMS)": {
+  "Deltagande i föräldraskapsstöd": {
     definition:
-      "Andel (%) kvinnor i åldern 16–40 år som uppger att de har måttliga till svåra besvär av PMS.",
+      "Andel (%) gravida som var förstföderskor och deltog i föräldraskapsstöd.\n\nFöräldraskapsstöd under graviditeten är en del av barnmorskemottagningarnas uppdrag. Syftet med föräldraskapsstödet är att främja barnets hälsa och utveckling genom att uppmärksamma och stärka föräldraskapet och föräldrars förmåga att möta det väntade barnet. Stödet innefattar både förlossnings- och föräldra¬förberedelse. Stödet kan erbjudas i olika former: gruppträffar, storgruppsföreläsningar, enskilt stöd, digitala gruppträffar eller enskilt digitalt informationsstöd. Målsättningen är att föräldraskapsstöd ska erbjudas alla blivande och nyblivna föräldrar",
+    källa: "Graviditetsregistret",
+    läsa_mer_1_text:
+      "Årsrapport.  Barnmorskemottagningarna i Stockholms län 2023, Region Stockholm (pdf)\n",
+    läsa_mer_1_link:
+      "https://kunskapsstodforvardgivare.se/download/18.37e7d4a9192711eeaaa1479a/1729071091738/Arsrapport-modrahalsovard-2023.pdf",
+    läsa_mer_2_text:
+      "Hälsa under graviditet och nyföddhetsperiod. Rapport 2023:3, Centrum för epidemiologi och samhällsmedicin (CES).",
+    läsa_mer_2_link:
+      "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20233-halsa-under-graviditet-och-nyfoddhetsperiod/",
+    läsa_mer_3_text:
+      "Graviditetsregistrets årsrapport 2023. (pdf, medscinet.com)",
+    läsa_mer_3_link:
+      "https://www.medscinet.com/GR/uploads/hemsida/Graviditetsregistrets%20%C3%85rsrapport%202023%201.0.pdf",
+    läsa_mer_4_text:
+      "Graviditet, förlossning och tiden efter - Nationellt kunskapsstöd för kontinuitet i vårdkedjan och vård på rätt nivå, Socialstyrelsen 2022 (pdf). ",
+    läsa_mer_4_link:
+      "https://www.socialstyrelsen.se/globalassets/sharepoint-dokument/artikelkatalog/kunskapsstod/2022-12-8287.pdf",
+    läsa_mer_5_text:
+      "Myndigheten för familjerätt och föräldraskapsstöd: Nationell strategi för ett stärkt föräldraskapsstöd (mfof.se)",
+    läsa_mer_5_link:
+      "https://www.mfof.se/foraldraskapsstod/nationell-strategi-for-ett-starkt-foraldraskapsstod.html",
+    läsa_mer_6_text:
+      "Myndigheten för familjerätt och föräldraskapsstöd: Mödra- och barnhälsovården (mfof.se)",
+    läsa_mer_6_link:
+      "https://www.mfof.se/foraldraskapsstod/arenor-for-foraldraskapsstod/modra--och-barnhalsovarden.html",
+  },
+  "Premenstruellt syndrom (PMS)": {
     källa: "Region Stockholms folkhälsoenkät",
     läsa_mer_1_text:
       "Folkhälsorapport 2023 – Gynekologiska sjukdomar, Centrum för epidemiologi och samhällsmedicin (CES)",
@@ -837,7 +866,7 @@ const indicator_info = {
   },
   Tandhälsa: {
     definition:
-      "Andel (%) individer som uppger att de har varken bra eller dålig, dålig eller mycket dålig tandhälsa.",
+      "Föräldraskapsstöd under graviditeten är en del av barnmorskemottagningarnas uppdrag. Syftet med föräldraskapsstödet är att främja barnets hälsa och utveckling genom att uppmärksamma och stärka föräldraskapet och föräldrars förmåga att möta det väntade barnet. Stödet innefattar både förlossnings- och föräldra\xadförberedelse. Stödet kan erbjudas i olika former: gruppträffar, storgruppsföreläsningar, enskilt stöd, digitala gruppträffar eller enskilt digitalt informationsstöd. Målsättningen är att föräldraskapsstöd ska erbjudas alla blivande och nyblivna föräldrar",
     källa: "Region Stockholms folkhälsoenkät",
     läsa_mer_1_text:
       "Tandhälsan hos barn och ungdomar i Stockholms län 2022. Raport, 2022, Hälso- och sjukvårdsförvaltningen, Region Stockholm.",
