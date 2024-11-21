@@ -19,7 +19,7 @@ const källa_url_map = {
   Stockholmsenkäten:
     "https://www.folkhalsokollen.se/datakallor/stockholmsenkaten/",
   Graviditetsregistret:
-    "https://www.folkhalsokollen.se/datakallor/graviditetsregistret/"
+    "https://www.folkhalsokollen.se/datakallor/graviditetsregistret/",
 };
 const indicator_info = {
   Boendeform: {
@@ -91,7 +91,7 @@ const indicator_info = {
   "Barn i familjer med låg inkomst": {
     definition:
       "Andel (%) som lever i familjer där inkomster efter skatt och bidrag inte räcker till nödvändiga levnadsomkostnader, som mat, kläder, el och boende, enligt Statistikmyndigheten SCB:s beräkning av inkomst för skälig levnadsnivå.",
-    källa: "Statistikmyndigheten (SCB)",
+    källa: "Statistiska centralbyrån (SCB) ",
     läsa_mer_1_text:
       "Folkhälsorapport 2023 – Inkomst, Centrum för epidemiologi och samhällsmedicin (CES)",
     läsa_mer_1_link:
@@ -167,8 +167,7 @@ const indicator_info = {
   "Röstande i kommunval": {
     definition:
       "Andel (%) individer som röstat i val till kommunfullmäktige av det totala antalet röstberättigade i kommunen eller stadsdelen (inklusive blanka och ogiltiga röster).",
-    källa:
-      "Statistiska centralbyrån (SCB), Valmyndigheten och Stockholms statistikkontor ",
+    källa: "Statistiska centralbyrån (SCB) ",
   },
   "Anmälda våldsbrott": {
     definition:
@@ -854,7 +853,6 @@ const indicator_info = {
       "https://www.mfof.se/foraldraskapsstod/arenor-for-foraldraskapsstod/modra--och-barnhalsovarden.html",
   },
   "Premenstruellt syndrom (PMS)": {
-    definition: "Andel (%) kvinnor i åldern 16–40 år som uppger att de har måttliga till svåra besvär av PMS",
     källa: "Region Stockholms folkhälsoenkät",
     läsa_mer_1_text:
       "Folkhälsorapport 2023 – Gynekologiska sjukdomar, Centrum för epidemiologi och samhällsmedicin (CES)",
@@ -1076,7 +1074,7 @@ const indicator_info = {
   "Tillgång till grönska i närområdet": {
     definition:
       "Andel invånare som har tillgång till grönområde inom 100 meter från bostaden.<br>Grönområde definieras som ett område av sammanhängande grönytor som uppgår till minst 0,5 hektar och som är allmänt tillgängligt. ",
-    källa: "Statistiska centralbyrån (SCB)\n",
+    källa: "Statistiska centralbyrån (SCB) ",
     läsa_mer_1_text:
       "Miljöhälsorapport Stockholms län 2021, Centrum för arbets- och miljömedicin (CAMM)",
     läsa_mer_1_link:
