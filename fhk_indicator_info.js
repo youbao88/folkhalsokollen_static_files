@@ -853,6 +853,7 @@ const indicator_info = {
       "https://www.mfof.se/foraldraskapsstod/arenor-for-foraldraskapsstod/modra--och-barnhalsovarden.html",
   },
   "Premenstruellt syndrom (PMS)": {
+    definition: "Andel (%) kvinnor i åldern 16–40 år som uppger att de har måttliga till svåra besvär av PMS"
     källa: "Region Stockholms folkhälsoenkät",
     läsa_mer_1_text:
       "Folkhälsorapport 2023 – Gynekologiska sjukdomar, Centrum för epidemiologi och samhällsmedicin (CES)",
