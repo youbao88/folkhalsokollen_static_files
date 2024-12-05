@@ -490,7 +490,7 @@ const indicator_name_parameter_map = {
       tabel_Kön: "Kvinnor",
     },
   },
-  "Deltagande i föräldraskapsstöd": {
+  "Deltagande i föräldraskapsstöd under graviditet": {
     karta: {
       karta_Tidsperiod: "2023",
       karta_Kön: "Kvinnor",
@@ -1847,7 +1847,7 @@ const indicator_name_parameter_map = {
       tabel_Kön: ["Kvinnor", "Män"],
     },
   },
-  Fallskada: {
+  "Fallskada (diagnostiserad)": {
     karta: {
       karta_Tidsperiod: "2022",
       karta_Kön: ["Kvinnor", "Män"],
