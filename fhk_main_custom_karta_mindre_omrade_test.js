@@ -459,7 +459,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   iframe = document.createElement("iframe");
   iframe.src =
-    "https://rawcdn.githack.com/youbao88/folkhalsokollen_static_files/cb60ff854ce087e4b99d71e2bb63dc3d920742e8/3rdpartycookiecheckstart.html";
+    "https://folkhalsokollen-static-files.pages.dev//3rdpartycookiecheckstart";
   iframe.style.display = "none";
   document.body.appendChild(iframe);
   var receiveMessage = function (evt) {
