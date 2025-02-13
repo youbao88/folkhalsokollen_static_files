@@ -1083,7 +1083,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
           e.target.title ==
           "Använd den här länken för att dela sidan med de data du har valt."
         ) {
-          let rx = /.+\/(.+)_selector.+/g;
+          let rx = /.+\/(.+)_selector/g;
           let current_visualization_type = rx.exec(
             document.getElementsByTagName("iframe")[0].src
           )[1];
