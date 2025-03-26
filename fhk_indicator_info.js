@@ -815,7 +815,7 @@ const indicator_info = {
   },
   Tandhälsa: {
     definition:
-      "Föräldraskapsstöd under graviditeten är en del av barnmorskemottagningarnas uppdrag. Syftet med föräldraskapsstödet är att främja barnets hälsa och utveckling genom att uppmärksamma och stärka föräldraskapet och föräldrars förmåga att möta det väntade barnet. Stödet innefattar både förlossnings- och föräldra\xadförberedelse. Stödet kan erbjudas i olika former: gruppträffar, storgruppsföreläsningar, enskilt stöd, digitala gruppträffar eller enskilt digitalt informationsstöd. Målsättningen är att föräldraskapsstöd ska erbjudas alla blivande och nyblivna föräldrar",
+      "Andel (%) individer som uppger att de har varken bra eller dålig, dålig eller mycket dålig tandhälsa.",
     källa: "Region Stockholms folkhälsoenkät",
     läsa_mer_1_text:
       "Tandhälsan hos barn och ungdomar i Stockholms län 2022. Raport, 2022, Hälso- och sjukvårdsförvaltningen, Region Stockholm.",
