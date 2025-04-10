@@ -2423,6 +2423,29 @@ const indicator_name_parameter_map = {
       tabel_Kön: ["Kvinnor", "Män"],
     },
   },
+ "Vaccination mot covid-19": {
+    karta: {
+      karta_Tidsperiod: "2024",
+      karta_Kön: ["Kvinnor", "Män"],
+      karta_Åldersgrupp: ["65+ år"],
+    },
+    stapel: {
+      stapel_Område: "Stockholms län",
+      stapel_Tidsperiod: "2024",
+      stapel_Kön: ["Kvinnor", "Män"],
+    },
+    linje: {
+      linje_Kön: ["Kvinnor", "Män"],
+      linje_Område: ["Stockholms län", "Botkyrka"],
+      linje_Åldersgrupp: ["65+ år"],
+    },
+    tabell: {
+      table_Tidsperiod: "2024",
+      table_Område: "Stockholms län",
+      tabel_Åldersgrupp: ["65+ år"],
+      tabel_Kön: ["Kvinnor", "Män"],
+    },
+  }
 };
 const indicator_init_map = {
   "Äldres hälsa": {

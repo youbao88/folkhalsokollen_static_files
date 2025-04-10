@@ -320,6 +320,23 @@ const indicator_info = {
     läsa_mer_4_link:
       "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20236-hur-mar-de-allra-aldsta/",
   },
+  "Vaccination mot covid-19": {
+    definition:
+      "Andel (%) individer, 65 år eller äldre, som har haft minst en vaccination mot covid-19 under året.",
+    källa: "VAL-databaserna ",
+    läsa_mer_1_text:
+      "Folkhälsomyndighetens samlingssida om vaccination mot covid-19",
+    läsa_mer_1_link:
+      "https://www.folkhalsomyndigheten.se/smittskydd-beredskap/vaccinationer/vacciner-som-anvands-i-sverige/covid-19/",
+    läsa_mer_2_text:
+      "Strategier för att öka vaccinationstäckningen – en kunskapsöversikt. Rapport 2022:7. Centrum för epidemiologi och samhällsmedicin (CES).",
+    läsa_mer_2_link:
+      "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20227-strategier-for-att-oka-vaccinationstackningen--en-kunskapsoversikt/",
+    läsa_mer_3_text:
+      "Budgetpåverkansanalys av vaccinationsprogram för äldre. Rapport 2023:3. Stockholm centrum för hälsoekonomi (StoCHE).",
+    läsa_mer_3_link:
+      "https://www.folkhalsoguiden.se/publikationer/chis-rapport-2023-budgetpaverkansanalys-vaccinationsprogram/",
+  },
   "Demens (diagnostiserad)": {
     definition:
       "Andel (%) individer, 65 år eller äldre, som vårdats inom regionfinansierad öppen- eller slutenvård med demens. Demens utgörs av demens vid Alzheimers sjukdom (ICD-10 F00), vaskulär demens (ICD-10 F01), demens vid andra sjukdomar (ICD-10 F02), ospecificerad demens (ICD-10 F03) samt, eller Alzheimers sjukdom (ICD-10 G30).\xa0",
