@@ -329,7 +329,7 @@ const indicator_info = {
     läsa_mer_1_link:
       "https://www.folkhalsomyndigheten.se/smittskydd-beredskap/vaccinationer/vacciner-som-anvands-i-sverige/covid-19/",
     läsa_mer_2_text:
-      "Strategier för att öka vaccinationstäckningen – en kunskapsöversikt. Rapport 2022:7. Centrum för epidemiologi och samhällsmedicin (CES).",
+      "Strategier för att öka vaccinationstäckningen – en kunskapsöversikt.  Rapport 2022:7. Centrum för epidemiologi och samhällsmedicin (CES).",
     läsa_mer_2_link:
       "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20227-strategier-for-att-oka-vaccinationstackningen--en-kunskapsoversikt/",
     läsa_mer_3_text:
@@ -1037,6 +1037,74 @@ const indicator_info = {
       "Luftföroreningar och hälsa. Fakablad 2018. Centrum för arbets- och miljömedicin (CAMM).",
     läsa_mer_4_link:
       "https://www.folkhalsoguiden.se/publikationer/luftfororeningar-och-halsa/",
+  },
+  "Besök i grönområde": {
+    definition:
+      "Andel (%) av befolkningen i Stockholms län som vistas i park, grönområde eller annan natur varje dag eller flera gånger per vecka under sommarhalvåret",
+    källa: "Miljöhälsoenkäten",
+    läsa_mer_1_text:
+      "Miljöhälsorapport Stockholms län 2017, Centrum för arbets- och miljömedicin (CAMM)",
+    läsa_mer_1_link:
+      "http://dok.slso.sll.se/CAMM/Rapportserien/2017/CAMM_miljoohalsorapport_webb.pdf",
+    läsa_mer_2_text:
+      "Miljöhälsorapport Stockholms län 2021, Centrum för arbets- och miljömedicin (CAMM)",
+    läsa_mer_2_link:
+      "https://www.camm.regionstockholm.se/4ae032/siteassets/camm-dokument/miljohalsorapport2021.pdf",
+    läsa_mer_3_text:
+      "Kapitlet om grönstruktur på Miljöhälsa Online, från Centrum för Arbets- och Miljömedicin",
+    läsa_mer_3_link:
+      "https://www.camm.regionstockholm.se/miljohalsa-online/gronstruktur/",
+  },
+  "Grönska på gångavstånd från bostaden": {
+    definition:
+      "Andel (%) av befolkningen i Stockholms län som har park, grönområde eller annan natur på gångavstånd från sin bostad",
+    källa: "Miljöhälsoenkäten",
+    läsa_mer_1_text:
+      "Miljöhälsorapport Stockholms län 2017, Centrum för arbets- och miljömedicin (CAMM)",
+    läsa_mer_1_link:
+      "http://dok.slso.sll.se/CAMM/Rapportserien/2017/CAMM_miljoohalsorapport_webb.pdf",
+    läsa_mer_2_text:
+      "Miljöhälsorapport Stockholms län 2021, Centrum för arbets- och miljömedicin (CAMM)",
+    läsa_mer_2_link:
+      "https://www.camm.regionstockholm.se/4ae032/siteassets/camm-dokument/miljohalsorapport2021.pdf",
+    läsa_mer_3_text:
+      "Kapitlet om grönstruktur på Miljöhälsa Online, från Centrum för Arbets- och Miljömedicin",
+    läsa_mer_3_link:
+      "https://www.camm.regionstockholm.se/miljohalsa-online/gronstruktur/",
+  },
+  "Störs av trafikbuller": {
+    definition:
+      "Andel (%) av befolkningen i Stockholms län som uppger att de är mycket eller väldigt mycket störda av trafikbuller (väg-, spår- och flygtrafik sammantaget) i eller i närheten av sin bostad",
+    källa: "Miljöhälsoenkäten",
+    läsa_mer_1_text:
+      "Miljöhälsorapport Stockholms län 2017, Centrum för arbets- och miljömedicin (CAMM)",
+    läsa_mer_1_link:
+      "http://dok.slso.sll.se/CAMM/Rapportserien/2017/CAMM_miljoohalsorapport_webb.pdf",
+    läsa_mer_2_text:
+      "Miljöhälsorapport Stockholms län 2021, Centrum för arbets- och miljömedicin (CAMM)",
+    läsa_mer_2_link:
+      "https://www.camm.regionstockholm.se/4ae032/siteassets/camm-dokument/miljohalsorapport2021.pdf",
+    läsa_mer_3_text:
+      "Kapitlet om buller i samhället på Miljöhälsa Online, från Centrum för Arbets- och Miljömedicin",
+    läsa_mer_3_link:
+      "https://www.camm.regionstockholm.se/miljohalsa-online/buller-i-samhallet/",
+  },
+  "Upplevelse av luftkvalitet": {
+    definition:
+      "Andel (%) av befolkningen i Stockholms län som rapporterar dålig eller mycket dålig luftkvalitet utomhus i närheten av sin bostad",
+    källa: "Miljöhälsoenkäten",
+    läsa_mer_1_text:
+      "Miljöhälsorapport Stockholms län 2017, Centrum för arbets- och miljömedicin (CAMM)",
+    läsa_mer_1_link:
+      "http://dok.slso.sll.se/CAMM/Rapportserien/2017/CAMM_miljoohalsorapport_webb.pdf",
+    läsa_mer_2_text:
+      "Miljöhälsorapport Stockholms län 2021, Centrum för arbets- och miljömedicin (CAMM)",
+    läsa_mer_2_link:
+      "https://www.camm.regionstockholm.se/4ae032/siteassets/camm-dokument/miljohalsorapport2021.pdf",
+    läsa_mer_3_text:
+      "Kapitlet om luftföroreningar utomhus på Miljöhälsa Online, från Centrum för Arbets- och Miljömedicin",
+    läsa_mer_3_link:
+      "https://www.camm.regionstockholm.se/miljohalsa-online/luftfororeningar-utomhus/",
   },
   "Tillgång till grönska i närområdet": {
     definition:
