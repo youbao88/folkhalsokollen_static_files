@@ -1089,7 +1089,7 @@ const indicator_info = {
     läsa_mer_3_link:
       "https://www.camm.regionstockholm.se/miljohalsa-online/buller-i-samhallet/",
   },
-  "Upplevelse av luftkvalitet": {
+  "Upplevelse av dålig luftkvalitet": {
     definition:
       "Andel (%) av befolkningen i Stockholms län som rapporterar dålig eller mycket dålig luftkvalitet utomhus i närheten av sin bostad",
     källa: "Miljöhälsoenkäten",
