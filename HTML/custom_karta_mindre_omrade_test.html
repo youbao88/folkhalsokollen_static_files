@@ -494,15 +494,19 @@ https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.css
             // "<i class='goBackButton fa-solid fa-arrow-rotate-left' title = 'Go back'></span>",
             function () {
               //Reset map
-
               current_value_max = Math.max.apply(
                 Math,
-                Object.values(first_level_data)
+                Object.values(first_level_data).filter(function (e) {
+                  return e !== ".";
+                })
               );
               current_value_min = Math.min.apply(
                 Math,
-                Object.values(first_level_data)
+                Object.values(first_level_data).filter(function (e) {
+                  return e !== ".";
+                })
               );
+
               if (first_value_sorted.includes(".")) {
                 isSupressed = true;
               } else {
