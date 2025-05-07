@@ -106,6 +106,26 @@ const indicator_info = {
     läsa_mer_1_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/sociala-och-ekonomiska-forutsattningar/utbildning/",
   },
+  Gymnasiebehörighet: {
+    definition:
+      "Procentandelen elever med ett slutbetyg från grundskolan som ger behörighet till något av de nationella gymnasieprogrammen (inkl. yrkesprogrammen), av de elever som slutfört sin grundskoleutbildning under våren respektive år. Uppgiften anges utifrån elevens boendeort, inte skolornas geografiska placering. </br></br>Notera: Måttet är inte helt jämförbart med Skolverkets statistik. Andelen behöriga påverkas bl. a. av andelen nyligen invandrade, med ofullständiga kunskaper i svenska",
+    källa: "Statistiska centralbyrån (SCB) ",
+    läsa_mer_1_text:
+      "Folkhälsorapport 2023 - Utbildning. Centrum för epidemiologi och samhällsmedicin (CES).",
+    läsa_mer_1_link:
+      "https://www.folkhalsorapportstockholm.se/rapporten2/sociala-och-ekonomiska-forutsattningar/utbildning/ ",
+    läsa_mer_2_text: "Beskrivande statistik, Skolverkets statistikrapporter",
+    läsa_mer_2_link:
+      "https://www.skolverket.se/publikationsserier/beskrivande-statistik",
+  },
+  Livsvillkorsindex: {
+    definition:
+      ' Livsvilkorindex är ett index som synliggör skillnader i sociala och ekonomiska förhållanden mellan bostadsområden. Indexet används bara för att jämföra olika områden med varandra och bygger på en sammanställning av sju olika variabler:<br><ol style="font-style: italic"><li>Andel som varit arbetslösa det senaste året;</li><li>Andel som erhållit ekonomiskt bistånd det senaste året;</li><li> Andel med förgymnasial utbildning;</li><li> Andel ensamstående föräldrar;</li><li> Andel utrikesfödda;</li><li> Medianinkomst;</li><li>Genomsnittlig boyta.</li></ol> Variablerna har standardiserats och vägts tillsammans för att sammanfatta så mycket av variationen i de olika variablerna som möjligt i ett index, ett så kallat livsvilkorindex. Indexet är ett relativt mått. Det innebär att ett områdes värde bara kan tolkas i jämförelse med andra områden som mäts med samma mått, och kan inte förstås som en oberoende siffra. Livsvillkorindexet är standardiserat så att det genomsnittliga värdet för Stockholms län är 100. Det innebär att alla områden som har ett värde under 100 präglas av mer sårbara livsvillkor än genomsnittet i länet och alla områden med värden över 100 präglas av mindre sårbara livsvillkor än genomsnittet i länet. Det vill säga, desto lägre värden, desto sämre är de genomsnittliga sociala och ekonomiska förhållanden i området (i termer av de sju variablerna som indexet bygger på) i jämförelse med andra områden i Stockholms län.',
+    källa: "Statistiska centralbyrån (SCB)",
+    läsa_mer_1_text:
+      "Länsstyrelsen Stockholm, 2024. Regional lägesbild: Om livsvillkor, brott, narkotika samt otrygghet i Stockholms län 2023.",
+    läsa_mer_1_link: "https://catalog.lansstyrelsen.se/store/39/resource/455",
+  },
   "Amning vid 4 månaders ålder": {
     definition:
       "Andel (%) barn inom barnhälsovården som enbart eller delvis får bröstmjölk vid fyra månaders ålder. Barn som får enbart bröstmjölk och eventuella mineraler, vitaminer eller läkemedel, räknas som enbart ammande barn. Barn som får bröstmjölk, men också smakportioner, välling, bröstmjölksersättning eller hela måltider bestående av annan kost räknas som delvis ammande. Observera att det kan förekomma brister i data för olika år och man ska vara försiktig med att dra slutsatser från de år och område det gäller för. Data är inkomplett eller osäkra för: Norrtälje (år 2016–2018), Sigtuna (år 2016), Vallentuna (2020), Sollentuna (2021–2022), Solna (2021–2022), Haninge (2021), Tyresö (2021), Kungsholmen (2022).",
@@ -123,6 +143,8 @@ const indicator_info = {
       "Årsrapport – barnhälsovård i Stockholms län 2023, Region Stockholm.",
     läsa_mer_1_link:
       "https://kunskapsstodforvardgivare.se/download/18.28eeaa311900ff142db87ea/1718694895552/%C3%85rsrapport%20Barnh%C3%A4lsov%C3%A5rd%C2%A02023.pdf",
+    läsa_mer_3_text: "Sluta-röka-linjen",
+    läsa_mer_3_link: "https://www.slutarokalinjen.se",
   },
   "Kariesfria 3-åringar": {
     definition:
@@ -163,6 +185,10 @@ const indicator_info = {
       "Strategier för att öka vaccinationstäckningen – en kunskapsöversikt. Rapport 2022:7. Centrum för epidemiologi och dsamhällsmedicin (CES).",
     läsa_mer_2_link:
       "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20227-strategier-for-att-oka-vaccinationstackningen--en-kunskapsoversikt/",
+    läsa_mer_3_text:
+      "Att främja vaccinationer. Rapport 2024:6. Cetrum för epidemiologi och samhällsmedicin (CES)",
+    läsa_mer_3_link:
+      "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20256-att-framja-vaccinationer/",
   },
   "Röstande i kommunval": {
     definition:
@@ -500,16 +526,13 @@ const indicator_info = {
       "Nationella riktlinjer för vård vid depression och ångestsyndrom, Socialstyrelsen",
     läsa_mer_2_link:
       "https://www.socialstyrelsen.se/kunskapsstod-och-regler/regler-och-riktlinjer/nationella-riktlinjer/riktlinjer-och-utvarderingar/depression-och-angest/",
-    läsa_mer_3_text: "Regionalt vårdprogram för depression, Region Stockholm",
-    läsa_mer_3_link:
-      "https://psykiatristod.se/regionala-vardprogram/depression",
-    läsa_mer_4_text:
+    läsa_mer_3_text:
       "Stigma kring psykisk ohälsa. Rapport 2023:6. Centrum för epidemiologi och samhällsmedicin (CES).",
-    läsa_mer_4_link:
+    läsa_mer_3_link:
       "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20236-stigma-kring-psykisk-ohalsa/",
-    läsa_mer_5_text:
+    läsa_mer_4_text:
       "Förekomst av ångestdiagnos bland unga i Stockholms län. Rapport 2024:3. Centrum för epidemiologi och samhällsmedicin (CES).",
-    läsa_mer_5_link:
+    läsa_mer_4_link:
       "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20243-forekomst-av-angestdiagnos-bland-unga-i-stockholms-lan/",
   },
   "Adhd (diagnostiserad)": {
@@ -524,6 +547,23 @@ const indicator_info = {
       "Autismspektrumtillstånd och adhd bland vuxna i Stockholms län Förekomst av diagnoser i befolkningen samt vårdkonsumtion. Rapport 2022, Centrum för epidemiologi och samhällsmedicin (CES)",
     läsa_mer_2_link:
       "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20232-autismspektrumtillstand-och-adhd-bland-vuxna-i-stockholms-lan/",
+  },
+  "Beroende och skadligt bruk (diagnostiserad)": {
+    definition:
+      "Andel (%) individer, 18 år eller äldre, som vårdats inom regionfinansierad öppen- eller slutenvård med diagnosen psykiska störningar och beteendestörningar orsakade av psykoaktiva substanser (ICD-10-diagnos F10-F16, F18-F19).Denna diagnosgrupp innehåller huvudsakligen psykiska problem orsakade av beroende och skadligt bruk av alkohol eller droger.<br><br>Observera att eftersom data bygger på rapporterade diagnoser från vården skulle skillnader mellan områden eller över tid, delvis kunna bero på skillnader i registreringen av diagnoser. Måttet redovisar individer med en registrerad diagnos och täcker därför inte hela andelen som har problem. De som inte söker vård för sina problem får heller ingen registrerad diagnos. Säkerheten i talen är mindre i de kommuner eller stadsdelar med en mindre befolkningsstorlek, som till exempel i Salem, Nykvarn och Vaxholm.",
+    källa: "VAL-databaserna",
+    läsa_mer_1_text:
+      "Folkhälsorapport 2023 – Alkoholvanor, Centrum för epidemiologi och samhällsmedicin (CES)",
+    läsa_mer_1_link:
+      "https://www.folkhalsorapportstockholm.se/rapporten2/levnadsvanor/alkoholvanor/",
+    läsa_mer_2_text:
+      "Folkhälsorapport 2023 – Narkotikavanor, Centrum för epidemiologi och samhällsmedicin (CES)",
+    läsa_mer_2_link:
+      "https://www.folkhalsorapportstockholm.se/rapporten2/levnadsvanor/droganvandning/",
+    läsa_mer_3_text:
+      "Nationella riktlinjer för vård och stöd vid missbruk och beroende, Socialstyrelsen",
+    läsa_mer_3_link:
+      "https://www.socialstyrelsen.se/globalassets/sharepoint-dokument/artikelkatalog/nationella-riktlinjer/2019-1-16.pdf",
   },
   "Autismspektrumtillstånd (diagnostiserad)": {
     definition:
@@ -750,7 +790,7 @@ const indicator_info = {
     läsa_mer_2_link:
       "https://www.folkhalsoguiden.se/4a4d82/globalassets/verksamheter/forskning-och-utveckling/centrum-for-epidemiologi-och-samhallsmedicin/folkhalsoguiden/rapporter-och-faktablad/rapport-2023.6-hur-mar-de-allra-aldsta-i-stockholms-lan.pdf",
     läsa_mer_3_text:
-      "Personer med omfattande funktionsnedsättning i Stockholms län. Rapport 2023:9. Centrum för epidemiologi och samhällsmedicin (CES)",
+      "Personer med omfattande funktionsnedsättning i Stockholms län. Rapport 2023:9. Centrum för epidemiologi och samhällsmedicin (CES).",
     läsa_mer_3_link:
       "\nhttps://www.folkhalsoguiden.se/publikationer/ces-rapport-20239-personer-med-omfattande-funktionsnedsattning-i-stockholms-lan/",
   },
@@ -780,10 +820,6 @@ const indicator_info = {
       "Folkhälsorapport 2023 – Smärta, Centrum för epidemiologi och samhällsmedicin (CES)",
     läsa_mer_1_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/sjukdomar-och-skador/smarta/",
-    läsa_mer_2_text:
-      "Nacksmärta – orsaker och åtgärder. Rapport 2019:1, Centrum för epidemiologi och samhällsmedicin (CES).",
-    läsa_mer_2_link:
-      "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20191-nacksmarta--orsaker-och-atgarder/",
   },
   "Huvudvärk eller migrän": {
     definition:
@@ -816,7 +852,6 @@ const indicator_info = {
     läsa_mer_2_link:
       "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20223-den-ojamlika-obesitasvarden/",
   },
-  nan: {},
   "Premenstruellt syndrom (PMS)": {
     definition:
       "Andel (%) kvinnor i åldern 16–40 år som uppger att de har måttliga till svåra besvär av PMS",
@@ -866,7 +901,11 @@ const indicator_info = {
     läsa_mer_1_text:
       "Folkhälsorapport 2023 – Hjärtinfarkt och stroke, Centrum för epidemiologi och samhällsmedicin (CES)",
     läsa_mer_1_link:
-      "https://www.folkhalsorapportstockholm.se/rapporten/sjukdomar-och-skador/hjartinfarkt-och-stroke/",
+      "\nhttps://www.folkhalsorapportstockholm.se/rapporten2/sjukdomar-och-skador/hjartinfarkt-och-stroke/",
+    läsa_mer_2_text:
+      "Screening av hypertoni vid Region Stockholms vårdcentraler. Rapport 2025:1. Centrum för epidemiologi och samhällsmedicin (CES).",
+    läsa_mer_2_link:
+      "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20251-screening-av-hypertoni/",
   },
   "Stroke (ålder nyinsjuknade)": {
     definition:
@@ -876,6 +915,10 @@ const indicator_info = {
       "Folkhälsorapport 2023 – Hjärtinfarkt och stroke, Centrum för epidemiologi och samhällsmedicin (CES)",
     läsa_mer_1_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/sjukdomar-och-skador/hjartinfarkt-och-stroke/",
+    läsa_mer_2_text:
+      "Screening av hypertoni vid Region Stockholms vårdcentraler. Rapport 2025:1. Centrum för epidemiologi och samhällsmedicin (CES).",
+    läsa_mer_2_link:
+      "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20251-screening-av-hypertoni/",
   },
   Lungcancer: {
     definition:
@@ -886,7 +929,7 @@ const indicator_info = {
     läsa_mer_1_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/sjukdomar-och-skador/cancer/ ",
     läsa_mer_2_text:
-      "Regional cancerplan Stockholm-Gotland 20204–2027, Regionalt cancercentrum Stockholm Gotland",
+      "Regional cancerplan Stockholm-Gotland 2024–2027, Regionalt cancercentrum Stockholm Gotland",
     läsa_mer_2_link:
       "https://cancercentrum.se/contentassets/c17be38bac8443d3b3e7599d5f58d13a/sjukvardsregional-cancerplan-2024-2027.pdf",
   },
@@ -928,6 +971,10 @@ const indicator_info = {
       "Regional cancerplan Stockholm-Gotland 2024–2027, Regionalt cancercentrum Stockholm Gotland",
     läsa_mer_2_link:
       "https://cancercentrum.se/contentassets/c17be38bac8443d3b3e7599d5f58d13a/sjukvardsregional-cancerplan-2024-2027.pdf",
+    läsa_mer_3_text:
+      "Mäns erfarenheter av organiserad prostatacancertestning. Rapport 2024:5. Centrum för epidemiologi och samhällsmedicin (CES).",
+    läsa_mer_3_link:
+      "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20245mans-erfarenheter-av--organiserad--prostatacancertestning/",
   },
   "Malignt hudmelanom": {
     definition: "Antal nya fall av malignt hudmelanom per 100 000 invånare.",
@@ -958,26 +1005,6 @@ const indicator_info = {
       "Rapporter om covid-19, utgivna av Centrum för epidemiologi och samhällsmedicin (CES).",
     läsa_mer_1_link:
       "https://www.ces.regionstockholm.se/rapporter/rapporter-om-covid-19/",
-  },
-  Gymnasiebehörighet: {
-    definition:
-      "Procentandelen elever med ett slutbetyg från grundskolan som ger behörighet till något av de nationella gymnasieprogrammen (inkl. yrkesprogrammen), av de elever som slutfört sin grundskoleutbildning under våren respektive år. Uppgiften anges utifrån elevens boendeort, inte skolornas geografiska placering. </br></br>Notera: Måttet är inte helt jämförbart med Skolverkets statistik. Andelen behöriga påverkas bl. a. av andelen nyligen invandrade, med ofullständiga kunskaper i svenska",
-    källa: "Statistiska centralbyrån (SCB) ",
-    läsa_mer_1_text:
-      "Folkhälsorapport 2023 - Utbildning. Centrum för epidemiologi och samhällsmedicin (CES).",
-    läsa_mer_1_link:
-      "https://www.folkhalsorapportstockholm.se/rapporten2/sociala-och-ekonomiska-forutsattningar/utbildning/ ",
-    läsa_mer_2_text: "Beskrivande statistik, Skolverkets statistikrapporter",
-    läsa_mer_2_link:
-      "https://www.skolverket.se/publikationsserier/beskrivande-statistik",
-  },
-  Livsvillkorsindex: {
-    definition:
-      ' Livsvilkorindex är ett index som synliggör skillnader i sociala och ekonomiska förhållanden mellan bostadsområden. Indexet används bara för att jämföra olika områden med varandra och bygger på en sammanställning av sju olika variabler:<br><ol style="font-style: italic"><li>Andel som varit arbetslösa det senaste året;</li><li>Andel som erhållit ekonomiskt bistånd det senaste året;</li><li> Andel med förgymnasial utbildning;</li><li> Andel ensamstående föräldrar;</li><li> Andel utrikesfödda;</li><li> Medianinkomst;</li><li>Genomsnittlig boyta.</li></ol> Variablerna har standardiserats och vägts tillsammans för att sammanfatta så mycket av variationen i de olika variablerna som möjligt i ett index, ett så kallat livsvilkorindex. Indexet är ett relativt mått. Det innebär att ett områdes värde bara kan tolkas i jämförelse med andra områden som mäts med samma mått, och kan inte förstås som en oberoende siffra. Livsvillkorindexet är standardiserat så att det genomsnittliga värdet för Stockholms län är 100. Det innebär att alla områden som har ett värde under 100 präglas av mer sårbara livsvillkor än genomsnittet i länet och alla områden med värden över 100 präglas av mindre sårbara livsvillkor än genomsnittet i länet. Det vill säga, desto lägre värden, desto sämre är de genomsnittliga sociala och ekonomiska förhållanden i området (i termer av de sju variablerna som indexet bygger på) i jämförelse med andra områden i Stockholms län.',
-    källa: "Statistiska centralbyrån (SCB)",
-    läsa_mer_1_text:
-      "Länsstyrelsen Stockholm, 2024. Regional lägesbild: Om livsvillkor, brott, narkotika samt otrygghet i Stockholms län 2023.",
-    läsa_mer_1_link: "https://catalog.lansstyrelsen.se/store/39/resource/455",
   },
   "Besvär av trafikbuller i bostad": {
     definition:
@@ -1072,7 +1099,7 @@ const indicator_info = {
     läsa_mer_3_link:
       "https://www.camm.regionstockholm.se/miljohalsa-online/gronstruktur/",
   },
-  "Störs av trafikbuller": {
+  "Störs mycket av trafikbuller": {
     definition:
       "Andel (%) av befolkningen i Stockholms län som uppger att de är mycket eller väldigt mycket störda av trafikbuller (väg-, spår- och flygtrafik sammantaget) i eller i närheten av sin bostad",
     källa: "Miljöhälsoenkäten",
@@ -1106,9 +1133,9 @@ const indicator_info = {
     läsa_mer_3_link:
       "https://www.camm.regionstockholm.se/miljohalsa-online/luftfororeningar-utomhus/",
   },
-  "Tillgång till grönska i närområdet": {
+  "Grönska på gångavstånd från bostaden saknas": {
     definition:
-      "Andel invånare som har tillgång till grönområde inom 100 meter från bostaden.<br>Grönområde definieras som ett område av sammanhängande grönytor som uppgår till minst 0,5 hektar och som är allmänt tillgängligt. ",
+      "Andel (%) av befolkningen i Stockholms län som anger att grönområde på gångavstånd från bostaden saknas",
     källa: "Statistiska centralbyrån (SCB)\n",
     läsa_mer_1_text:
       "Miljöhälsorapport Stockholms län 2021, Centrum för arbets- och miljömedicin (CAMM)",
@@ -1125,23 +1152,6 @@ const indicator_info = {
       "Tillgång till bostadsnära grönska i befolkningen. Rapport 2022:04. Centrum för arbets- och miljömedicin (CAMM).",
     läsa_mer_4_link:
       "https://www.folkhalsoguiden.se/publikationer/camm-rapport-2022-tillgang-till-bostadsnara--gronska-i-befolkningen/",
-  },
-  "Beroende och skadligt bruk (diagnostiserad)": {
-    definition:
-      "Andel (%) individer, 18 år eller äldre, som vårdats inom regionfinansierad öppen- eller slutenvård med diagnosen psykiska störningar och beteendestörningar orsakade av psykoaktiva substanser (ICD-10-diagnos F10-F16, F18-F19).Denna diagnosgrupp innehåller huvudsakligen psykiska problem orsakade av beroende och skadligt bruk av alkohol eller droger.<br><br>Observera att eftersom data bygger på rapporterade diagnoser från vården skulle skillnader mellan områden eller över tid, delvis kunna bero på skillnader i registreringen av diagnoser. Måttet redovisar individer med en registrerad diagnos och täcker därför inte hela andelen som har problem. De som inte söker vård för sina problem får heller ingen registrerad diagnos. Säkerheten i talen är mindre i de kommuner eller stadsdelar med en mindre befolkningsstorlek, som till exempel i Salem, Nykvarn och Vaxholm.",
-    källa: "VAL-databaserna",
-    läsa_mer_1_text:
-      "Folkhälsorapport 2023 – Alkoholvanor, Centrum för epidemiologi och samhällsmedicin (CES)",
-    läsa_mer_1_link:
-      "https://www.folkhalsorapportstockholm.se/rapporten2/levnadsvanor/alkoholvanor/",
-    läsa_mer_2_text:
-      "Folkhälsorapport 2023 – Narkotikavanor, Centrum för epidemiologi och samhällsmedicin (CES)",
-    läsa_mer_2_link:
-      "https://www.folkhalsorapportstockholm.se/rapporten2/levnadsvanor/droganvandning/",
-    läsa_mer_3_text:
-      "Nationella riktlinjer för vård och stöd vid missbruk och beroende, Socialstyrelsen",
-    läsa_mer_3_link:
-      "https://www.socialstyrelsen.se/globalassets/sharepoint-dokument/artikelkatalog/nationella-riktlinjer/2019-1-16.pdf",
   },
   "Röker e-cigaretter (grundskola åk 9)": {
     definition:
