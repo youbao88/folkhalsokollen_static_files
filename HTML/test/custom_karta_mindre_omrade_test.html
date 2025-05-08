@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+  <script src="
+https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.js
+"></script>
+  <link
+    href="
+https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.css
+"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/leaflet-gesture-handling@1.2.2/dist/leaflet-gesture-handling.min.css"
+    type="text/css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/leaflet-gesture-handling@1.2.2/dist/leaflet-gesture-handling.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+  <script src="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-image/v0.0.4/leaflet-image.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+  <script
+    src="https://kit.fontawesome.com/f12bd0d7ad.js"
+    crossorigin="anonymous"
+  ></script>
+  <style>
+    body {
+      font-family: Arial, Verdana, Helvetica;
+      font-size: 0.9rem;
+      background-color: transparent;
+    }
+
+    .main-container {
+      background-color: transparent;
+      margin: auto;
+      width: 85%;
+    }
+
+    .report-col {
+      height: 700px;
+    }
+
+    .blank-row {
+      height: 10px;
+    }
+
+    .sas_components-Pane-Pane_pane {
+      --pane-bg: transparent !important;
+    }
+
+    .visualization {
+      margin: auto;
+      padding: 3px;
+    }
+
+    #back_btn {
+      display: none;
+      position: absolute;
+      z-index: 10;
+      top: 12%;
+      left: 5%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      background-color: #f1f1f1;
+      color: black;
+      font-size: 16px;
+      padding: 10px 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      text-align: center;
+      border: solid;
+      border-width: thin;
+    }
+
+    #back_btn:hover {
+      background-color: black;
+      color: white;
+    }
+
+    .info {
+      padding: 10px 10px;
+      font: 14px Arial, Helvetica, sans-serif;
+      background: white;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      opacity: 0.9;
+    }
+
+    .legend {
+      font: 14px Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      border-width: 0cm;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      line-height: 18px;
+      color: black;
+      background-color: white;
+      opacity: 0.9;
+      padding: 10px;
+    }
+
+    .legend i {
+      width: 18px;
+      height: 18px;
+      float: left;
+      margin-right: 8px;
+      opacity: 0.9;
+    }
+
+    .leaflet-container {
+      background-color: rgba(255, 0, 0, 0);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="visualization" style="width: 100%; display: flex">
+    <div style="width: 50%; height: 96vh" id="karta"></div>
+    <div style="width: 50%; height: 96vh">
+      <canvas id="karta_stapel"></canvas>
+    </div>
+  </div>
+  <script>
+    //Add event listener for sas va compoenent
+    if (window.addEventListener) {
+      // For standards-compliant web browsers
+      window.addEventListener("message", onMessage, false);
+    } else {
+      window.attachEvent("onmessage", onMessage);
+    }
+    var mymap;
+    var barchart;
+    var isOnKommun = true;
+
+    var first_label_sorted;
+    var first_value_sorted;
+    var geojson;
+    var first_level_data;
+    var first_backgroundColor;
+    var stockholm_kommun_sorted;
+
+    var second_label;
+    var second_json_data;
+    var second_label;
+    var second_level_data;
+    var second_label_sorted;
+    var second_value_sorted;
+    var current_value_max;
+    var current_value_min;
+    var isSupressed;
+    var legend;
+    var info;
+    var currentjson;
+    var tileLayer;
+    var isOnMindre;
+    var event_rows;
+
+    //List of Stockholm stadsdelar
+    const stadsdelarList = [
+      "Bromma",
+      "Enskede-Årsta-Vantör",
+      "Farsta",
+      "Hägersten-Älvsjö",
+      "Hässelby-Vällingby",
+      "Kungsholmen",
+      "Norra innerstaden",
+      "Järva",
+      "Skarpnäck",
+      "Skärholmen",
+      "Södermalm",
+    ];
+    //List of Stockholm kommun
+    const firstLevelAreaList = [
+      "Botkyrka",
+      "Bromma",
+      "Danderyd",
+      "Ekerö",
+      "Enskede-Årsta-Vantör",
+      "Farsta",
+      "Haninge",
+      "Huddinge",
+      "Hägersten-Älvsjö",
+      "Hässelby-Vällingby",
+      "Järfälla",
+      "Kungsholmen",
+      "Lidingö",
+      "Nacka",
+      "Norra innerstaden",
+      "Norrtälje",
+      "Nykvarn",
+      "Nynäshamn",
+      "Salem",
+      "Sigtuna",
+      "Skarpnäck",
+      "Skärholmen",
+      "Sollentuna",
+      "Solna",
+      "Järva",
+      "Sundbyberg",
+      "Södermalm",
+      "Södertälje",
+      "Tyresö",
+      "Täby",
+      "Upplands Väsby",
+      "Upplands-Bro",
+      "Vallentuna",
+      "Vaxholm",
+      "Värmdö",
+      "Österåker",
+      "Stockholms län",
+      "Stockholms stad",
+    ];
+    const firstlevellist = [];
+
+    //Get shape file
+    async function getJson() {
+      let response = await fetch(
+        "https://cdn.statically.io/gh/youbao88/folkhalsokollen_static_files/96b15ee1b709542d2b2388095be5ac0409fbc071/fhk_karta_merged_240531.json"
+      );
+      let data = await response.json();
+      return data;
+    }
+
+    async function onMessage(event) {
+      if (event && event.data && event.data.data) {
+        //Use the length of the data (number of areas) to determain if the indicator supports mindre område
+        if (event.data.data.length <= 40) {
+          isOnMindre = false;
+        } else {
+          isOnMindre = true;
+        }
+
+        //Create empty first_level_data object to store the first level (kommun) data
+        first_level_data = {};
+        const stockholm_json = await getJson();
+
+        event_rows = event.data.data;
+        //Put data into first_level_data object by whose key is the area name and the value is the indicator value
+        for (let i = 0; i < event_rows.length; i++) {
+          if (firstLevelAreaList.includes(event_rows[i][2])) {
+            if (first_level_data[event_rows[i][2]] == undefined) {
+              first_level_data[event_rows[i][2]] = event_rows[i][1];
+            } else {
+              first_level_data[event_rows[i][2]] += event_rows[i][1];
+            }
+          }
+        }
+
+        //Round the values in two digit decimal place
+        for (let objectName in first_level_data) {
+          if (first_level_data[objectName] != ".") {
+            first_level_data[objectName] =
+              Math.round(first_level_data[objectName] * 100) / 100;
+          }
+        }
+
+        //Get unit info
+        let unit = event_rows[0][0];
+
+        //Create a function for bar chart display color
+        function generate_color(labels) {
+          let output = [];
+          for (let i = 0; i < labels.length; i++) {
+            if (labels[i] == "Stockholms län") {
+              output.push("rgba(101, 29, 120, 0.8)");
+            } else {
+              output.push("rgba(176,183,194, 0.8)");
+            }
+          }
+          return output;
+        }
+
+        //Create a function for bar chart hover color
+        function generate_hover_color(labels) {
+          let output = [];
+          for (let i = 0; i < labels.length; i++) {
+            if (labels[i] == "Stockholms län") {
+              output.push("rgba(62, 20, 73, 0.9)");
+            } else {
+              output.push("rgba(98,98,98, 0.9)");
+            }
+          }
+          return output;
+        }
+
+        //Sort the values in the first_level_data and return label name
+        first_label_sorted = Object.keys(first_level_data).sort(function (
+          a,
+          b
+        ) {
+          if (first_level_data[a] == ".") return 1;
+          if (first_level_data[b] == ".") return -1;
+          return first_level_data[b] - first_level_data[a];
+        });
+
+        //Sort the values in the first_level_data and return the value
+        first_value_sorted = Object.values(first_level_data).sort(function (
+          a,
+          b
+        ) {
+          if (a == ".") return 1;
+          if (b == ".") return -1;
+          return b - a;
+        });
+        //Determain if the data contains 'missing value'(.)
+        if (first_value_sorted.includes(".")) {
+          isSupressed = true;
+        } else {
+          isSupressed = false;
+        }
+
+        //Get the max and min value
+        current_value_max = Math.max.apply(
+          Math,
+          Object.values(first_level_data).filter(function (e) {
+            return e !== ".";
+          })
+        );
+        current_value_min = Math.min.apply(
+          Math,
+          Object.values(first_level_data).filter(function (e) {
+            return e !== ".";
+          })
+        );
+
+        first_backgroundColor = generate_color(first_label_sorted);
+        let current_bar_selection_index = null;
+        let current_choro_selection_index = null;
+        let stockholm_kommun = stockholm_json["stockholm län"].features;
+        stockholm_kommun_sorted = stockholm_kommun.sort(
+          (a, b) =>
+            first_label_sorted.indexOf(a.properties.omr_namn) -
+            first_label_sorted.indexOf(b.properties.omr_namn)
+        );
+        for (let i = 0; i < stockholm_kommun_sorted.length; i++) {
+          omrade = stockholm_kommun_sorted[i].properties.omr_namn;
+          stockholm_kommun_sorted[i].properties.value =
+            first_level_data[omrade];
+        }
+        if (
+          typeof mymap == "undefined" ||
+          !(isOnKommun == false && isOnMindre == true)
+        ) {
+          if (typeof mymap != "undefined") {
+            mymap.gestureHandling.disable();
+            mymap.remove();
+          }
+          if (barchart !== undefined && barchart !== null) {
+            barchart.destroy();
+          }
+          const southWest = L.latLng(58.718, 16.858);
+          const northEast = L.latLng(60.249, 19.526);
+          const bounds = L.latLngBounds(southWest, northEast);
+
+          // For the choropleth
+          mymap = L.map("karta", {
+            attributionControl: false,
+            preferCanvas: true,
+            gestureHandling: true,
+            gestureHandlingOptions: {
+              text: {
+                touch: "Använd två fingrar för att flytta kartan",
+                scroll: "Använd ctrl + scroll för att zooma på kartan",
+                scrollMac: "Använd \u2318 + scroll för att zooma på kartan",
+              },
+              duration: 1500,
+            },
+          })
+            .setMaxBounds(bounds)
+            .setView([59.5, 18.15], 8, {
+              animate: false,
+            });
+
+          tileLayer = L.tileLayer(
+            "https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
+            {
+              id: "outdoors-v11",
+              accessToken:
+                "pk.eyJ1IjoibWluaGFvemhvdSIsImEiOiJjbDZkcDUwdTMwMDlhM2txYzVnNjlndGJ1In0.pNM75PZvZEXrzCAPnYKpbg",
+              maxZoom: 19,
+              tileSize: 512,
+              zoomOffset: -1,
+            }
+          );
+
+          function getColor(d) {
+            let interval = (current_value_max - current_value_min) / 5;
+            return d == "."
+              ? "#D3D3D3"
+              : d >= current_value_min + 4 * interval
+              ? "#297b7b"
+              : d >= current_value_min + 3 * interval
+              ? "#529494"
+              : d >= current_value_min + 2 * interval
+              ? "#7fb0b0"
+              : d >= current_value_min + 1 * interval
+              ? "#c3dada"
+              : d >= current_value_min
+              ? "#e2eded"
+              : "#ffffff";
+          }
+
+          function style(feature) {
+            return {
+              fillColor: getColor(feature.properties.value),
+              weight: 2,
+              opacity: 1,
+              color: "rgb(245, 243, 240, 0.8)",
+              weight: 2,
+              fillOpacity: 0.85,
+            };
+          }
+
+          function style_transparent(feature) {
+            return {
+              fillColor: getColor(feature.properties.value),
+              weight: 2,
+              opacity: 1,
+              color: "rgb(245, 243, 240, 0.8)",
+              weight: 2,
+              fillOpacity: 0.8,
+            };
+          }
+
+          function simple_style() {
+            return {
+              fillColor: "#909090",
+              opacity: 1,
+              color: "#000000",
+              weight: 1,
+              fillOpacity: 0.8,
+            };
+          }
+
+          //Create dynamic info div when hovered
+          info = L.control();
+
+          info.onAdd = function (map) {
+            this._div = L.DomUtil.create("div", "info arrow-bottom"); // create a div with a class "info"
+            this.update();
+            return this._div;
+          };
+
+          // method that we will use to update the control based on feature properties passed
+          info.update = function (props) {
+            this._div.innerHTML = props
+              ? "<b>Område:</b>" +
+                props.omr_namn +
+                "<br /><b> Värde: </b>" +
+                (props.value == "."
+                  ? "*"
+                  : props.value.toLocaleString("sv-SE", {
+                      minimumFractionDigits: 2,
+                      maximumFractionDigits: 2,
+                    })) +
+                "</br><b>Enhet: </b>" +
+                unit
+              : " ";
+          };
+
+          //Create static info div when clicked
+          let infoClicked = L.control({
+            position: "bottomleft",
+          });
+
+          infoClicked.onAdd = function (map) {
+            this._div = L.DomUtil.create("div", "info arrow-bottom"); // create a div with a class "info"
+            this.update();
+            return this._div;
+          };
+
+          // method that we will use to update the control based on feature properties passed
+          infoClicked.update = function (omrade) {
+            this._div.innerHTML = omrade ? "<b>" + omrade + "</b>" : "";
+          };
+
+          //Initialize center button
+          let centerButton = L.easyButton(
+            "<span class='fas fa-arrow-rotate-right' title = 'Uppdatera kartan'></span>",
+            function () {
+              //center the view
+              mymap.fitBounds(currentjson.getBounds());
+            }
+          );
+          centerButton.addTo(mymap);
+          //Initialize go-back button
+          let goBackButton = L.easyButton(
+            "<span class='fas fa-arrow-left' title = 'Gå bakåt'></span>",
+            // "<i class='goBackButton fa-solid fa-arrow-rotate-left' title = 'Go back'></span>",
+            function () {
+              //Reset map
+              current_value_max = Math.max.apply(
+                Math,
+                Object.values(first_level_data).filter(function (e) {
+                  return e !== ".";
+                })
+              );
+              current_value_min = Math.min.apply(
+                Math,
+                Object.values(first_level_data).filter(function (e) {
+                  return e !== ".";
+                })
+              );
+
+              if (first_value_sorted.includes(".")) {
+                isSupressed = true;
+              } else {
+                isSupressed = false;
+              }
+
+              secondjson.remove();
+              simpleGeojson.remove();
+              tileLayer.remove();
+              geojson = L.geoJson(stockholm_kommun_sorted, {
+                style: style,
+                onEachFeature: onEachFeature,
+              });
+              geojson.addTo(mymap);
+              legend.remove();
+              legend.addTo(mymap);
+              infoClicked.remove();
+              currentjson = geojson;
+              isOnKommun = true;
+              mymap.fitBounds(geojson.getBounds());
+
+              //Reset barchart
+              barchart.config.data = {
+                responsive: true,
+                labels: first_label_sorted,
+                datasets: [
+                  {
+                    label: "Värde",
+                    data: first_value_sorted.map(function (item) {
+                      return item == "." ? null : item;
+                    }),
+                    backgroundColor: generate_color(first_label_sorted),
+                    borderColor: generate_color(first_label_sorted),
+                    borderWidth: 1,
+                    hoverBackgroundColor:
+                      generate_hover_color(first_label_sorted),
+                  },
+                ],
+              };
+              barchart.update();
+
+              goBackButton.remove();
+
+              simpleGeojson = L.geoJson(stockholm_kommun_sorted, {
+                style: simple_style,
+              });
+            }
+          );
+
+          function highlightFeature(e) {
+            let layer = e.target;
+
+            layer.setStyle({
+              weight: 3,
+              color: "#666",
+              dashArray: "",
+              fillOpacity: 0.9,
+            });
+
+            if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+              layer.bringToFront();
+            }
+
+            info.addTo(mymap);
+            info.update(layer.feature.properties);
+
+            barchart.setActiveElements([
+              {
+                datasetIndex: 0,
+                index: barchart.data.labels.indexOf(
+                  layer.feature.properties.omr_namn
+                ),
+              },
+            ]);
+            barchart.tooltip.setActiveElements([
+              {
+                datasetIndex: 0,
+                index: barchart.data.labels.indexOf(
+                  layer.feature.properties.omr_namn
+                ),
+              },
+            ]);
+            barchart.update("none");
+          }
+
+          function resetHighlight(e) {
+            if (mymap.hasLayer(geojson)) {
+              geojson.resetStyle();
+            } else {
+              if (mymap.hasLayer(secondjson)) {
+                secondjson.resetStyle();
+              }
+            }
+            info.remove();
+            barchart.setActiveElements([]);
+            barchart.tooltip.setActiveElements([]);
+            barchart.update("none");
+          }
+
+          if (isOnMindre) {
+            function zoomToFeature(e) {
+              let clickedOmrade;
+              if (e.target) {
+                clickedOmrade = e.target.feature.properties.omr_namn;
+              } else {
+                clickedOmrade = barchart.data.labels[e[0].index];
+              }
+              if (
+                isOnKommun &
+                (clickedOmrade != "Stockholms län") &
+                (clickedOmrade != "Stockholms stad")
+              ) {
+                //Delete original layer and add detail layer
+                geojson.remove(); //Remove main layer
+                simpleGeojson.remove();
+                second_json_data = stockholm_json[clickedOmrade].features; //Get geojson data for each clicked area
+                second_label = [];
+                for (let i = 0; i < second_json_data.length; i++) {
+                  second_label.push(second_json_data[i].properties.omr_namn);
+                }
+
+                second_level_data = {};
+                for (let i = 0; i < event_rows.length; i++) {
+                  if (second_label.includes(event_rows[i][2])) {
+                    second_level_data[event_rows[i][2]] = event_rows[i][1];
+                  }
+                }
+                for (let objectName in second_level_data) {
+                  if (second_level_data[objectName] != ".") {
+                    second_level_data[objectName] =
+                      Math.round(second_level_data[objectName] * 100) / 100;
+                  }
+                }
+                second_label_sorted = Object.keys(second_level_data).sort(
+                  function (a, b) {
+                    if (second_level_data[a] == ".") return 1;
+                    if (second_level_data[b] == ".") return -1;
+                    return second_level_data[b] - second_level_data[a];
+                  }
+                );
+                second_value_sorted = Object.values(second_level_data).sort(
+                  function (a, b) {
+                    if (a == ".") return 1;
+                    if (b == ".") return -1;
+                    return b - a;
+                  }
+                );
+
+                current_value_max = Math.max.apply(
+                  Math,
+                  Object.values(second_level_data).filter(function (e) {
+                    return e !== ".";
+                  })
+                );
+                current_value_min = Math.min.apply(
+                  Math,
+                  Object.values(second_level_data).filter(function (e) {
+                    return e !== ".";
+                  })
+                );
+                if (second_value_sorted.includes(".")) {
+                  isSupressed = true;
+                } else {
+                  isSupressed = false;
+                }
+                let second_backgroundColor =
+                  generate_color(second_label_sorted);
+
+                let second_json_data_sorted = second_json_data.sort(
+                  (a, b) =>
+                    second_label_sorted.indexOf(a.properties.omr_namn) -
+                    second_label_sorted.indexOf(b.properties.omr_namn)
+                );
+                for (let i = 0; i < second_json_data_sorted.length; i++) {
+                  omrade = second_json_data_sorted[i].properties.omr_namn;
+                  second_json_data_sorted[i].properties.value =
+                    second_level_data[omrade];
+                }
+                simpleGeojson.addTo(mymap);
+
+                simpleGeojson.eachLayer(function (layer) {
+                  if (layer.feature.properties.omr_namn == clickedOmrade) {
+                    mymap.removeLayer(layer);
+                  }
+                });
+
+                secondjson = L.geoJson(second_json_data_sorted, {
+                  style: style_transparent,
+                  onEachFeature: onEachFeature,
+                });
+                secondjson.addTo(mymap);
+
+                legend.remove();
+                legend.addTo(mymap);
+                currentjson = secondjson;
+                // Add button
+                goBackButton.addTo(mymap);
+
+                //Add infoClicked
+                infoClicked.addTo(mymap);
+                infoClicked.update(clickedOmrade);
+
+                //Update datasets on table
+                barchart.config.data = {
+                  responsive: true,
+                  labels: second_label_sorted,
+                  datasets: [
+                    {
+                      label: "Värde",
+                      data: second_value_sorted.map(function (item) {
+                        return item == "." ? null : item;
+                      }),
+                      backgroundColor: generate_color(second_label_sorted),
+                      borderColor: generate_color(second_label_sorted),
+                      borderWidth: 1,
+                      hoverBackgroundColor:
+                        generate_hover_color(second_label_sorted),
+                    },
+                  ],
+                };
+                barchart.update();
+                mymap.fitBounds(secondjson.getBounds());
+                tileLayer.addTo(mymap);
+                isOnKommun = false;
+              } else {
+                if (e.target) {
+                  mymap.fitBounds(e.target.getBounds());
+                } else {
+                  for (let [key, value] of Object.entries(
+                    currentjson._layers
+                  )) {
+                    if (value.feature.properties.omr_namn == clickedOmrade) {
+                      mymap.fitBounds(value.getBounds());
+                      break;
+                    }
+                  }
+                }
+              }
+            }
+          } else {
+            function zoomToFeature(e) {
+              if (e.target) {
+                mymap.fitBounds(e.target.getBounds());
+              } else {
+                for (const [key, value] of Object.entries(
+                  currentjson._layers
+                )) {
+                  if (
+                    value.feature.properties.omr_namn ==
+                    barchart.data.labels[e[0].index]
+                  ) {
+                    mymap.fitBounds(value.getBounds());
+                    break;
+                  }
+                }
+              }
+            }
+          }
+
+          function onEachFeature(feature, layer) {
+            layer.on({
+              mouseover: highlightFeature,
+              mouseout: resetHighlight,
+              click: zoomToFeature,
+            });
+          }
+          simpleGeojson = L.geoJson(stockholm_kommun_sorted, {
+            style: simple_style,
+          });
+
+          geojson = L.geoJson(stockholm_kommun_sorted, {
+            style: style,
+            onEachFeature: onEachFeature,
+          });
+          geojson.addTo(mymap);
+          isOnKommun = true;
+
+          currentjson = geojson;
+          legend = L.control({
+            position: "bottomright",
+          });
+
+          legend.onAdd = function (map) {
+            let div = L.DomUtil.create("div", "legend"),
+              interval = (current_value_max - current_value_min) / 5;
+            (grades = [
+              current_value_min,
+              current_value_min + 1 * interval,
+              current_value_min + 2 * interval,
+              current_value_min + 3 * interval,
+              current_value_min + 4 * interval,
+            ]),
+              (labels = []);
+            div.innerHTML +=
+              '<h4 style = "text-align: center; font-weight: bold; margin : 0px 8px 8px 8px">Värde</h4>';
+
+            // if there exists supressed value, add one more colored square op top
+            console.log(isSupressed);
+            if (isSupressed) {
+              div.innerHTML +=
+                '<i style="background: #D3D3D3; opacity: 0.85"></i> * <br>';
+            }
+            // loop through our density intervals and generate a label with a colored square for each interval
+            for (let i = 0; i < grades.length; i++) {
+              div.innerHTML +=
+                '<i style="background:' +
+                getColor(grades[i]) +
+                '; opacity: 0.85"></i> ' +
+                grades[i].toLocaleString("sv-SE", {
+                  minimumFractionDigits: 2,
+                  maximumFractionDigits: 2,
+                }) +
+                (grades[i + 1]
+                  ? "&ndash;" +
+                    grades[i + 1].toLocaleString("sv-SE", {
+                      minimumFractionDigits: 2,
+                      maximumFractionDigits: 2,
+                    }) +
+                    "<br>"
+                  : "+");
+            }
+            return div;
+          };
+
+          legend.addTo(mymap);
+
+          function highlightFeatureFromBar(omr_namn) {
+            if (omr_namn !== "Stockholms län" && omr_namn !== "Stockholms stad") {
+              currentjson.eachLayer(function (layer) {
+                if (layer.feature.properties.omr_namn == hovered_omr) {
+                  layer.setStyle({
+                    weight: 3,
+                    color: "#666",
+                    dashArray: "",
+                    fillOpacity: 1,
+                  });
+                  info.addTo(mymap);
+                  info.update(layer.feature.properties);
+
+                  if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+                    layer.bringToFront();
+                  }
+
+                  return;
+                }
+              });
+            } else {
+              if (omr_namn == "Stockholms län") {
+                currentjson.eachLayer(function (layer) {
+                  layer.setStyle({
+                    weight: 3,
+                    color: "#666",
+                    dashArray: "",
+                    fillOpacity: 1,
+                  });
+                  if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+                    layer.bringToFront();
+                  }
+                });
+              } else {
+                currentjson.eachLayer(function (layer) {
+                  if (
+                    stadsdelarList.includes(layer.feature.properties.omr_namn)
+                  ) {
+                    layer.setStyle({
+                      weight: 3,
+                      color: "#666",
+                      dashArray: "",
+                      fillOpacity: 1,
+                    });
+                    if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+                      layer.bringToFront();
+                    }
+                  }
+                });
+              }
+            }
+          }
+
+          function resetHighlightFromBar(omr_namn) {
+            currentjson.eachLayer(function (layer) {
+              if (omr_namn !== "Stockholms län" && omr_namn !== "Stockholms stad") {
+                currentjson.eachLayer(function (layer) {
+                  if (layer.feature.properties.omr_namn == hovered_omr) {
+                    currentjson.resetStyle(layer);
+                    info.remove();
+                    return;
+                  }
+                });
+              } else {
+                if (omr_namn == "Stockholms län") {
+                  currentjson.eachLayer(function (layer) {
+                    currentjson.resetStyle(layer);
+                  });
+                } else {
+                  currentjson.eachLayer(function (layer) {
+                    currentjson.resetStyle(layer);
+                  });
+                }
+              }
+            });
+          }
+
+          // For bar chart
+          let previous_hovered_omr;
+          let ctx = document.getElementById("karta_stapel").getContext("2d");
+          barchart = new Chart(ctx, {
+            type: "bar",
+            data: {
+              responsive: true,
+              labels: first_label_sorted,
+              datasets: [
+                {
+                  label: "Värde",
+                  data: first_value_sorted.map(function (item) {
+                    return item == "." ? null : item;
+                  }),
+                  backgroundColor: generate_color(first_label_sorted),
+                  borderColor: generate_color(first_label_sorted),
+                  borderWidth: 1,
+                  hoverBackgroundColor:
+                    generate_hover_color(first_label_sorted),
+                },
+              ],
+            },
+            plugins: [ChartDataLabels],
+            options: {
+              plugins: {
+                datalabels: {
+                  formatter: function (value, context) {
+                    if (value == null) {
+                      return "*";
+                    } else {
+                      return value.toLocaleString("sv-SE", {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2,
+                      });
+                    }
+                  },
+                  anchor: "end",
+                  align: "end",
+                  padding: {
+                    left: 6,
+                  },
+                  clamp: true,
+                  font: {
+                    size: 12,
+                  },
+                },
+                legend: false,
+                tooltip: {
+                  backgroundColor: "#F8F9FA",
+                  bodyFont: {
+                    size: 14,
+                  },
+                  bodyColor: "#000000",
+                  displayColors: false,
+                  titleColor: "#000000",
+                  titleFont: {
+                    size: 14,
+                  },
+                  cornerRadius: 3,
+                  borderColor: "#000000",
+                  borderWidth: 0.5,
+
+                  callbacks: {
+                    afterBody: function (t, d) {
+                      return "Enhet: " + unit;
+                    },
+                    label: function (t, d) {
+                      return (
+                        "Värde: " +
+                        (t.raw == null
+                          ? "*"
+                          : t.raw.toLocaleString("sv-SE", {
+                              minimumFractionDigits: 2,
+                              maximumFractionDigits: 2,
+                            }))
+                      );
+                    },
+                  },
+                },
+              },
+              maintainAspectRatio: false,
+              layout: {
+                padding: {
+                  right: 40,
+                },
+              },
+              indexAxis: "y",
+              scales: {
+                y: {
+                  ticks: {
+                    autoSkip: false,
+                    font: {
+                      size: 11,
+                    },
+                  },
+                  grid: {
+                    display: false,
+                  },
+                },
+              },
+              intersection: {
+                mode: "point",
+              },
+              onHover: function (event, elements) {
+                if (elements && elements.length) {
+                  // mouse over
+                  if (previous_hovered_omr == null) {
+                    hovered_omr = event.chart.data.labels[elements[0].index];
+                    highlightFeatureFromBar(hovered_omr);
+                    previous_hovered_omr = hovered_omr;
+                  }
+                } else {
+                  // mouse out
+                  if (previous_hovered_omr) {
+                    resetHighlightFromBar(previous_hovered_omr);
+                    previous_hovered_omr = null;
+                  }
+                }
+              },
+              onClick: function (event, elements) {
+                zoomToFeature(elements);
+              },
+            },
+          });
+        } else {
+          //If the user already clicked on the mindre omrade level, the data would be refreshed and the map
+          //will automatically be zommed to the clicked omrade.
+          function getColor(d) {
+            let interval = (current_value_max - current_value_min) / 5;
+            return d == "."
+              ? "#D3D3D3"
+              : d >= current_value_min + 4 * interval
+              ? "#297b7b"
+              : d >= current_value_min + 3 * interval
+              ? "#529494"
+              : d >= current_value_min + 2 * interval
+              ? "#7fb0b0"
+              : d >= current_value_min + 1 * interval
+              ? "#c3dada"
+              : d >= current_value_min
+              ? "#e2eded"
+              : "#ffffff";
+          }
+
+          function style_transparent(feature) {
+            return {
+              fillColor: getColor(feature.properties.value),
+              weight: 2,
+              opacity: 1,
+              color: "rgb(245, 243, 240, 0.8)",
+              weight: 2,
+              fillOpacity: 0.8,
+            };
+          }
+
+          function highlightFeature(e) {
+            let layer = e.target;
+
+            layer.setStyle({
+              weight: 3,
+              color: "#666",
+              dashArray: "",
+              fillOpacity: 0.9,
+            });
+
+            if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+              layer.bringToFront();
+            }
+
+            info.addTo(mymap);
+            info.update(layer.feature.properties);
+
+            barchart.setActiveElements([
+              {
+                datasetIndex: 0,
+                index: barchart.data.labels.indexOf(
+                  layer.feature.properties.omr_namn
+                ),
+              },
+            ]);
+            barchart.tooltip.setActiveElements([
+              {
+                datasetIndex: 0,
+                index: barchart.data.labels.indexOf(
+                  layer.feature.properties.omr_namn
+                ),
+              },
+            ]);
+            barchart.update("none");
+          }
+
+          function resetHighlight(e) {
+            if (mymap.hasLayer(geojson)) {
+              geojson.resetStyle();
+            } else {
+              if (mymap.hasLayer(secondjson)) {
+                secondjson.resetStyle();
+              }
+            }
+            info.remove();
+            barchart.setActiveElements([]);
+            barchart.tooltip.setActiveElements([]);
+            barchart.update("none");
+          }
+
+          function zoomToFeature(e) {
+            if (e.target) {
+              mymap.fitBounds(e.target.getBounds());
+            } else {
+              for (const [key, value] of Object.entries(currentjson._layers)) {
+                if (
+                  value.feature.properties.omr_namn ==
+                  barchart.data.labels[e[0].index]
+                ) {
+                  mymap.fitBounds(value.getBounds());
+                  break;
+                }
+              }
+            }
+          }
+
+          function onEachFeature(feature, layer) {
+            layer.on({
+              mouseover: highlightFeature,
+              mouseout: resetHighlight,
+              click: zoomToFeature,
+            });
+          }
+          first_level_data = {};
+          for (let i = 0; i < event_rows.length; i++) {
+            if (firstLevelAreaList.includes(event_rows[i][2])) {
+              if (first_level_data[event_rows[i][2]] == undefined) {
+                first_level_data[event_rows[i][2]] = event_rows[i][1];
+              } else {
+                first_level_data[event_rows[i][2]] += event_rows[i][1];
+              }
+            }
+          }
+          for (let objectName in first_level_data) {
+            if (first_level_data[objectName] != ".") {
+              first_level_data[objectName] =
+                Math.round(first_level_data[objectName] * 100) / 100;
+            }
+          }
+          first_label_sorted = Object.keys(first_level_data).sort(function (
+            a,
+            b
+          ) {
+            return first_level_data[b] - first_level_data[a];
+          });
+          first_value_sorted = Object.values(first_level_data).sort(function (
+            a,
+            b
+          ) {
+            return b - a;
+          });
+          stockholm_kommun_sorted = stockholm_kommun.sort(
+            (a, b) =>
+              first_label_sorted.indexOf(a.properties.omr_namn) -
+              first_label_sorted.indexOf(b.properties.omr_namn)
+          );
+          for (i = 0; i < stockholm_kommun_sorted.length; i++) {
+            omrade = stockholm_kommun_sorted[i].properties.omr_namn;
+            stockholm_kommun_sorted[i].properties.value =
+              first_level_data[omrade];
+          }
+          first_backgroundColor = generate_color(first_label_sorted);
+
+          second_level_data = {};
+          for (i = 0; i < event_rows.length; i++) {
+            if (second_label.includes(event_rows[i][2])) {
+              second_level_data[event_rows[i][2]] = event_rows[i][1];
+            }
+          }
+          for (let objectName in second_level_data) {
+            if (second_level_data[objectName] != ".") {
+              second_level_data[objectName] =
+                Math.round(second_level_data[objectName] * 100) / 100;
+            }
+          }
+          second_label_sorted = Object.keys(second_level_data).sort(function (
+            a,
+            b
+          ) {
+            return second_level_data[b] - second_level_data[a];
+          });
+          second_value_sorted = Object.values(second_level_data).sort(function (
+            a,
+            b
+          ) {
+            return b - a;
+          });
+
+          current_value_max = Math.max.apply(
+            Math,
+            Object.values(second_level_data)
+          );
+          current_value_min = Math.min.apply(
+            Math,
+            Object.values(second_level_data)
+          );
+
+          second_backgroundColor = generate_color(second_label_sorted);
+
+          second_json_data_sorted = second_json_data.sort(
+            (a, b) =>
+              second_label_sorted.indexOf(a.properties.omr_namn) -
+              second_label_sorted.indexOf(b.properties.omr_namn)
+          );
+          for (let i = 0; i < second_json_data_sorted.length; i++) {
+            omrade = second_json_data_sorted[i].properties.omr_namn;
+            second_json_data_sorted[i].properties.value =
+              second_level_data[omrade];
+          }
+          secondjson.remove();
+          secondjson = L.geoJson(second_json_data_sorted, {
+            style: style_transparent,
+            onEachFeature: onEachFeature,
+          });
+          secondjson.addTo(mymap);
+          tileLayer.addTo(mymap);
+          legend.remove();
+          legend.addTo(mymap);
+          currentjson = secondjson;
+          barchart.config.data = {
+            //Update the value in the barchart
+            responsive: true,
+            labels: second_label_sorted,
+            datasets: [
+              {
+                label: "Värde",
+                data: second_value_sorted.map(function (item) {
+                  return item == "." ? null : item;
+                }),
+                backgroundColor: generate_color(second_label_sorted),
+                borderColor: generate_color(second_label_sorted),
+                borderWidth: 1,
+                hoverBackgroundColor: generate_hover_color(second_label_sorted),
+              },
+            ],
+          };
+          barchart.update();
+        }
+      } else {
+        if (
+          event.data &&
+          event.data.type &&
+          event.data.type == "takeScreenShot"
+        ) {
+          let stapelCanvasOriginal = document.getElementsByTagName("canvas")[1];
+
+          //Resize the map canvas to be the same width as barchart
+          let mapCanvasOriginal = document.getElementsByTagName("canvas")[0];
+
+          let mapHeightWidthRatio =
+            mapCanvasOriginal.height / mapCanvasOriginal.width;
+
+          let mapCanvasResized = document.createElement("canvas");
+          let mapContextResized = mapCanvasResized.getContext("2d");
+
+          let targetHeight = stapelCanvasOriginal.height;
+          let targetWidth = stapelCanvasOriginal.height / mapHeightWidthRatio;
+
+          mapCanvasResized.height = targetHeight;
+          mapCanvasResized.width = targetWidth;
+
+          mapContextResized.drawImage(
+            mapCanvasOriginal,
+            0,
+            0,
+            targetWidth,
+            targetHeight
+          );
+          let mapBase64 = mapCanvasResized.toDataURL();
+          let stapelBase64 = stapelCanvasOriginal.toDataURL();
+
+          var messageToMain = {
+            type: "screenshotKarta",
+            content: {
+              karta: mapBase64,
+              stapel: stapelBase64,
+            },
+          };
+          window.parent.postMessage(
+            (message = messageToMain),
+            (targetOrigin = "*")
+          );
+        }
+      }
+    }
+  </script>
+</body>
