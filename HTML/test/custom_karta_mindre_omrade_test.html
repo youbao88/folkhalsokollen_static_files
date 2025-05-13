@@ -5,29 +5,19 @@
   <script src="
 https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.js
 "></script>
-  <link
-    href="
+  <link href="
 https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.css
-"
-    rel="stylesheet"
-  />
-  <link
-    rel="stylesheet"
+" rel="stylesheet" />
+  <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/leaflet-gesture-handling@1.2.2/dist/leaflet-gesture-handling.min.css"
-    type="text/css"
-  />
-  <script src="https://cdn.jsdelivr.net/npm/leaflet-gesture-handling@1.2.2/dist/leaflet-gesture-handling.min.js"></script>
+    type="text/css" />
+  <script
+    src="https://cdn.jsdelivr.net/npm/leaflet-gesture-handling@1.2.2/dist/leaflet-gesture-handling.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
   <script src="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-image/v0.0.4/leaflet-image.js"></script>
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css"
-  />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css" />
   <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
-  <script
-    src="https://kit.fontawesome.com/f12bd0d7ad.js"
-    crossorigin="anonymous"
-  ></script>
+  <script src="https://kit.fontawesome.com/f12bd0d7ad.js" crossorigin="anonymous"></script>
   <style>
     body {
       font-family: Arial, Verdana, Helvetica;
@@ -393,16 +383,16 @@ https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.css
             return d == "."
               ? "#D3D3D3"
               : d >= current_value_min + 4 * interval
-              ? "#297b7b"
-              : d >= current_value_min + 3 * interval
-              ? "#529494"
-              : d >= current_value_min + 2 * interval
-              ? "#7fb0b0"
-              : d >= current_value_min + 1 * interval
-              ? "#c3dada"
-              : d >= current_value_min
-              ? "#e2eded"
-              : "#ffffff";
+                ? "#297b7b"
+                : d >= current_value_min + 3 * interval
+                  ? "#529494"
+                  : d >= current_value_min + 2 * interval
+                    ? "#7fb0b0"
+                    : d >= current_value_min + 1 * interval
+                      ? "#c3dada"
+                      : d >= current_value_min
+                        ? "#e2eded"
+                        : "#ffffff";
           }
 
           function style(feature) {
@@ -450,16 +440,16 @@ https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.css
           info.update = function (props) {
             this._div.innerHTML = props
               ? "<b>Område:</b>" +
-                props.omr_namn +
-                "<br /><b> Värde: </b>" +
-                (props.value == "."
-                  ? "*"
-                  : props.value.toLocaleString("sv-SE", {
-                      minimumFractionDigits: 2,
-                      maximumFractionDigits: 2,
-                    })) +
-                "</br><b>Enhet: </b>" +
-                unit
+              props.omr_namn +
+              "<br /><b> Värde: </b>" +
+              (props.value == "."
+                ? "*"
+                : props.value.toLocaleString("sv-SE", {
+                  minimumFractionDigits: 2,
+                  maximumFractionDigits: 2,
+                })) +
+              "</br><b>Enhet: </b>" +
+              unit
               : " ";
           };
 
@@ -810,23 +800,25 @@ https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.css
                 '<i style="background: #D3D3D3; opacity: 0.85"></i> * <br>';
             }
             // loop through our density intervals and generate a label with a colored square for each interval
-            for (let i = 0; i < grades.length; i++) {
-              div.innerHTML +=
-                '<i style="background:' +
-                getColor(grades[i]) +
-                '; opacity: 0.85"></i> ' +
-                grades[i].toLocaleString("sv-SE", {
-                  minimumFractionDigits: 2,
-                  maximumFractionDigits: 2,
-                }) +
-                (grades[i + 1]
-                  ? "&ndash;" +
+            if (Number.isFinite(grades[0])) {
+              for (let i = 0; i < grades.length; i++) {
+                div.innerHTML +=
+                  '<i style="background:' +
+                  getColor(grades[i]) +
+                  '; opacity: 0.85"></i> ' +
+                  grades[i].toLocaleString("sv-SE", {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                  }) +
+                  (grades[i + 1]
+                    ? "&ndash;" +
                     grades[i + 1].toLocaleString("sv-SE", {
                       minimumFractionDigits: 2,
                       maximumFractionDigits: 2,
                     }) +
                     "<br>"
-                  : "+");
+                    : "+");
+              }
             }
             return div;
           };
@@ -982,9 +974,9 @@ https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.css
                         (t.raw == null
                           ? "*"
                           : t.raw.toLocaleString("sv-SE", {
-                              minimumFractionDigits: 2,
-                              maximumFractionDigits: 2,
-                            }))
+                            minimumFractionDigits: 2,
+                            maximumFractionDigits: 2,
+                          }))
                       );
                     },
                   },
@@ -1042,16 +1034,16 @@ https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.css
             return d == "."
               ? "#D3D3D3"
               : d >= current_value_min + 4 * interval
-              ? "#297b7b"
-              : d >= current_value_min + 3 * interval
-              ? "#529494"
-              : d >= current_value_min + 2 * interval
-              ? "#7fb0b0"
-              : d >= current_value_min + 1 * interval
-              ? "#c3dada"
-              : d >= current_value_min
-              ? "#e2eded"
-              : "#ffffff";
+                ? "#297b7b"
+                : d >= current_value_min + 3 * interval
+                  ? "#529494"
+                  : d >= current_value_min + 2 * interval
+                    ? "#7fb0b0"
+                    : d >= current_value_min + 1 * interval
+                      ? "#c3dada"
+                      : d >= current_value_min
+                        ? "#e2eded"
+                        : "#ffffff";
           }
 
           function style_transparent(feature) {
@@ -1190,26 +1182,41 @@ https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.css
                 Math.round(second_level_data[objectName] * 100) / 100;
             }
           }
-          second_label_sorted = Object.keys(second_level_data).sort(function (
-            a,
-            b
-          ) {
-            return second_level_data[b] - second_level_data[a];
-          });
-          second_value_sorted = Object.values(second_level_data).sort(function (
-            a,
-            b
-          ) {
-            return b - a;
-          });
+          second_label_sorted = Object.keys(second_level_data).sort(
+            function (a, b) {
+              if (second_level_data[a] == ".") return 1;
+              if (second_level_data[b] == ".") return -1;
+              return second_level_data[b] - second_level_data[a];
+            }
+          );
+          second_value_sorted = Object.values(second_level_data).sort(
+            function (a, b) {
+              if (a == ".") return 1;
+              if (b == ".") return -1;
+              return b - a;
+            }
+          );
 
+
+          // current_value_max = Math.max.apply(
+          //   Math,
+          //   Object.values(second_level_data)
+          // );
           current_value_max = Math.max.apply(
             Math,
-            Object.values(second_level_data)
+            Object.values(second_level_data).filter(function (e) {
+              return e !== ".";
+            })
           );
+          // current_value_min = Math.min.apply(
+          //   Math,
+          //   Object.values(second_level_data)
+          // );
           current_value_min = Math.min.apply(
             Math,
-            Object.values(second_level_data)
+            Object.values(second_level_data).filter(function (e) {
+              return e !== ".";
+            })
           );
 
           second_backgroundColor = generate_color(second_label_sorted);
