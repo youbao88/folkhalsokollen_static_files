@@ -20,6 +20,8 @@ const källa_url_map = {
     "https://www.folkhalsokollen.se/datakallor/stockholmsenkaten/",
   Graviditetsregistret:
     "https://www.folkhalsokollen.se/datakallor/graviditetsregistret/",
+  Miljöhälsoenkäten:
+    "https://www.folkhalsokollen.se/datakallor/miljohalsoenkaten/"
 };
 const indicator_info = {
   Boendeform: {
