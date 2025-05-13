@@ -1138,7 +1138,7 @@ const indicator_info = {
   "Grönska på gångavstånd från bostaden saknas": {
     definition:
       "Andel (%) av befolkningen i Stockholms län som anger att grönområde på gångavstånd från bostaden saknas",
-    källa: "Statistiska centralbyrån (SCB)\n",
+    källa: "Miljöhälsoenkäten",
     läsa_mer_1_text:
       "Miljöhälsorapport Stockholms län 2021, Centrum för arbets- och miljömedicin (CAMM)",
     läsa_mer_1_link:
