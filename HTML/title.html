@@ -71,7 +71,8 @@
             'Boendeform', 'Familjetyp', 'Födelseland', 'Åldersgrupper', 'Ohälsotal', 'Slutenvårdstillfällen',
             'Öppenvårdsbesök', 'Ekonomiskt bistånd', 'Huvudsaklig sysselsättning', 'Inkomstnivå', 'Utbildningsnivå',
             'Ohälsodagar', 'Vaccination mot säsongsinfluensa', 'Exponeras för luftföroreningar',
-            'Exponeras för trafikbuller', 'Tillgång till grönska i närområdet','Livsvillkorsindex','Vaccination mot covid-19'
+            'Exponeras för trafikbuller', 'Tillgång till grönska i närområdet', 'Livsvillkorsindex', 'Vaccination mot covid-19',
+            'Grönska på gångavstånd från bostaden saknas', 'Störs mycket av trafikbuller', 'Upplevelse av dålig luftkvalitet'
         ]
 
         function combineAgeInterval(originalInterval) {
@@ -90,7 +91,7 @@
             ålder_interval_processed.push(ålder_interval[0]);
             for (let j = 1; j < ålder_interval.length; j++) {
                 if (parseInt(ålder_interval[j][0]) - 1 == parseInt(ålder_interval_processed[ålder_interval_processed
-                        .length - 1][1])) {
+                    .length - 1][1])) {
                     ålder_interval_processed[ålder_interval_processed.length - 1][1] = ålder_interval[j][1];
                 } else {
                     ålder_interval_processed.push(ålder_interval[j]);
@@ -143,7 +144,7 @@
                 div.innerHTML = '';
                 var indicator_name = rows[0][0];
 
-                messageToMain['Kategori'] = rows.map(i=>i[1])
+                messageToMain['Kategori'] = rows.map(i => i[1])
 
                 div.innerHTML +=
                     `<span id = "big_title" style="font-size: 1.1rem; font-weight: bold">${indicator_name}</h1>`;
@@ -227,7 +228,7 @@
                         if (omittedNumber != 0) {
                             div.innerHTML += "<span style = 'font-size: 0.9rem; font-weight:bold'>; </span>"
                             div.innerHTML += `<div style = 'font-size: 0.9rem; font-weight:bold' class = 'tooltip'>+${omittedNumber}
-                            <span class = 'tooltiptext'>${omittedValue.toString().replaceAll(',','; ')}</span></div>`
+                            <span class = 'tooltiptext'>${omittedValue.toString().replaceAll(',', '; ')}</span></div>`
                         }
                     } else {
                         div.innerHTML +=
@@ -240,18 +241,22 @@
                     `<span style="font-size: 0.9rem">Enhet: </span><span style="font-size: 0.9rem; font-weight:bold">${value_unit}</span>`;
                 if (isOnKarta || isOnTable) {
                     if (['Amning vid 4 månaders ålder', 'Ångestkänslor (grundskola åk 9)', 'Ångestkänslor (gymnasiet år 2)',
-                    'Använder vitt snus (grundskola åk 9)', 'Använder vitt snus (gymnasiet år 2)',
-                    'Huvudvärk (grundskola åk 9)', 'Huvudvärk (gymnasiet år 2)',
-                    'Röker e-cigaretter (grundskola åk 9)', 'Röker e-cigaretter (gymnasiet år 2)'].includes(indicator_name)) {
+                        'Använder vitt snus (grundskola åk 9)', 'Använder vitt snus (gymnasiet år 2)',
+                        'Huvudvärk (grundskola åk 9)', 'Huvudvärk (gymnasiet år 2)',
+                        'Röker e-cigaretter (grundskola åk 9)', 'Röker e-cigaretter (gymnasiet år 2)'].includes(indicator_name)) {
                         div.innerHTML += `
                     <span style="font-size: 0.9rem; font-weight:normal"> (Om uppgifter saknas anges asterisk * )</span>
                     `
                     } else {
                         if (['Dödsfall på grund av covid-19', 'Sjukhusinläggning med covid-19', 'Autismspektrumtillstånd (diagnostiserad)',
-                                'Anmälan socialtjänst via BVC', 'Bröstcancer', 'Lungcancer', 'Prostatacancer', 'Adhd (diagnostiserad)', 'Depression och ångest (diagnostiserad)', 'Tjock- och ändtarmscancer'
-                            ].includes(indicator_name)) {
+                            'Anmälan socialtjänst via BVC', 'Bröstcancer', 'Lungcancer', 'Prostatacancer', 'Adhd (diagnostiserad)', 'Depression och ångest (diagnostiserad)', 'Tjock- och ändtarmscancer'
+                        ].includes(indicator_name)) {
                             div.innerHTML += `
                     <span style="font-size: 0.9rem; font-weight:normal"> (asterisk * anges vid mindre än 10 fall)</span>
+                    `
+                        } else if (['Grönska på gångavstånd från bostaden saknas', 'Störs mycket av trafikbuller', 'Upplevelse av dålig luftkvalitet'].includes(indicator_name)) {
+                            div.innerHTML += `
+                    <span style="font-size: 0.9rem; font-weight:normal"> (asterisk * anges vid mindre än 5 fall)</span>
                     `
                         }
                     };
