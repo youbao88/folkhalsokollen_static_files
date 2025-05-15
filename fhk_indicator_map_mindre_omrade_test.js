@@ -2379,13 +2379,13 @@ const indicator_name_parameter_map = {
   },
   Livsvillkorsindex: {
     karta: {
-      karta_Tidsperiod: "2021",
+      karta_Tidsperiod: "2022",
       karta_Kön: "Samtliga",
       karta_Åldersgrupp: "Samtliga",
     },
     stapel: {
       stapel_Område: "Stockholms län",
-      stapel_Tidsperiod: "2021",
+      stapel_Tidsperiod: "2022",
       stapel_Kön: "Samtliga",
     },
     linje: {
@@ -2394,7 +2394,7 @@ const indicator_name_parameter_map = {
       linje_Åldersgrupp: "Samtliga",
     },
     tabell: {
-      table_Tidsperiod: "2021",
+      table_Tidsperiod: "2022",
       table_Område: "Stockholms län",
       tabel_Åldersgrupp: "Samtliga",
       tabel_Kön: "Samtliga",
@@ -2443,6 +2443,75 @@ const indicator_name_parameter_map = {
       table_Tidsperiod: "2024",
       table_Område: "Stockholms län",
       tabel_Åldersgrupp: ["65+ år"],
+      tabel_Kön: ["Kvinnor", "Män"],
+    },
+  },
+   "Grönska på gångavstånd från bostaden saknas": {
+    karta: {
+      karta_Tidsperiod: "2023",
+      karta_Kön: ["Kvinnor", "Män"],
+      karta_Åldersgrupp: ["18-44 år", "45-64 år", "65+ år"],
+    },
+    stapel: {
+      stapel_Område: "Stockholms län",
+      stapel_Tidsperiod: "2023",
+      stapel_Kön: ["Kvinnor", "Män"],
+    },
+    linje: {
+      linje_Kön: ["Kvinnor", "Män"],
+      linje_Område: ["Stockholms län", "Botkyrka"],
+      linje_Åldersgrupp:["18-44 år", "45-64 år", "65+ år"],
+    },
+    tabell: {
+      table_Tidsperiod: "2024",
+      table_Område: "Stockholms län",
+      tabel_Åldersgrupp: ["18-44 år", "45-64 år", "65+ år"],
+      tabel_Kön: ["Kvinnor", "Män"],
+    },
+  },
+  "Störs mycket av trafikbuller": {
+    karta: {
+      karta_Tidsperiod: "2023",
+      karta_Kön: ["Kvinnor", "Män"],
+      karta_Åldersgrupp: ["18-44 år", "45-64 år", "65+ år"],
+    },
+    stapel: {
+      stapel_Område: "Stockholms län",
+      stapel_Tidsperiod: "2023",
+      stapel_Kön: ["Kvinnor", "Män"],
+    },
+    linje: {
+      linje_Kön: ["Kvinnor", "Män"],
+      linje_Område: ["Stockholms län", "Botkyrka"],
+      linje_Åldersgrupp:["18-44 år", "45-64 år", "65+ år"],
+    },
+    tabell: {
+      table_Tidsperiod: "2024",
+      table_Område: "Stockholms län",
+      tabel_Åldersgrupp: ["18-44 år", "45-64 år", "65+ år"],
+      tabel_Kön: ["Kvinnor", "Män"],
+    },
+  },
+    "Upplevelse av dålig luftkvalitet": {
+    karta: {
+      karta_Tidsperiod: "2023",
+      karta_Kön: ["Kvinnor", "Män"],
+      karta_Åldersgrupp: ["18-44 år", "45-64 år", "65+ år"],
+    },
+    stapel: {
+      stapel_Område: "Stockholms län",
+      stapel_Tidsperiod: "2023",
+      stapel_Kön: ["Kvinnor", "Män"],
+    },
+    linje: {
+      linje_Kön: ["Kvinnor", "Män"],
+      linje_Område: ["Stockholms län", "Botkyrka"],
+      linje_Åldersgrupp:["18-44 år", "45-64 år", "65+ år"],
+    },
+    tabell: {
+      table_Tidsperiod: "2024",
+      table_Område: "Stockholms län",
+      tabel_Åldersgrupp: ["18-44 år", "45-64 år", "65+ år"],
       tabel_Kön: ["Kvinnor", "Män"],
     },
   }
@@ -2648,18 +2717,18 @@ const indicator_init_map = {
   },
   Miljöhälsa: {
     indikator_group: "Miljöhälsa",
-    indikator_name: "Besvär av trafikbuller i bostad",
+    indikator_name: "Grönska på gångavstånd från bostaden saknas",
     indikator_category: "Ej valbart",
-    karta_Tidsperiod: "2018",
+    karta_Tidsperiod: "2023",
     karta_Kön: ["Kvinnor", "Män"],
     karta_Åldersgrupp: ["16-44 år", "45-64 år", "65+ år"],
     stapel_Område: "Stockholms län",
-    stapel_Tidsperiod: "2018",
+    stapel_Tidsperiod: "2023",
     stapel_Kön: ["Kvinnor", "Män"],
     linje_Område: ["Stockholms län", "Botkyrka"],
     linje_Kön: ["Kvinnor", "Män"],
     linje_Åldersgrupp: ["16-44 år", "45-64 år", "65+ år"],
-    table_Tidsperiod: "2018",
+    table_Tidsperiod: "2023",
     table_Område: "Stockholms län",
     tabel_Åldersgrupp: ["16-44 år", "45-64 år", "65+ år"],
     tabel_Kön: ["Kvinnor", "Män"],
