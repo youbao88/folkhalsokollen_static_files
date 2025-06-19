@@ -1182,13 +1182,13 @@ const indicator_name_parameter_map = {
   },
   "Anmälan socialtjänst via BVC": {
     karta: {
-      karta_Tidsperiod: "2023",
+      karta_Tidsperiod: "2024",
       karta_Kön: ["Samtliga"],
       karta_Åldersgrupp: ["Samtliga"],
     },
     stapel: {
       stapel_Område: "Stockholms län",
-      stapel_Tidsperiod: "2023",
+      stapel_Tidsperiod: "2024",
       stapel_Kön: ["Samtliga"],
     },
     linje: {
@@ -1197,7 +1197,7 @@ const indicator_name_parameter_map = {
       linje_Åldersgrupp: ["Samtliga"],
     },
     tabell: {
-      table_Tidsperiod: "2023",
+      table_Tidsperiod: "2024",
       table_Område: "Stockholms län",
       tabel_Åldersgrupp: ["Samtliga"],
       tabel_Kön: ["Samtliga"],
@@ -1205,13 +1205,13 @@ const indicator_name_parameter_map = {
   },
   "Övervikt och obesitas 4-åringar": {
     karta: {
-      karta_Tidsperiod: "2023",
+      karta_Tidsperiod: "2024",
       karta_Kön: ["Flickor", "Pojkar"],
       karta_Åldersgrupp: ["Samtliga"],
     },
     stapel: {
       stapel_Område: "Stockholms län",
-      stapel_Tidsperiod: "2023",
+      stapel_Tidsperiod: "2024",
       stapel_Kön: ["Flickor", "Pojkar"],
     },
     linje: {
@@ -1220,7 +1220,7 @@ const indicator_name_parameter_map = {
       linje_Åldersgrupp: ["Samtliga"],
     },
     tabell: {
-      table_Tidsperiod: "2023",
+      table_Tidsperiod: "2024",
       table_Område: "Stockholms län",
       tabel_Åldersgrupp: ["Samtliga"],
       tabel_Kön: ["Flickor", "Pojkar"],
@@ -1228,13 +1228,13 @@ const indicator_name_parameter_map = {
   },
   "Vaccinationstäckning MPR": {
     karta: {
-      karta_Tidsperiod: "2023",
+      karta_Tidsperiod: "2024",
       karta_Kön: ["Samtliga"],
       karta_Åldersgrupp: ["Samtliga"],
     },
     stapel: {
       stapel_Område: "Stockholms län",
-      stapel_Tidsperiod: "2023",
+      stapel_Tidsperiod: "2024",
       stapel_Kön: ["Samtliga"],
     },
     linje: {
@@ -1243,7 +1243,7 @@ const indicator_name_parameter_map = {
       linje_Åldersgrupp: ["Samtliga"],
     },
     tabell: {
-      table_Tidsperiod: "2023",
+      table_Tidsperiod: "2024",
       table_Område: "Stockholms län",
       tabel_Åldersgrupp: ["Samtliga"],
       tabel_Kön: ["Samtliga"],
@@ -1251,13 +1251,13 @@ const indicator_name_parameter_map = {
   },
   "Exponering för tobaksrök vid 8 månaders ålder": {
     karta: {
-      karta_Tidsperiod: "2023",
+      karta_Tidsperiod: "2024",
       karta_Kön: ["Samtliga"],
       karta_Åldersgrupp: ["Samtliga"],
     },
     stapel: {
       stapel_Område: "Stockholms län",
-      stapel_Tidsperiod: "2023",
+      stapel_Tidsperiod: "2024",
       stapel_Kön: ["Samtliga"],
     },
     linje: {
@@ -1266,7 +1266,7 @@ const indicator_name_parameter_map = {
       linje_Åldersgrupp: ["Samtliga"],
     },
     tabell: {
-      table_Tidsperiod: "2023",
+      table_Tidsperiod: "2024",
       table_Område: "Stockholms län",
       tabel_Åldersgrupp: ["Samtliga"],
       tabel_Kön: ["Samtliga"],
@@ -1274,13 +1274,13 @@ const indicator_name_parameter_map = {
   },
   "Amning vid 4 månaders ålder": {
     karta: {
-      karta_Tidsperiod: "2023",
+      karta_Tidsperiod: "2024",
       karta_Kön: ["Samtliga"],
       karta_Åldersgrupp: ["Samtliga"],
     },
     stapel: {
       stapel_Område: "Stockholms län",
-      stapel_Tidsperiod: "2023",
+      stapel_Tidsperiod: "2024",
       stapel_Kön: ["Samtliga"],
     },
     linje: {
@@ -1289,7 +1289,7 @@ const indicator_name_parameter_map = {
       linje_Åldersgrupp: ["Samtliga"],
     },
     tabell: {
-      table_Tidsperiod: "2023",
+      table_Tidsperiod: "2024",
       table_Område: "Stockholms län",
       tabel_Åldersgrupp: ["Samtliga"],
       tabel_Kön: ["Samtliga"],
@@ -1297,13 +1297,13 @@ const indicator_name_parameter_map = {
   },
   "Kariesfria 3-åringar": {
     karta: {
-      karta_Tidsperiod: "2023",
+      karta_Tidsperiod: "2024",
       karta_Kön: ["Samtliga"],
       karta_Åldersgrupp: ["Samtliga"],
     },
     stapel: {
       stapel_Område: "Stockholms län",
-      stapel_Tidsperiod: "2023",
+      stapel_Tidsperiod: "2024",
       stapel_Kön: ["Samtliga"],
     },
     linje: {
@@ -1312,7 +1312,7 @@ const indicator_name_parameter_map = {
       linje_Åldersgrupp: ["Samtliga"],
     },
     tabell: {
-      table_Tidsperiod: "2023",
+      table_Tidsperiod: "2024",
       table_Område: "Stockholms län",
       tabel_Åldersgrupp: ["Samtliga"],
       tabel_Kön: ["Samtliga"],
