@@ -21,7 +21,7 @@ const källa_url_map = {
   Graviditetsregistret:
     "https://www.folkhalsokollen.se/datakallor/graviditetsregistret/",
   Miljöhälsoenkäten:
-    "https://www.folkhalsokollen.se/datakallor/miljohalsoenkaten/"
+    "https://www.folkhalsokollen.se/datakallor/miljohalsoenkaten/",
 };
 const indicator_info = {
   Boendeform: {
@@ -133,18 +133,18 @@ const indicator_info = {
       "Andel (%) barn inom barnhälsovården som enbart eller delvis får bröstmjölk vid fyra månaders ålder. Barn som får enbart bröstmjölk och eventuella mineraler, vitaminer eller läkemedel, räknas som enbart ammande barn. Barn som får bröstmjölk, men också smakportioner, välling, bröstmjölksersättning eller hela måltider bestående av annan kost räknas som delvis ammande. Observera att det kan förekomma brister i data för olika år och man ska vara försiktig med att dra slutsatser från de år och område det gäller för. Data är inkomplett eller osäkra för: Norrtälje (år 2016–2018), Sigtuna (år 2016), Vallentuna (2020), Sollentuna (2021–2022), Solna (2021–2022), Haninge (2021), Tyresö (2021), Kungsholmen (2022).",
     källa: "Barnhälsovårdens årsrapport ",
     läsa_mer_1_text:
-      "Årsrapport – barnhälsovård i Stockholms län 2023, Region Stockholm.",
+      "Årsrapport – barnhälsovård i Stockholms län 2024, Region Stockholm.",
     läsa_mer_1_link:
-      "https://kunskapsstodforvardgivare.se/download/18.28eeaa311900ff142db87ea/1718694895552/%C3%85rsrapport%20Barnh%C3%A4lsov%C3%A5rd%C2%A02023.pdf",
+      "https://kunskapsstodforvardgivare.se/download/18.2416aa00197626be2ab1de34/1750765518396/BHV-A%CC%8AR-2024-250623.pdf",
   },
   "Exponering för tobaksrök vid 8 månaders ålder": {
     definition:
       "Andel (%) barn vars mamma, pappa eller annan person som stadigvarande bor i familjen rökte dagligen när barnet var fyra veckor och när en uppföljningen gjordes vid åtta månaders ålder. Observera att det kan förekomma brister i data för olika år och man ska vara försiktig med att dra slutsatser från de år och område det gäller för. Data är inkomplett för: Norrtälje (2016–2018), Sigtuna (2016), Skärholmen (2017), Kungsholmen (2022).",
     källa: "Barnhälsovårdens årsrapport ",
     läsa_mer_1_text:
-      "Årsrapport – barnhälsovård i Stockholms län 2023, Region Stockholm.",
+      "Årsrapport – barnhälsovård i Stockholms län 2024, Region Stockholm.",
     läsa_mer_1_link:
-      "https://kunskapsstodforvardgivare.se/download/18.28eeaa311900ff142db87ea/1718694895552/%C3%85rsrapport%20Barnh%C3%A4lsov%C3%A5rd%C2%A02023.pdf",
+      "https://kunskapsstodforvardgivare.se/download/18.2416aa00197626be2ab1de34/1750765518396/BHV-A%CC%8AR-2024-250623.pdf",
     läsa_mer_3_text: "Sluta-röka-linjen",
     läsa_mer_3_link: "https://www.slutarokalinjen.se",
   },
@@ -153,36 +153,36 @@ const indicator_info = {
       "Andel (%) treåringar utan kariesskadade tänder. Med skadade tänder avses tänder som har hål (karies), som dragits ut på grund av karies eller som fått fyllningar på grund av tidigare hål.",
     källa: "Barnhälsovårdens årsrapport ",
     läsa_mer_1_text:
-      "Årsrapport – barnhälsovård i Stockholms län 2023, Region Stockholm.",
+      "Årsrapport – barnhälsovård i Stockholms län 2024, Region Stockholm.",
     läsa_mer_1_link:
-      "https://kunskapsstodforvardgivare.se/download/18.28eeaa311900ff142db87ea/1718694895552/%C3%85rsrapport%20Barnh%C3%A4lsov%C3%A5rd%C2%A02023.pdf",
+      "https://kunskapsstodforvardgivare.se/download/18.2416aa00197626be2ab1de34/1750765518396/BHV-A%CC%8AR-2024-250623.pdf",
   },
   "Övervikt och obesitas 4-åringar": {
     definition:
       "\nAndel (%) fyraåringar med övervikt och obesitas. Övervikt (utan obesitas) definieras som ISO-BMI 25–30 och obesitas definieras som ISO-BMI 30 eller mer. ISO-BMI är ett BMI som är anpassat för barn från två års ålder. Observera att det kan förekomma brister i data för olika år och man ska vara försiktig med att dra slutsatser från de år och område det gäller för. Data är inkomplett för: Södertälje (2016–2017), Norrtälje (2017, 2018, 2021), Sigtuna (2017), Skärholmen (2017, 2021, 2022, 2023), Österåker (2021) , Rinkeby-Kista (2021).\n",
     källa: "Barnhälsovårdens årsrapport ",
     läsa_mer_1_text:
-      "Årsrapport – barnhälsovård i Stockholms län 2023, Region Stockholm.",
+      "Årsrapport – barnhälsovård i Stockholms län 2024, Region Stockholm.",
     läsa_mer_1_link:
-      "https://kunskapsstodforvardgivare.se/download/18.28eeaa311900ff142db87ea/1718694895552/%C3%85rsrapport%20Barnh%C3%A4lsov%C3%A5rd%C2%A02023.pdf",
+      "https://kunskapsstodforvardgivare.se/download/18.2416aa00197626be2ab1de34/1750765518396/BHV-A%CC%8AR-2024-250623.pdf",
   },
   "Anmälan socialtjänst via BVC": {
     definition:
       "Andel (%) barn i åldrarna 0–5 år per årskull kring vilka Barnavårdscentralen (BVC) gjort orosanmälan till socialtjänsten. Observera att det kan förekomma brister i data för olika år och man ska vara försiktig med att dra slutsatser från de år och område det gäller för. Data är inkomplett för: Norrtälje (år 2017–2018) och Kungsholmen (2022).",
     källa: "Barnhälsovårdens årsrapport ",
     läsa_mer_1_text:
-      "Årsrapport – barnhälsovård i Stockholms län 2023, Region Stockholm.",
+      "Årsrapport – barnhälsovård i Stockholms län 2024, Region Stockholm.",
     läsa_mer_1_link:
-      "https://kunskapsstodforvardgivare.se/download/18.28eeaa311900ff142db87ea/1718694895552/%C3%85rsrapport%20Barnh%C3%A4lsov%C3%A5rd%C2%A02023.pdf",
+      "https://kunskapsstodforvardgivare.se/download/18.2416aa00197626be2ab1de34/1750765518396/BHV-A%CC%8AR-2024-250623.pdf",
   },
   "Vaccinationstäckning MPR": {
     definition:
       "Andel (%) barn per årskull som har vaccinerats mot mässling, påssjuka och röda hund (MPR) med minst en dos. Data för år 2022 gäller barn födda 2020 och så vidare. Observera att det kan förekomma brister i data för olika år och man ska vara försiktig med att dra slutsatser från de år och område det gäller för. Data är inkomplett för: Norrtälje (2016–2018), Sigtuna (2016), Kungsholmen (2022).",
     källa: "Barnhälsovårdens årsrapport ",
     läsa_mer_1_text:
-      "Årsrapport – barnhälsovård i Stockholms län 2023, Region Stockholm.",
+      "Årsrapport – barnhälsovård i Stockholms län 2024, Region Stockholm.",
     läsa_mer_1_link:
-      "https://kunskapsstodforvardgivare.se/download/18.28eeaa311900ff142db87ea/1718694895552/%C3%85rsrapport%20Barnh%C3%A4lsov%C3%A5rd%C2%A02023.pdf",
+      "https://kunskapsstodforvardgivare.se/download/18.2416aa00197626be2ab1de34/1750765518396/BHV-A%CC%8AR-2024-250623.pdf",
     läsa_mer_2_text:
       "Strategier för att öka vaccinationstäckningen – en kunskapsöversikt. Rapport 2022:7. Centrum för epidemiologi och dsamhällsmedicin (CES).",
     läsa_mer_2_link:
@@ -1008,111 +1008,18 @@ const indicator_info = {
     läsa_mer_1_link:
       "https://www.ces.regionstockholm.se/rapporter/rapporter-om-covid-19/",
   },
-  "Besvär av trafikbuller i bostad": {
-    definition:
-      "Andel (%) individer som uppger att trafikbuller (väg-, tåg- eller flygtrafik) medför störningar i eller i närheten av sin bostad (t.ex. svårt att somna eller svårt att ha fönster öppna på dagtid) varje vecka eller dagligen.",
-    källa: "Region Stockholms folkhälsoenkät",
-    läsa_mer_1_text:
-      "Miljöhälsorapport Stockholms län 2021, Centrum för arbets- och miljömedicin (CAMM)",
-    läsa_mer_1_link:
-      "https://www.camm.regionstockholm.se/4ae032/siteassets/camm-dokument/miljohalsorapport2021.pdf",
-    läsa_mer_2_text:
-      "Kapitlet om buller på Miljöhälsa online, Centrum för arbets- och miljömedicin (CAMM):",
-    läsa_mer_2_link:
-      "https://www.camm.regionstockholm.se/miljohalsa-online/buller-i-samhallet/",
-    läsa_mer_3_text:
-      "Omgivningsbuller och hälsa. Faktablad 2020. Centrum för arbets- och miljömedicin (CAMM).",
-    läsa_mer_3_link:
-      "https://www.folkhalsoguiden.se/publikationer/omgivningsbuller--och-halsa/",
-  },
-  "Exponeras för trafikbuller": {
-    definition:
-      "Andel invånare vars genomsnittliga årsexponering för en eller fler former av trafikbuller (väg-, spår-, eller flygtrafikbuller) överstiger WHO:s riktvärden. <br>Dessa riktvärden är:<br><ul><li>53 dB Lden för vägtrafik </li><li>54 dB Lden för spårtrafik </li><li>45 dB Lden för flygtrafik </li></ul><br>Notera att dessa riktvärden är något striktare än våra svenska norm- och målvärden, därav relativt höga andelar exponerade.",
-    källa: "Institutet för miljömedicin (IMM);Statistiska centralbyrån (SCB)",
-    läsa_mer_1_text:
-      "Miljöhälsorapport Stockholms län 2021, Centrum för arbets- och miljömedicin (CAMM)",
-    läsa_mer_1_link:
-      "https://www.camm.regionstockholm.se/4ae032/siteassets/camm-dokument/miljohalsorapport2021.pdf",
-    läsa_mer_2_text:
-      "Kapitlet om trafikbuller på Miljöhälsa Online, från Centrum för Arbets- och Miljömedicin",
-    läsa_mer_2_link:
-      "https://www.camm.regionstockholm.se/miljohalsa-online/buller-i-samhallet/",
-    läsa_mer_3_text:
-      "Environmental noise guidelines for the European Region. WHO Regional office for Europe, Copenhagen, 2019.",
-    läsa_mer_3_link:
-      "https://www.who.int/europe/publications/i/item/9789289053563",
-    läsa_mer_4_text:
-      "Omgivningsbuller och hälsa. Faktablad 2020. Centrum för arbets- och miljömedicin (CAMM).",
-    läsa_mer_4_link:
-      "https://www.folkhalsoguiden.se/publikationer/omgivningsbuller--och-halsa/",
-  },
-  "Exponeras för luftföroreningar": {
-    definition:
-      "Andel invånare vars genomsnittliga årsexponering för grova partiklar (PM10) eller kvävedioxid (NO2) överstiger WHO:s riktvärden.<br>Dessa riktvärden är: <br><ul><li>15 µg/m3 av grova partiklar (PM10) </li><li>10 µg/m3 av kvävedioxid (NO2) </li></ul><br>Notera att dessa riktvärden är något strängare än våra svenska norm- och målvärden, därav relativt höga andelar exponerade.",
-    källa: "Institutet för miljömedicin (IMM);Statistiska centralbyrån (SCB)",
-    läsa_mer_1_text:
-      "Miljöhälsorapport Stockholms län 2021, Centrum för arbets- och miljömedicin (CAMM)",
-    läsa_mer_1_link:
-      "https://www.camm.regionstockholm.se/4ae032/siteassets/camm-dokument/miljohalsorapport2021.pdf",
-    läsa_mer_2_text:
-      "Kapitlet om luftförorening på Miljöhälsa online, från Centrum för Arbets- och Miljömedicin",
-    läsa_mer_2_link:
-      "https://www.camm.regionstockholm.se/miljohalsa-online/luftfororeningar-utomhus/",
-    läsa_mer_3_text:
-      "What are the WHO Air quality guidelines?, WHO Regional office for Europe, Copenhagen, 2021.",
-    läsa_mer_3_link:
-      "https://www.who.int/news-room/feature-stories/detail/what-are-the-who-air-quality-guidelines",
-    läsa_mer_4_text:
-      "Luftföroreningar och hälsa. Fakablad 2018. Centrum för arbets- och miljömedicin (CAMM).",
-    läsa_mer_4_link:
-      "https://www.folkhalsoguiden.se/publikationer/luftfororeningar-och-halsa/",
-  },
-  "Besök i grönområde": {
-    definition:
-      "Andel (%) av befolkningen i Stockholms län som vistas i park, grönområde eller annan natur varje dag eller flera gånger per vecka under sommarhalvåret",
-    källa: "Miljöhälsoenkäten",
-    läsa_mer_1_text:
-      "Miljöhälsorapport Stockholms län 2017, Centrum för arbets- och miljömedicin (CAMM)",
-    läsa_mer_1_link:
-      "http://dok.slso.sll.se/CAMM/Rapportserien/2017/CAMM_miljoohalsorapport_webb.pdf",
-    läsa_mer_2_text:
-      "Miljöhälsorapport Stockholms län 2021, Centrum för arbets- och miljömedicin (CAMM)",
-    läsa_mer_2_link:
-      "https://www.camm.regionstockholm.se/4ae032/siteassets/camm-dokument/miljohalsorapport2021.pdf",
-    läsa_mer_3_text:
-      "Kapitlet om grönstruktur på Miljöhälsa Online, från Centrum för Arbets- och Miljömedicin",
-    läsa_mer_3_link:
-      "https://www.camm.regionstockholm.se/miljohalsa-online/gronstruktur/",
-  },
-  "Grönska på gångavstånd från bostaden": {
-    definition:
-      "Andel (%) av befolkningen i Stockholms län som har park, grönområde eller annan natur på gångavstånd från sin bostad",
-    källa: "Miljöhälsoenkäten",
-    läsa_mer_1_text:
-      "Miljöhälsorapport Stockholms län 2017, Centrum för arbets- och miljömedicin (CAMM)",
-    läsa_mer_1_link:
-      "http://dok.slso.sll.se/CAMM/Rapportserien/2017/CAMM_miljoohalsorapport_webb.pdf",
-    läsa_mer_2_text:
-      "Miljöhälsorapport Stockholms län 2021, Centrum för arbets- och miljömedicin (CAMM)",
-    läsa_mer_2_link:
-      "https://www.camm.regionstockholm.se/4ae032/siteassets/camm-dokument/miljohalsorapport2021.pdf",
-    läsa_mer_3_text:
-      "Kapitlet om grönstruktur på Miljöhälsa Online, från Centrum för Arbets- och Miljömedicin",
-    läsa_mer_3_link:
-      "https://www.camm.regionstockholm.se/miljohalsa-online/gronstruktur/",
-  },
   "Störs mycket av trafikbuller": {
     definition:
-      "Andel (%) av befolkningen i Stockholms län som uppger att de är mycket eller väldigt mycket störda av trafikbuller (väg-, spår- och flygtrafik sammantaget) i eller i närheten av sin bostad",
+      "Andel (%) av befolkningen i Stockholms län som uppger att de är mycket eller väldigt mycket störda av trafikbuller (väg-, spår- och flygtrafik sammantaget) i eller i närheten av sin bostad.",
     källa: "Miljöhälsoenkäten",
     läsa_mer_1_text:
       "Miljöhälsorapport Stockholms län 2017, Centrum för arbets- och miljömedicin (CAMM)",
     läsa_mer_1_link:
-      "http://dok.slso.sll.se/CAMM/Rapportserien/2017/CAMM_miljoohalsorapport_webb.pdf",
+      "https://www.camm.regionstockholm.se/rapporter-och-faktablad/rapporter/miljohalsorapporter/bestall-miljohalsorapport/",
     läsa_mer_2_text:
       "Miljöhälsorapport Stockholms län 2021, Centrum för arbets- och miljömedicin (CAMM)",
     läsa_mer_2_link:
-      "https://www.camm.regionstockholm.se/4ae032/siteassets/camm-dokument/miljohalsorapport2021.pdf",
+      "https://www.camm.regionstockholm.se/rapporter-och-faktablad/rapporter/miljohalsorapporter/bestall-miljohalsorapport2021/",
     läsa_mer_3_text:
       "Kapitlet om buller i samhället på Miljöhälsa Online, från Centrum för Arbets- och Miljömedicin",
     läsa_mer_3_link:
@@ -1120,16 +1027,16 @@ const indicator_info = {
   },
   "Upplevelse av dålig luftkvalitet": {
     definition:
-      "Andel (%) av befolkningen i Stockholms län som rapporterar dålig eller mycket dålig luftkvalitet utomhus i närheten av sin bostad",
+      "Andel (%) av befolkningen i Stockholms län som rapporterar dålig eller mycket dålig luftkvalitet utomhus i närheten av sin bostad.",
     källa: "Miljöhälsoenkäten",
     läsa_mer_1_text:
       "Miljöhälsorapport Stockholms län 2017, Centrum för arbets- och miljömedicin (CAMM)",
     läsa_mer_1_link:
-      "http://dok.slso.sll.se/CAMM/Rapportserien/2017/CAMM_miljoohalsorapport_webb.pdf",
+      "https://www.camm.regionstockholm.se/rapporter-och-faktablad/rapporter/miljohalsorapporter/bestall-miljohalsorapport/",
     läsa_mer_2_text:
       "Miljöhälsorapport Stockholms län 2021, Centrum för arbets- och miljömedicin (CAMM)",
     läsa_mer_2_link:
-      "https://www.camm.regionstockholm.se/4ae032/siteassets/camm-dokument/miljohalsorapport2021.pdf",
+      "https://www.camm.regionstockholm.se/rapporter-och-faktablad/rapporter/miljohalsorapporter/bestall-miljohalsorapport2021/",
     läsa_mer_3_text:
       "Kapitlet om luftföroreningar utomhus på Miljöhälsa Online, från Centrum för Arbets- och Miljömedicin",
     läsa_mer_3_link:
@@ -1137,23 +1044,20 @@ const indicator_info = {
   },
   "Grönska på gångavstånd från bostaden saknas": {
     definition:
-      "Andel (%) av befolkningen i Stockholms län som anger att grönområde på gångavstånd från bostaden saknas",
-    källa: "Miljöhälsoenkäten",
+      "Andel (%) av befolkningen i Stockholms län som anger att grönområde på gångavstånd från bostaden saknas.",
+    källa: "Miljöhälsoenkäten 2023\n",
     läsa_mer_1_text:
-      "Miljöhälsorapport Stockholms län 2021, Centrum för arbets- och miljömedicin (CAMM)",
+      "Miljöhälsorapport Stockholms län 2017, Centrum för arbets- och miljömedicin (CAMM)",
     läsa_mer_1_link:
-      "https://www.camm.regionstockholm.se/4ae032/siteassets/camm-dokument/miljohalsorapport2021.pdf",
+      "https://www.camm.regionstockholm.se/rapporter-och-faktablad/rapporter/miljohalsorapporter/bestall-miljohalsorapport/",
     läsa_mer_2_text:
-      "Kapitlet om Grönstruktur på Miljöhälsa online, från Centrum för Arbets- och Miljömedicin",
+      "Miljöhälsorapport Stockholms län 2021, Centrum för arbets- och miljömedicin (CAMM)",
     läsa_mer_2_link:
-      "https://www.camm.regionstockholm.se/miljohalsa-online/gronstruktur/",
+      "https://www.camm.regionstockholm.se/rapporter-och-faktablad/rapporter/miljohalsorapporter/bestall-miljohalsorapport2021/",
     läsa_mer_3_text:
-      "Urban green spaces and health. A review of evidence. WHO Regional office for Europe, Copenhagen, 2016.",
-    läsa_mer_3_link: "https://apps.who.int/iris/handle/10665/345751",
-    läsa_mer_4_text:
-      "Tillgång till bostadsnära grönska i befolkningen. Rapport 2022:04. Centrum för arbets- och miljömedicin (CAMM).",
-    läsa_mer_4_link:
-      "https://www.folkhalsoguiden.se/publikationer/camm-rapport-2022-tillgang-till-bostadsnara--gronska-i-befolkningen/",
+      "Kapitlet om Grönstruktur på Miljöhälsa online, från Centrum för Arbets- och Miljömedicin (CAMM)",
+    läsa_mer_3_link:
+      "https://www.camm.regionstockholm.se/miljohalsa-online/gronstruktur/",
   },
   "Röker e-cigaretter (grundskola åk 9)": {
     definition:
