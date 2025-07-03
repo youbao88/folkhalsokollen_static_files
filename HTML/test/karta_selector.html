@@ -99,7 +99,7 @@
         </div>
         <div class='selectorWrap'>
             <div class='selectorTextWrap'>
-                <span class='selectorText'>6. Välj ålder</span>
+                <span class='selectorText' id="ålderSelectorText">6. Välj ålder</span>
             </div>
             <div class='selectorDropdown'>
                 <select class="selectpicker" id='karta_alder' multiple data-style='mySelectpicker' data-width='100%'
@@ -176,7 +176,7 @@
                 const tidPeriodUnique = unzippedData[1].unique();
                 const aldersUnique = unzippedData[2].unique().sort();
 
-                const isUngasHalsa = aldersUnique.includes('Gy 2');
+                const isUngasHalsa = aldersUnique.includes('Årskurs 9');
 
                 if (tidPeriodUnique[0].length == 4) {
                     var tidPeriodUniqueSorted = tidPeriodUnique.sort()
@@ -251,12 +251,12 @@
                 $('#karta_alder').empty();
                 const selectAllButton = $('#karta_alder').siblings('.dropdown-menu').find('button:contains("välj alla")');
                 if (isUngasHalsa){
+                    $('#ålderSelectorText').html('6. Välj skolår');
                     $('#karta_alder').data('maxOptions', 1);
                     selectAllButton.attr('disabled', '');
                     selectAllButton.attr('title', 'Only one option can be selected when Ungas Hälsa is selected');
-
-
                 }else{
+                    $('#ålderSelectorText').html('6. Välj ålder');
                     $('#karta_alder').data('maxOptions', false);
                     selectAllButton.removeAttr('disabled');
                     selectAllButton.removeAttr('title');
