@@ -2514,7 +2514,145 @@ const indicator_name_parameter_map = {
       tabel_Åldersgrupp: ["18-44 år", "45-64 år", "65+ år"],
       tabel_Kön: ["Kvinnor", "Män"],
     },
-  }
+  },
+  "Använder e-cigaretter dagligen eller ibland": {
+    karta: {
+      karta_Tidsperiod: "2024",
+      karta_Kön: ["Killar", "Tjejer"],
+      karta_Åldersgrupp: "Gymnasieår 2",
+    },
+    stapel: {
+      stapel_Område: "Stockholms län",
+      stapel_Tidsperiod: "2024",
+      stapel_Kön: ["Killar", "Tjejer"],
+    },
+    linje: {
+      linje_Kön: ["Killar", "Tjejer"],
+      linje_Område: ["Stockholms län", "Botkyrka"],
+      linje_Åldersgrupp:"Gymnasieår 2",
+    },
+    tabell: {
+      table_Tidsperiod: "2024",
+      table_Område: "Stockholms län",
+      tabel_Åldersgrupp: "Gymnasieår 2",
+      tabel_Kön: ["Killar", "Tjejer"],
+    },
+  },
+    "Känner sig otrygga i sitt bostadsområde": {
+    karta: {
+      karta_Tidsperiod: "2024",
+      karta_Kön: ["Killar", "Tjejer"],
+      karta_Åldersgrupp: "Gymnasieår 2",
+    },
+    stapel: {
+      stapel_Område: "Stockholms län",
+      stapel_Tidsperiod: "2024",
+      stapel_Kön: ["Killar", "Tjejer"],
+    },
+    linje: {
+      linje_Kön: ["Killar", "Tjejer"],
+      linje_Område: ["Stockholms län", "Botkyrka"],
+      linje_Åldersgrupp:"Gymnasieår 2",
+    },
+    tabell: {
+      table_Tidsperiod: "2024",
+      table_Område: "Stockholms län",
+      tabel_Åldersgrupp: "Gymnasieår 2",
+      tabel_Kön: ["Killar", "Tjejer"],
+    },
+  },
+      "Röker dagligen eller ibland": {
+    karta: {
+      karta_Tidsperiod: "2024",
+      karta_Kön: ["Killar", "Tjejer"],
+      karta_Åldersgrupp: "Gymnasieår 2",
+    },
+    stapel: {
+      stapel_Område: "Stockholms län",
+      stapel_Tidsperiod: "2024",
+      stapel_Kön: ["Killar", "Tjejer"],
+    },
+    linje: {
+      linje_Kön: ["Killar", "Tjejer"],
+      linje_Område: ["Stockholms län", "Botkyrka"],
+      linje_Åldersgrupp:"Gymnasieår 2",
+    },
+    tabell: {
+      table_Tidsperiod: "2024",
+      table_Område: "Stockholms län",
+      tabel_Åldersgrupp: "Gymnasieår 2",
+      tabel_Kön: ["Killar", "Tjejer"],
+    },
+  },
+   "Snusar dagligen eller ibland": {
+    karta: {
+      karta_Tidsperiod: "2024",
+      karta_Kön: ["Killar", "Tjejer"],
+      karta_Åldersgrupp: "Gymnasieår 2",
+    },
+    stapel: {
+      stapel_Område: "Stockholms län",
+      stapel_Tidsperiod: "2024",
+      stapel_Kön: ["Killar", "Tjejer"],
+    },
+    linje: {
+      linje_Kön: ["Killar", "Tjejer"],
+      linje_Område: ["Stockholms län", "Botkyrka"],
+      linje_Åldersgrupp:"Gymnasieår 2",
+    },
+    tabell: {
+      table_Tidsperiod: "2024",
+      table_Område: "Stockholms län",
+      tabel_Åldersgrupp: "Gymnasieår 2",
+      tabel_Kön: ["Killar", "Tjejer"],
+    },
+  },
+     "Snusar vitt snus dagligen eller ibland": {
+    karta: {
+      karta_Tidsperiod: "2024",
+      karta_Kön: ["Killar", "Tjejer"],
+      karta_Åldersgrupp: "Gymnasieår 2",
+    },
+    stapel: {
+      stapel_Område: "Stockholms län",
+      stapel_Tidsperiod: "2024",
+      stapel_Kön: ["Killar", "Tjejer"],
+    },
+    linje: {
+      linje_Kön: ["Killar", "Tjejer"],
+      linje_Område: ["Stockholms län", "Botkyrka"],
+      linje_Åldersgrupp:"Gymnasieår 2",
+    },
+    tabell: {
+      table_Tidsperiod: "2024",
+      table_Område: "Stockholms län",
+      tabel_Åldersgrupp: "Gymnasieår 2",
+      tabel_Kön: ["Killar", "Tjejer"],
+    },
+  },
+   "Upplever inte hot och våld": {
+    karta: {
+      karta_Tidsperiod: "2024",
+      karta_Kön: ["Killar", "Tjejer"],
+      karta_Åldersgrupp: "Gymnasieår 2",
+    },
+    stapel: {
+      stapel_Område: "Stockholms län",
+      stapel_Tidsperiod: "2024",
+      stapel_Kön: ["Killar", "Tjejer"],
+    },
+    linje: {
+      linje_Kön: ["Killar", "Tjejer"],
+      linje_Område: ["Stockholms län", "Botkyrka"],
+      linje_Åldersgrupp:"Gymnasieår 2",
+    },
+    tabell: {
+      table_Tidsperiod: "2024",
+      table_Område: "Stockholms län",
+      tabel_Åldersgrupp: "Gymnasieår 2",
+      tabel_Kön: ["Killar", "Tjejer"],
+    },
+  },
 };
 const indicator_init_map = {
   "Äldres hälsa": {
@@ -2591,20 +2729,20 @@ const indicator_init_map = {
   },
   "Ungas hälsa": {
     indikator_group: "Ungas hälsa",
-    indikator_name: "Ångestkänslor (grundskola åk 9)",
+    indikator_name: "Använder e-cigaretter dagligen eller ibland",
     indikator_category: "Ej valbart",
-    karta_Tidsperiod: "2022",
+    karta_Tidsperiod: "2024",
     karta_Kön: ["Killar", "Tjejer"],
-    karta_Åldersgrupp: "Samtliga",
+    karta_Åldersgrupp: "Gymnasieår 2",
     stapel_Område: "Stockholms län",
-    stapel_Tidsperiod: "2022",
+    stapel_Tidsperiod: "2024",
     stapel_Kön: ["Killar", "Tjejer"],
     linje_Område: ["Stockholms län", "Botkyrka"],
     linje_Kön: ["Killar", "Tjejer"],
-    linje_Åldersgrupp: "Samtliga",
-    table_Tidsperiod: "2022",
+    linje_Åldersgrupp: "Gymnasieår 2",
+    table_Tidsperiod: "2024",
     table_Område: "Stockholms län",
-    tabel_Åldersgrupp: "Samtliga",
+    tabel_Åldersgrupp: "Gymnasieår 2",
     tabel_Kön: ["Killar", "Tjejer"],
   },
   "Psykisk ohälsa": {
