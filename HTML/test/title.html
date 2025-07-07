@@ -248,6 +248,10 @@
                         div.innerHTML += `
                     <span style="font-size: 0.9rem; font-weight:normal"> (asterisk * anges vid mindre än 5 fall)</span>
                     `
+                    } else if (['Använder e-cigaretter dagligen eller ibland', 'Känner sig otrygga i sitt bostadsområde', 'Röker dagligen eller ibland', 'Snusar dagligen eller ibland', 'Snusar vitt snus dagligen eller ibland', 'Upplever inte hot och våld'].includes(indicator_name)) {
+                        div.innerHTML += `
+                    <span style="font-size: 0.9rem; font-weight:normal"> (asterisk* anges vid färre än 10 svarande elever, eller om en kommun/stadsdel inte deltagit i enkätundersökningen)</span>
+                        `
                     }
                 };
                 // Send page information back to the main server in order to create it as an image
