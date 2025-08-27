@@ -1059,158 +1059,6 @@ const indicator_info = {
     läsa_mer_3_link:
       "https://www.camm.regionstockholm.se/miljohalsa-online/gronstruktur/",
   },
-  "Röker e-cigaretter (grundskola åk 9)": {
-    definition:
-      "Andel (%) elever i grundskola årskurs 9 som uppger att de röker e-cigaretter dagligen eller ibland.\nE-cigaretter, även kallat ”vejp” är en apparat som laddas med vätska som ofta är fylld med nikotin. Nikotin är beroendeframkallande och nikotinets egenskaper kan påverka hälsan negativt. ",
-    källa: "Stockholmsenkäten",
-    läsa_mer_1_text:
-      "Folkhälsorapport 2023 – Rökning, Centrum för epidemiologi och samhällsmedicin (CES)",
-    läsa_mer_1_link:
-      "https://www.folkhalsorapportstockholm.se/rapporten2/levnadsvanor/rokning/",
-    läsa_mer_2_text: "Sluta-röka-linjen",
-    läsa_mer_2_link: "https://www.slutarokalinjen.se/",
-    läsa_mer_3_text: "Hälsoområde Tobak, Elevhälsoportalen skola",
-    läsa_mer_3_link:
-      "https://www.elevhalsoportalen.se/skola/halsoomraden/tobak/  ",
-    läsa_mer_4_text:
-      "Kunskap om tobaks- och nikotinprodukters skadeverkningar. Rapport, Folkhälsomyndigheten 2023.",
-    läsa_mer_4_link:
-      "https://www.folkhalsomyndigheten.se/contentassets/6ab2ab5dabe64ccab994e8b472331c6d/kunskap-tobaks-nikotinprodukters-skadeverkningar.pdf",
-    läsa_mer_5_text:
-      "SOTIS – Samtal om tobak och nikotin i mötet med ungdomar. Centrum för epidemiologi och samhällsmedicin (CES). 2024.",
-    läsa_mer_5_link: "https://www.folkhalsoguiden.se/publikationer/ces-sotis/",
-  },
-  "Röker e-cigaretter (gymnasiet år 2)": {
-    definition:
-      "Andel (%) elever i gymnasiet år 2 som uppger att de röker e-cigaretter dagligen eller ibland. \nE-cigaretter, även kallat ”vejp” är en apparat som laddas med vätska som ofta är fylld med nikotin. Nikotin är beroendeframkallande och nikotinets egenskaper kan påverka hälsan negativt. ",
-    källa: "Stockholmsenkäten",
-    läsa_mer_1_text:
-      "Folkhälsorapport 2023 – Rökning, Centrum för epidemiologi och samhällsmedicin (CES)",
-    läsa_mer_1_link:
-      "https://www.folkhalsorapportstockholm.se/rapporten2/levnadsvanor/rokning/",
-    läsa_mer_2_text: "Sluta-röka-linjen",
-    läsa_mer_2_link: "https://www.slutarokalinjen.se/",
-    läsa_mer_3_text: "Hälsoområde Tobak, Elevhälsoportalen skola",
-    läsa_mer_3_link:
-      "https://www.elevhalsoportalen.se/skola/halsoomraden/tobak/  ",
-    läsa_mer_4_text:
-      "Kunskap om tobaks- och nikotinprodukters skadeverkningar. Rapport, Folkhälsomyndigheten 2023.",
-    läsa_mer_4_link:
-      "https://www.folkhalsomyndigheten.se/contentassets/6ab2ab5dabe64ccab994e8b472331c6d/kunskap-tobaks-nikotinprodukters-skadeverkningar.pdf",
-    läsa_mer_5_text:
-      "SOTIS – Samtal om tobak och nikotin i mötet med ungdomar. Centrum för epidemiologi och samhällsmedicin (CES). 2024.",
-    läsa_mer_5_link: "https://www.folkhalsoguiden.se/publikationer/ces-sotis/",
-  },
-  "Använder vitt snus (grundskola åk 9)": {
-    definition:
-      "Andel (%) elever i grundskola årskurs 9 som uppger att de snusar vitt snus eller nikotinpåse. Vitt snus benämns ofta som tobaksfritt med nikotin. Nikotin är beroendeframkallande och nikotinets egenskaper kan påverka hälsan negativt. ",
-    källa: "Stockholmsenkäten",
-    läsa_mer_1_text:
-      "Folkhälsorapport 2023 – Rökning, Centrum för epidemiologi och samhällsmedicin (CES)",
-    läsa_mer_1_link:
-      "https://www.folkhalsorapportstockholm.se/rapporten2/levnadsvanor/rokning/",
-    läsa_mer_2_text: "Sluta-röka-linjen",
-    läsa_mer_2_link: "https://www.slutarokalinjen.se/",
-    läsa_mer_3_text: "Hälsoområde Tobak, Elevhälsoportalen skola",
-    läsa_mer_3_link:
-      "https://www.elevhalsoportalen.se/skola/halsoomraden/tobak/  ",
-    läsa_mer_4_text:
-      "Kunskap om tobaks- och nikotinprodukters skadeverkningar. Rapport, Folkhälsomyndigheten 2023.",
-    läsa_mer_4_link:
-      "https://www.folkhalsomyndigheten.se/contentassets/6ab2ab5dabe64ccab994e8b472331c6d/kunskap-tobaks-nikotinprodukters-skadeverkningar.pdf",
-    läsa_mer_5_text:
-      "SOTIS – Samtal om tobak och nikotin i mötet med ungdomar. Centrum för epidemiologi och samhällsmedicin (CES). 2024.",
-    läsa_mer_5_link: "https://www.folkhalsoguiden.se/publikationer/ces-sotis/",
-  },
-  "Använder vitt snus (gymnasiet år 2)": {
-    definition:
-      "Andel (%) elever i gymnasiet år 2 som uppger att de snusar vitt snus eller nikotinpåse. Vitt snus benämns ofta som tobaksfritt med nikotin. Nikotin är beroendeframkallande och nikotinets egenskaper kan påverka hälsan negativt. ",
-    källa: "Stockholmsenkäten",
-    läsa_mer_1_text:
-      "Folkhälsorapport 2023 – Rökning, Centrum för epidemiologi och samhällsmedicin (CES)",
-    läsa_mer_1_link:
-      "https://www.folkhalsorapportstockholm.se/rapporten2/levnadsvanor/rokning/",
-    läsa_mer_2_text: "Sluta-röka-linjen",
-    läsa_mer_2_link: "https://www.slutarokalinjen.se/",
-    läsa_mer_3_text: "Hälsoområde Tobak, Elevhälsoportalen skola",
-    läsa_mer_3_link:
-      "https://www.elevhalsoportalen.se/skola/halsoomraden/tobak/  ",
-    läsa_mer_4_text:
-      "Kunskap om tobaks- och nikotinprodukters skadeverkningar. Rapport, Folkhälsomyndigheten 2023.",
-    läsa_mer_4_link:
-      "https://www.folkhalsomyndigheten.se/contentassets/6ab2ab5dabe64ccab994e8b472331c6d/kunskap-tobaks-nikotinprodukters-skadeverkningar.pdf",
-    läsa_mer_5_text:
-      "SOTIS – Samtal om tobak och nikotin i mötet med ungdomar. Centrum för epidemiologi och samhällsmedicin (CES). 2024.",
-    läsa_mer_5_link: "https://www.folkhalsoguiden.se/publikationer/ces-sotis/",
-  },
-  "Ångestkänslor (grundskola åk 9)": {
-    definition:
-      "Andel (%) elever i grundskola årskurs 9 som uppger att de ganska ofta eller väldigt ofta känner sig rädda utan att veta varför. \nObservera att Upplands-Bro svar för 2020 baseras på skolkommun i stället för hemkommun.",
-    källa: "Stockholmsenkäten",
-    läsa_mer_1_text: "Hälsoområde Psykisk hälsa, Elevhälsoportalen",
-    läsa_mer_1_link:
-      "https://www.elevhalsoportalen.se/skola/halsoomraden/psykisk-halsa/",
-    läsa_mer_2_text: "Barn & unga, Uppdrag psykisk hälsa",
-    läsa_mer_2_link:
-      "https://www.uppdragpsykiskhalsa.se/stockholmslan/barn-unga/",
-    läsa_mer_3_text:
-      "Folkhälsorapport 2023 – Ångest och depression, Centrum för epidemiologi och samhällsmedicin (CES)",
-    läsa_mer_3_link:
-      "https://www.folkhalsorapportstockholm.se/rapporten2/sjukdomar-och-skador/angest-och-depression/ ",
-    läsa_mer_4_text:
-      "Det utökade uppdraget för barn och unga med psykisk ohälsa i Region Stockholm. Uppföljning av strukturförändringar inom primärvården. Rapport 2024:4. Centrum för epidemiologi och samhällsmedicin (CES)",
-    läsa_mer_4_link:
-      "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20244/",
-    läsa_mer_5_text:
-      "Förekomst av ångestdiagnos bland unga i Stockholms län. Rapport 2024:3. Centrum för epidemiologi och samhällsmedicin (CES).",
-    läsa_mer_5_link:
-      "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20243-forekomst-av-angestdiagnos-bland-unga-i-stockholms-lan/",
-  },
-  "Ångestkänslor (gymnasiet år 2)": {
-    definition:
-      "Andel (%) elever i gymnasiet år 2 som uppger att de ganska ofta eller väldigt ofta känner sig rädda utan att veta varför.\nObservera att Upplands-Bro svar för 2020 baseras på skolkommun i stället för hemkommun.",
-    källa: "Stockholmsenkäten",
-    läsa_mer_1_text: "Hälsoområde Psykisk hälsa, Elevhälsoportalen",
-    läsa_mer_1_link:
-      "https://www.elevhalsoportalen.se/skola/halsoomraden/psykisk-halsa/",
-    läsa_mer_2_text: "Barn & unga, Uppdrag psykisk hälsa",
-    läsa_mer_2_link:
-      "https://www.uppdragpsykiskhalsa.se/stockholmslan/barn-unga/",
-    läsa_mer_3_text:
-      "Folkhälsorapport 2023 – Ångest och depression, Centrum för epidemiologi och samhällsmedicin (CES)",
-    läsa_mer_3_link:
-      "https://www.folkhalsorapportstockholm.se/rapporten2/sjukdomar-och-skador/angest-och-depression/ ",
-    läsa_mer_4_text:
-      "Det utökade uppdraget för barn och unga med psykisk ohälsa i Region Stockholm. Uppföljning av strukturförändringar inom primärvården. Rapport 2024:4. Centrum för epidemiologi och samhällsmedicin (CES)",
-    läsa_mer_4_link:
-      "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20244/",
-    läsa_mer_5_text:
-      "Förekomst av ångestdiagnos bland unga i Stockholms län. Rapport 2024:3. Centrum för epidemiologi och samhällsmedicin (CES).",
-    läsa_mer_5_link:
-      "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20243-forekomst-av-angestdiagnos-bland-unga-i-stockholms-lan/",
-  },
-  "Huvudvärk (grundskola åk 9)": {
-    definition:
-      "Andel (%) elever i grundskola årskurs 9 som uppger att de har huvudvärk en gång i veckan eller oftare. \nObservera att Upplands-Bro svar för 2020 baseras på skolkommun i stället för hemkommun.",
-    källa: "Stockholmsenkäten",
-    läsa_mer_1_text:
-      "Folkhälsorapport 2023 – Smärta, Centrum för epidemiologi och samhällsmedicin (CES)",
-    läsa_mer_1_link:
-      "https://www.folkhalsorapportstockholm.se/rapporten2/sjukdomar-och-skador/smarta/ ",
-    läsa_mer_2_text: "Metodstöd för elevhälsan. Uppdrag psykisk hälsa.   ",
-    läsa_mer_2_link: "https://metodstod.se/metoder/huvudvark/",
-  },
-  "Huvudvärk (gymnasiet år 2)": {
-    definition:
-      "Andel (%) elever i gymnasiet år 2 som uppger att de har huvudvärk en gång i veckan eller oftare.  Observera att Upplands-Bro svar för 2020 baseras på skolkommun i stället för hemkommun.",
-    källa: "Stockholmsenkäten",
-    läsa_mer_1_text:
-      "Folkhälsorapport 2023 – Smärta, Centrum för epidemiologi och samhällsmedicin (CES)",
-    läsa_mer_1_link:
-      "https://www.folkhalsorapportstockholm.se/rapporten2/sjukdomar-och-skador/smarta/ ",
-    läsa_mer_2_text: "Metodstöd för elevhälsan. Uppdrag psykisk hälsa.   ",
-    läsa_mer_2_link: "https://metodstod.se/metoder/huvudvark/",
-  },
   "Använder e-cigaretter dagligen eller ibland": {
     definition:
       "Andel (%) elever som uppger att de röker e-cigaretter dagligen eller ibland. E-cigaretter, även kallat ”vejp” är en apparat som laddas med vätska som ofta är fylld med nikotin. Nikotin är beroendeframkallande och nikotinets egenskaper kan påverka hälsan negativt.",
@@ -1220,7 +1068,7 @@ const indicator_info = {
     läsa_mer_1_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/levnadsvanor/rokning/",
     läsa_mer_2_text: "Sluta-röka-linjen",
-    läsa_mer_2_link: "https://www.slutarokalinjen.se/",
+    läsa_mer_2_link: "https://www.slutarokalinjen.se",
     läsa_mer_3_text: "Hälsoområde Tobak, Elevhälsoportalen skola",
     läsa_mer_3_link:
       "https://www.elevhalsoportalen.se/skola/halsoomraden/tobak/",
@@ -1237,13 +1085,13 @@ const indicator_info = {
       "Andel (%) elever som uppger att de känner sig ganska otrygga, mycket otrygga eller inte går ut på kvällen i sitt bostadsområde av oro för att utsättas för brott.",
     källa: "Stockholmsenkäten",
     läsa_mer_1_text:
-      "Strategi för att förebygga och bekämpa våld i Stockholms län 2020–2026, Länsstyrelsen",
+      "Folkhälsorapport 2023 - Sociala relationer. Centrum för epidemiologi och samhällsmedicin (CES)",
     läsa_mer_1_link:
-      "https://www.lansstyrelsen.se/stockholm/om-oss/vara-tjanster/publikationer/2019/strategi-for-att-forebygga-och-bekampa-vald-i-stockholms-lan---strategi-2020-2026.html",
-    läsa_mer_2_text:
-      "Folkhälsorapport 2023 - Sociala relationer. Centrum för epidemiologi och samhällsmedicin (CES).",
-    läsa_mer_2_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/sociala-och-ekonomiska-forutsattningar/sociala-relationer/",
+    läsa_mer_2_text:
+      "Strategi för att förebygga och bekämpa våld i Stockholms län – STRATEGI 2020–2026, Länsstyrelsen Stockholm",
+    läsa_mer_2_link:
+      "https://www.lansstyrelsen.se/stockholm/om-oss/vara-tjanster/publikationer/2019/strategi-for-att-forebygga-och-bekampa-vald-i-stockholms-lan---strategi-2020-2026.html",
   },
   "Röker dagligen eller ibland": {
     definition:
@@ -1254,7 +1102,7 @@ const indicator_info = {
     läsa_mer_1_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/levnadsvanor/rokning/",
     läsa_mer_2_text: "Sluta-röka-linjen",
-    läsa_mer_2_link: "https://www.slutarokalinjen.se/",
+    läsa_mer_2_link: "https://www.slutarokalinjen.se",
     läsa_mer_3_text: "Hälsoområde Tobak, Elevhälsoportalen skola",
     läsa_mer_3_link:
       "https://www.elevhalsoportalen.se/skola/halsoomraden/tobak/",
@@ -1271,17 +1119,21 @@ const indicator_info = {
       "Andel (%) elever som uppger att de snusar traditionellt snus med tobak dagligen eller ibland.",
     källa: "Stockholmsenkäten",
     läsa_mer_1_text:
-      "Folkhälsorapport 2023 – Rökning. Centrum för epidemiologi och samhällsmedicin (CES)",
+      "Folkhälsorapport 2023 – Rökning, Centrum för epidemiologi och samhällsmedicin (CES)",
     läsa_mer_1_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/levnadsvanor/rokning/",
-    läsa_mer_2_text: "Tobaksprevention (ces.regionstockholm.se)",
-    läsa_mer_2_link:
-      "https://www.ces.regionstockholm.se/projekt-och-uppdrag/tobaksprevention/",
-    läsa_mer_3_text: "Sluta-röka-linjen",
-    läsa_mer_3_link: "https://www.slutarokalinjen.se/",
+    läsa_mer_2_text: "Sluta-röka-linjen",
+    läsa_mer_2_link: "https://www.slutarokalinjen.se",
+    läsa_mer_3_text: "Hälsoområde Tobak, Elevhälsoportalen skola",
+    läsa_mer_3_link:
+      "https://www.elevhalsoportalen.se/skola/halsoomraden/tobak/",
     läsa_mer_4_text:
+      "Tobaksprevention, Centrum för epidemiologi och amhällsmedicin (CES)",
+    läsa_mer_4_link:
+      "https://www.ces.regionstockholm.se/projekt-och-uppdrag/tobaksprevention/",
+    läsa_mer_5_text:
       "SOTIS – Samtal om tobak och nikotin i mötet med ungdomar. Centrum för epidemiologi och samhällsmedicin (CES). 2024.",
-    läsa_mer_4_link: "https://www.folkhalsoguiden.se/publikationer/ces-sotis/",
+    läsa_mer_5_link: "https://www.folkhalsoguiden.se/publikationer/ces-sotis/",
   },
   "Snusar vitt snus dagligen eller ibland": {
     definition:
@@ -1292,12 +1144,12 @@ const indicator_info = {
     läsa_mer_1_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/levnadsvanor/rokning/",
     läsa_mer_2_text: "Sluta-röka-linjen",
-    läsa_mer_2_link: "https://www.slutarokalinjen.se/",
+    läsa_mer_2_link: "https://www.slutarokalinjen.se",
     läsa_mer_3_text: "Hälsoområde Tobak, Elevhälsoportalen skola",
     läsa_mer_3_link:
       "https://www.elevhalsoportalen.se/skola/halsoomraden/tobak/",
     läsa_mer_4_text:
-      "· Kunskap om tobaks- och nikotinprodukters skadeverkningar. Rapport, Folkhälsomyndigheten 2023.",
+      "Kunskap om tobaks- och nikotinprodukters skadeverkningar. Rapport, Folkhälsomyndigheten 2023.",
     läsa_mer_4_link:
       "https://www.folkhalsomyndigheten.se/contentassets/6ab2ab5dabe64ccab994e8b472331c6d/kunskap-tobaks-nikotinprodukters-skadeverkningar.pdf",
     läsa_mer_5_text:
@@ -1313,7 +1165,7 @@ const indicator_info = {
     läsa_mer_1_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/sociala-och-ekonomiska-forutsattningar/sociala-relationer/",
     läsa_mer_2_text:
-      "Strategi för att förebygga och bekämpa våld i Stockholms län 2020–2026, Länsstyrelsen",
+      "Strategi för att förebygga och bekämpa våld i Stockholms län – STRATEGI 2020–2026, Länsstyrelsen Stockholm",
     läsa_mer_2_link:
       "https://www.lansstyrelsen.se/stockholm/om-oss/vara-tjanster/publikationer/2019/strategi-for-att-forebygga-och-bekampa-vald-i-stockholms-lan---strategi-2020-2026.html",
   },
