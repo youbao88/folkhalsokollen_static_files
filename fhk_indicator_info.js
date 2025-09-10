@@ -898,7 +898,7 @@ const indicator_info = {
   },
   "Hjärtinfarkt (ålder nyinsjuknade)": {
     definition:
-      "Medianåldern för nyinsjuknande i hjärtinfarkt, vilket definieras som ett vårdtillfälle med någon av huvuddiagnoserna I20–125 (ICD-10) hos individer som aldrig tidigare haft en hjärtinfarkt eller där det gått minst sju år sedan den senaste. Resultaten redovisas som ett femårsmedelvärde.",
+      "Medianåldern för nyinsjuknande i hjärtinfarkt, vilket definieras som ett vårdtillfälle med någon av huvuddiagnoserna I21, I22 (ICD-10) hos individer som aldrig tidigare haft en hjärtinfarkt eller där det gått minst sju år sedan den senaste. Resultaten redovisas som ett femårsmedelvärde.",
     källa: "VAL-databaserna ",
     läsa_mer_1_text:
       "Folkhälsorapport 2023 – Hjärtinfarkt och stroke, Centrum för epidemiologi och samhällsmedicin (CES)",
@@ -911,7 +911,7 @@ const indicator_info = {
   },
   "Stroke (ålder nyinsjuknade)": {
     definition:
-      "Medianåldern för nyinsjuknande i stroke, vilket definieras som ett vårdtillfälle med någon av huvuddiagnoserna I60–I69 (ICD-10) hos individer som aldrig tidigare haft en stroke, eller där det gått minst sju år sedan man senast vårdades för stroke. Resultaten redovisas som ett femårsmedelvärde.",
+      "Medianåldern för nyinsjuknande i stroke, vilket definieras som ett vårdtillfälle med någon av huvuddiagnoserna I60, I61, I63, I64 (ICD-10) hos individer som aldrig tidigare haft en stroke, eller där det gått minst sju år sedan man senast vårdades för stroke. Resultaten redovisas som ett femårsmedelvärde.",
     källa: "VAL-databaserna ",
     läsa_mer_1_text:
       "Folkhälsorapport 2023 – Hjärtinfarkt och stroke, Centrum för epidemiologi och samhällsmedicin (CES)",
