@@ -749,10 +749,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
       });
     } else {
       if (statusParametersEncoded) {
-        if (statusParametersEncoded[1].startsWith("(")){
-        shareParameters = uncrush(decodeURIComponent(statusParametersEncoded[1]));
-        }else{
-          shareParameters = JSON.parse(Base64.decode(statusParametersEncoded[1]));
+        if (statusParametersEncoded[1].startsWith("(")) {
+          shareParameters = uncrush(
+            decodeURIComponent(statusParametersEncoded[1])
+          );
+        } else {
+          shareParameters = JSON.parse(
+            Base64.decode(statusParametersEncoded[1])
+          );
         }
         page_to_open = shareParameters["page"];
         delete shareParameters["page"];
@@ -922,6 +926,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 if (line_span) {
                   let line_text = "";
                   for (let j = 0; j < line_span.length; j++) {
+                    if (j == 1  && (!line_text.includes(":"))) {
+                      //For those indicator type not None, create comma between indicator name and type when downloading screenshot
+                      line_text = line_text.concat(": ");
+                    }
                     line_text = line_text.concat(
                       line_span[j].match(/.*>(.+)</m)[1]
                     );
@@ -1036,6 +1044,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
               if (line_span) {
                 let line_text = "";
                 for (let j = 0; j < line_span.length; j++) {
+                  if (j == 1  && (!line_text.includes(":"))) {
+                    //For those indicator type not None, create comma between indicator name and type when downloading screenshot
+                    line_text = line_text.concat(": ");
+                  }
                   line_text = line_text.concat(
                     line_span[j].match(/.*>(.+)</m)[1]
                   );
