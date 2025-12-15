@@ -402,7 +402,7 @@ const indicator_info = {
   },
   "Deltagande i mammografi": {
     definition:
-      "Definition: Andel (%) kvinnor i åldern 40–74 år som efter kallelse till screening för bröstcancer genomfört mammografiundersökning.",
+      "Andel (%) kvinnor i åldern 40–74 år som efter kallelse till screening för bröstcancer genomfört mammografiundersökning.",
     källa: "Regionalt cancercentrum Stockholm Gotland (RCC) ",
     läsa_mer_1_text:
       "Nationellt vårdprogram bröstcancerscreening, Regionala cancercentrum i samverkan",
