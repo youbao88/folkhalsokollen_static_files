@@ -446,13 +446,13 @@ const indicator_name_parameter_map = {
   },
   "Övervikt och obesitas": {
     karta: {
-      karta_Tidsperiod: "2021",
+      karta_Tidsperiod: "2024",
       karta_Kön: ["Kvinnor", "Män"],
       karta_Åldersgrupp: ["16-44 år", "45-64 år", "65+ år"],
     },
     stapel: {
       stapel_Område: "Stockholms län",
-      stapel_Tidsperiod: "2021",
+      stapel_Tidsperiod: "2024",
       stapel_Kön: ["Kvinnor", "Män"],
     },
     linje: {
@@ -461,7 +461,7 @@ const indicator_name_parameter_map = {
       linje_Åldersgrupp: ["16-44 år", "45-64 år", "65+ år"],
     },
     tabell: {
-      table_Tidsperiod: "2021",
+      table_Tidsperiod: "2024",
       table_Område: "Stockholms län",
       tabel_Åldersgrupp: ["16-44 år", "45-64 år", "65+ år"],
       tabel_Kön: ["Kvinnor", "Män"],
@@ -837,13 +837,13 @@ const indicator_name_parameter_map = {
   },
   Öppenvårdsbesök: {
     karta: {
-      karta_Tidsperiod: "2022",
+      karta_Tidsperiod: "2024",
       karta_Kön: ["Kvinnor", "Män"],
       karta_Åldersgrupp: ["0-24 år", "25-49 år", "50-69 år", "70+ år"],
     },
     stapel: {
       stapel_Område: "Stockholms län",
-      stapel_Tidsperiod: "2022",
+      stapel_Tidsperiod: "2024",
       stapel_Kön: ["Kvinnor", "Män"],
     },
     linje: {
@@ -852,7 +852,7 @@ const indicator_name_parameter_map = {
       linje_Åldersgrupp: ["0-24 år", "25-49 år", "50-69 år", "70+ år"],
     },
     tabell: {
-      table_Tidsperiod: "2022",
+      table_Tidsperiod: "2024",
       table_Område: "Stockholms län",
       tabel_Åldersgrupp: ["0-24 år", "25-49 år", "50-69 år", "70+ år"],
       tabel_Kön: ["Kvinnor", "Män"],
@@ -860,13 +860,13 @@ const indicator_name_parameter_map = {
   },
   Slutenvårdstillfällen: {
     karta: {
-      karta_Tidsperiod: "2022",
+      karta_Tidsperiod: "2024",
       karta_Kön: ["Kvinnor", "Män"],
       karta_Åldersgrupp: ["0-24 år", "25-49 år", "50-69 år", "70+ år"],
     },
     stapel: {
       stapel_Område: "Stockholms län",
-      stapel_Tidsperiod: "2022",
+      stapel_Tidsperiod: "2024",
       stapel_Kön: ["Kvinnor", "Män"],
     },
     linje: {
@@ -875,7 +875,7 @@ const indicator_name_parameter_map = {
       linje_Åldersgrupp: ["0-24 år", "25-49 år", "50-69 år", "70+ år"],
     },
     tabell: {
-      table_Tidsperiod: "2022",
+      table_Tidsperiod: "2024",
       table_Område: "Stockholms län",
       tabel_Åldersgrupp: ["0-24 år", "25-49 år", "50-69 år", "70+ år"],
       tabel_Kön: ["Kvinnor", "Män"],
@@ -1021,13 +1021,13 @@ const indicator_name_parameter_map = {
   },
   "Anmälda våldsbrott": {
     karta: {
-      karta_Tidsperiod: "2023",
+      karta_Tidsperiod: "2024",
       karta_Kön: ["Samtliga"],
       karta_Åldersgrupp: ["Samtliga"],
     },
     stapel: {
       stapel_Område: "Stockholms län",
-      stapel_Tidsperiod: "2023",
+      stapel_Tidsperiod: "2024",
       stapel_Kön: ["Samtliga"],
     },
     linje: {
@@ -1036,7 +1036,7 @@ const indicator_name_parameter_map = {
       linje_Åldersgrupp: ["Samtliga"],
     },
     tabell: {
-      table_Tidsperiod: "2023",
+      table_Tidsperiod: "2024",
       table_Område: "Stockholms län",
       tabel_Åldersgrupp: ["Samtliga"],
       tabel_Kön: ["Samtliga"],
@@ -1389,13 +1389,13 @@ const indicator_name_parameter_map = {
   },
   "Hjärtinfarkt (ålder nyinsjuknade)": {
     karta: {
-      karta_Tidsperiod: "2022",
+      karta_Tidsperiod: "2024",
       karta_Kön: ["Kvinnor", "Män"],
       karta_Åldersgrupp: ["Ej valbart"],
     },
     stapel: {
       stapel_Område: "Stockholms län",
-      stapel_Tidsperiod: "2022",
+      stapel_Tidsperiod: "2024",
       stapel_Kön: ["Kvinnor", "Män"],
     },
     linje: {
@@ -1404,7 +1404,7 @@ const indicator_name_parameter_map = {
       linje_Åldersgrupp: ["Ej valbart"],
     },
     tabell: {
-      table_Tidsperiod: "2022",
+      table_Tidsperiod: "2024",
       table_Område: "Stockholms län",
       tabel_Åldersgrupp: ["Ej valbart"],
       tabel_Kön: ["Kvinnor", "Män"],
@@ -1412,13 +1412,13 @@ const indicator_name_parameter_map = {
   },
   "Stroke (ålder nyinsjuknade)": {
     karta: {
-      karta_Tidsperiod: "2022",
+      karta_Tidsperiod: "2024",
       karta_Kön: ["Kvinnor", "Män"],
       karta_Åldersgrupp: ["Ej valbart"],
     },
     stapel: {
       stapel_Område: "Stockholms län",
-      stapel_Tidsperiod: "2022",
+      stapel_Tidsperiod: "2024",
       stapel_Kön: ["Kvinnor", "Män"],
     },
     linje: {
@@ -1427,7 +1427,7 @@ const indicator_name_parameter_map = {
       linje_Åldersgrupp: ["Ej valbart"],
     },
     tabell: {
-      table_Tidsperiod: "2022",
+      table_Tidsperiod: "2024",
       table_Område: "Stockholms län",
       tabel_Åldersgrupp: ["Ej valbart"],
       tabel_Kön: ["Kvinnor", "Män"],
@@ -1619,13 +1619,13 @@ const indicator_name_parameter_map = {
   },
   "Diabetes (diagnostiserad)": {
     karta: {
-      karta_Tidsperiod: "2022",
+      karta_Tidsperiod: "2024",
       karta_Kön: ["Kvinnor", "Män"],
       karta_Åldersgrupp: ["16-44 år", "45-64 år", "65+ år"],
     },
     stapel: {
       stapel_Område: "Stockholms län",
-      stapel_Tidsperiod: "2022",
+      stapel_Tidsperiod: "2024",
       stapel_Kön: ["Kvinnor", "Män"],
     },
     linje: {
@@ -1634,7 +1634,7 @@ const indicator_name_parameter_map = {
       linje_Åldersgrupp: ["16-44 år", "45-64 år", "65+ år"],
     },
     tabell: {
-      table_Tidsperiod: "2022",
+      table_Tidsperiod: "2024",
       table_Område: "Stockholms län",
       tabel_Åldersgrupp: ["16-44 år", "45-64 år", "65+ år"],
       tabel_Kön: ["Kvinnor", "Män"],
@@ -1849,13 +1849,13 @@ const indicator_name_parameter_map = {
   },
   "Fallskada (diagnostiserad)": {
     karta: {
-      karta_Tidsperiod: "2022",
+      karta_Tidsperiod: "2024",
       karta_Kön: ["Kvinnor", "Män"],
       karta_Åldersgrupp: ["65-84 år", "85+ år"],
     },
     stapel: {
       stapel_Område: "Stockholms län",
-      stapel_Tidsperiod: "2022",
+      stapel_Tidsperiod: "2024",
       stapel_Kön: ["Kvinnor", "Män"],
     },
     linje: {
@@ -1864,7 +1864,7 @@ const indicator_name_parameter_map = {
       linje_Åldersgrupp: ["65-84 år", "85+ år"],
     },
     tabell: {
-      table_Tidsperiod: "2022",
+      table_Tidsperiod: "2024",
       table_Område: "Stockholms län",
       tabel_Åldersgrupp: ["65-84 år", "85+ år"],
       tabel_Kön: ["Kvinnor", "Män"],
@@ -2402,13 +2402,13 @@ const indicator_name_parameter_map = {
   },
   "Demens (diagnostiserad)": {
     karta: {
-      karta_Tidsperiod: "2022",
+      karta_Tidsperiod: "2024",
       karta_Kön: ["Kvinnor", "Män"],
       karta_Åldersgrupp: ["65+ år"],
     },
     stapel: {
       stapel_Område: "Stockholms län",
-      stapel_Tidsperiod: "2022",
+      stapel_Tidsperiod: "2024",
       stapel_Kön: ["Kvinnor", "Män"],
     },
     linje: {
@@ -2417,7 +2417,7 @@ const indicator_name_parameter_map = {
       linje_Åldersgrupp: ["65+ år"],
     },
     tabell: {
-      table_Tidsperiod: "2022",
+      table_Tidsperiod: "2024",
       table_Område: "Stockholms län",
       tabel_Åldersgrupp: ["65+ år"],
       tabel_Kön: ["Kvinnor", "Män"],
@@ -2653,6 +2653,53 @@ const indicator_name_parameter_map = {
       tabel_Kön: ["Killar", "Tjejer"],
     },
   },
+     "Deltagande i mammografi": {
+    karta: {
+      karta_Tidsperiod: "2024",
+      karta_Kön: "Kvinnor",
+      karta_Åldersgrupp: ['40-49 år', '50-59 år', '60+ år'],
+    },
+    stapel: {
+      stapel_Område: "Stockholms län",
+      stapel_Tidsperiod: "2024",
+      stapel_Kön: "Kvinnor",
+    },
+    linje: {
+      linje_Kön: "Kvinnor",
+      linje_Område: ["Stockholms län", "Botkyrka"],
+      linje_Åldersgrupp:['40-49 år', '50-59 år', '60+ år'],
+    },
+    tabell: {
+      table_Tidsperiod: "2024",
+      table_Område: "Stockholms län",
+      tabel_Åldersgrupp: ['40-49 år', '50-59 år', '60+ år'],
+      tabel_Kön: "Kvinnor",
+    },
+  },
+  "Beroende och skadligt bruk (diagnostiserad)": {
+    karta: {
+      karta_Tidsperiod: "2022",
+      karta_Kön: ['Kvinnor', 'Män'],
+      karta_Åldersgrupp: ['18-44 år', '45+ år'],
+    },
+    stapel: {
+      stapel_Område: "Stockholms län",
+      stapel_Tidsperiod: "2022",
+      stapel_Kön: ['18-44 år', '45+ år'],
+    },
+    linje: {
+      linje_Kön: ['Kvinnor', 'Män'],
+      linje_Område: ["Stockholms län", "Botkyrka"],
+      linje_Åldersgrupp:['18-44 år', '45+ år'],
+    },
+    tabell: {
+      table_Tidsperiod: "2022",
+      table_Område: "Stockholms län",
+      tabel_Åldersgrupp: ['40-49 år', '50-59 år', '60+ år'],
+      tabel_Kön: ['18-44 år', '45+ år'],
+    },
+  },
+
 };
 const indicator_init_map = {
   "Äldres hälsa": {
@@ -2767,16 +2814,16 @@ const indicator_init_map = {
     indikator_group: "Sociala relationer, trygghet och demokrati",
     indikator_name: "Anmälda våldsbrott",
     indikator_category: "Ej valbart",
-    karta_Tidsperiod: "2023",
+    karta_Tidsperiod: "2024",
     karta_Kön: "Samtliga",
     karta_Åldersgrupp: "Samtliga",
     stapel_Område: "Stockholms län",
-    stapel_Tidsperiod: "2023",
+    stapel_Tidsperiod: "2024",
     stapel_Kön: "Samtliga",
     linje_Område: ["Stockholms län", "Botkyrka"],
     linje_Kön: "Samtliga",
     linje_Åldersgrupp: "Samtliga",
-    table_Tidsperiod: "2023",
+    table_Tidsperiod: "2024",
     table_Område: "Stockholms län",
     tabel_Åldersgrupp: "Samtliga",
     tabel_Kön: "Samtliga",

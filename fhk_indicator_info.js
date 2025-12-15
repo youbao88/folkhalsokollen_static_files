@@ -88,7 +88,7 @@ const indicator_info = {
     läsa_mer_1_text:
       "Utbildning - nyckeln till arbete. Sveriges kommuner och regioner (SKR)",
     läsa_mer_1_link:
-      "https://skr.se/download/18.45167e4317e2b341b24bb50d/1642783429505/7585-365-9.pdf",
+      "https://www.kunskapsstyrningvard.se/download/18.45167e4317e2b341b24bb50d/1642783429505/7585-365-9.pdf",
   },
   "Barn i familjer med låg inkomst": {
     definition:
@@ -116,9 +116,9 @@ const indicator_info = {
       "Folkhälsorapport 2023 - Utbildning. Centrum för epidemiologi och samhällsmedicin (CES).",
     läsa_mer_1_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/sociala-och-ekonomiska-forutsattningar/utbildning/ ",
-    läsa_mer_2_text: "Beskrivande statistik, Skolverkets statistikrapporter",
-    läsa_mer_2_link:
-      "https://www.skolverket.se/publikationsserier/beskrivande-statistik",
+    läsa_mer_2_text:
+      "Beskrivande statistik, sök bland Skolverkets statistikrapporter",
+    läsa_mer_2_link: "https://www.skolverket.se/sok-publikationer",
   },
   Livsvillkorsindex: {
     definition:
@@ -326,6 +326,10 @@ const indicator_info = {
       "Hur mår de allra äldsta i Stockholms län? Rapport 2023:6. Centrum för epidemiologi och samhällsmedicin (CES).",
     läsa_mer_2_link:
       "https://www.folkhalsoguiden.se/publikationer/ces-rapport-20236-hur-mar-de-allra-aldsta/",
+    läsa_mer_3_text:
+      "Fallolyckor, Socialstyrelsens kunskapsstöd om vård och omsorg för äldre personer",
+    läsa_mer_3_link:
+      "https://www.socialstyrelsen.se/kunskapsstod-och-regler/omraden/aldre/stod-i-arbetet--vard-och-omsorg-for-aldre-personer--utifran-amnesomraden/fallolyckor/",
   },
   "Vaccination mot säsongsinfluensa": {
     definition:
@@ -334,7 +338,7 @@ const indicator_info = {
     läsa_mer_1_text:
       "Folkhälsomyndighetens samlingssida om vaccination mot influensa",
     läsa_mer_1_link:
-      "https://www.folkhalsomyndigheten.se/smittskydd-beredskap/vaccinationer/vacciner-a-o/influensa/",
+      "https://www.folkhalsomyndigheten.se/smittskydd-beredskap/vaccinationer/vaccinationer-i-sverige/influensa/",
     läsa_mer_2_text:
       "Budgetpåverkansanalys av vaccinationsprogram för äldre. Rapport 2023:3. Stockholm  centrum för hälsoekonomi (StoCHE).",
     läsa_mer_2_link:
@@ -355,7 +359,7 @@ const indicator_info = {
     läsa_mer_1_text:
       "Folkhälsomyndighetens samlingssida om vaccination mot covid-19",
     läsa_mer_1_link:
-      "https://www.folkhalsomyndigheten.se/smittskydd-beredskap/vaccinationer/vacciner-som-anvands-i-sverige/covid-19/",
+      "https://www.folkhalsomyndigheten.se/smittskydd-beredskap/vaccinationer/vaccinationer-i-sverige/vaccination-mot-covid-19/",
     läsa_mer_2_text:
       "Strategier för att öka vaccinationstäckningen – en kunskapsöversikt.  Rapport 2022:7. Centrum för epidemiologi och samhällsmedicin (CES).",
     läsa_mer_2_link:
@@ -395,6 +399,22 @@ const indicator_info = {
       "Folkhälsorapport 2023 – Inkomst, Centrum för epidemiologi och samhällsmedicin (CES)",
     läsa_mer_1_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/sociala-och-ekonomiska-forutsattningar/inkomst/",
+  },
+  "Deltagande i mammografi": {
+    definition:
+      "Definition: Andel (%) kvinnor i åldern 40–74 år som efter kallelse till screening för bröstcancer genomfört mammografiundersökning.",
+    källa: "Regionalt cancercentrum Stockholm Gotland (RCC) ",
+    läsa_mer_1_text:
+      "Nationellt vårdprogram bröstcancerscreening, Regionala cancercentrum i samverkan",
+    läsa_mer_1_link:
+      "https://cancercentrum.se/preventiontidigupptackt/screeningochtestning/brostcancerscreening/vardprogram.8046.html",
+    läsa_mer_2_text:
+      "Folkhälsorapport 2023 – Cancer, Centrum för epidemiologi och samhällsmedicin (CES)",
+    läsa_mer_2_link:
+      "https://www.folkhalsorapportstockholm.se/rapporten2/sjukdomar-och-skador/cancer/",
+    läsa_mer_3_text: "Bröstcancerscreening, Vårdgivarguiden",
+    läsa_mer_3_link:
+      "https://vardgivarguiden.se/administration/patientadministration/remittering/medicinsk-service/screeningprogram/brostcancerscreening/",
   },
   Öppenvårdsbesök: {
     definition:
@@ -439,7 +459,8 @@ const indicator_info = {
     definition:
       'Andel (%) individer som lider av psykisk ohälsa mätt med Kessler Psychological Distress Scale (K6). K6 består av sex frågor om psykisk ohälsa under de senaste 30 dagarna och hur stor del av tiden besvären funnits. Ett värde på 8 eller mer räknas som psykisk ohälsa.<br><br><b>Varför syns inte utvecklingen över tid?</b><br>Sedan 1990 har den psykiska ohälsan i Stockholms län mätts med tolvfrågorsversionen av General Health Questionnaire (GHQ-12). I senaste folkhälsoenkäten, Hälsa Stockholm 2021, ersättes GHQ-12 med ett motsvarande mätverktyg: sexfrågorsversionen av Kessler Psychological Distress Scale (K6)<br>Både GHQ-12 och K6 är utvecklade som screeningsinstrument för psykisk ohälsa, men skiljer sig i längd, svarsalternativ och till viss del i innehåll. På grund av skillnaderna kan man inte direkt jämföra ett visst värde i GHQ-12 med ett visst värde i K6, och vice versa. Folkhälsokollen redovisar därför enbart data för 2021 mätt med K6.<br><br><b>Se utvecklingen över tid på länsnivå</b><br>Ett visst urval av deltagarna i 2021 års folkhälsoenkät (de som ingår i Stockholm Public Health Cohort) har fått besvara GHQ-12-frågorna i enkäten. Det gör att vi kan redovisa en tidstrend för psykisk hälsa på länsnivå.<br><br><button class="buttonLink" title="https://www.folkhalsokollen.se/webbverktyg/psykisk-halsa-over-tid-i-stockholms-lan" role="link" onclick="window.open(\'https://www.folkhalsokollen.se/webbverktyg/psykisk-halsa-over-tid-i-stockholms-lan\', \'_blank\')">Tidstrend för psykisk ohälsa på länsnivå och information om GHQ-12 och K6</button>\n',
     källa: "Region Stockholms folkhälsoenkät",
-    läsa_mer_1_text: "Inriktning - Uppdrag Psykisk Hälsa i Stockholms län",
+    läsa_mer_1_text:
+      "Inriktning 2024-2026 - Uppdrag Psykisk Hälsa i Stockholms län",
     läsa_mer_1_link:
       "https://www.uppdragpsykiskhalsa.se/stockholmslan/inriktning/",
     läsa_mer_2_text:
@@ -475,7 +496,8 @@ const indicator_info = {
       "Suicidkommunikation på digitala plattformar. Rapport 2021. Nationellt centrum för suicidforskning (NASP).",
     läsa_mer_3_link:
       "https://www.folkhalsoguiden.se/publikationer/nasp-suicidkommunikation-pa-digitala-plattformar/",
-    läsa_mer_4_text: "Inriktning - Uppdrag Psykisk Hälsa i Stockholms län",
+    läsa_mer_4_text:
+      "Inriktning 2024-2026 - Uppdrag Psykisk Hälsa i Stockholms län",
     läsa_mer_4_link:
       "https://www.uppdragpsykiskhalsa.se/stockholmslan/inriktning/",
     läsa_mer_5_text:
@@ -499,7 +521,8 @@ const indicator_info = {
       "Suicidkommunikation på digitala plattformar. Rapport 2021. Nationellt centrum för suicidforskning (NASP).",
     läsa_mer_3_link:
       "https://www.folkhalsoguiden.se/publikationer/nasp-suicidkommunikation-pa-digitala-plattformar/",
-    läsa_mer_4_text: "Inriktning - Uppdrag Psykisk Hälsa i Stockholms län",
+    läsa_mer_4_text:
+      "Inriktning 2024-2026 - Uppdrag Psykisk Hälsa i Stockholms län",
     läsa_mer_4_link:
       "https://www.uppdragpsykiskhalsa.se/stockholmslan/inriktning/",
     läsa_mer_5_text:
@@ -898,7 +921,7 @@ const indicator_info = {
   },
   "Hjärtinfarkt (ålder nyinsjuknade)": {
     definition:
-      "Medianåldern för nyinsjuknande i hjärtinfarkt, vilket definieras som ett vårdtillfälle med någon av huvuddiagnoserna I21, I22 (ICD-10) hos individer som aldrig tidigare haft en hjärtinfarkt eller där det gått minst sju år sedan den senaste. Resultaten redovisas som ett femårsmedelvärde.",
+      "Medelåldern för nyinsjuknande i hjärtinfarkt, vilket definieras som ett vårdtillfälle med någon av huvuddiagnoserna I21, I22 (ICD-10) hos individer som aldrig tidigare haft en hjärtinfarkt eller där det gått minst sju år sedan den senaste. Resultaten redovisas som ett femårsmedelvärde.",
     källa: "VAL-databaserna ",
     läsa_mer_1_text:
       "Folkhälsorapport 2023 – Hjärtinfarkt och stroke, Centrum för epidemiologi och samhällsmedicin (CES)",
@@ -911,7 +934,7 @@ const indicator_info = {
   },
   "Stroke (ålder nyinsjuknade)": {
     definition:
-      "Medianåldern för nyinsjuknande i stroke, vilket definieras som ett vårdtillfälle med någon av huvuddiagnoserna I60, I61, I63, I64 (ICD-10) hos individer som aldrig tidigare haft en stroke, eller där det gått minst sju år sedan man senast vårdades för stroke. Resultaten redovisas som ett femårsmedelvärde.",
+      "Medelåldern för nyinsjuknande i stroke, vilket definieras som ett vårdtillfälle med någon av huvuddiagnoserna I60, I61, I63, I64 (ICD-10) hos individer som aldrig tidigare haft en stroke, eller där det gått minst sju år sedan man senast vårdades för stroke. Resultaten redovisas som ett femårsmedelvärde.",
     källa: "VAL-databaserna ",
     läsa_mer_1_text:
       "Folkhälsorapport 2023 – Hjärtinfarkt och stroke, Centrum för epidemiologi och samhällsmedicin (CES)",
@@ -933,7 +956,7 @@ const indicator_info = {
     läsa_mer_2_text:
       "Regional cancerplan Stockholm-Gotland 2024–2027, Regionalt cancercentrum Stockholm Gotland",
     läsa_mer_2_link:
-      "https://cancercentrum.se/contentassets/c17be38bac8443d3b3e7599d5f58d13a/sjukvardsregional-cancerplan-2024-2027.pdf",
+      " https://cancercentrum.se/omrcc/uppdragochstyrning/utvecklingsplaner/cancerplan20242027.8989.html",
   },
   "Tjock- och ändtarmscancer": {
     definition:
@@ -946,7 +969,7 @@ const indicator_info = {
     läsa_mer_2_text:
       "Regional cancerplan Stockholm-Gotland 2024–2027, Regionalt cancercentrum Stockholm Gotland",
     läsa_mer_2_link:
-      "https://cancercentrum.se/contentassets/c17be38bac8443d3b3e7599d5f58d13a/sjukvardsregional-cancerplan-2024-2027.pdf",
+      " https://cancercentrum.se/omrcc/uppdragochstyrning/utvecklingsplaner/cancerplan20242027.8989.html",
   },
   Bröstcancer: {
     definition:
@@ -959,7 +982,7 @@ const indicator_info = {
     läsa_mer_2_text:
       "Regional cancerplan Stockholm-Gotland 2024–2027, Regionalt cancercentrum Stockholm Gotland",
     läsa_mer_2_link:
-      "\nhttps://cancercentrum.se/contentassets/c17be38bac8443d3b3e7599d5f58d13a/sjukvardsregional-cancerplan-2024-2027.pdf",
+      "\n https://cancercentrum.se/omrcc/uppdragochstyrning/utvecklingsplaner/cancerplan20242027.8989.html",
   },
   Prostatacancer: {
     definition:
@@ -972,7 +995,7 @@ const indicator_info = {
     läsa_mer_2_text:
       "Regional cancerplan Stockholm-Gotland 2024–2027, Regionalt cancercentrum Stockholm Gotland",
     läsa_mer_2_link:
-      "https://cancercentrum.se/contentassets/c17be38bac8443d3b3e7599d5f58d13a/sjukvardsregional-cancerplan-2024-2027.pdf",
+      " https://cancercentrum.se/omrcc/uppdragochstyrning/utvecklingsplaner/cancerplan20242027.8989.html",
     läsa_mer_3_text:
       "Mäns erfarenheter av organiserad prostatacancertestning. Rapport 2024:5. Centrum för epidemiologi och samhällsmedicin (CES).",
     läsa_mer_3_link:
@@ -988,7 +1011,7 @@ const indicator_info = {
     läsa_mer_2_text:
       "Regional cancerplan Stockholm-Gotland 2024–2027, Regionalt cancercentrum Stockholm Gotland",
     läsa_mer_2_link:
-      "https://cancercentrum.se/contentassets/c17be38bac8443d3b3e7599d5f58d13a/sjukvardsregional-cancerplan-2024-2027.pdf",
+      " https://cancercentrum.se/omrcc/uppdragochstyrning/utvecklingsplaner/cancerplan20242027.8989.html",
   },
   "Dödsfall på grund av covid-19": {
     definition:
