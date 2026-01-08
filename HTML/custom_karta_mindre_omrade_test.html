@@ -210,7 +210,7 @@ https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.css
     //Get shape file
     async function getJson() {
       let response = await fetch(
-        "https://cdn.statically.io/gh/youbao88/folkhalsokollen_static_files/96b15ee1b709542d2b2388095be5ac0409fbc071/fhk_karta_merged_240531.json"
+        "https://cdn.jsdelivr.net/gh/youbao88/folkhalsokollen_static_files@1.0.15/fhk_karta_merged_240531.json"
       );
       let data = await response.json();
       return data;
