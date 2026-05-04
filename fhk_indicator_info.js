@@ -1013,15 +1013,7 @@ const indicator_info = {
     läsa_mer_2_link:
       " https://cancercentrum.se/omrcc/uppdragochstyrning/utvecklingsplaner/cancerplan20242027.8989.html",
   },
-  "Dödsfall på grund av covid-19": {
-    definition:
-      "Antal dödsfall per 10 000 invånare med covid-19  som underliggande dödsorsak.",
-    källa: "Socialstyrelsens dödsorsaksstatistik",
-    läsa_mer_1_text:
-      "Rapporter om covid-19, utgivna av Centrum för epidemiologi och samhällsmedicin (CES). ",
-    läsa_mer_1_link:
-      "https://www.ces.regionstockholm.se/rapporter/rapporter-om-covid-19/",
-  },
+  nan: {},
   "Sjukhusinläggning med covid-19": {
     definition:
       "Antal slutenvårdstillfällen (dvs. inläggning på sjukhus) per 10 000 invånare med covid-19 som huvuddiagnos.",
@@ -1121,7 +1113,7 @@ const indicator_info = {
       "Andel (%) elever som uppger att de röker tobakscigaretter dagligen eller ibland.",
     källa: "Stockholmsenkäten",
     läsa_mer_1_text:
-      "Folkhälsorapport 2023 – Rökning, Centrum för epidemiologi och samhällsmedicin (CES)",
+      "Folkhälsorapport 2023 – Rökning, Centrum för epidemiologi och samhällsmedicin (CES).",
     läsa_mer_1_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/levnadsvanor/rokning/",
     läsa_mer_2_text: "Sluta-röka-linjen",
@@ -1142,7 +1134,7 @@ const indicator_info = {
       "Andel (%) elever som uppger att de snusar traditionellt snus med tobak dagligen eller ibland.",
     källa: "Stockholmsenkäten",
     läsa_mer_1_text:
-      "Folkhälsorapport 2023 – Rökning, Centrum för epidemiologi och samhällsmedicin (CES)",
+      "Folkhälsorapport 2023 – Rökning, Centrum för epidemiologi och samhällsmedicin (CES).",
     läsa_mer_1_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/levnadsvanor/rokning/",
     läsa_mer_2_text: "Sluta-röka-linjen",
@@ -1163,7 +1155,7 @@ const indicator_info = {
       "Andel (%) elever som uppger att de snusar vitt snus eller nikotinpåse dagligen eller ibland. Vitt snus benämns ofta som tobaksfritt med nikotin. Nikotin är beroendeframkallande och nikotinets egenskaper kan påverka hälsan negativt.",
     källa: "Stockholmsenkäten",
     läsa_mer_1_text:
-      "Folkhälsorapport 2023 – Rökning, Centrum för epidemiologi och samhällsmedicin (CES)",
+      "Folkhälsorapport 2023 – Rökning, Centrum för epidemiologi och samhällsmedicin (CES).",
     läsa_mer_1_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/levnadsvanor/rokning/",
     läsa_mer_2_text: "Sluta-röka-linjen",
@@ -1184,12 +1176,50 @@ const indicator_info = {
       "Andel (%) elever som uppger att de inte känt sig hotade och utsatta för misshandel det senaste året.",
     källa: "Stockholmsenkäten",
     läsa_mer_1_text:
-      "Folkhälsorapport 2023 - Sociala relationer. Centrum för epidemiologi och samhällsmedicin (CES)",
+      "Folkhälsorapport 2023 - Sociala relationer. Centrum för epidemiologi och samhällsmedicin (CES).",
     läsa_mer_1_link:
       "https://www.folkhalsorapportstockholm.se/rapporten2/sociala-och-ekonomiska-forutsattningar/sociala-relationer/",
     läsa_mer_2_text:
       "Strategi för att förebygga och bekämpa våld i Stockholms län – STRATEGI 2020–2026, Länsstyrelsen Stockholm",
     läsa_mer_2_link:
       "https://www.lansstyrelsen.se/stockholm/om-oss/vara-tjanster/publikationer/2019/strategi-for-att-forebygga-och-bekampa-vald-i-stockholms-lan---strategi-2020-2026.html",
+  },
+  "Har testat cannabis någon gång ": {
+    definition:
+      "Andel (%) elever som uppger att testat hasch eller marijuana någon gång. ",
+    källa: "Stockholmsenkäten",
+    läsa_mer_1_text:
+      "Rapporter om cannabis och unga vuxna. Centrum för epidemiologi och samhällsmedicin (CES).",
+    läsa_mer_1_link:
+      "https://www.ces.regionstockholm.se/rapporter/rapporter-om-cannabis-och-unga-vuxna/",
+  },
+  "Storkonsumerar alkohol minst en gång i månaden": {
+    definition:
+      "Andel (%) unga som uppger att de någon gång per månad eller oftare vid samma tillfälle konsumerar mer än motsvarande 18 cl fyrtioprocentig sprit (en halv kvarting) eller en helflaska vin eller fyra flaskor starkcider/alkoläsk eller fyra burkar starköl eller sex burkar folköl. ",
+    källa: "Stockholmsenkäten",
+    läsa_mer_1_text:
+      "Folkhälsorapport 2023 – Alkoholvanor, Centrum för epidemiologi och samhällsmedicin (CES).",
+    läsa_mer_1_link:
+      "https://www.folkhalsorapportstockholm.se/rapporten2/levnadsvanor/alkoholvanor/",
+  },
+  "Har testat lustgas någon gång": {
+    definition:
+      "Andel (%) unga som uppger att de någon gång testat att sniffa tex lustgas, frågan inkluderar även butangas från tändare eller drivgas från sprayburkar. Lustgas (dikväveoxid) används inom vården som smärtlindring och då tillsammans med syrgas. När ungdomar använder lustgas kommer den ofta från livsmedelshandeln, avsedd som drivgas för bland annat gräddsifoner. Gasen är färglös och ger upphov till ett kortvarigt rus.",
+    källa: "Stockholmsenkäten",
+    läsa_mer_1_text: "Fakta om lustgas. Beroendecentrum Region Stockholm.",
+    läsa_mer_1_link: "https://www.beroendecentrum.se/fakta/droger/inhalering/",
+    läsa_mer_2_text:
+      "Lustgas bland unga 2022 (pdf). CAN – Centralförbundet för alkohol- och narkotikaupplysning.",
+    läsa_mer_2_link:
+      "https://www.can.se/app/uploads/2022/08/can-kortfakta-01-lustgas-bland-unga-2022.pdf",
+  },
+  "Har huvudvärk minst en gång i månaden": {
+    definition:
+      "Andel (%) unga som uppger att de haft huvudvärk en gång per månad eller oftare under det senaste läsåret. ",
+    källa: "Stockholmsenkäten",
+    läsa_mer_1_text:
+      "Folkhälsorapport 2023 – Smärta, Centrum för epidemiologi och samhällsmedicin (CES).",
+    läsa_mer_1_link:
+      "https://www.folkhalsorapportstockholm.se/rapporten2/sjukdomar-och-skador/smarta/",
   },
 };
