@@ -736,10 +736,6 @@ const indicator_info = {
       "https://www.folkhalsoguiden.se/publikationer/ces-rapport-202212/",
     läsa_mer_3_text: "Alkoholhjälpen",
     läsa_mer_3_link: "https://alkoholhjalpen.se/",
-    läsa_mer_4_text:
-      "Frågor och svar om risker med alkoholkonsumtion. Folkhälsomyndigheten (folkhalsomyndigheten.se) ",
-    läsa_mer_4_link:
-      "https://www.folkhalsomyndigheten.se/livsvillkor-levnadsvanor/andts/fragor-och-svar/fragor-och-svar-om-risker-med-alkoholkonsumtion/",
   },
   "Fysisk aktivitet": {
     definition:
