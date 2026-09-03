@@ -457,22 +457,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   styleSheet.innerText = styles;
   document.head.appendChild(styleSheet);
 
-  // small DOM helpers
-  const $ = (s) => document.querySelector(s);
-  const $$ = (s) => document.querySelectorAll(s);
-  // helper to get select label elements by aria-controls name and optional index
-  const getSelectLabelByControl = (controlName, idx = 0) => {
-    const control = document.querySelector(
-      `[aria-controls="${controlName}"]`
-    );
-    if (!control) return null;
-    const labels = control.getElementsByClassName(
-      "sas_components-Select-Select_label"
-    );
-    return labels && labels.length > idx ? labels[idx] : null;
-  };
-
-  const iframe = document.createElement("iframe");
+  iframe = document.createElement("iframe");
   iframe.src =
     "https://folkhalsokollen-static-files.pages.dev//3rdpartycookiecheckstart";
   iframe.style.display = "none";
@@ -536,77 +521,86 @@ document.addEventListener("DOMContentLoaded", function (event) {
       var sasVaSDKScript = document.createElement("script");
       sasVaSDKScript.type = "text/javascript";
       sasVaSDKScript.src =
-        "https://cdn.jsdelivr.net/npm/@sassoftware/va-report-components@1.12.0/dist/umd/va-report-components.min.js";
+        "https://cdn.jsdelivr.net/npm/@sassoftware/va-report-components@2.37.0/dist/umd/va-report-components.min.js";
       document.head.append(sasVaSDKScript);
       //add modals to the html content
     }
   };
-  // listen once for the cookie-check iframe response
-  window.addEventListener("message", receiveMessage, { once: true });
-
-  // delegate canvas propagation handling to single listeners to avoid
-  // attaching handlers to every canvas element individually
-  const stopCanvasPropagation = (e) => {
-    const t = e.target;
-    if (!t) return;
-    if (t.tagName === "CANVAS" || t.closest && t.closest("canvas")) {
-      e.stopPropagation();
-    }
-  };
-  document.addEventListener("dblclick", stopCanvasPropagation, true);
-  document.addEventListener("wheel", stopCanvasPropagation, { capture: true });
-
-  // Debounce helper for high-frequency DOM updates
-  const debounce = (fn, wait = 100) => {
-    let timeout;
-    return function (...args) {
-      const context = this;
-      clearTimeout(timeout);
-      timeout = setTimeout(() => fn.apply(context, args), wait);
-    };
-  };
+  window.addEventListener("message", receiveMessage, false, {
+    once: true,
+  });
 
   function disableScrollDoubleClickOutline() {
-    // Outlines for canvases are handled globally via delegated listeners.
-    // Just make sure any existing canvases don't show outlines.
-    const canvases = $$("canvas");
-    canvases.forEach((c) => (c.style.outline = "none"));
+    let canvases = Array.from(document.getElementsByTagName("canvas"));
+    for (let i = 0; i < canvases.length; i++) {
+      //Stop double click function
+      canvases[i].addEventListener(
+        "dblclick",
+        function (event) {
+          event.stopPropagation();
+        },
+        true
+      );
+      //Disable the outline
+      canvases[i].style.outline = "none";
+      //Stop wheel function
+      canvases[i].addEventListener(
+        "wheel",
+        function (event) {
+          event.stopPropagation();
+        },
+        true
+      );
+    }
 
     //Disable the outline for selection boxes
-    const selectionBoxes = $$(
-      ".sas_components-Select-Select_select.sas_components-Select-Select_focus-visible"
+    let selectionBoxes = document.getElementsByClassName(
+      "sas_components-Select-Select_select sas_components-Select-Select_focus-visible"
     );
-    selectionBoxes.forEach((el) => (el.style.outline = "none"));
-
-    const textLink = $$(".sas_BirdText-BirdText_bird-text-link");
-    textLink.forEach((el) => (el.style.outline = "none"));
-
-    const birdText = $$(".sas_BirdText-BirdText_text");
-    birdText.forEach((el) => (el.style.outline = "none"));
-
-    // Add hover effect to the icons; use querySelectorAll and safer DOM walks
-    const icons = $$(
-      ".sas_components-Image-Image_clickable.sas_components-Image-Image_scale.sas_components-Image-Image_span"
+    if (selectionBoxes.length != 0) {
+      for (let i = 0; i < selectionBoxes.length; i++) {
+        selectionBoxes[i].style.outline = "none";
+      }
+    }
+    //Disable the outline for text link
+    let textLink = document.getElementsByClassName(
+      "sas_BirdText-BirdText_bird-text-link"
     );
-    icons.forEach((icon) => {
-      const t = icon.title || "";
+    if (textLink.length != 0) {
+      for (let i = 0; i < textLink.length; i++) {
+        textLink[i].style.outline = "none";
+      }
+    }
+    //Disable the outline for bird text
+    let birdText = document.getElementsByClassName(
+      "sas_BirdText-BirdText_text"
+    );
+    if (birdText.length != 0) {
+      for (let i = 0; i < birdText.length; i++) {
+        birdText[i].style.outline = "none";
+      }
+    }
+    //Add hover effect to the icons
+    let icons = document.getElementsByClassName(
+      "sas_components-Image-Image_clickable sas_components-Image-Image_scale sas_components-Image-Image_span"
+    );
+    for (let i = 0; i < icons.length; i++) {
       if (
-        t === "Hjälp" ||
-        t ===
-          "Klicka här för att spara en bild av din visualisering. Bilden ladds ned som en jpg-fil på din dator." ||
-        t === "Klicka här för att spara en Excel fil." ||
-        t ===
+        icons[i].title == "Hjälp" ||
+        icons[i].title ==
+          "Klicka här för att spara en bild av din visualisering. Bilden laddas ned som en jpg-fil på din dator." ||
+        icons[i].title == "Klicka här för att spara en Excel fil." ||
+        icons[i].title ==
           "Använd den här länken för att dela sidan med de data du har valt."
       ) {
-        const p = icon.closest("div");
-        if (p && p.parentNode && p.parentNode.parentNode)
-          p.parentNode.parentNode.classList.add("tool_icon");
+        icons[i].parentNode.parentNode.parentNode.classList.add("tool_icon");
       } else {
-        const icon_div = icon.closest("div > div > div");
-        if (icon_div && icon_div.style.backgroundColor !== "rgb(233, 236, 239)")
+        let icon_div = icons[i].parentNode.parentNode.parentNode.parentNode;
+        if (icon_div.style.backgroundColor != "rgb(233, 236, 239)") {
           icon_div.classList.add("tab_icon");
+        }
       }
-    });
+    }
   }
   window.addEventListener("vaReportComponents.loaded", function () {
     let shareParameters;
@@ -615,7 +609,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     let defaultOmradeWhenIndicatorChanged = {};
     let page_to_open;
 
-    function onChangeIndicator(mutationRecords) {
+    observer_change_indicator = new MutationObserver((mutationRecords) => {
       sasReport.getReportHandle().then((reportHandle) => {
         let newIndicator = document
           .querySelector('[aria-controls="sas_RC-Dropdown-list-1"]')
@@ -631,11 +625,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
         shareParameters = update(shareParameters, parameters);
         reportHandle.updateReportParameters(parameters);
       });
-    }
-    observer_change_indicator = new MutationObserver(debounce(onChangeIndicator, 120));
+    });
 
     let loading_replaced = false;
-    function onLoadingChanged(mutationRecords) {
+    let observer_loading = new MutationObserver((mutationRecords) => {
       let sasLoadingDiv = document.getElementsByClassName(
         "sas_components-BusyStateIndicator-BusyStateIndicator_state"
       );
@@ -726,8 +719,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             [pageIndexMap[page_to_open]].click();
         }
       }
-    }
-    const observer_loading = new MutationObserver(debounce(onLoadingChanged, 120));
+    });
 
     observer_loading.observe(sasReport, {
       childList: true,
@@ -757,14 +749,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
       });
     } else {
       if (statusParametersEncoded) {
-        if (statusParametersEncoded[1].startsWith("(")) {
-          shareParameters = uncrush(
-            decodeURIComponent(statusParametersEncoded[1])
-          );
-        } else {
-          shareParameters = JSON.parse(
-            Base64.decode(statusParametersEncoded[1])
-          );
+        if (statusParametersEncoded[1].startsWith("(")){
+        shareParameters = uncrush(decodeURIComponent(statusParametersEncoded[1]));
+        }else{
+          shareParameters = JSON.parse(Base64.decode(statusParametersEncoded[1]));
         }
         page_to_open = shareParameters["page"];
         delete shareParameters["page"];
@@ -934,10 +922,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 if (line_span) {
                   let line_text = "";
                   for (let j = 0; j < line_span.length; j++) {
-                    if (j == 1  && (!line_text.includes(":"))) {
-                      //For those indicator type not None, create comma between indicator name and type when downloading screenshot
-                      line_text = line_text.concat(": ");
-                    }
                     line_text = line_text.concat(
                       line_span[j].match(/.*>(.+)</m)[1]
                     );
@@ -980,12 +964,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
             stapelImage.src = event.data.content.stapel;
             break;
           case "openMerInfo":
-              let indikator_name_label = getSelectLabelByControl(
-                "sas_RC-Dropdown-list-1"
-              );
-              let indikator_name = indikator_name_label
-                ? indikator_name_label.innerText
-                : "";
+            let indikator_name = document
+              .querySelector('[aria-controls="sas_RC-Dropdown-list-3"]')
+              .getElementsByClassName(
+                "sas_components-Select-Select_label"
+              )[0].innerText;
             let indikator_info_content = indicator_info[indikator_name];
             html = `<div style="font-size: 1.5rem; text-align:left"><h1 style="font-weight: bold; font-size: 2rem">${indikator_name}</h1><span style="font-weight: bold;" title="definition">Definition: </span>${indikator_info_content["definition"]}<br><br><span style="font-weight: bold">Källa: </span>`;
             // Add källa
@@ -1053,10 +1036,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
               if (line_span) {
                 let line_text = "";
                 for (let j = 0; j < line_span.length; j++) {
-                  if (j == 1  && (!line_text.includes(":"))) {
-                    //For those indicator type not None, create comma between indicator name and type when downloading screenshot
-                    line_text = line_text.concat(": ");
-                  }
                   line_text = line_text.concat(
                     line_span[j].match(/.*>(.+)</m)[1]
                   );
@@ -1109,18 +1088,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
             document.getElementsByTagName("iframe")[0].src
           )[1];
           shareParameters["page"] = current_visualization_type;
-          const indikator_group_label = getSelectLabelByControl(
-            "sas_RC-Dropdown-list-0"
-          );
-          shareParameters["indikator_group"] = indikator_group_label
-            ? indikator_group_label.innerText
-            : "";
-          const indikator_name_label2 = getSelectLabelByControl(
-            "sas_RC-Dropdown-list-1"
-          );
-          shareParameters["indikator_name"] = indikator_name_label2
-            ? indikator_name_label2.innerText
-            : "";
+          shareParameters["indikator_group"] = document
+            .querySelector('[aria-controls="sas_RC-Dropdown-list-2"]')
+            .getElementsByClassName(
+              "sas_components-Select-Select_label"
+            )[0].innerText;
+          shareParameters["indikator_name"] = document
+            .querySelector('[aria-controls="sas_RC-Dropdown-list-3"]')
+            .getElementsByClassName(
+              "sas_components-Select-Select_label"
+            )[0].innerText;
           if (currentUrl.includes("webbverktyg-test")) {
             //for test page
             var shareURL =
