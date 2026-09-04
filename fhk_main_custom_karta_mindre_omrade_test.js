@@ -293,6 +293,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
     .tool_icon{
         opacity:0.8 !important;
+        cursor: pointer !important;
     }
     .tool_icon:hover{
         opacity: 1.0 !important;
