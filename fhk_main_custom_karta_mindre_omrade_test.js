@@ -11,7 +11,7 @@ const JSONCrushSwap = (string, forward = 1) => {
   const swapInternal = (string, g) => {
     let regex = new RegExp(
       `${(g[2] ? g[2] : "") + g[0]}|${(g[3] ? g[3] : "") + g[1]}`,
-      "g"
+      "g",
     );
     return string.replace(regex, ($1) => ($1 === g[0] ? g[1] : g[0]));
   };
@@ -51,7 +51,7 @@ function crush(jsonObject, maxSubstringLength = 50) {
     return { [newKey]: jsonObject[key] };
   });
   const josnObjectReplaced = jsonObjectReplacedArray.reduce((a, b) =>
-    Object.assign({}, a, b)
+    Object.assign({}, a, b),
   );
   string = JSON.stringify(josnObjectReplaced);
   const delimiter = "\u0001"; // used to split parts of crushed string
@@ -94,7 +94,7 @@ function crush(jsonObject, maxSubstringLength = 50) {
         )
           substringPos = string.indexOf(
             substring,
-            substringPos + substringLength
+            substringPos + substringLength,
           );
 
         // add to list if it appears multiple times
@@ -108,7 +108,6 @@ function crush(jsonObject, maxSubstringLength = 50) {
         ;
         replaceCharacterPos-- &&
         string.includes(replaceCharacters[replaceCharacterPos]);
-
       ) {}
       if (replaceCharacterPos < 0) break; // ran out of replacement characters
       let replaceCharacter = replaceCharacters[replaceCharacterPos];
@@ -248,7 +247,7 @@ function uncrush(string) {
     return { [newKey]: unreplacedJson[key] };
   });
   const replacedJson = jsonObjectReplacedArray.reduce((a, b) =>
-    Object.assign({}, a, b)
+    Object.assign({}, a, b),
   );
   return replacedJson;
 }
@@ -256,7 +255,7 @@ function uncrush(string) {
 function update(target, src) {
   const res = {};
   Object.keys(target).forEach(
-    (k) => (res[k] = src.hasOwnProperty(k) ? src[k] : target[k])
+    (k) => (res[k] = src.hasOwnProperty(k) ? src[k] : target[k]),
   );
   return res;
 }
@@ -467,7 +466,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
       console.log("third party cookies are not supported");
       let sasReport = document.getElementsByTagName("sas-report")[0];
       let thirdPartyErrorDiv = sasReport.appendChild(
-        document.createElement("div")
+        document.createElement("div"),
       );
       thirdPartyErrorDiv.setAttribute("id", "thirdPartyErrorDiv");
       thirdPartyErrorDiv.style.cssText = `
@@ -480,7 +479,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             width: 80%;
             `;
       let wrapDiv = thirdPartyErrorDiv.appendChild(
-        document.createElement("div")
+        document.createElement("div"),
       );
       wrapDiv.innerHTML = `
                     <div class = 'ErrorMessageTitle'>
@@ -539,7 +538,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         function (event) {
           event.stopPropagation();
         },
-        true
+        true,
       );
       //Disable the outline
       canvases[i].style.outline = "none";
@@ -549,13 +548,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
         function (event) {
           event.stopPropagation();
         },
-        true
+        true,
       );
     }
 
     //Disable the outline for selection boxes
     let selectionBoxes = document.getElementsByClassName(
-      "sas_components-Select-Select_select sas_components-Select-Select_focus-visible"
+      "sas_components-Select-Select_select sas_components-Select-Select_focus-visible",
     );
     if (selectionBoxes.length != 0) {
       for (let i = 0; i < selectionBoxes.length; i++) {
@@ -564,7 +563,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
     //Disable the outline for text link
     let textLink = document.getElementsByClassName(
-      "sas_BirdText-BirdText_bird-text-link"
+      "sas_BirdText-BirdText_bird-text-link",
     );
     if (textLink.length != 0) {
       for (let i = 0; i < textLink.length; i++) {
@@ -573,7 +572,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
     //Disable the outline for bird text
     let birdText = document.getElementsByClassName(
-      "sas_BirdText-BirdText_text"
+      "sas_BirdText-BirdText_text",
     );
     if (birdText.length != 0) {
       for (let i = 0; i < birdText.length; i++) {
@@ -582,7 +581,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
     //Add hover effect to the icons
     let icons = document.getElementsByClassName(
-      "sas_components-Image-Image_clickable sas_components-Image-Image_scale sas_components-Image-Image_span"
+      "sas_components-Image-Image_scale sas_components-Image-Image_span",
     );
     for (let i = 0; i < icons.length; i++) {
       if (
@@ -612,9 +611,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
     observer_change_indicator = new MutationObserver((mutationRecords) => {
       sasReport.getReportHandle().then((reportHandle) => {
         let newIndicator = document
-          .querySelector('[aria-controls="sas_RC-Dropdown-list-1"]')
+          .querySelector('[aria-controls="sas_RC-Dropdown-list-3"]')
           .getElementsByClassName(
-            "sas_components-Select-Select_label"
+            "sas_components-Select-Select_label",
           )[0].innerText;
         let _parameters = indicator_name_parameter_map[newIndicator];
         let parameters = {};
@@ -627,98 +626,217 @@ document.addEventListener("DOMContentLoaded", function (event) {
       });
     });
 
+    // let loading_replaced = false;
+    // let observer_loading = new MutationObserver((mutationRecords) => {
+    //   let sasLoadingDiv = document.getElementsByClassName(
+    //     "sas_components-BusyStateIndicator-BusyStateIndicator_state"
+    //   );
+    //   if (typeof sasLoadingDiv != "undefined" && loading_replaced == false) {
+    //     loading_replaced = true;
+    //     sasLoadingDiv[0].style.visibility = "hidden";
+    //     let sasMainPanel = document.getElementsByClassName(
+    //       "sas_components-Pane-Pane_pane"
+    //     )[0];
+    //     let customLoadingDiv = sasMainPanel.appendChild(
+    //       document.createElement("div")
+    //     );
+    //     customLoadingDiv.setAttribute("id", "customLoadingDiv");
+    //     customLoadingDiv.innerHTML = `
+    //             <div class='loading screen'>
+    //                 <div class="lds-ring">
+    //                     <div></div>
+    //                     <div></div>
+    //                     <div></div>
+    //                     <div></div>
+    //                 </div>
+    //                 <div class='loading-text'>webbverktyget laddas...</div>
+    //                 <div class='loading-tip'>
+    //                     <p class="first-line fade-in">Använd webbverktyget från en dator eller surfplatta. För att garantera att det visas på bästa sätt rekommenderar vi webbläsarna Microsoft Edge (alla versioner), Firefox 12, Google chrome 19, Internet explorer 10, Safari 5.1 eller senare versioner av dessa.</p>
+    //                 </div>
+    //             </div>
+    //         `;
+    //   }
+    //   let errorMessageDiv = document.querySelector(
+    //     '[title^="Unable to"], [title^="Det går inte"]'
+    //   );
+    //   if (errorMessageDiv != null) {
+    //     errorMessageDiv.style.display = "none";
+    //     let sasMainPanel = document.getElementsByClassName(
+    //       "sas_components-Pane-Pane_pane"
+    //     )[0];
+    //     let customErrorDiv = sasMainPanel.appendChild(
+    //       document.createElement("div")
+    //     );
+    //     customErrorDiv.setAttribute("id", "customErrorDiv");
+    //     customErrorDiv.innerHTML = `
+    //          <div class = 'ErrorMessageTitle'>
+    //             <img src="https://img.icons8.com/emoji/50/null/warning-emoji.png"/ style = "margin: 5px"><span style = 'margin-top: auto; margin-bottom: auto'>Fel: Verktyget kunde inte läsas in</span>
+    //             </div>
+    //             <div class = 'ErrorMessageMain'>
+    //             <span>Det har uppstått ett fel mellan Folkhälsokollen och webbläsaren. Du kan försöka åtgärda problemet genom att göra något av följande:</span>
+    //             </div>
+    //             <div class = 'ErrorMessageMain indent'>
+    //             <span>1. Om underhåll pågår: vänta en stund och försök igen senare.</span>
+    //             </div>
+    //             </div>
+    //             <div class = 'ErrorMessageMain indent'>
+    //             <span>2. Prova att öppna Folkhälsokollen i en annan webbläsare.</span>
+    //             </div>
+    //             <div class = 'ErrorMessageMain indent biggerSpace'>
+    //                 <span>Kontakta <a href = "mailto: folkhalsokollen.slso@regionstockholm.se" style = "color: #27769f;">folkhalsokollen.slso@regionstockholm.se</a> om felet kvarstår.</span>
+    //             </div>
+    //             `;
+    //     observer_loading.disconnect();
+    //   }
+
+    //   let indicator_control = document.querySelector(
+    //     '[aria-controls="sas_RC-Dropdown-list-3"]'
+    //   );
+    //   if (indicator_control) {
+    //     observer_change_indicator.observe(
+    //       indicator_control.getElementsByClassName(
+    //         "sas_components-Select-Select_label"
+    //       )[0],
+    //       {
+    //         characterData: true,
+    //         attributes: false,
+    //         childList: false,
+    //         subtree: true,
+    //       }
+    //     );
+    //     observer_loading.disconnect();
+    //     // Open the page
+    //     if (statusParametersEncoded) {
+    //       let pageIndexMap = {
+    //         karta: 0,
+    //         stapel: 1,
+    //         linje: 2,
+    //         tabell: 3,
+    //       };
+    //       document
+    //         .getElementsByClassName("sas_components-Image-Image_clickable")
+    //         [pageIndexMap[page_to_open]].click();
+    //     }
+    //   }
+    // });
+
+    // observer_loading.observe(sasReport, {
+    //   childList: true,
+    //   subtree: true,
+    // });
     let loading_replaced = false;
-    let observer_loading = new MutationObserver((mutationRecords) => {
-      let sasLoadingDiv = document.getElementsByClassName(
-        "sas_components-BusyStateIndicator-BusyStateIndicator_state"
-      );
-      if (typeof sasLoadingDiv != "undefined" && loading_replaced == false) {
-        loading_replaced = true;
-        sasLoadingDiv[0].style.visibility = "hidden";
-        let sasMainPanel = document.getElementsByClassName(
-          "sas_components-Pane-Pane_pane"
-        )[0];
-        let customLoadingDiv = sasMainPanel.appendChild(
-          document.createElement("div")
+    let rafId = null;
+
+    const checkLoadingState = () => {
+      // 1. Replace the default loading screen (runs once to prevent repetitive DOM queries)
+      if (!loading_replaced) {
+        let sasLoadingDiv = document.getElementsByClassName(
+          "sas_components-BusyStateIndicator-BusyStateIndicator_state",
         );
-        customLoadingDiv.setAttribute("id", "customLoadingDiv");
-        customLoadingDiv.innerHTML = `
-                <div class='loading screen'>
-                    <div class="lds-ring">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div class='loading-text'>webbverktyget laddas...</div>
-                    <div class='loading-tip'>
-                        <p class="first-line fade-in">Använd webbverktyget från en dator eller surfplatta. För att garantera att det visas på bästa sätt rekommenderar vi webbläsarna Microsoft Edge (alla versioner), Firefox 12, Google chrome 19, Internet explorer 10, Safari 5.1 eller senare versioner av dessa.</p>
-                    </div>
-                </div>
-            `;
+        if (sasLoadingDiv.length > 0) {
+          loading_replaced = true;
+          sasLoadingDiv[0].style.visibility = "hidden";
+          let sasMainPanel = document.getElementsByClassName(
+            "sas_components-Pane-Pane_pane",
+          )[0];
+          if (sasMainPanel) {
+            let customLoadingDiv = document.createElement("div");
+            customLoadingDiv.setAttribute("id", "customLoadingDiv");
+            customLoadingDiv.innerHTML = `
+                  <div class='loading screen'>
+                      <div class="lds-ring">
+                          <div></div>
+                          <div></div>
+                          <div></div>
+                          <div></div>
+                      </div>
+                      <div class='loading-text'>webbverktyget laddas...</div>
+                      <div class='loading-tip'>
+                          <p class="first-line fade-in">Använd webbverktyget från en dator eller surfplatta. För att garantera att det visas på bästa sätt rekommenderar vi webbläsarna Microsoft Edge (alla versioner), Firefox 12, Google chrome 19, Internet explorer 10, Safari 5.1 eller senare versioner av dessa.</p>
+                      </div>
+                  </div>
+              `;
+            sasMainPanel.appendChild(customLoadingDiv);
+          }
+        }
       }
+
+      // 2. Check for error messages
       let errorMessageDiv = document.querySelector(
-        '[title^="Unable to"], [title^="Det går inte"]'
+        '[title^="Unable to"], [title^="Det går inte"]',
       );
       if (errorMessageDiv != null) {
         errorMessageDiv.style.display = "none";
         let sasMainPanel = document.getElementsByClassName(
-          "sas_components-Pane-Pane_pane"
+          "sas_components-Pane-Pane_pane",
         )[0];
-        let customErrorDiv = sasMainPanel.appendChild(
-          document.createElement("div")
-        );
-        customErrorDiv.setAttribute("id", "customErrorDiv");
-        customErrorDiv.innerHTML = `
-             <div class = 'ErrorMessageTitle'>
-                <img src="https://img.icons8.com/emoji/50/null/warning-emoji.png"/ style = "margin: 5px"><span style = 'margin-top: auto; margin-bottom: auto'>Fel: Verktyget kunde inte läsas in</span>
-                </div>
-                <div class = 'ErrorMessageMain'>
-                <span>Det har uppstått ett fel mellan Folkhälsokollen och webbläsaren. Du kan försöka åtgärda problemet genom att göra något av följande:</span>
-                </div>
-                <div class = 'ErrorMessageMain indent'>
-                <span>1. Om underhåll pågår: vänta en stund och försök igen senare.</span>
-                </div>
-                </div>
-                <div class = 'ErrorMessageMain indent'>
-                <span>2. Prova att öppna Folkhälsokollen i en annan webbläsare.</span>
-                </div>
-                <div class = 'ErrorMessageMain indent biggerSpace'>
-                    <span>Kontakta <a href = "mailto: folkhalsokollen.slso@regionstockholm.se" style = "color: #27769f;">folkhalsokollen.slso@regionstockholm.se</a> om felet kvarstår.</span>
-                </div> 
-                `;
+        if (sasMainPanel) {
+          let customErrorDiv = document.createElement("div");
+          customErrorDiv.setAttribute("id", "customErrorDiv");
+          customErrorDiv.innerHTML = `
+               <div class = 'ErrorMessageTitle'>
+                  <img src="https://img.icons8.com/emoji/50/null/warning-emoji.png"/ style = "margin: 5px"><span style = 'margin-top: auto; margin-bottom: auto'>Fel: Verktyget kunde inte läsas in</span>
+                  </div>
+                  <div class = 'ErrorMessageMain'>
+                  <span>Det har uppstått ett fel mellan Folkhälsokollen och webbläsaren. Du kan försöka åtgärda problemet genom att göra något av följande:</span>
+                  </div>
+                  <div class = 'ErrorMessageMain indent'>
+                  <span>1. Om underhåll pågår: vänta en stund och försök igen senare.</span>
+                  </div>
+                  </div>
+                  <div class = 'ErrorMessageMain indent'>
+                  <span>2. Prova att öppna Folkhälsokollen i en annan webbläsare.</span>
+                  </div>
+                  <div class = 'ErrorMessageMain indent biggerSpace'>
+                      <span>Kontakta <a href = "mailto: folkhalsokollen.slso@regionstockholm.se" style = "color: #27769f;">folkhalsokollen.slso@regionstockholm.se</a> om felet kvarstår.</span>
+                  </div> 
+                  `;
+          sasMainPanel.appendChild(customErrorDiv);
+        }
         observer_loading.disconnect();
+        return;
       }
 
+      // 3. Check if the indicator control is ready, navigate to initial page, and disconnect observer
       let indicator_control = document.querySelector(
-        '[aria-controls="sas_RC-Dropdown-list-1"]'
+        '[aria-controls="sas_RC-Dropdown-list-3"]',
       );
       if (indicator_control) {
-        observer_change_indicator.observe(
-          indicator_control.getElementsByClassName(
-            "sas_components-Select-Select_label"
-          )[0],
-          {
+        let selectLabel = indicator_control.getElementsByClassName(
+          "sas_components-Select-Select_label",
+        )[0];
+        if (selectLabel) {
+          observer_change_indicator.observe(selectLabel, {
             characterData: true,
             attributes: false,
             childList: false,
             subtree: true,
+          });
+          observer_loading.disconnect();
+
+          // Open the specified page
+          if (statusParametersEncoded) {
+            let pageIndexMap = {
+              karta: 0,
+              stapel: 1,
+              linje: 2,
+              tabell: 3,
+            };
+            let clickableImages = document.getElementsByClassName(
+              "sas_components-Image-Image_clickable",
+            );
+            if (clickableImages[pageIndexMap[page_to_open]]) {
+              clickableImages[pageIndexMap[page_to_open]].click();
+            }
           }
-        );
-        observer_loading.disconnect();
-        // Open the page
-        if (statusParametersEncoded) {
-          let pageIndexMap = {
-            karta: 0,
-            stapel: 1,
-            linje: 2,
-            tabell: 3,
-          };
-          document
-            .getElementsByClassName("sas_components-Image-Image_clickable")
-            [pageIndexMap[page_to_open]].click();
         }
       }
+    };
+
+    // Throttle DOM checks to once per animation frame
+    let observer_loading = new MutationObserver(() => {
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(checkLoadingState);
     });
 
     observer_loading.observe(sasReport, {
@@ -726,13 +844,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
       subtree: true,
     });
 
+    // Fallback timeout: force disconnect after 20 seconds to prevent lingering observers
+    setTimeout(() => {
+      observer_loading.disconnect();
+    }, 120000);
+
     //disable the right-click function
     sasReport.addEventListener(
       "contextmenu",
       function (event) {
         event.stopPropagation();
       },
-      true
+      true,
     );
 
     //update indicator when firstly open the report
@@ -744,15 +867,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
       sasReport.getReportHandle().then((reportHandle) => {
         shareParameters = indicator_init_map[id_indicator[UrlId[1]]];
         reportHandle.updateReportParameters(
-          indicator_init_map[id_indicator[UrlId[1]]]
+          indicator_init_map[id_indicator[UrlId[1]]],
         );
       });
     } else {
       if (statusParametersEncoded) {
-        if (statusParametersEncoded[1].startsWith("(")){
-        shareParameters = uncrush(decodeURIComponent(statusParametersEncoded[1]));
-        }else{
-          shareParameters = JSON.parse(Base64.decode(statusParametersEncoded[1]));
+        if (statusParametersEncoded[1].startsWith("(")) {
+          shareParameters = uncrush(
+            decodeURIComponent(statusParametersEncoded[1]),
+          );
+        } else {
+          shareParameters = JSON.parse(
+            Base64.decode(statusParametersEncoded[1]),
+          );
         }
         page_to_open = shareParameters["page"];
         delete shareParameters["page"];
@@ -763,7 +890,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         sasReport.getReportHandle().then((reportHandle) => {
           shareParameters = indicator_init_map["Arbetsmiljö"];
           reportHandle.updateReportParameters(
-            indicator_init_map["Arbetsmiljö"]
+            indicator_init_map["Arbetsmiljö"],
           );
         });
       }
@@ -788,7 +915,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
           case "screenshotInfo":
             iframe_title_div_innerHTML = event.data.content["title_div"];
             document.getElementsByClassName(
-              "sas_components-Select-Select_label"
+              "sas_components-Select-Select_label",
             )[2].innerText = event.data.content["Kategori"].toString();
             shareParameters["indikator_category"] =
               event.data.content["Kategori"];
@@ -835,7 +962,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
               case "linje":
                 parameterTobeChanged = {};
                 parameterTobeChanged["table_Område"] = Object.values(
-                  event.data.content
+                  event.data.content,
                 )[0];
                 defaultOmradeWhenIndicatorChanged["linje_Område"] =
                   Object.values(event.data.content)[0];
@@ -843,11 +970,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
                   Object.values(event.data.content)[0];
                 if (
                   !Object.values(event.data.content)[0].includes(
-                    stapelCurrentOmrade
+                    stapelCurrentOmrade,
                   )
                 ) {
                   parameterTobeChanged["stapel_Område"] = Object.values(
-                    event.data.content
+                    event.data.content,
                   )[0][Object.values(event.data.content)[0].length - 1];
                   defaultOmradeWhenIndicatorChanged["stapel_Område"] =
                     Object.values(event.data.content)[0][
@@ -865,7 +992,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
               case "table":
                 parameterTobeChanged = {};
                 parameterTobeChanged["linje_Område"] = Object.values(
-                  event.data.content
+                  event.data.content,
                 )[0];
                 defaultOmradeWhenIndicatorChanged["table_Område"] =
                   Object.values(event.data.content)[0];
@@ -873,11 +1000,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
                   Object.values(event.data.content)[0];
                 if (
                   !Object.values(event.data.content)[0].includes(
-                    stapelCurrentOmrade
+                    stapelCurrentOmrade,
                   )
                 ) {
                   parameterTobeChanged["stapel_Område"] = Object.values(
-                    event.data.content
+                    event.data.content,
                   )[0][Object.values(event.data.content)[0].length - 1];
                   defaultOmradeWhenIndicatorChanged["stapel_Område"] =
                     Object.values(event.data.content)[0][
@@ -923,7 +1050,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                   let line_text = "";
                   for (let j = 0; j < line_span.length; j++) {
                     line_text = line_text.concat(
-                      line_span[j].match(/.*>(.+)</m)[1]
+                      line_span[j].match(/.*>(.+)</m)[1],
                     );
                   }
                   if (i == 0) {
@@ -967,7 +1094,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             let indikator_name = document
               .querySelector('[aria-controls="sas_RC-Dropdown-list-3"]')
               .getElementsByClassName(
-                "sas_components-Select-Select_label"
+                "sas_components-Select-Select_label",
               )[0].innerText;
             let indikator_info_content = indicator_info[indikator_name];
             html = `<div style="font-size: 1.5rem; text-align:left"><h1 style="font-weight: bold; font-size: 2rem">${indikator_name}</h1><span style="font-weight: bold;" title="definition">Definition: </span>${indikator_info_content["definition"]}<br><br><span style="font-weight: bold">Källa: </span>`;
@@ -986,7 +1113,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             // Add läs mer
             html += "<br><br><span style='font-weight: bold'>Läs mer:</a>";
             let las_mer = (({ definition, källa, ...o }) => o)(
-              indikator_info_content
+              indikator_info_content,
             );
             html += "<ul>";
             for (let i = 1; i <= Object.keys(las_mer).length / 2; i++) {
@@ -1037,7 +1164,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 let line_text = "";
                 for (let j = 0; j < line_span.length; j++) {
                   line_text = line_text.concat(
-                    line_span[j].match(/.*>(.+)</m)[1]
+                    line_span[j].match(/.*>(.+)</m)[1],
                   );
                 }
                 if (i == 0) {
@@ -1067,7 +1194,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 (message = {
                   type: "takeScreenShot",
                 }),
-                (targetOrigin = "*")
+                (targetOrigin = "*"),
               );
           }
         } else if (e.target.title == "Klicka här för att spara en Excel fil.") {
@@ -1085,18 +1212,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
         ) {
           let rx = /.+\/(.+)_selector/g;
           let current_visualization_type = rx.exec(
-            document.getElementsByTagName("iframe")[0].src
+            document.getElementsByTagName("iframe")[0].src,
           )[1];
           shareParameters["page"] = current_visualization_type;
           shareParameters["indikator_group"] = document
             .querySelector('[aria-controls="sas_RC-Dropdown-list-2"]')
             .getElementsByClassName(
-              "sas_components-Select-Select_label"
+              "sas_components-Select-Select_label",
             )[0].innerText;
           shareParameters["indikator_name"] = document
             .querySelector('[aria-controls="sas_RC-Dropdown-list-3"]')
             .getElementsByClassName(
-              "sas_components-Select-Select_label"
+              "sas_components-Select-Select_label",
             )[0].innerText;
           if (currentUrl.includes("webbverktyg-test")) {
             //for test page
