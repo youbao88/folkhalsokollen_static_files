@@ -446,13 +446,13 @@ const indicator_name_parameter_map = {
   },
   "Övervikt och obesitas": {
     karta: {
-      karta_Tidsperiod: "2024",
+      karta_Tidsperiod: "2021",
       karta_Kön: ["Kvinnor", "Män"],
       karta_Åldersgrupp: ["16-44 år", "45-64 år", "65+ år"],
     },
     stapel: {
       stapel_Område: "Stockholms län",
-      stapel_Tidsperiod: "2024",
+      stapel_Tidsperiod: "2021",
       stapel_Kön: ["Kvinnor", "Män"],
     },
     linje: {
@@ -461,7 +461,7 @@ const indicator_name_parameter_map = {
       linje_Åldersgrupp: ["16-44 år", "45-64 år", "65+ år"],
     },
     tabell: {
-      table_Tidsperiod: "2024",
+      table_Tidsperiod: "2021",
       table_Område: "Stockholms län",
       tabel_Åldersgrupp: ["16-44 år", "45-64 år", "65+ år"],
       tabel_Kön: ["Kvinnor", "Män"],
@@ -1205,13 +1205,13 @@ const indicator_name_parameter_map = {
   },
   "Övervikt och obesitas 4-åringar": {
     karta: {
-      karta_Tidsperiod: "2025",
+      karta_Tidsperiod: "2024",
       karta_Kön: ["Flickor", "Pojkar"],
       karta_Åldersgrupp: ["Samtliga"],
     },
     stapel: {
       stapel_Område: "Stockholms län",
-      stapel_Tidsperiod: "2025",
+      stapel_Tidsperiod: "2024",
       stapel_Kön: ["Flickor", "Pojkar"],
     },
     linje: {
@@ -1220,7 +1220,7 @@ const indicator_name_parameter_map = {
       linje_Åldersgrupp: ["Samtliga"],
     },
     tabell: {
-      table_Tidsperiod: "2025",
+      table_Tidsperiod: "2024",
       table_Område: "Stockholms län",
       tabel_Åldersgrupp: ["Samtliga"],
       tabel_Kön: ["Flickor", "Pojkar"],
@@ -1251,13 +1251,13 @@ const indicator_name_parameter_map = {
   },
   "Exponering för tobaksrök vid 8 månaders ålder": {
     karta: {
-      karta_Tidsperiod: "2025",
+      karta_Tidsperiod: "2024",
       karta_Kön: ["Samtliga"],
       karta_Åldersgrupp: ["Samtliga"],
     },
     stapel: {
       stapel_Område: "Stockholms län",
-      stapel_Tidsperiod: "2025",
+      stapel_Tidsperiod: "2024",
       stapel_Kön: ["Samtliga"],
     },
     linje: {
@@ -1266,7 +1266,7 @@ const indicator_name_parameter_map = {
       linje_Åldersgrupp: ["Samtliga"],
     },
     tabell: {
-      table_Tidsperiod: "2025",
+      table_Tidsperiod: "2024",
       table_Område: "Stockholms län",
       tabel_Åldersgrupp: ["Samtliga"],
       tabel_Kön: ["Samtliga"],
@@ -1274,13 +1274,13 @@ const indicator_name_parameter_map = {
   },
   "Amning vid 4 månaders ålder": {
     karta: {
-      karta_Tidsperiod: "2025",
+      karta_Tidsperiod: "2024",
       karta_Kön: ["Samtliga"],
       karta_Åldersgrupp: ["Samtliga"],
     },
     stapel: {
       stapel_Område: "Stockholms län",
-      stapel_Tidsperiod: "2025",
+      stapel_Tidsperiod: "2024",
       stapel_Kön: ["Samtliga"],
     },
     linje: {
@@ -1289,7 +1289,7 @@ const indicator_name_parameter_map = {
       linje_Åldersgrupp: ["Samtliga"],
     },
     tabell: {
-      table_Tidsperiod: "2025",
+      table_Tidsperiod: "2024",
       table_Område: "Stockholms län",
       tabel_Åldersgrupp: ["Samtliga"],
       tabel_Kön: ["Samtliga"],
@@ -2954,16 +2954,16 @@ const indicator_init_map = {
     indikator_group: "Barns hälsa",
     indikator_name: "Amning vid 4 månaders ålder",
     indikator_category: "Ej valbart",
-    karta_Tidsperiod: "2025",
+    karta_Tidsperiod: "2024",
     karta_Kön: "Samtliga",
     karta_Åldersgrupp: "Samtliga",
     stapel_Område: "Stockholms län",
-    stapel_Tidsperiod: "2025",
+    stapel_Tidsperiod: "2024",
     stapel_Kön: "Samtliga",
     linje_Område: ["Stockholms län", "Botkyrka"],
     linje_Kön: "Samtliga",
     linje_Åldersgrupp: "Samtliga",
-    table_Tidsperiod: "2025",
+    table_Tidsperiod: "2024",
     table_Område: "Stockholms län",
     tabel_Åldersgrupp: "Samtliga",
     tabel_Kön: "Samtliga",
