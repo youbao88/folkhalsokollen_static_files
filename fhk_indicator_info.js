@@ -133,18 +133,18 @@ const indicator_info = {
       "Andel (%) barn inom barnhälsovården som enbart eller delvis får bröstmjölk vid fyra månaders ålder. Barn som får enbart bröstmjölk och eventuella mineraler, vitaminer eller läkemedel, räknas som enbart ammande barn. Barn som får bröstmjölk, men också smakportioner, välling, bröstmjölksersättning eller hela måltider bestående av annan kost räknas som delvis ammande. Observera att det kan förekomma brister i data för olika år och man ska vara försiktig med att dra slutsatser från de år och område det gäller för. Data är inkomplett eller osäkra för: Norrtälje (år 2016–2018), Sigtuna (år 2016), Vallentuna (2020), Sollentuna (2021–2022), Solna (2021–2022), Haninge (2021), Tyresö (2021), Kungsholmen (2022).",
     källa: "Barnhälsovårdens årsrapport ",
     läsa_mer_1_text:
-      "Årsrapport – barnhälsovård i Stockholms län 2024, Region Stockholm.",
+      "Årsrapport – barnhälsovård i Stockholms län 2025, Region Stockholm.",
     läsa_mer_1_link:
-      "https://kunskapsstodforvardgivare.se/download/18.2416aa00197626be2ab1de34/1750765518396/BHV-A%CC%8AR-2024-250623.pdf",
+      "https://www.regionstockholm.se/dokument/halsa-och-vard/rapport/2026/arsrapport-barnhalsovard-i-stockholms-lan-2025/",
   },
   "Exponering för tobaksrök vid 8 månaders ålder": {
     definition:
       "Andel (%) barn vars mamma, pappa eller annan person som stadigvarande bor i familjen rökte dagligen när barnet var fyra veckor och när en uppföljningen gjordes vid åtta månaders ålder. Observera att det kan förekomma brister i data för olika år och man ska vara försiktig med att dra slutsatser från de år och område det gäller för. Data är inkomplett för: Norrtälje (2016–2018), Sigtuna (2016), Skärholmen (2017), Kungsholmen (2022).",
     källa: "Barnhälsovårdens årsrapport ",
     läsa_mer_1_text:
-      "Årsrapport – barnhälsovård i Stockholms län 2024, Region Stockholm.",
+      "Årsrapport – barnhälsovård i Stockholms län 2025, Region Stockholm.",
     läsa_mer_1_link:
-      "https://kunskapsstodforvardgivare.se/download/18.2416aa00197626be2ab1de34/1750765518396/BHV-A%CC%8AR-2024-250623.pdf",
+      "https://www.regionstockholm.se/dokument/halsa-och-vard/rapport/2026/arsrapport-barnhalsovard-i-stockholms-lan-2025/",
     läsa_mer_3_text: "Sluta-röka-linjen",
     läsa_mer_3_link: "https://www.slutarokalinjen.se",
   },
@@ -153,36 +153,36 @@ const indicator_info = {
       "Andel (%) treåringar utan kariesskadade tänder. Med skadade tänder avses tänder som har hål (karies), som dragits ut på grund av karies eller som fått fyllningar på grund av tidigare hål.",
     källa: "Barnhälsovårdens årsrapport ",
     läsa_mer_1_text:
-      "Årsrapport – barnhälsovård i Stockholms län 2024, Region Stockholm.",
+      "Årsrapport – barnhälsovård i Stockholms län 2025, Region Stockholm.",
     läsa_mer_1_link:
-      "https://kunskapsstodforvardgivare.se/download/18.2416aa00197626be2ab1de34/1750765518396/BHV-A%CC%8AR-2024-250623.pdf",
+      "https://www.regionstockholm.se/dokument/halsa-och-vard/rapport/2026/arsrapport-barnhalsovard-i-stockholms-lan-2025/",
   },
   "Övervikt och obesitas 4-åringar": {
     definition:
       "\nAndel (%) fyraåringar med övervikt och obesitas. Övervikt (utan obesitas) definieras som ISO-BMI 25–30 och obesitas definieras som ISO-BMI 30 eller mer. ISO-BMI är ett BMI som är anpassat för barn från två års ålder. Observera att det kan förekomma brister i data för olika år och man ska vara försiktig med att dra slutsatser från de år och område det gäller för. Data är inkomplett för: Södertälje (2016–2017), Norrtälje (2017, 2018, 2021), Sigtuna (2017), Skärholmen (2017, 2021, 2022, 2023), Österåker (2021) , Rinkeby-Kista (2021).\n",
     källa: "Barnhälsovårdens årsrapport ",
     läsa_mer_1_text:
-      "Årsrapport – barnhälsovård i Stockholms län 2024, Region Stockholm.",
+      "Årsrapport – barnhälsovård i Stockholms län 2025, Region Stockholm.",
     läsa_mer_1_link:
-      "https://kunskapsstodforvardgivare.se/download/18.2416aa00197626be2ab1de34/1750765518396/BHV-A%CC%8AR-2024-250623.pdf",
+      "https://www.regionstockholm.se/dokument/halsa-och-vard/rapport/2026/arsrapport-barnhalsovard-i-stockholms-lan-2025/",
   },
   "Anmälan socialtjänst via BVC": {
     definition:
       "Andel (%) barn i åldrarna 0–5 år per årskull kring vilka Barnavårdscentralen (BVC) gjort orosanmälan till socialtjänsten. Observera att det kan förekomma brister i data för olika år och man ska vara försiktig med att dra slutsatser från de år och område det gäller för. Data är inkomplett för: Norrtälje (år 2017–2018) och Kungsholmen (2022).",
     källa: "Barnhälsovårdens årsrapport ",
     läsa_mer_1_text:
-      "Årsrapport – barnhälsovård i Stockholms län 2024, Region Stockholm.",
+      "Årsrapport – barnhälsovård i Stockholms län 2025, Region Stockholm.",
     läsa_mer_1_link:
-      "https://kunskapsstodforvardgivare.se/download/18.2416aa00197626be2ab1de34/1750765518396/BHV-A%CC%8AR-2024-250623.pdf",
+      "https://www.regionstockholm.se/dokument/halsa-och-vard/rapport/2026/arsrapport-barnhalsovard-i-stockholms-lan-2025/",
   },
   "Vaccinationstäckning MPR": {
     definition:
       "Andel (%) barn per årskull som har vaccinerats mot mässling, påssjuka och röda hund (MPR) med minst en dos. Data för år 2022 gäller barn födda 2020 och så vidare. Observera att det kan förekomma brister i data för olika år och man ska vara försiktig med att dra slutsatser från de år och område det gäller för. Data är inkomplett för: Norrtälje (2016–2018), Sigtuna (2016), Kungsholmen (2022).",
     källa: "Barnhälsovårdens årsrapport ",
     läsa_mer_1_text:
-      "Årsrapport – barnhälsovård i Stockholms län 2024, Region Stockholm.",
+      "Årsrapport – barnhälsovård i Stockholms län 2025, Region Stockholm.",
     läsa_mer_1_link:
-      "https://kunskapsstodforvardgivare.se/download/18.2416aa00197626be2ab1de34/1750765518396/BHV-A%CC%8AR-2024-250623.pdf",
+      "https://www.regionstockholm.se/dokument/halsa-och-vard/rapport/2026/arsrapport-barnhalsovard-i-stockholms-lan-2025/",
     läsa_mer_2_text:
       "Strategier för att öka vaccinationstäckningen – en kunskapsöversikt. Rapport 2022:7. Centrum för epidemiologi och dsamhällsmedicin (CES).",
     läsa_mer_2_link:
