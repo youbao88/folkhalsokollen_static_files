@@ -2356,13 +2356,13 @@ const indicator_name_parameter_map = {
   },
   Livsvillkorsindex: {
     karta: {
-      karta_Tidsperiod: "2022",
+      karta_Tidsperiod: "2024",
       karta_Kön: "Samtliga",
       karta_Åldersgrupp: "Samtliga",
     },
     stapel: {
       stapel_Område: "Stockholms län",
-      stapel_Tidsperiod: "2022",
+      stapel_Tidsperiod: "2024",
       stapel_Kön: "Samtliga",
     },
     linje: {
@@ -2371,7 +2371,7 @@ const indicator_name_parameter_map = {
       linje_Åldersgrupp: "Samtliga",
     },
     tabell: {
-      table_Tidsperiod: "2022",
+      table_Tidsperiod: "2024",
       table_Område: "Stockholms län",
       tabel_Åldersgrupp: "Samtliga",
       tabel_Kön: "Samtliga",
