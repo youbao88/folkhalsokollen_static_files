@@ -2676,7 +2676,7 @@ const indicator_name_parameter_map = {
       tabel_Kön: ["18-44 år", "45+ år"],
     },
   },
-  "Har huvudvärk minst en gång i månaden": {
+  "Huvudvärk minst en gång per vecka": {
     karta: {
       karta_Tidsperiod: "2026",
       karta_Kön: ["Killar", "Tjejer"],

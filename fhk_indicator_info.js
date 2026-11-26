@@ -891,11 +891,9 @@ const indicator_info = {
       "Andel (%) individer som uppger att de har varken bra eller dålig, dålig eller mycket dålig tandhälsa.",
     källa: "Region Stockholms folkhälsoenkät",
     läsa_mer_1_text:
-      "Tandhälsan hos barn och ungdomar i Stockholms län 2022. Raport, 2022, Hälso- och sjukvårdsförvaltningen, Region Stockholm.",
+      "Karies bland barn och ungdomar i Stockholms län 2025. Raport, 2026, Hälso- och sjukvårdsförvaltningen, Region Stockholm.",
     läsa_mer_1_link:
-      "https://akademiskbarntandvard.ki.se/wp-content/uploads/sites/141/2023/06/Tandhalsorapport-2022.pdf",
-    läsa_mer_2_text:
-      "Riktlinjer vid premenstruell dysforisk störning, PMDS - Janusinfo.se",
+      "https://akademiskbarntandvard.ki.se/wp-content/uploads/sites/141/2026/06/Karies-bland-barn-och-ungdomar-i-Stockholms-la%CC%88n-2025.pdf",
   },
   "Förväntad medellivslängd": {
     definition:
@@ -1209,9 +1207,9 @@ const indicator_info = {
     läsa_mer_2_link:
       "https://www.can.se/app/uploads/2022/08/can-kortfakta-01-lustgas-bland-unga-2022.pdf",
   },
-  "Har huvudvärk minst en gång i månaden": {
+  "Huvudvärk minst en gång per vecka": {
     definition:
-      "Andel (%) unga som uppger att de haft huvudvärk en gång per månad eller oftare under det senaste läsåret. ",
+      "Andel (%) unga som uppger att de haft huvudvärk en gång per vecka eller oftare under det senaste läsåret. ",
     källa: "Stockholmsenkäten",
     läsa_mer_1_text:
       "Folkhälsorapport 2023 – Smärta, Centrum för epidemiologi och samhällsmedicin (CES).",
