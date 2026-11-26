@@ -1178,7 +1178,7 @@ const indicator_info = {
     läsa_mer_2_link:
       "https://www.lansstyrelsen.se/stockholm/om-oss/vara-tjanster/publikationer/2019/strategi-for-att-forebygga-och-bekampa-vald-i-stockholms-lan---strategi-2020-2026.html",
   },
-  "Har testat cannabis någon gång ": {
+  "Har testat cannabis någon gång": {
     definition:
       "Andel (%) elever som uppger att testat hasch eller marijuana någon gång. ",
     källa: "Stockholmsenkäten",
